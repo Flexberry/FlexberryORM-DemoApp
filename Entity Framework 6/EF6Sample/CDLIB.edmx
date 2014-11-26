@@ -1,0 +1,3618 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CDLIBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BlueRay">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Capacity" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Publisher" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CD">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Publisher" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CDDA">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Publisher" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TotalTracks" Type="int" />
+        </EntityType>
+        <EntityType Name="CDDD">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Capacity" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Publisher" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D0">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D1">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D0" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D11">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D1" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D111">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D11" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D112">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D11" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D113">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D11" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D12">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D1" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D121">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D12" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D122">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D12" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D123">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D12" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D13">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D1" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D131">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D13" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D132">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D13" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D133">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D13" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D2">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D0" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D21">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D2" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D211">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D21" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D212">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D21" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D213">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D21" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D22">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D2" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D221">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D22" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D222">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D22" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D223">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D22" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D23">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D2" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D231">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D23" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D232">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D23" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D233">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D23" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D3">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D0" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D31">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D3" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D311">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D31" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D312">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D31" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D313">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D31" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D32">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D3" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D321">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D32" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D322">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D32" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D323">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D32" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D33">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D3" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D331">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D33" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D332">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D33" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="D333">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="D33" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="DVD">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Version" Type="varchar" MaxLength="4" />
+          <Property Name="Capacity" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Publisher" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Publisher">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Country" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Track">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Length" Type="int" />
+          <Property Name="Author" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Singer" Type="uniqueidentifier" />
+          <Property Name="CDDA" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="BlueRay_FPublisher_0">
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
+          <End Role="BlueRay" Type="Self.BlueRay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="BlueRay">
+              <PropertyRef Name="Publisher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CD_FPublisher_0">
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
+          <End Role="CD" Type="Self.CD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="CD">
+              <PropertyRef Name="Publisher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CDDA_FPublisher_0">
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
+          <End Role="CDDA" Type="Self.CDDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="CDDA">
+              <PropertyRef Name="Publisher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CDDD_FPublisher_0">
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
+          <End Role="CDDD" Type="Self.CDDD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="CDDD">
+              <PropertyRef Name="Publisher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D1_FD0_0">
+          <End Role="D0" Type="Self.D0" Multiplicity="1" />
+          <End Role="D1" Type="Self.D1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D0">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D1">
+              <PropertyRef Name="D0" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D11_FD1_0">
+          <End Role="D1" Type="Self.D1" Multiplicity="1" />
+          <End Role="D11" Type="Self.D11" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D1">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D11">
+              <PropertyRef Name="D1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D111_FD11_0">
+          <End Role="D11" Type="Self.D11" Multiplicity="1" />
+          <End Role="D111" Type="Self.D111" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D11">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D111">
+              <PropertyRef Name="D11" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D112_FD11_0">
+          <End Role="D11" Type="Self.D11" Multiplicity="1" />
+          <End Role="D112" Type="Self.D112" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D11">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D112">
+              <PropertyRef Name="D11" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D113_FD11_0">
+          <End Role="D11" Type="Self.D11" Multiplicity="1" />
+          <End Role="D113" Type="Self.D113" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D11">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D113">
+              <PropertyRef Name="D11" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D12_FD1_0">
+          <End Role="D1" Type="Self.D1" Multiplicity="1" />
+          <End Role="D12" Type="Self.D12" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D1">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D12">
+              <PropertyRef Name="D1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D121_FD12_0">
+          <End Role="D12" Type="Self.D12" Multiplicity="1" />
+          <End Role="D121" Type="Self.D121" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D12">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D121">
+              <PropertyRef Name="D12" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D122_FD12_0">
+          <End Role="D12" Type="Self.D12" Multiplicity="1" />
+          <End Role="D122" Type="Self.D122" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D12">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D122">
+              <PropertyRef Name="D12" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D123_FD12_0">
+          <End Role="D12" Type="Self.D12" Multiplicity="1" />
+          <End Role="D123" Type="Self.D123" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D12">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D123">
+              <PropertyRef Name="D12" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D13_FD1_0">
+          <End Role="D1" Type="Self.D1" Multiplicity="1" />
+          <End Role="D13" Type="Self.D13" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D1">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D13">
+              <PropertyRef Name="D1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D131_FD13_0">
+          <End Role="D13" Type="Self.D13" Multiplicity="1" />
+          <End Role="D131" Type="Self.D131" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D13">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D131">
+              <PropertyRef Name="D13" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D132_FD13_0">
+          <End Role="D13" Type="Self.D13" Multiplicity="1" />
+          <End Role="D132" Type="Self.D132" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D13">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D132">
+              <PropertyRef Name="D13" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D133_FD13_0">
+          <End Role="D13" Type="Self.D13" Multiplicity="1" />
+          <End Role="D133" Type="Self.D133" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D13">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D133">
+              <PropertyRef Name="D13" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D2_FD0_0">
+          <End Role="D0" Type="Self.D0" Multiplicity="1" />
+          <End Role="D2" Type="Self.D2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D0">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D2">
+              <PropertyRef Name="D0" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D21_FD2_0">
+          <End Role="D2" Type="Self.D2" Multiplicity="1" />
+          <End Role="D21" Type="Self.D21" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D2">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D21">
+              <PropertyRef Name="D2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D211_FD21_0">
+          <End Role="D21" Type="Self.D21" Multiplicity="1" />
+          <End Role="D211" Type="Self.D211" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D21">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D211">
+              <PropertyRef Name="D21" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D212_FD21_0">
+          <End Role="D21" Type="Self.D21" Multiplicity="1" />
+          <End Role="D212" Type="Self.D212" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D21">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D212">
+              <PropertyRef Name="D21" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D213_FD21_0">
+          <End Role="D21" Type="Self.D21" Multiplicity="1" />
+          <End Role="D213" Type="Self.D213" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D21">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D213">
+              <PropertyRef Name="D21" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D22_FD2_0">
+          <End Role="D2" Type="Self.D2" Multiplicity="1" />
+          <End Role="D22" Type="Self.D22" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D2">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D22">
+              <PropertyRef Name="D2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D221_FD22_0">
+          <End Role="D22" Type="Self.D22" Multiplicity="1" />
+          <End Role="D221" Type="Self.D221" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D22">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D221">
+              <PropertyRef Name="D22" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D222_FD22_0">
+          <End Role="D22" Type="Self.D22" Multiplicity="1" />
+          <End Role="D222" Type="Self.D222" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D22">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D222">
+              <PropertyRef Name="D22" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D223_FD22_0">
+          <End Role="D22" Type="Self.D22" Multiplicity="1" />
+          <End Role="D223" Type="Self.D223" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D22">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D223">
+              <PropertyRef Name="D22" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D23_FD2_0">
+          <End Role="D2" Type="Self.D2" Multiplicity="1" />
+          <End Role="D23" Type="Self.D23" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D2">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D23">
+              <PropertyRef Name="D2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D231_FD23_0">
+          <End Role="D23" Type="Self.D23" Multiplicity="1" />
+          <End Role="D231" Type="Self.D231" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D23">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D231">
+              <PropertyRef Name="D23" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D232_FD23_0">
+          <End Role="D23" Type="Self.D23" Multiplicity="1" />
+          <End Role="D232" Type="Self.D232" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D23">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D232">
+              <PropertyRef Name="D23" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D233_FD23_0">
+          <End Role="D23" Type="Self.D23" Multiplicity="1" />
+          <End Role="D233" Type="Self.D233" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D23">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D233">
+              <PropertyRef Name="D23" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D3_FD0_0">
+          <End Role="D0" Type="Self.D0" Multiplicity="1" />
+          <End Role="D3" Type="Self.D3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D0">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D3">
+              <PropertyRef Name="D0" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D31_FD3_0">
+          <End Role="D3" Type="Self.D3" Multiplicity="1" />
+          <End Role="D31" Type="Self.D31" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D3">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D31">
+              <PropertyRef Name="D3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D311_FD31_0">
+          <End Role="D31" Type="Self.D31" Multiplicity="1" />
+          <End Role="D311" Type="Self.D311" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D31">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D311">
+              <PropertyRef Name="D31" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D312_FD31_0">
+          <End Role="D31" Type="Self.D31" Multiplicity="1" />
+          <End Role="D312" Type="Self.D312" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D31">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D312">
+              <PropertyRef Name="D31" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D313_FD31_0">
+          <End Role="D31" Type="Self.D31" Multiplicity="1" />
+          <End Role="D313" Type="Self.D313" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D31">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D313">
+              <PropertyRef Name="D31" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D32_FD3_0">
+          <End Role="D3" Type="Self.D3" Multiplicity="1" />
+          <End Role="D32" Type="Self.D32" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D3">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D32">
+              <PropertyRef Name="D3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D321_FD32_0">
+          <End Role="D32" Type="Self.D32" Multiplicity="1" />
+          <End Role="D321" Type="Self.D321" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D32">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D321">
+              <PropertyRef Name="D32" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D322_FD32_0">
+          <End Role="D32" Type="Self.D32" Multiplicity="1" />
+          <End Role="D322" Type="Self.D322" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D32">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D322">
+              <PropertyRef Name="D32" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D323_FD32_0">
+          <End Role="D32" Type="Self.D32" Multiplicity="1" />
+          <End Role="D323" Type="Self.D323" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D32">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D323">
+              <PropertyRef Name="D32" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D33_FD3_0">
+          <End Role="D3" Type="Self.D3" Multiplicity="1" />
+          <End Role="D33" Type="Self.D33" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D3">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D33">
+              <PropertyRef Name="D3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D331_FD33_0">
+          <End Role="D33" Type="Self.D33" Multiplicity="1" />
+          <End Role="D331" Type="Self.D331" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D33">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D331">
+              <PropertyRef Name="D33" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D332_FD33_0">
+          <End Role="D33" Type="Self.D33" Multiplicity="1" />
+          <End Role="D332" Type="Self.D332" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D33">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D332">
+              <PropertyRef Name="D33" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D333_FD33_0">
+          <End Role="D33" Type="Self.D33" Multiplicity="1" />
+          <End Role="D333" Type="Self.D333" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D33">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D333">
+              <PropertyRef Name="D33" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DVD_FPublisher_0">
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
+          <End Role="DVD" Type="Self.DVD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="DVD">
+              <PropertyRef Name="Publisher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Publisher_FCountry_0">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Publisher">
+              <PropertyRef Name="Country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Track_FCDDA_0">
+          <End Role="CDDA" Type="Self.CDDA" Multiplicity="1" />
+          <End Role="Track" Type="Self.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CDDA">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="CDDA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Track_FPerson_0">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Track" Type="Self.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="Author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Track_FPerson_1">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+          <End Role="Track" Type="Self.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="Singer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CDLIBModelStoreContainer">
+          <EntitySet Name="BlueRay" EntityType="Self.BlueRay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CD" EntityType="Self.CD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CDDA" EntityType="Self.CDDA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CDDD" EntityType="Self.CDDD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D0" EntityType="Self.D0" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D1" EntityType="Self.D1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D11" EntityType="Self.D11" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D111" EntityType="Self.D111" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D112" EntityType="Self.D112" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D113" EntityType="Self.D113" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D12" EntityType="Self.D12" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D121" EntityType="Self.D121" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D122" EntityType="Self.D122" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D123" EntityType="Self.D123" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D13" EntityType="Self.D13" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D131" EntityType="Self.D131" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D132" EntityType="Self.D132" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D133" EntityType="Self.D133" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D2" EntityType="Self.D2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D21" EntityType="Self.D21" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D211" EntityType="Self.D211" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D212" EntityType="Self.D212" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D213" EntityType="Self.D213" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D22" EntityType="Self.D22" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D221" EntityType="Self.D221" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D222" EntityType="Self.D222" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D223" EntityType="Self.D223" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D23" EntityType="Self.D23" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D231" EntityType="Self.D231" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D232" EntityType="Self.D232" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D233" EntityType="Self.D233" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D3" EntityType="Self.D3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D31" EntityType="Self.D31" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D311" EntityType="Self.D311" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D312" EntityType="Self.D312" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D313" EntityType="Self.D313" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D32" EntityType="Self.D32" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D321" EntityType="Self.D321" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D322" EntityType="Self.D322" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D323" EntityType="Self.D323" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D33" EntityType="Self.D33" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D331" EntityType="Self.D331" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D332" EntityType="Self.D332" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D333" EntityType="Self.D333" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DVD" EntityType="Self.DVD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Publisher" EntityType="Self.Publisher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Track" EntityType="Self.Track" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="BlueRay_FPublisher_0" Association="Self.BlueRay_FPublisher_0">
+            <End Role="Publisher" EntitySet="Publisher" />
+            <End Role="BlueRay" EntitySet="BlueRay" />
+          </AssociationSet>
+          <AssociationSet Name="CD_FPublisher_0" Association="Self.CD_FPublisher_0">
+            <End Role="Publisher" EntitySet="Publisher" />
+            <End Role="CD" EntitySet="CD" />
+          </AssociationSet>
+          <AssociationSet Name="CDDA_FPublisher_0" Association="Self.CDDA_FPublisher_0">
+            <End Role="Publisher" EntitySet="Publisher" />
+            <End Role="CDDA" EntitySet="CDDA" />
+          </AssociationSet>
+          <AssociationSet Name="CDDD_FPublisher_0" Association="Self.CDDD_FPublisher_0">
+            <End Role="Publisher" EntitySet="Publisher" />
+            <End Role="CDDD" EntitySet="CDDD" />
+          </AssociationSet>
+          <AssociationSet Name="D1_FD0_0" Association="Self.D1_FD0_0">
+            <End Role="D0" EntitySet="D0" />
+            <End Role="D1" EntitySet="D1" />
+          </AssociationSet>
+          <AssociationSet Name="D11_FD1_0" Association="Self.D11_FD1_0">
+            <End Role="D1" EntitySet="D1" />
+            <End Role="D11" EntitySet="D11" />
+          </AssociationSet>
+          <AssociationSet Name="D111_FD11_0" Association="Self.D111_FD11_0">
+            <End Role="D11" EntitySet="D11" />
+            <End Role="D111" EntitySet="D111" />
+          </AssociationSet>
+          <AssociationSet Name="D112_FD11_0" Association="Self.D112_FD11_0">
+            <End Role="D11" EntitySet="D11" />
+            <End Role="D112" EntitySet="D112" />
+          </AssociationSet>
+          <AssociationSet Name="D113_FD11_0" Association="Self.D113_FD11_0">
+            <End Role="D11" EntitySet="D11" />
+            <End Role="D113" EntitySet="D113" />
+          </AssociationSet>
+          <AssociationSet Name="D12_FD1_0" Association="Self.D12_FD1_0">
+            <End Role="D1" EntitySet="D1" />
+            <End Role="D12" EntitySet="D12" />
+          </AssociationSet>
+          <AssociationSet Name="D121_FD12_0" Association="Self.D121_FD12_0">
+            <End Role="D12" EntitySet="D12" />
+            <End Role="D121" EntitySet="D121" />
+          </AssociationSet>
+          <AssociationSet Name="D122_FD12_0" Association="Self.D122_FD12_0">
+            <End Role="D12" EntitySet="D12" />
+            <End Role="D122" EntitySet="D122" />
+          </AssociationSet>
+          <AssociationSet Name="D123_FD12_0" Association="Self.D123_FD12_0">
+            <End Role="D12" EntitySet="D12" />
+            <End Role="D123" EntitySet="D123" />
+          </AssociationSet>
+          <AssociationSet Name="D13_FD1_0" Association="Self.D13_FD1_0">
+            <End Role="D1" EntitySet="D1" />
+            <End Role="D13" EntitySet="D13" />
+          </AssociationSet>
+          <AssociationSet Name="D131_FD13_0" Association="Self.D131_FD13_0">
+            <End Role="D13" EntitySet="D13" />
+            <End Role="D131" EntitySet="D131" />
+          </AssociationSet>
+          <AssociationSet Name="D132_FD13_0" Association="Self.D132_FD13_0">
+            <End Role="D13" EntitySet="D13" />
+            <End Role="D132" EntitySet="D132" />
+          </AssociationSet>
+          <AssociationSet Name="D133_FD13_0" Association="Self.D133_FD13_0">
+            <End Role="D13" EntitySet="D13" />
+            <End Role="D133" EntitySet="D133" />
+          </AssociationSet>
+          <AssociationSet Name="D2_FD0_0" Association="Self.D2_FD0_0">
+            <End Role="D0" EntitySet="D0" />
+            <End Role="D2" EntitySet="D2" />
+          </AssociationSet>
+          <AssociationSet Name="D21_FD2_0" Association="Self.D21_FD2_0">
+            <End Role="D2" EntitySet="D2" />
+            <End Role="D21" EntitySet="D21" />
+          </AssociationSet>
+          <AssociationSet Name="D211_FD21_0" Association="Self.D211_FD21_0">
+            <End Role="D21" EntitySet="D21" />
+            <End Role="D211" EntitySet="D211" />
+          </AssociationSet>
+          <AssociationSet Name="D212_FD21_0" Association="Self.D212_FD21_0">
+            <End Role="D21" EntitySet="D21" />
+            <End Role="D212" EntitySet="D212" />
+          </AssociationSet>
+          <AssociationSet Name="D213_FD21_0" Association="Self.D213_FD21_0">
+            <End Role="D21" EntitySet="D21" />
+            <End Role="D213" EntitySet="D213" />
+          </AssociationSet>
+          <AssociationSet Name="D22_FD2_0" Association="Self.D22_FD2_0">
+            <End Role="D2" EntitySet="D2" />
+            <End Role="D22" EntitySet="D22" />
+          </AssociationSet>
+          <AssociationSet Name="D221_FD22_0" Association="Self.D221_FD22_0">
+            <End Role="D22" EntitySet="D22" />
+            <End Role="D221" EntitySet="D221" />
+          </AssociationSet>
+          <AssociationSet Name="D222_FD22_0" Association="Self.D222_FD22_0">
+            <End Role="D22" EntitySet="D22" />
+            <End Role="D222" EntitySet="D222" />
+          </AssociationSet>
+          <AssociationSet Name="D223_FD22_0" Association="Self.D223_FD22_0">
+            <End Role="D22" EntitySet="D22" />
+            <End Role="D223" EntitySet="D223" />
+          </AssociationSet>
+          <AssociationSet Name="D23_FD2_0" Association="Self.D23_FD2_0">
+            <End Role="D2" EntitySet="D2" />
+            <End Role="D23" EntitySet="D23" />
+          </AssociationSet>
+          <AssociationSet Name="D231_FD23_0" Association="Self.D231_FD23_0">
+            <End Role="D23" EntitySet="D23" />
+            <End Role="D231" EntitySet="D231" />
+          </AssociationSet>
+          <AssociationSet Name="D232_FD23_0" Association="Self.D232_FD23_0">
+            <End Role="D23" EntitySet="D23" />
+            <End Role="D232" EntitySet="D232" />
+          </AssociationSet>
+          <AssociationSet Name="D233_FD23_0" Association="Self.D233_FD23_0">
+            <End Role="D23" EntitySet="D23" />
+            <End Role="D233" EntitySet="D233" />
+          </AssociationSet>
+          <AssociationSet Name="D3_FD0_0" Association="Self.D3_FD0_0">
+            <End Role="D0" EntitySet="D0" />
+            <End Role="D3" EntitySet="D3" />
+          </AssociationSet>
+          <AssociationSet Name="D31_FD3_0" Association="Self.D31_FD3_0">
+            <End Role="D3" EntitySet="D3" />
+            <End Role="D31" EntitySet="D31" />
+          </AssociationSet>
+          <AssociationSet Name="D311_FD31_0" Association="Self.D311_FD31_0">
+            <End Role="D31" EntitySet="D31" />
+            <End Role="D311" EntitySet="D311" />
+          </AssociationSet>
+          <AssociationSet Name="D312_FD31_0" Association="Self.D312_FD31_0">
+            <End Role="D31" EntitySet="D31" />
+            <End Role="D312" EntitySet="D312" />
+          </AssociationSet>
+          <AssociationSet Name="D313_FD31_0" Association="Self.D313_FD31_0">
+            <End Role="D31" EntitySet="D31" />
+            <End Role="D313" EntitySet="D313" />
+          </AssociationSet>
+          <AssociationSet Name="D32_FD3_0" Association="Self.D32_FD3_0">
+            <End Role="D3" EntitySet="D3" />
+            <End Role="D32" EntitySet="D32" />
+          </AssociationSet>
+          <AssociationSet Name="D321_FD32_0" Association="Self.D321_FD32_0">
+            <End Role="D32" EntitySet="D32" />
+            <End Role="D321" EntitySet="D321" />
+          </AssociationSet>
+          <AssociationSet Name="D322_FD32_0" Association="Self.D322_FD32_0">
+            <End Role="D32" EntitySet="D32" />
+            <End Role="D322" EntitySet="D322" />
+          </AssociationSet>
+          <AssociationSet Name="D323_FD32_0" Association="Self.D323_FD32_0">
+            <End Role="D32" EntitySet="D32" />
+            <End Role="D323" EntitySet="D323" />
+          </AssociationSet>
+          <AssociationSet Name="D33_FD3_0" Association="Self.D33_FD3_0">
+            <End Role="D3" EntitySet="D3" />
+            <End Role="D33" EntitySet="D33" />
+          </AssociationSet>
+          <AssociationSet Name="D331_FD33_0" Association="Self.D331_FD33_0">
+            <End Role="D33" EntitySet="D33" />
+            <End Role="D331" EntitySet="D331" />
+          </AssociationSet>
+          <AssociationSet Name="D332_FD33_0" Association="Self.D332_FD33_0">
+            <End Role="D33" EntitySet="D33" />
+            <End Role="D332" EntitySet="D332" />
+          </AssociationSet>
+          <AssociationSet Name="D333_FD33_0" Association="Self.D333_FD33_0">
+            <End Role="D33" EntitySet="D33" />
+            <End Role="D333" EntitySet="D333" />
+          </AssociationSet>
+          <AssociationSet Name="DVD_FPublisher_0" Association="Self.DVD_FPublisher_0">
+            <End Role="Publisher" EntitySet="Publisher" />
+            <End Role="DVD" EntitySet="DVD" />
+          </AssociationSet>
+          <AssociationSet Name="Publisher_FCountry_0" Association="Self.Publisher_FCountry_0">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Publisher" EntitySet="Publisher" />
+          </AssociationSet>
+          <AssociationSet Name="Track_FCDDA_0" Association="Self.Track_FCDDA_0">
+            <End Role="CDDA" EntitySet="CDDA" />
+            <End Role="Track" EntitySet="Track" />
+          </AssociationSet>
+          <AssociationSet Name="Track_FPerson_0" Association="Self.Track_FPerson_0">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Track" EntitySet="Track" />
+          </AssociationSet>
+          <AssociationSet Name="Track_FPerson_1" Association="Self.Track_FPerson_1">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Track" EntitySet="Track" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDLIBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BlueRay">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Capacity" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Publisher" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Publisher1" Relationship="Self.BlueRay_FPublisher_0" FromRole="BlueRay" ToRole="Publisher" />
+        </EntityType>
+        <EntityType Name="CD">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Publisher" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Publisher1" Relationship="Self.CD_FPublisher_0" FromRole="CD" ToRole="Publisher" />
+        </EntityType>
+        <EntityType Name="CDDA">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Publisher" Type="Guid" Nullable="false" />
+          <Property Name="TotalTracks" Type="Int32" />
+          <NavigationProperty Name="Publisher1" Relationship="Self.CDDA_FPublisher_0" FromRole="CDDA" ToRole="Publisher" />
+          <NavigationProperty Name="Track" Relationship="Self.Track_FCDDA_0" FromRole="CDDA" ToRole="Track" />
+        </EntityType>
+        <EntityType Name="CDDD">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Capacity" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Publisher" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Publisher1" Relationship="Self.CDDD_FPublisher_0" FromRole="CDDD" ToRole="Publisher" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Publisher" Relationship="Self.Publisher_FCountry_0" FromRole="Country" ToRole="Publisher" />
+        </EntityType>
+        <EntityType Name="D0">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="D1" Relationship="Self.D1_FD0_0" FromRole="D0" ToRole="D1" />
+          <NavigationProperty Name="D2" Relationship="Self.D2_FD0_0" FromRole="D0" ToRole="D2" />
+          <NavigationProperty Name="D3" Relationship="Self.D3_FD0_0" FromRole="D0" ToRole="D3" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D1">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D0" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D01" Relationship="Self.D1_FD0_0" FromRole="D1" ToRole="D0" />
+          <NavigationProperty Name="D11" Relationship="Self.D11_FD1_0" FromRole="D1" ToRole="D11" />
+          <NavigationProperty Name="D12" Relationship="Self.D12_FD1_0" FromRole="D1" ToRole="D12" />
+          <NavigationProperty Name="D13" Relationship="Self.D13_FD1_0" FromRole="D1" ToRole="D13" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D11">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D1" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D12" Relationship="Self.D11_FD1_0" FromRole="D11" ToRole="D1" />
+          <NavigationProperty Name="D111" Relationship="Self.D111_FD11_0" FromRole="D11" ToRole="D111" />
+          <NavigationProperty Name="D112" Relationship="Self.D112_FD11_0" FromRole="D11" ToRole="D112" />
+          <NavigationProperty Name="D113" Relationship="Self.D113_FD11_0" FromRole="D11" ToRole="D113" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D111">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D11" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D112" Relationship="Self.D111_FD11_0" FromRole="D111" ToRole="D11" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D112">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D11" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D111" Relationship="Self.D112_FD11_0" FromRole="D112" ToRole="D11" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D113">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D11" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D111" Relationship="Self.D113_FD11_0" FromRole="D113" ToRole="D11" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D12">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D1" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D11" Relationship="Self.D12_FD1_0" FromRole="D12" ToRole="D1" />
+          <NavigationProperty Name="D121" Relationship="Self.D121_FD12_0" FromRole="D12" ToRole="D121" />
+          <NavigationProperty Name="D122" Relationship="Self.D122_FD12_0" FromRole="D12" ToRole="D122" />
+          <NavigationProperty Name="D123" Relationship="Self.D123_FD12_0" FromRole="D12" ToRole="D123" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D121">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D12" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D122" Relationship="Self.D121_FD12_0" FromRole="D121" ToRole="D12" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D122">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D12" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D121" Relationship="Self.D122_FD12_0" FromRole="D122" ToRole="D12" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D123">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D12" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D121" Relationship="Self.D123_FD12_0" FromRole="D123" ToRole="D12" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D13">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D1" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D11" Relationship="Self.D13_FD1_0" FromRole="D13" ToRole="D1" />
+          <NavigationProperty Name="D131" Relationship="Self.D131_FD13_0" FromRole="D13" ToRole="D131" />
+          <NavigationProperty Name="D132" Relationship="Self.D132_FD13_0" FromRole="D13" ToRole="D132" />
+          <NavigationProperty Name="D133" Relationship="Self.D133_FD13_0" FromRole="D13" ToRole="D133" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D131">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D13" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D132" Relationship="Self.D131_FD13_0" FromRole="D131" ToRole="D13" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D132">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D13" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D131" Relationship="Self.D132_FD13_0" FromRole="D132" ToRole="D13" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D133">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D13" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D131" Relationship="Self.D133_FD13_0" FromRole="D133" ToRole="D13" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D2">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D0" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D01" Relationship="Self.D2_FD0_0" FromRole="D2" ToRole="D0" />
+          <NavigationProperty Name="D21" Relationship="Self.D21_FD2_0" FromRole="D2" ToRole="D21" />
+          <NavigationProperty Name="D22" Relationship="Self.D22_FD2_0" FromRole="D2" ToRole="D22" />
+          <NavigationProperty Name="D23" Relationship="Self.D23_FD2_0" FromRole="D2" ToRole="D23" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D21">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D2" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D22" Relationship="Self.D21_FD2_0" FromRole="D21" ToRole="D2" />
+          <NavigationProperty Name="D211" Relationship="Self.D211_FD21_0" FromRole="D21" ToRole="D211" />
+          <NavigationProperty Name="D212" Relationship="Self.D212_FD21_0" FromRole="D21" ToRole="D212" />
+          <NavigationProperty Name="D213" Relationship="Self.D213_FD21_0" FromRole="D21" ToRole="D213" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D211">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D21" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D212" Relationship="Self.D211_FD21_0" FromRole="D211" ToRole="D21" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D212">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D21" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D211" Relationship="Self.D212_FD21_0" FromRole="D212" ToRole="D21" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D213">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D21" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D211" Relationship="Self.D213_FD21_0" FromRole="D213" ToRole="D21" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D22">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D2" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D21" Relationship="Self.D22_FD2_0" FromRole="D22" ToRole="D2" />
+          <NavigationProperty Name="D221" Relationship="Self.D221_FD22_0" FromRole="D22" ToRole="D221" />
+          <NavigationProperty Name="D222" Relationship="Self.D222_FD22_0" FromRole="D22" ToRole="D222" />
+          <NavigationProperty Name="D223" Relationship="Self.D223_FD22_0" FromRole="D22" ToRole="D223" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D221">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D22" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D222" Relationship="Self.D221_FD22_0" FromRole="D221" ToRole="D22" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D222">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D22" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D221" Relationship="Self.D222_FD22_0" FromRole="D222" ToRole="D22" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D223">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D22" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D221" Relationship="Self.D223_FD22_0" FromRole="D223" ToRole="D22" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D23">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D2" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D21" Relationship="Self.D23_FD2_0" FromRole="D23" ToRole="D2" />
+          <NavigationProperty Name="D231" Relationship="Self.D231_FD23_0" FromRole="D23" ToRole="D231" />
+          <NavigationProperty Name="D232" Relationship="Self.D232_FD23_0" FromRole="D23" ToRole="D232" />
+          <NavigationProperty Name="D233" Relationship="Self.D233_FD23_0" FromRole="D23" ToRole="D233" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D231">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D23" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D232" Relationship="Self.D231_FD23_0" FromRole="D231" ToRole="D23" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D232">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D23" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D231" Relationship="Self.D232_FD23_0" FromRole="D232" ToRole="D23" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D233">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D23" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D231" Relationship="Self.D233_FD23_0" FromRole="D233" ToRole="D23" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D3">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D0" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D01" Relationship="Self.D3_FD0_0" FromRole="D3" ToRole="D0" />
+          <NavigationProperty Name="D31" Relationship="Self.D31_FD3_0" FromRole="D3" ToRole="D31" />
+          <NavigationProperty Name="D32" Relationship="Self.D32_FD3_0" FromRole="D3" ToRole="D32" />
+          <NavigationProperty Name="D33" Relationship="Self.D33_FD3_0" FromRole="D3" ToRole="D33" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D31">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D3" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D32" Relationship="Self.D31_FD3_0" FromRole="D31" ToRole="D3" />
+          <NavigationProperty Name="D311" Relationship="Self.D311_FD31_0" FromRole="D31" ToRole="D311" />
+          <NavigationProperty Name="D312" Relationship="Self.D312_FD31_0" FromRole="D31" ToRole="D312" />
+          <NavigationProperty Name="D313" Relationship="Self.D313_FD31_0" FromRole="D31" ToRole="D313" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D311">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D31" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D312" Relationship="Self.D311_FD31_0" FromRole="D311" ToRole="D31" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D312">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D31" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D311" Relationship="Self.D312_FD31_0" FromRole="D312" ToRole="D31" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D313">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D31" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D311" Relationship="Self.D313_FD31_0" FromRole="D313" ToRole="D31" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D32">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D3" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D31" Relationship="Self.D32_FD3_0" FromRole="D32" ToRole="D3" />
+          <NavigationProperty Name="D321" Relationship="Self.D321_FD32_0" FromRole="D32" ToRole="D321" />
+          <NavigationProperty Name="D322" Relationship="Self.D322_FD32_0" FromRole="D32" ToRole="D322" />
+          <NavigationProperty Name="D323" Relationship="Self.D323_FD32_0" FromRole="D32" ToRole="D323" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D321">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D32" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D322" Relationship="Self.D321_FD32_0" FromRole="D321" ToRole="D32" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D322">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D32" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D321" Relationship="Self.D322_FD32_0" FromRole="D322" ToRole="D32" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D323">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D32" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D321" Relationship="Self.D323_FD32_0" FromRole="D323" ToRole="D32" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D33">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D3" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D31" Relationship="Self.D33_FD3_0" FromRole="D33" ToRole="D3" />
+          <NavigationProperty Name="D331" Relationship="Self.D331_FD33_0" FromRole="D33" ToRole="D331" />
+          <NavigationProperty Name="D332" Relationship="Self.D332_FD33_0" FromRole="D33" ToRole="D332" />
+          <NavigationProperty Name="D333" Relationship="Self.D333_FD33_0" FromRole="D33" ToRole="D333" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D331">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D33" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D332" Relationship="Self.D331_FD33_0" FromRole="D331" ToRole="D33" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D332">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D33" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D331" Relationship="Self.D332_FD33_0" FromRole="D332" ToRole="D33" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="D333">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="D33" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="D331" Relationship="Self.D333_FD33_0" FromRole="D333" ToRole="D33" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DVD">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Version" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Capacity" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Publisher" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Publisher1" Relationship="Self.DVD_FPublisher_0" FromRole="DVD" ToRole="Publisher" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Track" Relationship="Self.Track_FPerson_0" FromRole="Person" ToRole="Track" />
+          <NavigationProperty Name="Track1" Relationship="Self.Track_FPerson_1" FromRole="Person" ToRole="Track" />
+        </EntityType>
+        <EntityType Name="Publisher">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="BlueRay" Relationship="Self.BlueRay_FPublisher_0" FromRole="Publisher" ToRole="BlueRay" />
+          <NavigationProperty Name="CD" Relationship="Self.CD_FPublisher_0" FromRole="Publisher" ToRole="CD" />
+          <NavigationProperty Name="CDDA" Relationship="Self.CDDA_FPublisher_0" FromRole="Publisher" ToRole="CDDA" />
+          <NavigationProperty Name="CDDD" Relationship="Self.CDDD_FPublisher_0" FromRole="Publisher" ToRole="CDDD" />
+          <NavigationProperty Name="Country1" Relationship="Self.Publisher_FCountry_0" FromRole="Publisher" ToRole="Country" />
+          <NavigationProperty Name="DVD" Relationship="Self.DVD_FPublisher_0" FromRole="Publisher" ToRole="DVD" />
+        </EntityType>
+        <EntityType Name="Track">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Length" Type="Int32" />
+          <Property Name="Author" Type="Guid" Nullable="false" />
+          <Property Name="Singer" Type="Guid" />
+          <Property Name="CDDA" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CDDA1" Relationship="Self.Track_FCDDA_0" FromRole="Track" ToRole="CDDA" />
+          <NavigationProperty Name="Person" Relationship="Self.Track_FPerson_0" FromRole="Track" ToRole="Person" />
+          <NavigationProperty Name="Person1" Relationship="Self.Track_FPerson_1" FromRole="Track" ToRole="Person" />
+        </EntityType>
+        <Association Name="BlueRay_FPublisher_0">
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
+          <End Role="BlueRay" Type="Self.BlueRay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="BlueRay">
+              <PropertyRef Name="Publisher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CD_FPublisher_0">
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
+          <End Role="CD" Type="Self.CD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="CD">
+              <PropertyRef Name="Publisher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CDDA_FPublisher_0">
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
+          <End Role="CDDA" Type="Self.CDDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="CDDA">
+              <PropertyRef Name="Publisher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Track_FCDDA_0">
+          <End Role="CDDA" Type="Self.CDDA" Multiplicity="1" />
+          <End Role="Track" Type="Self.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CDDA">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="CDDA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CDDD_FPublisher_0">
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
+          <End Role="CDDD" Type="Self.CDDD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="CDDD">
+              <PropertyRef Name="Publisher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Publisher_FCountry_0">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Publisher">
+              <PropertyRef Name="Country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D1_FD0_0">
+          <End Role="D0" Type="Self.D0" Multiplicity="1" />
+          <End Role="D1" Type="Self.D1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D0">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D1">
+              <PropertyRef Name="D0" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D2_FD0_0">
+          <End Role="D0" Type="Self.D0" Multiplicity="1" />
+          <End Role="D2" Type="Self.D2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D0">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D2">
+              <PropertyRef Name="D0" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D3_FD0_0">
+          <End Role="D0" Type="Self.D0" Multiplicity="1" />
+          <End Role="D3" Type="Self.D3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D0">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D3">
+              <PropertyRef Name="D0" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D11_FD1_0">
+          <End Role="D1" Type="Self.D1" Multiplicity="1" />
+          <End Role="D11" Type="Self.D11" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D1">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D11">
+              <PropertyRef Name="D1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D12_FD1_0">
+          <End Role="D1" Type="Self.D1" Multiplicity="1" />
+          <End Role="D12" Type="Self.D12" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D1">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D12">
+              <PropertyRef Name="D1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D13_FD1_0">
+          <End Role="D1" Type="Self.D1" Multiplicity="1" />
+          <End Role="D13" Type="Self.D13" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D1">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D13">
+              <PropertyRef Name="D1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D111_FD11_0">
+          <End Role="D11" Type="Self.D11" Multiplicity="1" />
+          <End Role="D111" Type="Self.D111" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D11">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D111">
+              <PropertyRef Name="D11" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D112_FD11_0">
+          <End Role="D11" Type="Self.D11" Multiplicity="1" />
+          <End Role="D112" Type="Self.D112" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D11">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D112">
+              <PropertyRef Name="D11" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D113_FD11_0">
+          <End Role="D11" Type="Self.D11" Multiplicity="1" />
+          <End Role="D113" Type="Self.D113" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D11">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D113">
+              <PropertyRef Name="D11" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D121_FD12_0">
+          <End Role="D12" Type="Self.D12" Multiplicity="1" />
+          <End Role="D121" Type="Self.D121" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D12">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D121">
+              <PropertyRef Name="D12" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D122_FD12_0">
+          <End Role="D12" Type="Self.D12" Multiplicity="1" />
+          <End Role="D122" Type="Self.D122" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D12">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D122">
+              <PropertyRef Name="D12" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D123_FD12_0">
+          <End Role="D12" Type="Self.D12" Multiplicity="1" />
+          <End Role="D123" Type="Self.D123" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D12">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D123">
+              <PropertyRef Name="D12" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D131_FD13_0">
+          <End Role="D13" Type="Self.D13" Multiplicity="1" />
+          <End Role="D131" Type="Self.D131" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D13">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D131">
+              <PropertyRef Name="D13" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D132_FD13_0">
+          <End Role="D13" Type="Self.D13" Multiplicity="1" />
+          <End Role="D132" Type="Self.D132" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D13">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D132">
+              <PropertyRef Name="D13" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D133_FD13_0">
+          <End Role="D13" Type="Self.D13" Multiplicity="1" />
+          <End Role="D133" Type="Self.D133" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D13">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D133">
+              <PropertyRef Name="D13" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D21_FD2_0">
+          <End Role="D2" Type="Self.D2" Multiplicity="1" />
+          <End Role="D21" Type="Self.D21" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D2">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D21">
+              <PropertyRef Name="D2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D22_FD2_0">
+          <End Role="D2" Type="Self.D2" Multiplicity="1" />
+          <End Role="D22" Type="Self.D22" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D2">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D22">
+              <PropertyRef Name="D2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D23_FD2_0">
+          <End Role="D2" Type="Self.D2" Multiplicity="1" />
+          <End Role="D23" Type="Self.D23" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D2">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D23">
+              <PropertyRef Name="D2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D211_FD21_0">
+          <End Role="D21" Type="Self.D21" Multiplicity="1" />
+          <End Role="D211" Type="Self.D211" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D21">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D211">
+              <PropertyRef Name="D21" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D212_FD21_0">
+          <End Role="D21" Type="Self.D21" Multiplicity="1" />
+          <End Role="D212" Type="Self.D212" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D21">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D212">
+              <PropertyRef Name="D21" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D213_FD21_0">
+          <End Role="D21" Type="Self.D21" Multiplicity="1" />
+          <End Role="D213" Type="Self.D213" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D21">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D213">
+              <PropertyRef Name="D21" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D221_FD22_0">
+          <End Role="D22" Type="Self.D22" Multiplicity="1" />
+          <End Role="D221" Type="Self.D221" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D22">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D221">
+              <PropertyRef Name="D22" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D222_FD22_0">
+          <End Role="D22" Type="Self.D22" Multiplicity="1" />
+          <End Role="D222" Type="Self.D222" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D22">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D222">
+              <PropertyRef Name="D22" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D223_FD22_0">
+          <End Role="D22" Type="Self.D22" Multiplicity="1" />
+          <End Role="D223" Type="Self.D223" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D22">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D223">
+              <PropertyRef Name="D22" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D231_FD23_0">
+          <End Role="D23" Type="Self.D23" Multiplicity="1" />
+          <End Role="D231" Type="Self.D231" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D23">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D231">
+              <PropertyRef Name="D23" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D232_FD23_0">
+          <End Role="D23" Type="Self.D23" Multiplicity="1" />
+          <End Role="D232" Type="Self.D232" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D23">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D232">
+              <PropertyRef Name="D23" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D233_FD23_0">
+          <End Role="D23" Type="Self.D23" Multiplicity="1" />
+          <End Role="D233" Type="Self.D233" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D23">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D233">
+              <PropertyRef Name="D23" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D31_FD3_0">
+          <End Role="D3" Type="Self.D3" Multiplicity="1" />
+          <End Role="D31" Type="Self.D31" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D3">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D31">
+              <PropertyRef Name="D3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D32_FD3_0">
+          <End Role="D3" Type="Self.D3" Multiplicity="1" />
+          <End Role="D32" Type="Self.D32" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D3">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D32">
+              <PropertyRef Name="D3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D33_FD3_0">
+          <End Role="D3" Type="Self.D3" Multiplicity="1" />
+          <End Role="D33" Type="Self.D33" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D3">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D33">
+              <PropertyRef Name="D3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D311_FD31_0">
+          <End Role="D31" Type="Self.D31" Multiplicity="1" />
+          <End Role="D311" Type="Self.D311" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D31">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D311">
+              <PropertyRef Name="D31" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D312_FD31_0">
+          <End Role="D31" Type="Self.D31" Multiplicity="1" />
+          <End Role="D312" Type="Self.D312" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D31">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D312">
+              <PropertyRef Name="D31" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D313_FD31_0">
+          <End Role="D31" Type="Self.D31" Multiplicity="1" />
+          <End Role="D313" Type="Self.D313" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D31">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D313">
+              <PropertyRef Name="D31" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D321_FD32_0">
+          <End Role="D32" Type="Self.D32" Multiplicity="1" />
+          <End Role="D321" Type="Self.D321" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D32">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D321">
+              <PropertyRef Name="D32" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D322_FD32_0">
+          <End Role="D32" Type="Self.D32" Multiplicity="1" />
+          <End Role="D322" Type="Self.D322" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D32">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D322">
+              <PropertyRef Name="D32" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D323_FD32_0">
+          <End Role="D32" Type="Self.D32" Multiplicity="1" />
+          <End Role="D323" Type="Self.D323" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D32">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D323">
+              <PropertyRef Name="D32" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D331_FD33_0">
+          <End Role="D33" Type="Self.D33" Multiplicity="1" />
+          <End Role="D331" Type="Self.D331" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D33">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D331">
+              <PropertyRef Name="D33" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D332_FD33_0">
+          <End Role="D33" Type="Self.D33" Multiplicity="1" />
+          <End Role="D332" Type="Self.D332" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D33">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D332">
+              <PropertyRef Name="D33" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="D333_FD33_0">
+          <End Role="D33" Type="Self.D33" Multiplicity="1" />
+          <End Role="D333" Type="Self.D333" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="D33">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="D333">
+              <PropertyRef Name="D33" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DVD_FPublisher_0">
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
+          <End Role="DVD" Type="Self.DVD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="DVD">
+              <PropertyRef Name="Publisher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Track_FPerson_0">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Track" Type="Self.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="Author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Track_FPerson_1">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+          <End Role="Track" Type="Self.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="Singer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CDLIBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BlueRay" EntityType="Self.BlueRay" />
+          <EntitySet Name="CD" EntityType="Self.CD" />
+          <EntitySet Name="CDDA" EntityType="Self.CDDA" />
+          <EntitySet Name="CDDD" EntityType="Self.CDDD" />
+          <EntitySet Name="Country" EntityType="Self.Country" />
+          <EntitySet Name="D0" EntityType="Self.D0" />
+          <EntitySet Name="D1" EntityType="Self.D1" />
+          <EntitySet Name="D11" EntityType="Self.D11" />
+          <EntitySet Name="D111" EntityType="Self.D111" />
+          <EntitySet Name="D112" EntityType="Self.D112" />
+          <EntitySet Name="D113" EntityType="Self.D113" />
+          <EntitySet Name="D12" EntityType="Self.D12" />
+          <EntitySet Name="D121" EntityType="Self.D121" />
+          <EntitySet Name="D122" EntityType="Self.D122" />
+          <EntitySet Name="D123" EntityType="Self.D123" />
+          <EntitySet Name="D13" EntityType="Self.D13" />
+          <EntitySet Name="D131" EntityType="Self.D131" />
+          <EntitySet Name="D132" EntityType="Self.D132" />
+          <EntitySet Name="D133" EntityType="Self.D133" />
+          <EntitySet Name="D2" EntityType="Self.D2" />
+          <EntitySet Name="D21" EntityType="Self.D21" />
+          <EntitySet Name="D211" EntityType="Self.D211" />
+          <EntitySet Name="D212" EntityType="Self.D212" />
+          <EntitySet Name="D213" EntityType="Self.D213" />
+          <EntitySet Name="D22" EntityType="Self.D22" />
+          <EntitySet Name="D221" EntityType="Self.D221" />
+          <EntitySet Name="D222" EntityType="Self.D222" />
+          <EntitySet Name="D223" EntityType="Self.D223" />
+          <EntitySet Name="D23" EntityType="Self.D23" />
+          <EntitySet Name="D231" EntityType="Self.D231" />
+          <EntitySet Name="D232" EntityType="Self.D232" />
+          <EntitySet Name="D233" EntityType="Self.D233" />
+          <EntitySet Name="D3" EntityType="Self.D3" />
+          <EntitySet Name="D31" EntityType="Self.D31" />
+          <EntitySet Name="D311" EntityType="Self.D311" />
+          <EntitySet Name="D312" EntityType="Self.D312" />
+          <EntitySet Name="D313" EntityType="Self.D313" />
+          <EntitySet Name="D32" EntityType="Self.D32" />
+          <EntitySet Name="D321" EntityType="Self.D321" />
+          <EntitySet Name="D322" EntityType="Self.D322" />
+          <EntitySet Name="D323" EntityType="Self.D323" />
+          <EntitySet Name="D33" EntityType="Self.D33" />
+          <EntitySet Name="D331" EntityType="Self.D331" />
+          <EntitySet Name="D332" EntityType="Self.D332" />
+          <EntitySet Name="D333" EntityType="Self.D333" />
+          <EntitySet Name="DVD" EntityType="Self.DVD" />
+          <EntitySet Name="Person" EntityType="Self.Person" />
+          <EntitySet Name="Publisher" EntityType="Self.Publisher" />
+          <EntitySet Name="Track" EntityType="Self.Track" />
+          <AssociationSet Name="BlueRay_FPublisher_0" Association="Self.BlueRay_FPublisher_0">
+            <End Role="Publisher" EntitySet="Publisher" />
+            <End Role="BlueRay" EntitySet="BlueRay" />
+          </AssociationSet>
+          <AssociationSet Name="CD_FPublisher_0" Association="Self.CD_FPublisher_0">
+            <End Role="Publisher" EntitySet="Publisher" />
+            <End Role="CD" EntitySet="CD" />
+          </AssociationSet>
+          <AssociationSet Name="CDDA_FPublisher_0" Association="Self.CDDA_FPublisher_0">
+            <End Role="Publisher" EntitySet="Publisher" />
+            <End Role="CDDA" EntitySet="CDDA" />
+          </AssociationSet>
+          <AssociationSet Name="Track_FCDDA_0" Association="Self.Track_FCDDA_0">
+            <End Role="CDDA" EntitySet="CDDA" />
+            <End Role="Track" EntitySet="Track" />
+          </AssociationSet>
+          <AssociationSet Name="CDDD_FPublisher_0" Association="Self.CDDD_FPublisher_0">
+            <End Role="Publisher" EntitySet="Publisher" />
+            <End Role="CDDD" EntitySet="CDDD" />
+          </AssociationSet>
+          <AssociationSet Name="Publisher_FCountry_0" Association="Self.Publisher_FCountry_0">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Publisher" EntitySet="Publisher" />
+          </AssociationSet>
+          <AssociationSet Name="D1_FD0_0" Association="Self.D1_FD0_0">
+            <End Role="D0" EntitySet="D0" />
+            <End Role="D1" EntitySet="D1" />
+          </AssociationSet>
+          <AssociationSet Name="D2_FD0_0" Association="Self.D2_FD0_0">
+            <End Role="D0" EntitySet="D0" />
+            <End Role="D2" EntitySet="D2" />
+          </AssociationSet>
+          <AssociationSet Name="D3_FD0_0" Association="Self.D3_FD0_0">
+            <End Role="D0" EntitySet="D0" />
+            <End Role="D3" EntitySet="D3" />
+          </AssociationSet>
+          <AssociationSet Name="D11_FD1_0" Association="Self.D11_FD1_0">
+            <End Role="D1" EntitySet="D1" />
+            <End Role="D11" EntitySet="D11" />
+          </AssociationSet>
+          <AssociationSet Name="D12_FD1_0" Association="Self.D12_FD1_0">
+            <End Role="D1" EntitySet="D1" />
+            <End Role="D12" EntitySet="D12" />
+          </AssociationSet>
+          <AssociationSet Name="D13_FD1_0" Association="Self.D13_FD1_0">
+            <End Role="D1" EntitySet="D1" />
+            <End Role="D13" EntitySet="D13" />
+          </AssociationSet>
+          <AssociationSet Name="D111_FD11_0" Association="Self.D111_FD11_0">
+            <End Role="D11" EntitySet="D11" />
+            <End Role="D111" EntitySet="D111" />
+          </AssociationSet>
+          <AssociationSet Name="D112_FD11_0" Association="Self.D112_FD11_0">
+            <End Role="D11" EntitySet="D11" />
+            <End Role="D112" EntitySet="D112" />
+          </AssociationSet>
+          <AssociationSet Name="D113_FD11_0" Association="Self.D113_FD11_0">
+            <End Role="D11" EntitySet="D11" />
+            <End Role="D113" EntitySet="D113" />
+          </AssociationSet>
+          <AssociationSet Name="D121_FD12_0" Association="Self.D121_FD12_0">
+            <End Role="D12" EntitySet="D12" />
+            <End Role="D121" EntitySet="D121" />
+          </AssociationSet>
+          <AssociationSet Name="D122_FD12_0" Association="Self.D122_FD12_0">
+            <End Role="D12" EntitySet="D12" />
+            <End Role="D122" EntitySet="D122" />
+          </AssociationSet>
+          <AssociationSet Name="D123_FD12_0" Association="Self.D123_FD12_0">
+            <End Role="D12" EntitySet="D12" />
+            <End Role="D123" EntitySet="D123" />
+          </AssociationSet>
+          <AssociationSet Name="D131_FD13_0" Association="Self.D131_FD13_0">
+            <End Role="D13" EntitySet="D13" />
+            <End Role="D131" EntitySet="D131" />
+          </AssociationSet>
+          <AssociationSet Name="D132_FD13_0" Association="Self.D132_FD13_0">
+            <End Role="D13" EntitySet="D13" />
+            <End Role="D132" EntitySet="D132" />
+          </AssociationSet>
+          <AssociationSet Name="D133_FD13_0" Association="Self.D133_FD13_0">
+            <End Role="D13" EntitySet="D13" />
+            <End Role="D133" EntitySet="D133" />
+          </AssociationSet>
+          <AssociationSet Name="D21_FD2_0" Association="Self.D21_FD2_0">
+            <End Role="D2" EntitySet="D2" />
+            <End Role="D21" EntitySet="D21" />
+          </AssociationSet>
+          <AssociationSet Name="D22_FD2_0" Association="Self.D22_FD2_0">
+            <End Role="D2" EntitySet="D2" />
+            <End Role="D22" EntitySet="D22" />
+          </AssociationSet>
+          <AssociationSet Name="D23_FD2_0" Association="Self.D23_FD2_0">
+            <End Role="D2" EntitySet="D2" />
+            <End Role="D23" EntitySet="D23" />
+          </AssociationSet>
+          <AssociationSet Name="D211_FD21_0" Association="Self.D211_FD21_0">
+            <End Role="D21" EntitySet="D21" />
+            <End Role="D211" EntitySet="D211" />
+          </AssociationSet>
+          <AssociationSet Name="D212_FD21_0" Association="Self.D212_FD21_0">
+            <End Role="D21" EntitySet="D21" />
+            <End Role="D212" EntitySet="D212" />
+          </AssociationSet>
+          <AssociationSet Name="D213_FD21_0" Association="Self.D213_FD21_0">
+            <End Role="D21" EntitySet="D21" />
+            <End Role="D213" EntitySet="D213" />
+          </AssociationSet>
+          <AssociationSet Name="D221_FD22_0" Association="Self.D221_FD22_0">
+            <End Role="D22" EntitySet="D22" />
+            <End Role="D221" EntitySet="D221" />
+          </AssociationSet>
+          <AssociationSet Name="D222_FD22_0" Association="Self.D222_FD22_0">
+            <End Role="D22" EntitySet="D22" />
+            <End Role="D222" EntitySet="D222" />
+          </AssociationSet>
+          <AssociationSet Name="D223_FD22_0" Association="Self.D223_FD22_0">
+            <End Role="D22" EntitySet="D22" />
+            <End Role="D223" EntitySet="D223" />
+          </AssociationSet>
+          <AssociationSet Name="D231_FD23_0" Association="Self.D231_FD23_0">
+            <End Role="D23" EntitySet="D23" />
+            <End Role="D231" EntitySet="D231" />
+          </AssociationSet>
+          <AssociationSet Name="D232_FD23_0" Association="Self.D232_FD23_0">
+            <End Role="D23" EntitySet="D23" />
+            <End Role="D232" EntitySet="D232" />
+          </AssociationSet>
+          <AssociationSet Name="D233_FD23_0" Association="Self.D233_FD23_0">
+            <End Role="D23" EntitySet="D23" />
+            <End Role="D233" EntitySet="D233" />
+          </AssociationSet>
+          <AssociationSet Name="D31_FD3_0" Association="Self.D31_FD3_0">
+            <End Role="D3" EntitySet="D3" />
+            <End Role="D31" EntitySet="D31" />
+          </AssociationSet>
+          <AssociationSet Name="D32_FD3_0" Association="Self.D32_FD3_0">
+            <End Role="D3" EntitySet="D3" />
+            <End Role="D32" EntitySet="D32" />
+          </AssociationSet>
+          <AssociationSet Name="D33_FD3_0" Association="Self.D33_FD3_0">
+            <End Role="D3" EntitySet="D3" />
+            <End Role="D33" EntitySet="D33" />
+          </AssociationSet>
+          <AssociationSet Name="D311_FD31_0" Association="Self.D311_FD31_0">
+            <End Role="D31" EntitySet="D31" />
+            <End Role="D311" EntitySet="D311" />
+          </AssociationSet>
+          <AssociationSet Name="D312_FD31_0" Association="Self.D312_FD31_0">
+            <End Role="D31" EntitySet="D31" />
+            <End Role="D312" EntitySet="D312" />
+          </AssociationSet>
+          <AssociationSet Name="D313_FD31_0" Association="Self.D313_FD31_0">
+            <End Role="D31" EntitySet="D31" />
+            <End Role="D313" EntitySet="D313" />
+          </AssociationSet>
+          <AssociationSet Name="D321_FD32_0" Association="Self.D321_FD32_0">
+            <End Role="D32" EntitySet="D32" />
+            <End Role="D321" EntitySet="D321" />
+          </AssociationSet>
+          <AssociationSet Name="D322_FD32_0" Association="Self.D322_FD32_0">
+            <End Role="D32" EntitySet="D32" />
+            <End Role="D322" EntitySet="D322" />
+          </AssociationSet>
+          <AssociationSet Name="D323_FD32_0" Association="Self.D323_FD32_0">
+            <End Role="D32" EntitySet="D32" />
+            <End Role="D323" EntitySet="D323" />
+          </AssociationSet>
+          <AssociationSet Name="D331_FD33_0" Association="Self.D331_FD33_0">
+            <End Role="D33" EntitySet="D33" />
+            <End Role="D331" EntitySet="D331" />
+          </AssociationSet>
+          <AssociationSet Name="D332_FD33_0" Association="Self.D332_FD33_0">
+            <End Role="D33" EntitySet="D33" />
+            <End Role="D332" EntitySet="D332" />
+          </AssociationSet>
+          <AssociationSet Name="D333_FD33_0" Association="Self.D333_FD33_0">
+            <End Role="D33" EntitySet="D33" />
+            <End Role="D333" EntitySet="D333" />
+          </AssociationSet>
+          <AssociationSet Name="DVD_FPublisher_0" Association="Self.DVD_FPublisher_0">
+            <End Role="Publisher" EntitySet="Publisher" />
+            <End Role="DVD" EntitySet="DVD" />
+          </AssociationSet>
+          <AssociationSet Name="Track_FPerson_0" Association="Self.Track_FPerson_0">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Track" EntitySet="Track" />
+          </AssociationSet>
+          <AssociationSet Name="Track_FPerson_1" Association="Self.Track_FPerson_1">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Track" EntitySet="Track" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CDLIBModelStoreContainer" CdmEntityContainer="CDLIBEntities">
+          <EntitySetMapping Name="BlueRay">
+            <EntityTypeMapping TypeName="CDLIBModel.BlueRay">
+              <MappingFragment StoreEntitySet="BlueRay">
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CD">
+            <EntityTypeMapping TypeName="CDLIBModel.CD">
+              <MappingFragment StoreEntitySet="CD">
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CDDA">
+            <EntityTypeMapping TypeName="CDLIBModel.CDDA">
+              <MappingFragment StoreEntitySet="CDDA">
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="TotalTracks" ColumnName="TotalTracks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CDDD">
+            <EntityTypeMapping TypeName="CDLIBModel.CDDD">
+              <MappingFragment StoreEntitySet="CDDD">
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country">
+            <EntityTypeMapping TypeName="CDLIBModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D0">
+            <EntityTypeMapping TypeName="CDLIBModel.D0">
+              <MappingFragment StoreEntitySet="D0">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D1">
+            <EntityTypeMapping TypeName="CDLIBModel.D1">
+              <MappingFragment StoreEntitySet="D1">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D0" ColumnName="D0" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D11">
+            <EntityTypeMapping TypeName="CDLIBModel.D11">
+              <MappingFragment StoreEntitySet="D11">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D1" ColumnName="D1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D111">
+            <EntityTypeMapping TypeName="CDLIBModel.D111">
+              <MappingFragment StoreEntitySet="D111">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D11" ColumnName="D11" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D112">
+            <EntityTypeMapping TypeName="CDLIBModel.D112">
+              <MappingFragment StoreEntitySet="D112">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D11" ColumnName="D11" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D113">
+            <EntityTypeMapping TypeName="CDLIBModel.D113">
+              <MappingFragment StoreEntitySet="D113">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D11" ColumnName="D11" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D12">
+            <EntityTypeMapping TypeName="CDLIBModel.D12">
+              <MappingFragment StoreEntitySet="D12">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D1" ColumnName="D1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D121">
+            <EntityTypeMapping TypeName="CDLIBModel.D121">
+              <MappingFragment StoreEntitySet="D121">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D12" ColumnName="D12" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D122">
+            <EntityTypeMapping TypeName="CDLIBModel.D122">
+              <MappingFragment StoreEntitySet="D122">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D12" ColumnName="D12" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D123">
+            <EntityTypeMapping TypeName="CDLIBModel.D123">
+              <MappingFragment StoreEntitySet="D123">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D12" ColumnName="D12" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D13">
+            <EntityTypeMapping TypeName="CDLIBModel.D13">
+              <MappingFragment StoreEntitySet="D13">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D1" ColumnName="D1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D131">
+            <EntityTypeMapping TypeName="CDLIBModel.D131">
+              <MappingFragment StoreEntitySet="D131">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D13" ColumnName="D13" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D132">
+            <EntityTypeMapping TypeName="CDLIBModel.D132">
+              <MappingFragment StoreEntitySet="D132">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D13" ColumnName="D13" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D133">
+            <EntityTypeMapping TypeName="CDLIBModel.D133">
+              <MappingFragment StoreEntitySet="D133">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D13" ColumnName="D13" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D2">
+            <EntityTypeMapping TypeName="CDLIBModel.D2">
+              <MappingFragment StoreEntitySet="D2">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D0" ColumnName="D0" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D21">
+            <EntityTypeMapping TypeName="CDLIBModel.D21">
+              <MappingFragment StoreEntitySet="D21">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D2" ColumnName="D2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D211">
+            <EntityTypeMapping TypeName="CDLIBModel.D211">
+              <MappingFragment StoreEntitySet="D211">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D21" ColumnName="D21" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D212">
+            <EntityTypeMapping TypeName="CDLIBModel.D212">
+              <MappingFragment StoreEntitySet="D212">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D21" ColumnName="D21" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D213">
+            <EntityTypeMapping TypeName="CDLIBModel.D213">
+              <MappingFragment StoreEntitySet="D213">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D21" ColumnName="D21" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D22">
+            <EntityTypeMapping TypeName="CDLIBModel.D22">
+              <MappingFragment StoreEntitySet="D22">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D2" ColumnName="D2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D221">
+            <EntityTypeMapping TypeName="CDLIBModel.D221">
+              <MappingFragment StoreEntitySet="D221">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D22" ColumnName="D22" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D222">
+            <EntityTypeMapping TypeName="CDLIBModel.D222">
+              <MappingFragment StoreEntitySet="D222">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D22" ColumnName="D22" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D223">
+            <EntityTypeMapping TypeName="CDLIBModel.D223">
+              <MappingFragment StoreEntitySet="D223">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D22" ColumnName="D22" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D23">
+            <EntityTypeMapping TypeName="CDLIBModel.D23">
+              <MappingFragment StoreEntitySet="D23">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D2" ColumnName="D2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D231">
+            <EntityTypeMapping TypeName="CDLIBModel.D231">
+              <MappingFragment StoreEntitySet="D231">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D23" ColumnName="D23" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D232">
+            <EntityTypeMapping TypeName="CDLIBModel.D232">
+              <MappingFragment StoreEntitySet="D232">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D23" ColumnName="D23" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D233">
+            <EntityTypeMapping TypeName="CDLIBModel.D233">
+              <MappingFragment StoreEntitySet="D233">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D23" ColumnName="D23" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D3">
+            <EntityTypeMapping TypeName="CDLIBModel.D3">
+              <MappingFragment StoreEntitySet="D3">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D0" ColumnName="D0" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D31">
+            <EntityTypeMapping TypeName="CDLIBModel.D31">
+              <MappingFragment StoreEntitySet="D31">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D3" ColumnName="D3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D311">
+            <EntityTypeMapping TypeName="CDLIBModel.D311">
+              <MappingFragment StoreEntitySet="D311">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D31" ColumnName="D31" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D312">
+            <EntityTypeMapping TypeName="CDLIBModel.D312">
+              <MappingFragment StoreEntitySet="D312">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D31" ColumnName="D31" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D313">
+            <EntityTypeMapping TypeName="CDLIBModel.D313">
+              <MappingFragment StoreEntitySet="D313">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D31" ColumnName="D31" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D32">
+            <EntityTypeMapping TypeName="CDLIBModel.D32">
+              <MappingFragment StoreEntitySet="D32">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D3" ColumnName="D3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D321">
+            <EntityTypeMapping TypeName="CDLIBModel.D321">
+              <MappingFragment StoreEntitySet="D321">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D32" ColumnName="D32" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D322">
+            <EntityTypeMapping TypeName="CDLIBModel.D322">
+              <MappingFragment StoreEntitySet="D322">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D32" ColumnName="D32" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D323">
+            <EntityTypeMapping TypeName="CDLIBModel.D323">
+              <MappingFragment StoreEntitySet="D323">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D32" ColumnName="D32" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D33">
+            <EntityTypeMapping TypeName="CDLIBModel.D33">
+              <MappingFragment StoreEntitySet="D33">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D3" ColumnName="D3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D331">
+            <EntityTypeMapping TypeName="CDLIBModel.D331">
+              <MappingFragment StoreEntitySet="D331">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D33" ColumnName="D33" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D332">
+            <EntityTypeMapping TypeName="CDLIBModel.D332">
+              <MappingFragment StoreEntitySet="D332">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D33" ColumnName="D33" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D333">
+            <EntityTypeMapping TypeName="CDLIBModel.D333">
+              <MappingFragment StoreEntitySet="D333">
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="D33" ColumnName="D33" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DVD">
+            <EntityTypeMapping TypeName="CDLIBModel.DVD">
+              <MappingFragment StoreEntitySet="DVD">
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Person">
+            <EntityTypeMapping TypeName="CDLIBModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Publisher">
+            <EntityTypeMapping TypeName="CDLIBModel.Publisher">
+              <MappingFragment StoreEntitySet="Publisher">
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Track">
+            <EntityTypeMapping TypeName="CDLIBModel.Track">
+              <MappingFragment StoreEntitySet="Track">
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Singer" ColumnName="Singer" />
+                <ScalarProperty Name="CDDA" ColumnName="CDDA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

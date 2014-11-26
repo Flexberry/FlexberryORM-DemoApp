@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProjectGuid>{D4B20CA9-B6C7-4CFC-B8DA-D86F4B2618DC}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>MultiDetail(Objects)</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IIS.CDLIB</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>MultiDetail(Objects).xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>MultiDetail(Objects).xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML">
+      <HintPath>System.XML.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSSoft.STORMNET.DataObject">
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.DataObject.dll</HintPath>
+    </Reference>
+    <Reference Include="Repository">
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\Repository.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="D231.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D223.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D323.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D313.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D321.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D123.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D23.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D112.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D232.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D21.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D33.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D13.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D312.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D11.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D212.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D233.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D122.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D221.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D211.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D311.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D113.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D331.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D213.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D131.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D322.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D32.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D0.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D31.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D121.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D22.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D222.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D133.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D111.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D333.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D332.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D132.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="D12.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

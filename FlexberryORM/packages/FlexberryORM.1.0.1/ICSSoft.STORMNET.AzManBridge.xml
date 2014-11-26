@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.AzManBridge</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.AzManBridge">
+            <summary>
+            Мост от RightManager до MS AzMan
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.AzManBridge.Instance">
+            <summary>
+            Статическая инстанция AzManBridge (заполняется методом Init())
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.Init">
+            <summary>
+            Инициализация статической инстанции Instance
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.InitializeLifetimeService">
+            <summary>
+            Уничтожать не будем никогда (экономия памяти минимальная, а запуск требует времени)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.AccessCheck(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Проверить полномочия (параметры аналогичны вызову AzMan - AccessCheck)
+            </summary>
+            <param name="appName"></param>
+            <param name="userName"></param>
+            <param name="userDomain"></param>
+            <param name="bstrObjectName"></param>
+            <param name="soapvarScopeNames"></param>
+            <param name="soapvarOperations"></param>
+            <param name="soapvarParameterNames"></param>
+            <param name="soapvarParameterValues"></param>
+            <param name="soapvarInterfaceNames"></param>
+            <param name="soapvarInterfaceFlags"></param>
+            <param name="soapvarInterfaces"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.prv_ConvertOperations(System.String,System.String@)">
+            <summary>
+            Конвертировать операции из старого формата AzMan в новую систему полномочий
+            </summary>
+            <param name="varOperation">ТипОбъекта_ТипДоступа или Операция</param>
+            <param name="typeAccess">ТипДоступа</param>
+            <returns>Нужна проверка операции, а не типа доступа</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.SessionAccessCheck(System.String,System.Guid,System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+             Проверка доступа в режиме сессий
+            </summary>
+            <param name="appName"></param>
+            <param name="agent"></param>
+            <param name="session"></param>
+            <param name="bstrObjectName"></param>
+            <param name="soapvarScopeNames"></param>
+            <param name="soapvarOperations"></param>
+            <param name="soapvarParameterNames"></param>
+            <param name="soapvarParameterValues"></param>
+            <param name="soapvarInterfaceNames"></param>
+            <param name="soapvarInterfaceFlags"></param>
+            <param name="soapvarInterfaces"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.CacheInit(System.String,System.Guid,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            Получить все полномочия для кеширования
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.ValidateUser(System.String,System.String,System.String)">
+            <summary>
+            Проверить авторизован ли пользователь в нашей системе
+            </summary>
+            <param name="appname">Имя приложения</param>
+            <param name="username">Имя пользователя</param>
+            <param name="password">Пароль</param>
+            <returns>Авторизован</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.UpdateUser(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Обновить информацию о пользователе
+            </summary>
+            <param name="appname">Имя приложения</param>
+            <param name="login">логин</param>
+            <param name="name">имя пользователя</param>
+            <param name="pwd">пароль</param>
+            <param name="enabled">активен ли пользователь</param>
+            <returns>удалось ли выполнить обновление</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.UpdateUser(System.String,System.Guid,System.Guid,System.String,System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Обновить информацию о пользователе, с указанием старого пароля
+            </summary>
+            <param name="appName">имя приложения</param>
+            <param name="agent">ключ агента</param>
+            <param name="session">сессия</param>
+            <param name="currentPwdHash">текущий пароль</param>
+            <param name="newName">имя пользователя, которое будет установлено (если null, то не обновится)</param>
+            <param name="newPwdHash">новый пароль</param>
+            <param name="newEnabledValue">актуальность (если null, то не обновится)</param>
+            <returns>Успешность выполнения операции</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.UpdateUser(System.String,System.Guid,System.Guid,System.Guid,System.String,System.String,System.Boolean)">
+            <summary>
+            не использовать - не дописанный метод
+            </summary>
+            <param name="appName"></param>
+            <param name="agent"></param>
+            <param name="session"></param>
+            <param name="agentToUpdateKey"></param>
+            <param name="newName"></param>
+            <param name="newPwdHash"></param>
+            <param name="newEnabledValue"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ICSSoft.STORMNET.AzManBridge.CheckingModeCache">
+            <summary>
+            кеш режимов работы
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.GetCheckingMode(System.String)">
+            <summary>
+            Получить режим работы сервиса проверки полномочий для указанного приложения
+            </summary>
+            <param name="appName">Имя приложения (берётся из имени исполняемого файла (без расширения) или задаётся в конфигурации параметром AppNameForAzman)</param>
+            <returns>Режим работы сервиса</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.CheckExistLogin(System.String,System.String,System.String)">
+            <summary>
+            Проверить наличие в системе логина (чувствительность к регистру зависит от настроек источника данных). Уникальность проверяется в рамках указанного домена, то есть не гарантируется уникальность самого логина в рамках всей таблицы. (Но обязательно уникальным остаётся пара логин+домен) Отключенные пользователи тоже учитываются, как занимающие логин. Отключенный домен проверяется как действующий. Если указан домен, которого нет, вернётся сообщение, что логин свободен.
+            </summary>
+            <param name="login">Логин, который проверяем</param>
+            <param name="domain">Домен. Пустое значение или null означает, что проверяем среди юзеров, которые не находятся ни в одном домене</param>
+            <param name="appName">Имя приложения</param>
+            <returns>OperationResult.ОшибочныеАргументы, OperationResult.ОшибкаВыполненияОперации, OperationResult.ЛогинСвободен, OperationResult.ЛогинЗанят</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.CheckExistLogin(System.String,System.String)">
+            <summary>
+            Проверить наличие в системе логина (чувствительность к регистру зависит от настроек источника данных). Уникальность проверяется без контроля доменов, то есть гарантируется уникальность в рамках всей таблицы. Отключенные пользователи тоже учитываются, как занимающие логин.
+            </summary>
+            <param name="login">Логин, который проверяем</param>
+            <param name="appName">Имя приложения</param>
+            <returns>OperationResult.ЛогинСвободен, OperationResult.ЛогинЗанят, OperationResult.ОшибкаВыполненияОперации, OperationResult.ОшибочныеАргументы</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.LogInAndGetNewSessionKey(System.String,System.String,System.String,System.String,System.Nullable{System.Guid}@,System.Nullable{System.Guid}@,System.String@)">
+            <summary>
+            Проверить пароль пользователя и получить ключ сессии
+            </summary>
+            <param name="appName">Имя приложения</param>
+            <param name="login">Логин</param>
+            <param name="domain">Домен</param>
+            <param name="pwdHash">Хеш пароля</param>
+            <param name="session">Сюда вернётся ключ сессии в случае успеха</param>
+            <param name="agent">Сюда вернётся ключ агента</param>
+            <param name="name">Сюда вернётся имя пользователя (для целей синхронизации с прикладной системой)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.GetUserInfo(System.String,System.String,System.String,System.String,System.Nullable{System.Guid}@,System.String@)">
+            <summary>
+            Для режима сессий. Получить информацию о пользователе по логину и паролю.
+            </summary>
+            <param name="appName">Имя приложения</param>
+            <param name="login">логин</param>
+            <param name="domain">домен</param>
+            <param name="pwdHash">хеш пароля</param>
+            <param name="agent">Сюда вернётся ключ агента</param>
+            <param name="name">Сюда вернётся имя пользователя (для целей синхронизации с прикладной системой)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.GetLastSecurityUpdateTime(System.String,System.Nullable{System.DateTime}@)">
+            <summary>
+            Получить дату последнего изменения полномочий
+            </summary>
+            <param name="appName">Имя приложения</param>
+            <param name="lastUpdated">Дата последнего обновления</param>
+            <returns>Результат выполнения операции (OperationResult.ОшибочныеАргументы если задано имя приложения, для которого режим работы отличается от CheckingMode.SimpleCheck или CheckingMode.SessionCheck)</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.GetAllPermitions(System.String,System.Guid,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            Получить все полномочия для указанного пользователя
+            </summary>
+            <param name="appName">Имя приложения</param>
+            <param name="agentKey">Ключ агента</param>
+            <param name="subjects">Список доступных полномочий</param>
+            <returns>Результат выполнения операции (OperationResult.ОшибочныеАргументы если задано имя приложения, для которого режим работы отличается от CheckingMode.SessionCheck)</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.LogInAndGetNewSessionKey(System.String,System.Guid,System.String,System.Nullable{System.Guid}@)">
+            <summary>
+            Проверить пароль пользователя и получить ключ сессии
+            </summary>
+            <param name="appName">Имя приложения</param>
+            <param name="agent">Ключ агента</param>
+            <param name="pwdHash">Хеш пароля</param>
+            <param name="session">Ключ сессии, который вернётся (ну или null, если пароль не подойдёт или произойдёт ошибка)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.LogOff(System.Guid)">
+            <summary>
+            Закрыть сессию
+            </summary>
+            <param name="session">Ключ сессии пользователя</param>
+            <returns>Была ли такая сессия открыта</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.CheckSession(System.Guid)">
+            <summary>
+            Проверить есть ли такая сессия (не истекла ли)
+            </summary>
+            <param name="session">Ключ сессии</param>
+            <returns>Найдена ли она</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.BackUpSessions(System.String)">
+            <summary>
+            Сохранить весь массив сессий в БД
+            </summary>
+            <param name="appName">Имя системы, в хранилище которой сольём все сессии</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.RestoreSessions(System.String)">
+            <summary>
+            Восстановить сессии из БД
+            </summary>
+            <param name="appName">Имя системы, из хранилища которой достанем все сессии</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.KillExpiredSessions(System.String,System.Int32)">
+            <summary>
+            Почистить старые сессии
+            </summary>
+            <param name="appName">Имя приложения для сохранённых сессий</param>
+            <param name="expiredTimeMin">Время в минутах, превышая которое сессия считается просроченной</param>
+            <returns>была ли выполнена очистка</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.GetLimitForAccess(System.String,System.Guid,System.Guid,System.String,System.String,System.String[]@,System.Boolean@)">
+            <summary>
+            Получить ограничение для текущего пользователя (CheckingMode.SessionCheck только поддерживается)
+            </summary>
+            <param name="appName">Имя приложения</param>
+            <param name="agentKey">Пользователь</param>
+            <param name="sessionKey">Сессия</param>
+            <param name="subjectName">Объект, для которого получаем ограничение</param>
+            <param name="operationName">Имя операции, которое должно соответствовать одному из значений tTypeAccess, иначе будет OperationResult.ОшибочныеАргументы</param>
+            <param name="limits">Сериализованные ограничивающие функции (от разных ролей)</param>
+            <param name="canAccess">Имеем ли мы доступ к этому классу вообще?</param>
+            <returns>Если сессия не найдена, то OperationResult.ВДоступеОтказать</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.GetLimitStrForRoles(System.String,System.Guid,System.Guid,System.String,System.Collections.Generic.List{ICSSoft.STORMNET.Security.RoleWithAccesses}@)">
+            <summary>
+            Получить роли с заданными ограничениями
+            </summary>
+            <param name="appName"></param>
+            <param name="agentKey"></param>
+            <param name="sessionKey"></param>
+            <param name="subjectName"></param>
+            <param name="rolesWithAccesses"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.SetLimitStrForRole(System.String,System.Guid,System.Guid,System.String,System.String,System.String,System.String)">
+            <summary>
+            Задать ограничение для указанной роли
+            </summary>
+            <param name="appName"></param>
+            <param name="agentKey"></param>
+            <param name="sessionKey"></param>
+            <param name="roleName"></param>
+            <param name="filter"></param>
+            <param name="typeName"></param>
+            <param name="access"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.AzManBridge.DebugInformation">
+            <summary>
+            Состояние флага режима добавления отладочной информации
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.AzManBridge.SessionStorageAppName">
+            <summary>
+            Состояние флага режима добавления отладочной информации
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.AzManBridge.SessionExpireMin">
+            <summary>
+            Время, по прошествии которого сессия считается истекшей (задаётся через ключ конфигурации SessionExpireMin) в минутах
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.AzManBridge.Utils">
+            <summary>
+            Утилиты
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.AzManBridge.Utils.ObjectFromString(System.String)">
+            <summary>
+            Объект из строки
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.AzManBridge.CheckingMode">
+            <summary>
+            Режим работы сервиса полномочий
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.AzManBridge.CheckingMode.AzMan">
+            <summary>
+            Проверка через AzMan
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.AzManBridge.CheckingMode.SimpleCheck">
+            <summary>
+            Простая проверка полномочий
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.AzManBridge.CheckingMode.SessionCheck">
+            <summary>
+            Проверка полномочий с передачей ключа сессии
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.AzManBridge.CheckingMode.Undefined">
+            <summary>
+            Неопределённое значение
+            </summary>
+        </member>
+    </members>
+</doc>

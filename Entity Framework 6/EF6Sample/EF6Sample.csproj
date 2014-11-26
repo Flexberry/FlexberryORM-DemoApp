@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ABDCAA14-F27F-4BC3-80E3-121E510BB4AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EF6Sample</RootNamespace>
+    <AssemblyName>EF6Sample</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlueRay.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CD.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDDA.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDDD.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDLIB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDLIB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDLIB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDLIB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDLIB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D0.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D1.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D11.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D111.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D112.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D113.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D12.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D121.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D122.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D123.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D13.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D131.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D132.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D133.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D2.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D21.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D211.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D212.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D213.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D22.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D221.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D222.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D223.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D23.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D231.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D232.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D233.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D3.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D31.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D311.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D312.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D313.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D32.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D321.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D322.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D323.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D33.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D331.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D332.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D333.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DVD.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DVD_D.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publisher.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Publisher_D.cs" />
+    <Compile Include="Track.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="CDLIB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CDLIB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CDLIB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CDLIB.edmx</DependentUpon>
+      <LastGenOutput>CDLIB.Context.cs</LastGenOutput>
+    </None>
+    <None Include="CDLIB.edmx.diagram">
+      <DependentUpon>CDLIB.edmx</DependentUpon>
+    </None>
+    <None Include="CDLIB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CDLIB.edmx</DependentUpon>
+      <LastGenOutput>CDLIB.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

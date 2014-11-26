@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D4BB8BA4-B4E9-4FA4-B861-8641057AC6F7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CDADMTEST</RootNamespace>
+    <AssemblyName>CDADMTEST</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AppSettingsService">
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\AppSettingsService.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSSoft.STORMNET.AzManBridge">
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.AzManBridge.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSSoft.STORMNET.Business, Version=1.0.0.1, Culture=neutral, PublicKeyToken=c17bb360f7843f45">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSSoft.STORMNET.Business.MSSQLDataService, Version=1.0.0.1, Culture=neutral, PublicKeyToken=49b42003269a4a66">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.Business.MSSQLDataService.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSSoft.STORMNET.Collections, Version=1.0.0.1, Culture=neutral, PublicKeyToken=898f36b7a907d804">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSSoft.STORMNET.DataObject, Version=1.0.0.1, Culture=neutral, PublicKeyToken=023a90c13b0ca8dc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.DataObject.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSSoft.STORMNET.FunctionalLanguage, Version=1.0.0.1, Culture=neutral, PublicKeyToken=88efc6f76e5cd161">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.FunctionalLanguage.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSSoft.STORMNET.RightManager">
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.RightManager.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSSoft.STORMNET.Tools">
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSSoft.STORMNET.UserDataTypes">
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.UserDataTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="LogService">
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\LogService.dll</HintPath>
+    </Reference>
+    <Reference Include="Repository">
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MultiDetail\Objects\MultiDetail%28Objects%29.csproj">
+      <Project>{d4b20ca9-b6c7-4cfc-b8da-d86f4b2618dc}</Project>
+      <Name>MultiDetail%28Objects%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessServers\CDLIB%28BusinessServers%29.csproj">
+      <Project>{f94a0105-78b7-4344-a08c-1a5436b43a41}</Project>
+      <Name>CDLIB%28BusinessServers%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Objects\CDLIB%28Objects%29.csproj">
+      <Project>{4ffe8227-c302-4c91-a904-b5e95033534b}</Project>
+      <Name>CDLIB%28Objects%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
