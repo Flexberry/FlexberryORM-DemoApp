@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1fb9532ff6154d24b9a7fbef456c4d34" Name="Diagram1">
+        <EntityTypeShape EntityType="CDLIBModel.BlueRay" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.CD" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.CDDA" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.CDDD" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.Country" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D0" Width="1.5" PointX="9.75" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D1" Width="1.5" PointX="12" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D11" Width="1.5" PointX="14.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D111" Width="1.5" PointX="16.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D112" Width="1.5" PointX="16.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D113" Width="1.5" PointX="16.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D12" Width="1.5" PointX="14.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D121" Width="1.5" PointX="16.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D122" Width="1.5" PointX="16.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D123" Width="1.5" PointX="16.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D13" Width="1.5" PointX="14.25" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D131" Width="1.5" PointX="16.5" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D132" Width="1.5" PointX="16.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D133" Width="1.5" PointX="16.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D2" Width="1.5" PointX="12" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D21" Width="1.5" PointX="14.25" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D211" Width="1.5" PointX="16.5" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D212" Width="1.5" PointX="16.5" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D213" Width="1.5" PointX="16.5" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D22" Width="1.5" PointX="14.25" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D221" Width="1.5" PointX="16.5" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D222" Width="1.5" PointX="16.5" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D223" Width="1.5" PointX="16.5" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D23" Width="1.5" PointX="14.25" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D231" Width="1.5" PointX="16.5" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D232" Width="1.5" PointX="16.5" PointY="44.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D233" Width="1.5" PointX="16.5" PointY="47.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D3" Width="1.5" PointX="12" PointY="59.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D31" Width="1.5" PointX="14.25" PointY="52.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D311" Width="1.5" PointX="16.5" PointY="49.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D312" Width="1.5" PointX="16.5" PointY="52.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D313" Width="1.5" PointX="16.5" PointY="55" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D32" Width="1.5" PointX="14.25" PointY="59.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D321" Width="1.5" PointX="16.5" PointY="57.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D322" Width="1.5" PointX="16.5" PointY="60" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D323" Width="1.5" PointX="16.5" PointY="62.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D33" Width="1.5" PointX="14.25" PointY="67.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D331" Width="1.5" PointX="16.5" PointY="65.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D332" Width="1.5" PointX="16.5" PointY="67.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.D333" Width="1.5" PointX="16.5" PointY="70.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.DVD" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.Person" Width="1.5" PointX="5.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.Publisher" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDLIBModel.Track" Width="1.5" PointX="7.5" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="CDLIBModel.BlueRay_FPublisher_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.CD_FPublisher_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.CDDA_FPublisher_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.Track_FCDDA_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.CDDD_FPublisher_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.Publisher_FCountry_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D1_FD0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D2_FD0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D3_FD0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D11_FD1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D12_FD1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D13_FD1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D111_FD11_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D112_FD11_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D113_FD11_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D121_FD12_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D122_FD12_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D123_FD12_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D131_FD13_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D132_FD13_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D133_FD13_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D21_FD2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D22_FD2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D23_FD2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D211_FD21_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D212_FD21_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D213_FD21_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D221_FD22_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D222_FD22_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D223_FD22_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D231_FD23_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D232_FD23_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D233_FD23_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D31_FD3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D32_FD3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D33_FD3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D311_FD31_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D312_FD31_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D313_FD31_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D321_FD32_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D322_FD32_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D323_FD32_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D331_FD33_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D332_FD33_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.D333_FD33_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.DVD_FPublisher_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.Track_FPerson_0" ManuallyRouted="false" />
+        <AssociationConnector Association="CDLIBModel.Track_FPerson_1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
