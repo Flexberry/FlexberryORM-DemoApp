@@ -321,7 +321,7 @@
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
-            DataServiceProvider.DataService.LoadObject("D0_E", aggregator);
+            DataServiceProvider.DataService.LoadObject("FULLD0_E", aggregator);
             stopwatch.Stop();
             MessageBox.Show(string.Format("Time taken for loading: {0} ms", stopwatch.ElapsedMilliseconds));
             CheckDetailsQty(aggregator, 10); // Ensure we have really had 10 objects per every detailarray
