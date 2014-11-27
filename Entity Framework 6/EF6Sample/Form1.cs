@@ -1,6 +1,7 @@
 ﻿namespace EF6Sample
 {
     using System;
+    using System.Diagnostics;
     using System.Linq;
     using System.Windows.Forms;
 
@@ -70,7 +71,9 @@
             CDLIBEntities dbctx = new CDLIBEntities();
 
             Guid pkey = Guid.Parse("018FF5D0-0EB7-4E0F-B836-227D7E32425D");
-            DateTime starttime = DateTime.Now;
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             
             D0 d0 = dbctx.D0
                 .Include("D1.D11.D111").Include("D1.D11.D112").Include("D1.D11.D113")
@@ -83,8 +86,8 @@
                 .Include("D3.D32.D321").Include("D3.D32.D322").Include("D3.D32.D323")
                 .Include("D3.D33.D331").Include("D3.D33.D332").Include("D3.D33.D333")                
                 .Where(x => x.primaryKey == pkey).First() ;
-            
-            MessageBox.Show(string.Format("OK. Time taken: {0}", DateTime.Now.Subtract(starttime)));
+
+            MessageBox.Show(string.Format("OK. Time taken: {0}", stopwatch.ElapsedMilliseconds));
 
             //dbctx.Database.Log = (s => { textBox1.AppendText(string.Format("{0}{1}", s, Environment.NewLine)); });
             
