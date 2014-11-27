@@ -115,8 +115,6 @@
             {
                 MessageBox.Show(string.Format("Something wrong: {0}", exc));
             }
-
-
         }
 
         /// <summary>
@@ -130,13 +128,17 @@
         /// </param>
         private void button2_Click(object sender, EventArgs e)
         {
+            IDataService dataService = DataServiceProvider.DataService;
+            OrmSample ormSample = new OrmSample(dataService);
+            object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
+
             // How to read one specific dataobject
             // -----------------------------------
             CDDA cdda = new CDDA(); // Instantiate dataobject
-            cdda.SetExistObjectPrimaryKey("412F141F-1376-47BC-81EA-DD9091814C39");
+            cdda.SetExistObjectPrimaryKey(primaryKey);
 
             // Put an object's primary key. It must exist in DB.
-            DataServiceProvider.DataService.LoadObject("CDDA_E", cdda);
+            dataService.LoadObject(CDDA.Views.CDDA_E, cdda);
 
             // Load dataobject in specific view. View is a set of specific properties. You can define view in CASEBERRY tool, or in code by ViewAttribute.
             // Look at composed tracks in watch: they are read also.
@@ -146,7 +148,7 @@
             // Let's try to change a value of one loaded property. You can change only loaded properties. If you change not-loaded property, you'll get an error while persisting.
 
             // You would run in an intermediate window: cdda.GetStatus(). Ensure: an object status changed to Altered. Also you can see a set of changed properties by running cdda.GetAlteredPropertyNames(). Flexberry ORM will update only changed propertyes.
-            DataServiceProvider.DataService.UpdateObject(cdda); // You can persist only one object, it's OK.
+            dataService.UpdateObject(cdda); // You can persist only one object, it's OK.
         }
 
         /// <summary>
@@ -168,14 +170,14 @@
                 ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.LanguageDef;
 
             LoadingCustomizationStruct lcs = new LoadingCustomizationStruct(null); // Here you can set loading params.
-            lcs.View = Information.GetView("CD_E", typeof(CD)); // It's a view for loading
+            lcs.View = CD.Views.CD_E; // It's a view for loading
             lcs.LoadingTypes = new[] { typeof(CDDA), typeof(CDDD), typeof(DVD) };
 
             // It's a limitation on descendants of class CD. Only view-class and it's descendants can be loaded.
-            lcs.LimitFunction = ld.GetFunction(ld.funcEQ, new VariableDef(ld.StringType, "Publisher.Country.Name"), "USA");
+            lcs.LimitFunction = ld.GetFunction(ld.funcEQ, new VariableDef(ld.StringType, Information.ExtractPropertyPath<CD>(c => c.Publisher.Country.Name)), "USA");
 
             // Limitation on property value. You can use only properties in view. If the property doesn't exist in a view, you'll get an error while loading.
-            lcs.ColumnsSort = new[] { new ColumnsSortDef("Name", ICSSoft.STORMNET.Business.SortOrder.Asc) };
+            lcs.ColumnsSort = new[] { new ColumnsSortDef(Information.ExtractPropertyName<CD>(c => c.Name), ICSSoft.STORMNET.Business.SortOrder.Asc) };
 
             // Ordering of dataobjects in result array
 
@@ -205,16 +207,19 @@
         /// </param>
         private void button7_Click(object sender, EventArgs e)
         {
+            IDataService dataService = DataServiceProvider.DataService;
+            OrmSample ormSample = new OrmSample(dataService);
+            object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
+
             // How to do something at persistence moment (step by step):
             // 1. Attach business service to a dataobject class in Caseberry or in a code by using BusinessServer .NET attribute (look at the CDDA class in CDLIB(Objects) assembly)
             // 2. Then generate from Caseberry or code manually business server class with catch up method, and code it (look at the CDLibBS class in CDLIB(BusinessServers) assembly)
             // 3. Just read, change any property, then persist dataobject
             CDDA cdda = new CDDA(); // Instantiate dataobject
-            cdda.SetExistObjectPrimaryKey("412F141F-1376-47BC-81EA-DD9091814C39"); // Put an object's primary key. It must exist in DB.
-            DataServiceProvider.DataService.LoadObject("CDDA_E", cdda);
-            cdda.Name = "Huh! " + DateTime.Now.ToString();
-            DataServiceProvider.DataService.UpdateObject(cdda);
-
+            cdda.SetExistObjectPrimaryKey(primaryKey); // Put an object's primary key. It must exist in DB.
+            dataService.LoadObject(CDDA.Views.CDDA_E, cdda);
+            cdda.Name = "Huh! " + DateTime.Now;
+            dataService.UpdateObject(cdda);
         }
 
         /// <summary>
@@ -230,7 +235,9 @@
         {
             // Create a dataobject with multiple details. 
             D0 aggregator = new D0();
-            GenDetails(aggregator, 10); // Generate N objects for each detail. If N=10, qty of dataobjects will exceed 30000
+
+            OrmSample ormSample = new OrmSample();
+            ormSample.GenDetails(aggregator, 10); // Generate N objects for each detail. If N=10, qty of dataobjects will exceed 30000
 
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -241,65 +248,8 @@
         }
 
 
-        /// <summary>
-        /// The gen details.
-        /// </summary>
-        /// <param name="dobj">
-        /// The dobj.
-        /// </param>
-        /// <param name="QtyInEach">
-        /// The qty in each.
-        /// </param>
-        private void GenDetails(D dobj, int QtyInEach)
-        {
-            dobj.Name = System.IO.Path.GetRandomFileName();
-            dobj.S1 = System.IO.Path.GetRandomFileName();
-            dobj.S2 = System.IO.Path.GetRandomFileName();
-            dobj.S3 = System.IO.Path.GetRandomFileName();
-            dobj.S4 = System.IO.Path.GetRandomFileName();
-            dobj.S5 = System.IO.Path.GetRandomFileName();
 
-            string[] detprops = Information.GetPropertyNamesByType(dobj.GetType(), typeof(DetailArray));
-            for (int i = 0; i < detprops.Length; i++)
-            {
-                DetailArray detarr = (DetailArray)Information.GetPropValueByName(dobj, detprops[i]);
-                Type dettypetocreate = Information.GetCompatibleTypesForDetailProperty(dobj.GetType(), detprops[i])[0];
-                for (int j = 0; j < QtyInEach; j++)
-                {
-                    D newobj = (D)Activator.CreateInstance(dettypetocreate);
-                    GenDetails(newobj, QtyInEach);
-                    detarr.AddObject(newobj);
-                }
-            }
 
-        }
-
-        /// <summary>
-        /// The check details qty.
-        /// </summary>
-        /// <param name="dobj">
-        /// The dobj.
-        /// </param>
-        /// <param name="QtyInEach">
-        /// The qty in each.
-        /// </param>
-        /// <exception cref="Exception">
-        /// </exception>
-        private void CheckDetailsQty(D dobj, int QtyInEach)
-        {
-            string[] detprops = Information.GetPropertyNamesByType(dobj.GetType(), typeof(DetailArray));
-            for (int i = 0; i < detprops.Length; i++)
-            {
-                DetailArray detarr = (DetailArray)Information.GetPropValueByName(dobj, detprops[i]);
-                if (detarr.Count != QtyInEach) throw new Exception(string.Format("Missing reading of {0}!", detprops[i]));
-                for (int j = 0; j < detarr.Count; j++)
-                {
-                    D obj = (D)detarr.ItemByIndex(j);
-                    CheckDetailsQty(obj, QtyInEach);
-                }
-            }
-
-        }
 
         /// <summary>
         /// The button 21_ click.
@@ -312,19 +262,23 @@
         /// </param>
         private void button21_Click(object sender, EventArgs e)
         {
+            IDataService dataService = DataServiceProvider.DataService;
+            OrmSample ormSample = new OrmSample(dataService);
+            object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
+
             // Load a dataobject with multiple details
             D0 aggregator = new D0();
-            aggregator.SetExistObjectPrimaryKey("018FF5D0-0EB7-4E0F-B836-227D7E32425D");
+            aggregator.SetExistObjectPrimaryKey(primaryKey);
 
             // aggregator.DisableInitDataCopy(); // Uncomment it to do loading faster
             // Take timeshot.
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
-            DataServiceProvider.DataService.LoadObject("FULLD0_E", aggregator);
+            dataService.LoadObject(D0.Views.FULLD0_E, aggregator);
             stopwatch.Stop();
             MessageBox.Show(string.Format("Time taken for loading: {0} ms", stopwatch.ElapsedMilliseconds));
-            CheckDetailsQty(aggregator, 10); // Ensure we have really had 10 objects per every detailarray
+            ormSample.CheckDetailsQty(aggregator, 10); // Ensure we have really had 10 objects per every detailarray
             MessageBox.Show("OK");
         }
 
@@ -339,15 +293,19 @@
         /// </param>
         private void button9_Click_1(object sender, EventArgs e)
         {
+            IDataService dataService = DataServiceProvider.DataService;
+            OrmSample ormSample = new OrmSample(dataService);
+            object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
+
             // Create copy of dataobject
             D0 aggregator = new D0();
-            aggregator.SetExistObjectPrimaryKey("018FF5D0-0EB7-4E0F-B836-227D7E32425D");
+            aggregator.SetExistObjectPrimaryKey(primaryKey);
             DateTime starttime = DateTime.Now; // Take timeshot before loading
-            DataServiceProvider.DataService.LoadObject("D0_E", aggregator);
+            dataService.LoadObject(D0.Views.D0_E, aggregator);
             DateTime protostarttime = DateTime.Now; // Take timeshot before prototyping
             aggregator.Prototyping2(true); // This makes every object new
             DateTime updatestarttime = DateTime.Now; // Take timeshot before persistence
-            DataServiceProvider.DataService.UpdateObject(aggregator);
+            dataService.UpdateObject(aggregator);
 
             MessageBox.Show(string.Format("Time taken for loading: {1} {0}prototyping: {2} {0}persistence: {3}", Environment.NewLine,
                 protostarttime.Subtract(starttime),
