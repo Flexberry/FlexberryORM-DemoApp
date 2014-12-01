@@ -33,6 +33,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -52,15 +55,13 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -108,6 +109,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button7);
@@ -120,6 +122,38 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1. Basic";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button13);
+            this.groupBox2.Controls.Add(this.button21);
+            this.groupBox2.Controls.Add(this.button9);
+            this.groupBox2.Location = new System.Drawing.Point(6, 130);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(458, 106);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Multiple details";
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(6, 19);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(446, 23);
+            this.button13.TabIndex = 2;
+            this.button13.Text = "5 Create";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(6, 45);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(446, 23);
+            this.button21.TabIndex = 2;
+            this.button21.Text = "6. Loading";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // button9
             // 
@@ -200,7 +234,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(446, 23);
             this.button12.TabIndex = 3;
-            this.button12.Text = "4. Custom naming for DB structures";
+            this.button12.Text = "4. Custom naming of DB structures";
             this.button12.UseVisualStyleBackColor = true;
             // 
             // button20
@@ -310,37 +344,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select sample complexity level:";
             // 
-            // groupBox2
+            // groupBox3
             // 
-            this.groupBox2.Controls.Add(this.button13);
-            this.groupBox2.Controls.Add(this.button21);
-            this.groupBox2.Controls.Add(this.button9);
-            this.groupBox2.Location = new System.Drawing.Point(6, 130);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(458, 206);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Multiple details";
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(6, 19);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(446, 23);
-            this.button13.TabIndex = 2;
-            this.button13.Text = "5 Create";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(6, 45);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(446, 23);
-            this.button21.TabIndex = 2;
-            this.button21.Text = "6. Loading";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
+            this.groupBox3.Location = new System.Drawing.Point(6, 242);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(458, 131);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Flat list / multiple masters";
             // 
             // Form1
             // 
@@ -352,10 +363,10 @@
             this.Text = "FLEXBERRY ORM samples";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -389,6 +400,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

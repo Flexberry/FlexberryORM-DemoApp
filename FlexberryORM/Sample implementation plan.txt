@@ -1,0 +1,35 @@
+Sample implementation plan
+-------------------------------------
+
+There are three levels of complexity to understand FLEXBERRY ORM:
+
+1. Basic features
+-------------------------------------
+1.1* How to instantiate dataobjects and persist them into DB;
+1.2* How to load dataobjects in specific view, next change values of their properties, then persist. Object status and loading state;
+1.3* How to load a set of dataobjects in specific view, limitation, quantity, etc. LoadingCustomizationStruct structure;
+1.4* How to do something at persistence moment (how to catch an insert/update/delete action by a business service);
+1.5* A set of examples with multiple levels of aggregators-details. It also useful in performance comparison with other ORMs.
+1.6 A set of examples with a lot of onetyped dataobjects. Also useful in performance comparison with other ORMs.
+
+2. Standard
+-------------------------------------
+2.1 How to create and maintain not stored (calculated) properties;
+2.2 Views and inheritance;
+2.3 Master association to a class with descendants. Instantiating descendant master. Type usages;
+2.4 Using stereotypes and custom types;
+2.5 Custom naming of DB structures;
+2.6 Switching storages and storage types.
+
+3. Advanced features
+-------------------------------------
+3.1 How to construct advanced limit function;
+3.2 Working with views;
+3.3 Advanced business service;
+3.2 How to replace a query in data service during execution;
+3.3 How to change primary key type and algorithm;
+3.4 How to update a dataobject that wasn't read before.
+
+
+
+(*) - means this sample implemented.

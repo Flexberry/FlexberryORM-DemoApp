@@ -264,7 +264,7 @@
         {
             IDataService dataService = DataServiceProvider.DataService;
             OrmSample ormSample = new OrmSample(dataService);
-            object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
+            object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(D0));
 
             // Load a dataobject with multiple details
             D0 aggregator = new D0();
@@ -295,7 +295,7 @@
         {
             IDataService dataService = DataServiceProvider.DataService;
             OrmSample ormSample = new OrmSample(dataService);
-            object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
+            object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(D0));
 
             // Create copy of dataobject
             D0 aggregator = new D0();
