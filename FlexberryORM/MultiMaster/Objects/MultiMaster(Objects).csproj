@@ -2,10 +2,10 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProjectGuid>{4FFE8227-C302-4C91-A904-B5E95033534B}</ProjectGuid>
+    <ProjectGuid>{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <AssemblyName>CDLIB(Objects)</AssemblyName>
+    <AssemblyName>MultiMaster(Objects)</AssemblyName>
     <OutputType>Library</OutputType>
     <RootNamespace>IIS.CDLIB</RootNamespace>
     <FileUpgradeFlags>
@@ -21,7 +21,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>CDLIB(Objects).xml</DocumentationFile>
+    <DocumentationFile>MultiMaster(Objects).xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -43,7 +43,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>CDLIB(Objects).xml</DocumentationFile>
+    <DocumentationFile>MultiMaster(Objects).xml</DocumentationFile>
     <DebugSymbols>false</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -61,7 +61,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>CDLIB%28Objects%29.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>MultiMaster%28Objects%29.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
@@ -71,55 +71,71 @@
       <HintPath>System.XML.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.DataObject">
-      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.DataObject.dll</HintPath>
+      <HintPath>..\..\..\..\..\CASEBERRY 2014\ICSSoft.STORMNET.DataObject.dll</HintPath>
     </Reference>
-    <Reference Include="ICSSoft.STORMNET.Business">
-      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.Business.dll</HintPath>
+    <Reference Include="Repository">
+      <HintPath>..\..\..\..\..\CASEBERRY 2014\Repository.dll</HintPath>
     </Reference>
-    <ProjectReference Include="..\..\MultiDetail\Objects\MultiDetail(Objects).csproj">
-      <Project>{D4B20CA9-B6C7-4CFC-B8DA-D86F4B2618DC}</Project>
-      <Name>MultiDetail(Objects)</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MultiMaster\Objects\MultiMaster(Objects).csproj">
-      <Project>{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}</Project>
-      <Name>MultiMaster(Objects)</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CD.cs">
+    <Compile Include="Internal.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CDDA.cs">
+    <Compile Include="MasterDerived01.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Track.cs">
+    <Compile Include="Master07.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CDDD.cs">
+    <Compile Include="Master02.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DVDVersion.cs">
+    <Compile Include="Master10.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Country.cs">
+    <Compile Include="MasterDerived02.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DVD.cs">
+    <Compile Include="Master06.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Publisher.cs">
+    <Compile Include="Master08.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BlueRay.cs">
+    <Compile Include="Master12.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Person.cs">
+    <Compile Include="Master03.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Master11.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Master09.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Master04.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Master05.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Master01.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Master0.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MasterBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MasterDerived03.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CDLIB%28Objects%29.snk" />
+    <None Include="MultiMaster%28Objects%29.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

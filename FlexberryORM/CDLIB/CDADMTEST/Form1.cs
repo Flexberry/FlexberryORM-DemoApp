@@ -85,7 +85,7 @@
             cddd.Name = "Old software";
             cddd.Capacity = 640;
 
-            var objstoupdlist = new List<ICSSoft.STORMNET.DataObject>();
+            List<ICSSoft.STORMNET.DataObject> objstoupdlist = new List<ICSSoft.STORMNET.DataObject>();
 
             for (int i = 0; i < 5; i++)
             {
@@ -314,6 +314,74 @@
                 ));
 
             MessageBox.Show("OK");
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            // Create master objects for multimaster example
+            IDataService dataService = DataServiceProvider.DataService;
+            OrmSample ormSample = new OrmSample(dataService);
+            ICSSoft.STORMNET.DataObject[] objstoupd = ormSample.CreateMasterXXs(100);
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            dataService.UpdateObjects(ref objstoupd);
+            stopwatch.Stop();
+            MessageBox.Show(string.Format("Time taken for masters creation: {0} ms", stopwatch.ElapsedMilliseconds));
+
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            // Create 10000 dataobjects of class Internal
+            IDataService dataService = DataServiceProvider.DataService;
+            OrmSample ormSample = new OrmSample(dataService);
+            Dictionary<string, MasterBase[]> masterscache = ormSample.LoadMasters(); // Load master dataobjects into a cache
+            RandomStringGenerator rsg = new RandomStringGenerator();
+            Random rndMaster0 = new Random();
+            int cnt = 10000;
+            ICSSoft.STORMNET.DataObject[] objstoupd = new ICSSoft.STORMNET.DataObject[cnt];
+
+            for (int i = 0; i < cnt; i++)
+            {
+                Internal itnl = new Internal(); 
+                objstoupd[i] = itnl;
+                for (int j = 0; j < 10; j++) // Fill string properties with random values
+                { 
+                    Information.SetPropValueByName(itnl, string.Format("S{0}", j), rsg.Generate(200));
+                }
+
+                //Set MasterSpecial property to one of descendants of class Master0 randomly
+                itnl.MasterSpecial = (Master0) ormSample.GetRandomMaster(masterscache, string.Format("MasterDerived{0:00}", rndMaster0.Next(1,3)));
+                
+                for (int j = 1; j < 13; j++) // Set each master property to randomly selected value of corresponding type
+                {
+                    string mastertypename = string.Format("Master{0:00}", j);
+                    Information.SetPropValueByName(itnl, mastertypename, ormSample.GetRandomMaster(masterscache, mastertypename));
+                }
+
+            }
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            dataService.UpdateObjects(ref objstoupd); // Just persists created objects
+            stopwatch.Stop();
+            MessageBox.Show(string.Format("Time taken for creation: {0} ms", stopwatch.ElapsedMilliseconds));
+
+        }
+         
+        private void button24_Click(object sender, EventArgs e)
+        {
+            // Loading many objects of type Internal (for multimaster example)
+            IDataService dataService = DataServiceProvider.DataService;
+            LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Internal), "FULLInternal_E"); // Full set of attributes
+            //LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Internal), "Internal_E"); // S0 and only one attribute in each master
+            lcs.InitDataCopy = false;
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            ICSSoft.STORMNET.DataObject[] internals = dataService.LoadObjects(lcs);
+            //ObjectStringDataView[] sv = dataService.LoadStringedObjectView(';', lcs); //Loading as a string array, without dataobjects instantiation. It N-times faster and useful for UI.
+            stopwatch.Stop();
+            MessageBox.Show(string.Format("Time taken for loading: {0} ms", stopwatch.ElapsedMilliseconds));
         }
     }
 }

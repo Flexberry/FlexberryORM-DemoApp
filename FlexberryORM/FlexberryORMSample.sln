@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Sample implementation plan.txt = Sample implementation plan.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiMaster(Objects)", "MultiMaster\Objects\MultiMaster(Objects).csproj", "{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,16 @@ Global
 		{1C7C7ED7-7084-42E4-A42C-412EE83D79BD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1C7C7ED7-7084-42E4-A42C-412EE83D79BD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1C7C7ED7-7084-42E4-A42C-412EE83D79BD}.Release|x86.ActiveCfg = Release|Any CPU
+		{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -137,6 +137,10 @@
       <Project>{d4b20ca9-b6c7-4cfc-b8da-d86f4b2618dc}</Project>
       <Name>MultiDetail%28Objects%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\MultiMaster\Objects\MultiMaster%28Objects%29.csproj">
+      <Project>{7e6a09cb-5a1d-46ce-98ef-83d05e6c9efa}</Project>
+      <Name>MultiMaster%28Objects%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusinessServers\CDLIB%28BusinessServers%29.csproj">
       <Project>{f94a0105-78b7-4344-a08c-1a5436b43a41}</Project>
       <Name>CDLIB%28BusinessServers%29</Name>

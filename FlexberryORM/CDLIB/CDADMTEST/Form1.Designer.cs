@@ -56,12 +56,16 @@
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -346,12 +350,45 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button23);
+            this.groupBox3.Controls.Add(this.button24);
+            this.groupBox3.Controls.Add(this.button22);
             this.groupBox3.Location = new System.Drawing.Point(6, 242);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(458, 131);
+            this.groupBox3.Size = new System.Drawing.Size(638, 131);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Flat list / multiple masters";
+            this.groupBox3.Text = "A lot of objects with multiple masters";
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(6, 48);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(446, 23);
+            this.button22.TabIndex = 2;
+            this.button22.Text = "9. Create 10000";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(6, 19);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(446, 23);
+            this.button23.TabIndex = 2;
+            this.button23.Text = "8. Prepare masters";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(6, 77);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(446, 23);
+            this.button24.TabIndex = 2;
+            this.button24.Text = "10. Load";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // Form1
             // 
@@ -367,6 +404,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -401,6 +439,9 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button24;
     }
 }
 
