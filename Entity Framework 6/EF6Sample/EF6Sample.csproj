@@ -215,6 +215,58 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Internal.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KeyClass.cs" />
+    <Compile Include="Master0.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master01.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master02.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master03.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master04.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master05.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master06.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master07.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master08.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master09.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master10.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master11.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master12.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDerived01.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDerived02.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDerived03.cs">
+      <DependentUpon>CDLIB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs">
       <DependentUpon>CDLIB.tt</DependentUpon>
     </Compile>
@@ -224,6 +276,7 @@
       <DependentUpon>CDLIB.tt</DependentUpon>
     </Compile>
     <Compile Include="Publisher_D.cs" />
+    <Compile Include="RandomStringGenerator.cs" />
     <Compile Include="Track.cs">
       <DependentUpon>CDLIB.tt</DependentUpon>
     </Compile>

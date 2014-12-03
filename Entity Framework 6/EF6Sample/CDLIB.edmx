@@ -576,6 +576,294 @@
           <Property Name="Name" Type="varchar" MaxLength="255" />
           <Property Name="Publisher" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
+        <EntityType Name="Internal">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+          <Property Name="Master04" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Master07" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Master02" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Master09" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Master10" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Master06" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MasterSpecial_m0" Type="uniqueidentifier" />
+          <Property Name="MasterSpecial_m1" Type="uniqueidentifier" />
+          <Property Name="MasterSpecial_m2" Type="uniqueidentifier" />
+          <Property Name="MasterSpecial_m3" Type="uniqueidentifier" />
+          <Property Name="Master12" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Master08" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Master05" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Master11" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Master01" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Master03" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Master0">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master01">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master02">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master03">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master04">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master05">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master06">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master07">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master08">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master09">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master10">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master11">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Master12">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="MasterDerived01">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="MasterDerived02">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="MasterDerived03">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="S0" Type="varchar" MaxLength="255" />
+          <Property Name="S1" Type="varchar" MaxLength="255" />
+          <Property Name="S2" Type="varchar" MaxLength="255" />
+          <Property Name="S3" Type="varchar" MaxLength="255" />
+          <Property Name="S4" Type="varchar" MaxLength="255" />
+          <Property Name="S5" Type="varchar" MaxLength="255" />
+          <Property Name="S6" Type="varchar" MaxLength="255" />
+          <Property Name="S7" Type="varchar" MaxLength="255" />
+          <Property Name="S8" Type="varchar" MaxLength="255" />
+          <Property Name="S9" Type="varchar" MaxLength="255" />
+        </EntityType>
         <EntityType Name="Person">
           <Key>
             <PropertyRef Name="primaryKey" />
@@ -1131,6 +1419,198 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="Internal_FMaster0_0">
+          <End Role="Master0" Type="Self.Master0" Multiplicity="0..1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master0">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="MasterSpecial_m0" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster01_0">
+          <End Role="Master01" Type="Self.Master01" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master01">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master01" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster02_0">
+          <End Role="Master02" Type="Self.Master02" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master02">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master02" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster03_0">
+          <End Role="Master03" Type="Self.Master03" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master03">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master03" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster04_0">
+          <End Role="Master04" Type="Self.Master04" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master04">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master04" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster05_0">
+          <End Role="Master05" Type="Self.Master05" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master05">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master05" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster06_0">
+          <End Role="Master06" Type="Self.Master06" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master06">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master06" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster07_0">
+          <End Role="Master07" Type="Self.Master07" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master07">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master07" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster08_0">
+          <End Role="Master08" Type="Self.Master08" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master08">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master08" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster09_0">
+          <End Role="Master09" Type="Self.Master09" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master09">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master09" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster10_0">
+          <End Role="Master10" Type="Self.Master10" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master10">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master10" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster11_0">
+          <End Role="Master11" Type="Self.Master11" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master11">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master11" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster12_0">
+          <End Role="Master12" Type="Self.Master12" Multiplicity="1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master12">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master12" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMasterDerived01_0">
+          <End Role="MasterDerived01" Type="Self.MasterDerived01" Multiplicity="0..1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterDerived01">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="MasterSpecial_m1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMasterDerived02_0">
+          <End Role="MasterDerived02" Type="Self.MasterDerived02" Multiplicity="0..1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterDerived02">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="MasterSpecial_m2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMasterDerived03_0">
+          <End Role="MasterDerived03" Type="Self.MasterDerived03" Multiplicity="0..1" />
+          <End Role="Internal" Type="Self.Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterDerived03">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="MasterSpecial_m3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="Publisher_FCountry_0">
           <End Role="Country" Type="Self.Country" Multiplicity="1" />
           <End Role="Publisher" Type="Self.Publisher" Multiplicity="*" />
@@ -1226,6 +1706,23 @@
           <EntitySet Name="D332" EntityType="Self.D332" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="D333" EntityType="Self.D333" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DVD" EntityType="Self.DVD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Internal" EntityType="Self.Internal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master0" EntityType="Self.Master0" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master01" EntityType="Self.Master01" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master02" EntityType="Self.Master02" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master03" EntityType="Self.Master03" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master04" EntityType="Self.Master04" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master05" EntityType="Self.Master05" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master06" EntityType="Self.Master06" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master07" EntityType="Self.Master07" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master08" EntityType="Self.Master08" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master09" EntityType="Self.Master09" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master10" EntityType="Self.Master10" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master11" EntityType="Self.Master11" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master12" EntityType="Self.Master12" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MasterDerived01" EntityType="Self.MasterDerived01" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MasterDerived02" EntityType="Self.MasterDerived02" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MasterDerived03" EntityType="Self.MasterDerived03" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Publisher" EntityType="Self.Publisher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Track" EntityType="Self.Track" Schema="dbo" store:Type="Tables" />
@@ -1404,6 +1901,70 @@
           <AssociationSet Name="DVD_FPublisher_0" Association="Self.DVD_FPublisher_0">
             <End Role="Publisher" EntitySet="Publisher" />
             <End Role="DVD" EntitySet="DVD" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster0_0" Association="Self.Internal_FMaster0_0">
+            <End Role="Master0" EntitySet="Master0" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster01_0" Association="Self.Internal_FMaster01_0">
+            <End Role="Master01" EntitySet="Master01" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster02_0" Association="Self.Internal_FMaster02_0">
+            <End Role="Master02" EntitySet="Master02" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster03_0" Association="Self.Internal_FMaster03_0">
+            <End Role="Master03" EntitySet="Master03" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster04_0" Association="Self.Internal_FMaster04_0">
+            <End Role="Master04" EntitySet="Master04" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster05_0" Association="Self.Internal_FMaster05_0">
+            <End Role="Master05" EntitySet="Master05" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster06_0" Association="Self.Internal_FMaster06_0">
+            <End Role="Master06" EntitySet="Master06" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster07_0" Association="Self.Internal_FMaster07_0">
+            <End Role="Master07" EntitySet="Master07" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster08_0" Association="Self.Internal_FMaster08_0">
+            <End Role="Master08" EntitySet="Master08" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster09_0" Association="Self.Internal_FMaster09_0">
+            <End Role="Master09" EntitySet="Master09" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster10_0" Association="Self.Internal_FMaster10_0">
+            <End Role="Master10" EntitySet="Master10" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster11_0" Association="Self.Internal_FMaster11_0">
+            <End Role="Master11" EntitySet="Master11" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster12_0" Association="Self.Internal_FMaster12_0">
+            <End Role="Master12" EntitySet="Master12" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMasterDerived01_0" Association="Self.Internal_FMasterDerived01_0">
+            <End Role="MasterDerived01" EntitySet="MasterDerived01" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMasterDerived02_0" Association="Self.Internal_FMasterDerived02_0">
+            <End Role="MasterDerived02" EntitySet="MasterDerived02" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMasterDerived03_0" Association="Self.Internal_FMasterDerived03_0">
+            <End Role="MasterDerived03" EntitySet="MasterDerived03" />
+            <End Role="Internal" EntitySet="Internal" />
           </AssociationSet>
           <AssociationSet Name="Publisher_FCountry_0" Association="Self.Publisher_FCountry_0">
             <End Role="Country" EntitySet="Country" />
@@ -2938,8 +3499,601 @@
             <End Role="Person" EntitySet="Person" />
             <End Role="Track" EntitySet="Track" />
           </AssociationSet>
-        </EntityContainer>
-      </Schema>
+          <EntitySet Name="Master0" EntityType="CDLIBModel.Master0" />
+          <EntitySet Name="Master01" EntityType="CDLIBModel.Master01" />
+          <EntitySet Name="Master02" EntityType="CDLIBModel.Master02" />
+          <EntitySet Name="Master03" EntityType="CDLIBModel.Master03" />
+          <EntitySet Name="Master04" EntityType="CDLIBModel.Master04" />
+          <EntitySet Name="Master05" EntityType="CDLIBModel.Master05" />
+          <EntitySet Name="Master06" EntityType="CDLIBModel.Master06" />
+          <EntitySet Name="Master07" EntityType="CDLIBModel.Master07" />
+          <EntitySet Name="Master08" EntityType="CDLIBModel.Master08" />
+          <EntitySet Name="Master09" EntityType="CDLIBModel.Master09" />
+          <EntitySet Name="Master10" EntityType="CDLIBModel.Master10" />
+          <EntitySet Name="Master11" EntityType="CDLIBModel.Master11" />
+          <EntitySet Name="Master12" EntityType="CDLIBModel.Master12" />
+          <EntitySet Name="MasterDerived01" EntityType="CDLIBModel.MasterDerived01" />
+          <EntitySet Name="MasterDerived02" EntityType="CDLIBModel.MasterDerived02" />
+          <EntitySet Name="Internal" EntityType="CDLIBModel.Internal" />
+          <EntitySet Name="MasterDerived03" EntityType="CDLIBModel.MasterDerived03" />
+          <AssociationSet Name="Internal_FMaster0_0" Association="CDLIBModel.Internal_FMaster0_0">
+            <End Role="Master0" EntitySet="Master0" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster01_0" Association="CDLIBModel.Internal_FMaster01_0">
+            <End Role="Master01" EntitySet="Master01" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster02_0" Association="CDLIBModel.Internal_FMaster02_0">
+            <End Role="Master02" EntitySet="Master02" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster03_0" Association="CDLIBModel.Internal_FMaster03_0">
+            <End Role="Master03" EntitySet="Master03" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster04_0" Association="CDLIBModel.Internal_FMaster04_0">
+            <End Role="Master04" EntitySet="Master04" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster05_0" Association="CDLIBModel.Internal_FMaster05_0">
+            <End Role="Master05" EntitySet="Master05" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster06_0" Association="CDLIBModel.Internal_FMaster06_0">
+            <End Role="Master06" EntitySet="Master06" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster07_0" Association="CDLIBModel.Internal_FMaster07_0">
+            <End Role="Master07" EntitySet="Master07" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster08_0" Association="CDLIBModel.Internal_FMaster08_0">
+            <End Role="Master08" EntitySet="Master08" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster09_0" Association="CDLIBModel.Internal_FMaster09_0">
+            <End Role="Master09" EntitySet="Master09" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster10_0" Association="CDLIBModel.Internal_FMaster10_0">
+            <End Role="Master10" EntitySet="Master10" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster11_0" Association="CDLIBModel.Internal_FMaster11_0">
+            <End Role="Master11" EntitySet="Master11" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMaster12_0" Association="CDLIBModel.Internal_FMaster12_0">
+            <End Role="Master12" EntitySet="Master12" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMasterDerived01_0" Association="CDLIBModel.Internal_FMasterDerived01_0">
+            <End Role="MasterDerived01" EntitySet="MasterDerived01" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMasterDerived02_0" Association="CDLIBModel.Internal_FMasterDerived02_0">
+            <End Role="MasterDerived02" EntitySet="MasterDerived02" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          <AssociationSet Name="Internal_FMasterDerived03_0" Association="CDLIBModel.Internal_FMasterDerived03_0">
+            <End Role="MasterDerived03" EntitySet="MasterDerived03" />
+            <End Role="Internal" EntitySet="Internal" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Master0">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster0_0" FromRole="Master0" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master01">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster01_0" FromRole="Master01" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master02">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster02_0" FromRole="Master02" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master03">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster03_0" FromRole="Master03" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master04">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster04_0" FromRole="Master04" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master05">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster05_0" FromRole="Master05" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master06">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster06_0" FromRole="Master06" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master07">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster07_0" FromRole="Master07" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master08">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster08_0" FromRole="Master08" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master09">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster09_0" FromRole="Master09" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master10">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster10_0" FromRole="Master10" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master11">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster11_0" FromRole="Master11" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Master12">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMaster12_0" FromRole="Master12" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="MasterDerived01">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMasterDerived01_0" FromRole="MasterDerived01" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="MasterDerived02">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMasterDerived02_0" FromRole="MasterDerived02" ToRole="Internal" />
+        </EntityType>
+        <EntityType Name="Internal">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Master04" Type="Guid" Nullable="false" />
+          <Property Name="Master07" Type="Guid" Nullable="false" />
+          <Property Name="Master02" Type="Guid" Nullable="false" />
+          <Property Name="Master09" Type="Guid" Nullable="false" />
+          <Property Name="Master10" Type="Guid" Nullable="false" />
+          <Property Name="Master06" Type="Guid" Nullable="false" />
+          <Property Name="MasterSpecial_m0" Type="Guid" />
+          <Property Name="MasterSpecial_m1" Type="Guid" />
+          <Property Name="MasterSpecial_m2" Type="Guid" />
+          <Property Name="MasterSpecial_m3" Type="Guid" />
+          <Property Name="Master12" Type="Guid" Nullable="false" />
+          <Property Name="Master08" Type="Guid" Nullable="false" />
+          <Property Name="Master05" Type="Guid" Nullable="false" />
+          <Property Name="Master11" Type="Guid" Nullable="false" />
+          <Property Name="Master01" Type="Guid" Nullable="false" />
+          <Property Name="Master03" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Master0" Relationship="CDLIBModel.Internal_FMaster0_0" FromRole="Internal" ToRole="Master0" />
+          <NavigationProperty Name="Master011" Relationship="CDLIBModel.Internal_FMaster01_0" FromRole="Internal" ToRole="Master01" />
+          <NavigationProperty Name="Master021" Relationship="CDLIBModel.Internal_FMaster02_0" FromRole="Internal" ToRole="Master02" />
+          <NavigationProperty Name="Master031" Relationship="CDLIBModel.Internal_FMaster03_0" FromRole="Internal" ToRole="Master03" />
+          <NavigationProperty Name="Master041" Relationship="CDLIBModel.Internal_FMaster04_0" FromRole="Internal" ToRole="Master04" />
+          <NavigationProperty Name="Master051" Relationship="CDLIBModel.Internal_FMaster05_0" FromRole="Internal" ToRole="Master05" />
+          <NavigationProperty Name="Master061" Relationship="CDLIBModel.Internal_FMaster06_0" FromRole="Internal" ToRole="Master06" />
+          <NavigationProperty Name="Master071" Relationship="CDLIBModel.Internal_FMaster07_0" FromRole="Internal" ToRole="Master07" />
+          <NavigationProperty Name="Master081" Relationship="CDLIBModel.Internal_FMaster08_0" FromRole="Internal" ToRole="Master08" />
+          <NavigationProperty Name="Master091" Relationship="CDLIBModel.Internal_FMaster09_0" FromRole="Internal" ToRole="Master09" />
+          <NavigationProperty Name="Master101" Relationship="CDLIBModel.Internal_FMaster10_0" FromRole="Internal" ToRole="Master10" />
+          <NavigationProperty Name="Master111" Relationship="CDLIBModel.Internal_FMaster11_0" FromRole="Internal" ToRole="Master11" />
+          <NavigationProperty Name="Master121" Relationship="CDLIBModel.Internal_FMaster12_0" FromRole="Internal" ToRole="Master12" />
+          <NavigationProperty Name="MasterDerived01" Relationship="CDLIBModel.Internal_FMasterDerived01_0" FromRole="Internal" ToRole="MasterDerived01" />
+          <NavigationProperty Name="MasterDerived02" Relationship="CDLIBModel.Internal_FMasterDerived02_0" FromRole="Internal" ToRole="MasterDerived02" />
+          <NavigationProperty Name="MasterDerived03" Relationship="CDLIBModel.Internal_FMasterDerived03_0" FromRole="Internal" ToRole="MasterDerived03" />
+        </EntityType>
+        <EntityType Name="MasterDerived03">
+          <Key>
+            <PropertyRef Name="primaryKey" />
+          </Key>
+          <Property Name="primaryKey" Type="Guid" Nullable="false" />
+          <Property Name="S0" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S6" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S7" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S8" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="S9" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Internal" Relationship="CDLIBModel.Internal_FMasterDerived03_0" FromRole="MasterDerived03" ToRole="Internal" />
+        </EntityType>
+        <Association Name="Internal_FMaster0_0">
+          <End Type="CDLIBModel.Master0" Role="Master0" Multiplicity="0..1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master0">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="MasterSpecial_m0" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster01_0">
+          <End Type="CDLIBModel.Master01" Role="Master01" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master01">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master01" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster02_0">
+          <End Type="CDLIBModel.Master02" Role="Master02" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master02">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master02" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster03_0">
+          <End Type="CDLIBModel.Master03" Role="Master03" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master03">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master03" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster04_0">
+          <End Type="CDLIBModel.Master04" Role="Master04" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master04">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master04" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster05_0">
+          <End Type="CDLIBModel.Master05" Role="Master05" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master05">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master05" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster06_0">
+          <End Type="CDLIBModel.Master06" Role="Master06" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master06">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master06" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster07_0">
+          <End Type="CDLIBModel.Master07" Role="Master07" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master07">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master07" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster08_0">
+          <End Type="CDLIBModel.Master08" Role="Master08" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master08">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master08" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster09_0">
+          <End Type="CDLIBModel.Master09" Role="Master09" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master09">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master09" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster10_0">
+          <End Type="CDLIBModel.Master10" Role="Master10" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master10">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master10" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster11_0">
+          <End Type="CDLIBModel.Master11" Role="Master11" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master11">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master11" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMaster12_0">
+          <End Type="CDLIBModel.Master12" Role="Master12" Multiplicity="1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master12">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="Master12" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMasterDerived01_0">
+          <End Type="CDLIBModel.MasterDerived01" Role="MasterDerived01" Multiplicity="0..1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterDerived01">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="MasterSpecial_m1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMasterDerived02_0">
+          <End Type="CDLIBModel.MasterDerived02" Role="MasterDerived02" Multiplicity="0..1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterDerived02">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="MasterSpecial_m2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Internal_FMasterDerived03_0">
+          <End Type="CDLIBModel.MasterDerived03" Role="MasterDerived03" Multiplicity="0..1" />
+          <End Type="CDLIBModel.Internal" Role="Internal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MasterDerived03">
+              <PropertyRef Name="primaryKey" />
+            </Principal>
+            <Dependent Role="Internal">
+              <PropertyRef Name="MasterSpecial_m3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -3589,6 +4743,311 @@
                 <ScalarProperty Name="Author" ColumnName="Author" />
                 <ScalarProperty Name="Singer" ColumnName="Singer" />
                 <ScalarProperty Name="CDDA" ColumnName="CDDA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master0">
+            <EntityTypeMapping TypeName="CDLIBModel.Master0">
+              <MappingFragment StoreEntitySet="Master0">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master01">
+            <EntityTypeMapping TypeName="CDLIBModel.Master01">
+              <MappingFragment StoreEntitySet="Master01">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master02">
+            <EntityTypeMapping TypeName="CDLIBModel.Master02">
+              <MappingFragment StoreEntitySet="Master02">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master03">
+            <EntityTypeMapping TypeName="CDLIBModel.Master03">
+              <MappingFragment StoreEntitySet="Master03">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master04">
+            <EntityTypeMapping TypeName="CDLIBModel.Master04">
+              <MappingFragment StoreEntitySet="Master04">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master05">
+            <EntityTypeMapping TypeName="CDLIBModel.Master05">
+              <MappingFragment StoreEntitySet="Master05">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master06">
+            <EntityTypeMapping TypeName="CDLIBModel.Master06">
+              <MappingFragment StoreEntitySet="Master06">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master07">
+            <EntityTypeMapping TypeName="CDLIBModel.Master07">
+              <MappingFragment StoreEntitySet="Master07">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master08">
+            <EntityTypeMapping TypeName="CDLIBModel.Master08">
+              <MappingFragment StoreEntitySet="Master08">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master09">
+            <EntityTypeMapping TypeName="CDLIBModel.Master09">
+              <MappingFragment StoreEntitySet="Master09">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master10">
+            <EntityTypeMapping TypeName="CDLIBModel.Master10">
+              <MappingFragment StoreEntitySet="Master10">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master11">
+            <EntityTypeMapping TypeName="CDLIBModel.Master11">
+              <MappingFragment StoreEntitySet="Master11">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master12">
+            <EntityTypeMapping TypeName="CDLIBModel.Master12">
+              <MappingFragment StoreEntitySet="Master12">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MasterDerived01">
+            <EntityTypeMapping TypeName="CDLIBModel.MasterDerived01">
+              <MappingFragment StoreEntitySet="MasterDerived01">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MasterDerived02">
+            <EntityTypeMapping TypeName="CDLIBModel.MasterDerived02">
+              <MappingFragment StoreEntitySet="MasterDerived02">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Internal">
+            <EntityTypeMapping TypeName="CDLIBModel.Internal">
+              <MappingFragment StoreEntitySet="Internal">
+                <ScalarProperty Name="Master03" ColumnName="Master03" />
+                <ScalarProperty Name="Master01" ColumnName="Master01" />
+                <ScalarProperty Name="Master11" ColumnName="Master11" />
+                <ScalarProperty Name="Master05" ColumnName="Master05" />
+                <ScalarProperty Name="Master08" ColumnName="Master08" />
+                <ScalarProperty Name="Master12" ColumnName="Master12" />
+                <ScalarProperty Name="MasterSpecial_m3" ColumnName="MasterSpecial_m3" />
+                <ScalarProperty Name="MasterSpecial_m2" ColumnName="MasterSpecial_m2" />
+                <ScalarProperty Name="MasterSpecial_m1" ColumnName="MasterSpecial_m1" />
+                <ScalarProperty Name="MasterSpecial_m0" ColumnName="MasterSpecial_m0" />
+                <ScalarProperty Name="Master06" ColumnName="Master06" />
+                <ScalarProperty Name="Master10" ColumnName="Master10" />
+                <ScalarProperty Name="Master09" ColumnName="Master09" />
+                <ScalarProperty Name="Master02" ColumnName="Master02" />
+                <ScalarProperty Name="Master07" ColumnName="Master07" />
+                <ScalarProperty Name="Master04" ColumnName="Master04" />
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MasterDerived03">
+            <EntityTypeMapping TypeName="CDLIBModel.MasterDerived03">
+              <MappingFragment StoreEntitySet="MasterDerived03">
+                <ScalarProperty Name="S9" ColumnName="S9" />
+                <ScalarProperty Name="S8" ColumnName="S8" />
+                <ScalarProperty Name="S7" ColumnName="S7" />
+                <ScalarProperty Name="S6" ColumnName="S6" />
+                <ScalarProperty Name="S5" ColumnName="S5" />
+                <ScalarProperty Name="S4" ColumnName="S4" />
+                <ScalarProperty Name="S3" ColumnName="S3" />
+                <ScalarProperty Name="S2" ColumnName="S2" />
+                <ScalarProperty Name="S1" ColumnName="S1" />
+                <ScalarProperty Name="S0" ColumnName="S0" />
+                <ScalarProperty Name="primaryKey" ColumnName="primaryKey" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

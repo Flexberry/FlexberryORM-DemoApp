@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1fb9532ff6154d24b9a7fbef456c4d34" Name="Diagram1">
+      <Diagram DiagramId="1fb9532ff6154d24b9a7fbef456c4d34" Name="Diagram1" ZoomLevel="48">
         <EntityTypeShape EntityType="CDLIBModel.BlueRay" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CDLIBModel.CD" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="CDLIBModel.CDDA" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
@@ -102,6 +102,39 @@
         <AssociationConnector Association="CDLIBModel.DVD_FPublisher_0" ManuallyRouted="false" />
         <AssociationConnector Association="CDLIBModel.Track_FPerson_0" ManuallyRouted="false" />
         <AssociationConnector Association="CDLIBModel.Track_FPerson_1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CDLIBModel.Master0" Width="1.5" PointX="7.75" PointY="36" />
+        <EntityTypeShape EntityType="CDLIBModel.Master01" Width="1.5" PointX="7.75" PointY="40.125" />
+        <EntityTypeShape EntityType="CDLIBModel.Master02" Width="1.5" PointX="7.75" PointY="56.5" />
+        <EntityTypeShape EntityType="CDLIBModel.Master03" Width="1.5" PointX="7.75" PointY="72.75" />
+        <EntityTypeShape EntityType="CDLIBModel.Master04" Width="1.5" PointX="7.75" PointY="22.125" />
+        <EntityTypeShape EntityType="CDLIBModel.Master05" Width="1.5" PointX="7.75" PointY="80.875" />
+        <EntityTypeShape EntityType="CDLIBModel.Master06" Width="1.5" PointX="7.75" PointY="76.875" />
+        <EntityTypeShape EntityType="CDLIBModel.Master07" Width="1.5" PointX="7.75" PointY="32" />
+        <EntityTypeShape EntityType="CDLIBModel.Master08" Width="1.5" PointX="7.75" PointY="48.25" />
+        <EntityTypeShape EntityType="CDLIBModel.Master09" Width="1.5" PointX="7.75" PointY="27.875" />
+        <EntityTypeShape EntityType="CDLIBModel.Master10" Width="1.5" PointX="7.75" PointY="60.5" />
+        <EntityTypeShape EntityType="CDLIBModel.Master11" Width="1.5" PointX="7.75" PointY="64.625" />
+        <EntityTypeShape EntityType="CDLIBModel.Master12" Width="1.5" PointX="7.75" PointY="52.375" />
+        <EntityTypeShape EntityType="CDLIBModel.MasterDerived01" Width="1.5" PointX="7.75" PointY="44.25" />
+        <EntityTypeShape EntityType="CDLIBModel.MasterDerived02" Width="1.5" PointX="7.75" PointY="68.625" />
+        <EntityTypeShape EntityType="CDLIBModel.Internal" Width="1.5" PointX="21.625" PointY="39.625" />
+        <EntityTypeShape EntityType="CDLIBModel.MasterDerived03" Width="1.5" PointX="19.375" PointY="4.25" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster0_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster01_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster02_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster03_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster04_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster05_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster06_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster07_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster08_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster09_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster10_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster11_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMaster12_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMasterDerived01_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMasterDerived02_0" />
+        <AssociationConnector Association="CDLIBModel.Internal_FMasterDerived03_0" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

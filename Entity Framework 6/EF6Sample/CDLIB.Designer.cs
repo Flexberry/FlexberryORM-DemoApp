@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\AK\CASEBERRY 2014\EF 6\EF6Sample\CDLIB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\AK\GIT\FlexberryORM\Entity Framework 6\EF6Sample\CDLIB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
