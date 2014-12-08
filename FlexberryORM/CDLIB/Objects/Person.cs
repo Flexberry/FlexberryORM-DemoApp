@@ -16,7 +16,7 @@ namespace IIS.CDLIB
     
     
     // *** Start programmer edit section *** (Using statements)
-
+    using ICSSoft.STORMNET.Business;
     // *** End programmer edit section *** (Using statements)
 
 
@@ -28,6 +28,10 @@ namespace IIS.CDLIB
     // *** End programmer edit section *** (Person CustomAttributes)
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
+    [View("Person_E", new string[] {
+            "FirstName",
+            "LastName",
+            "FullName"})]
     public class Person : ICSSoft.STORMNET.DataObject
     {
         
@@ -101,6 +105,49 @@ namespace IIS.CDLIB
                 // *** Start programmer edit section *** (Person.LastName Set end)
 
                 // *** End programmer edit section *** (Person.LastName Set end)
+            }
+        }
+        
+        /// <summary>
+        /// FullName.
+        /// </summary>
+        // *** Start programmer edit section *** (Person.FullName CustomAttributes)
+
+        // *** End programmer edit section *** (Person.FullName CustomAttributes)
+        [ICSSoft.STORMNET.NotStored()]
+        [StrLen(255)]
+        [DataServiceExpression(typeof(SQLDataService), "isnull(@FirstName@,\'\') + \' \' + isnull(@LastName@,\'\')")]
+        public virtual string FullName
+        {
+            get
+            {
+                // *** Start programmer edit section *** (Person.FullName Get)
+                return string.Format("{0} {1}", fFirstName, fLastName);
+                // *** End programmer edit section *** (Person.FullName Get)
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Person.FullName Set)
+
+                // *** End programmer edit section *** (Person.FullName Set)
+            }
+        }
+        
+        /// <summary>
+        /// Class views container.
+        /// </summary>
+        public class Views
+        {
+            
+            /// <summary>
+            /// "Person_E" view.
+            /// </summary>
+            public static ICSSoft.STORMNET.View Person_E
+            {
+                get
+                {
+                    return ICSSoft.STORMNET.Information.GetView("Person_E", typeof(IIS.CDLIB.Person));
+                }
             }
         }
     }

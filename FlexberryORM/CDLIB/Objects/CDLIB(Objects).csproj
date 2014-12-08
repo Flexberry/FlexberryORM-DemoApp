@@ -76,6 +76,9 @@
     <Reference Include="ICSSoft.STORMNET.Business">
       <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.Business.dll</HintPath>
     </Reference>
+    <Reference Include="Repository">
+      <HintPath>..\..\..\..\..\CASEBERRY 2014\Repository.dll</HintPath>
+    </Reference>
     <ProjectReference Include="..\..\MultiDetail\Objects\MultiDetail(Objects).csproj">
       <Project>{D4B20CA9-B6C7-4CFC-B8DA-D86F4B2618DC}</Project>
       <Name>MultiDetail(Objects)</Name>
@@ -119,7 +122,6 @@
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CDLIB%28Objects%29.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

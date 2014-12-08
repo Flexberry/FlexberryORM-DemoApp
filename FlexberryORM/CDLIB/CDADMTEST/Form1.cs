@@ -383,5 +383,64 @@
             stopwatch.Stop();
             MessageBox.Show(string.Format("Time taken for loading: {0} ms", stopwatch.ElapsedMilliseconds));
         }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            // This example shows you how to use calculated properties.
+            // Please open Person class in CDLIB(Objects) project, then look at the property FullName.
+            // There is an expression defined by DataServiceExpression attribute. Specified data service (and its descendants) uses this expression when querying table.
+            // Also, there is an equivalent code in property getter for calculating in dataobject instances.
+            IDataService dataService = DataServiceProvider.DataService;
+            LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Person), "Person_E");
+            ICSSoft.STORMNET.DataObject[] persons = dataService.LoadObjects(lcs); // Load as dataobjects, notstored property calculated thru property getter.
+            ObjectStringDataView[] osdvpersons = dataService.LoadStringedObjectView(';', lcs); // Load as comma delimited string, notstored property calculated thru dataservice expression.
+            MessageBox.Show("OK.");
+            
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+
+            // Working with views example
+
+            // 1. Getting static views
+            ICSSoft.STORMNET.View cd_e_for_cd_view = Information.GetView("CD_E", typeof(CD)); // Getting a statically defined view using Information.
+            ICSSoft.STORMNET.View cd_e_for_cd_view1 = CD.Views.CD_E; //Also there is a simplest way to obtain view.
+            ICSSoft.STORMNET.View cd_e_for_cdda_view = Information.GetView("CD_E", typeof(CDDA)); //Base-class defined views are valid for any descendant classes too.
+            ICSSoft.STORMNET.View cd_e_for_cddd_view = Information.GetView("CD_E", typeof(CDDD)); //Base-class defined views are valid for any descendant classes too.
+
+            // 2. Getting names for compatible static view for different classes 
+            string[] commonviewnames = Information.AllViews(new Type[] { typeof(CDDA), typeof(CDDD) });
+
+
+            // TODO: Move to advanced part
+
+            // 3. How to create a view dynamically. 
+            // If you need to create a view "in code", just use one of following:
+            // a. Use default view constructor, then fill properties:
+            ICSSoft.STORMNET.View dynaview = new ICSSoft.STORMNET.View(); // Create an empty view.
+            dynaview.DefineClassType = typeof(CDDA); // Set a class for which the view is.
+            dynaview.AddProperties(new string[] { "Name", "TotalTracks", "Publisher.Name" }); // dynaview.AddProperty(...) // You can add own and master properties as an array or one by one
+            dynaview.AddMasterInView("Publisher"); // Add a master in view.
+            //Also you can use dynaview.AddDetailInView method to link detail views
+
+            //b. Creating a dytnamic view thru ViewAttribute:
+            ICSSoft.STORMNET.View dynaview1 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView", new string[] { "Name", "Publisher.Name" }), typeof(CDDA));
+
+            // 4. Operations with views. Each view acts as a set of properties.
+            ICSSoft.STORMNET.View view1 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView1", new string[] { "Name", "Publisher.Name" }), typeof(CDDA));
+            ICSSoft.STORMNET.View view2 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView1", new string[] { "Name", "TotalTracks" }), typeof(CDDA));
+            // a. Concatenate views
+            ICSSoft.STORMNET.View concatresult = (view1 | view2); // Concatenation result contains all properties of both source views ("Name", "Publisher.Name", "TotalTracks");
+            // b. Intersection
+            ICSSoft.STORMNET.View intersectresult = (view1 & view2); //Intersection result contains common properties only ("Name");
+            // c. Subtraction
+            ICSSoft.STORMNET.View subtractsectresult = (view1 - view2); //Subtraction result contains properties from view1, except all defined in view2 ("Publisher.Name");
+            // d. Exclusive concatenation
+            ICSSoft.STORMNET.View xconcatresult = (view1 ^ view2); // Common properties excluded ("Publisher.Name", "TotalTracks");
+
+
+            MessageBox.Show("OK.");
+        }
     }
 }

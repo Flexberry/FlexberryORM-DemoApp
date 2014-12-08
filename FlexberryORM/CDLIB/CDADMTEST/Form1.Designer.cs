@@ -33,6 +33,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
@@ -55,17 +59,13 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -126,6 +126,48 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1. Basic";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button23);
+            this.groupBox3.Controls.Add(this.button24);
+            this.groupBox3.Controls.Add(this.button22);
+            this.groupBox3.Location = new System.Drawing.Point(6, 242);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(638, 131);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "A lot of objects with multiple masters";
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(6, 19);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(446, 23);
+            this.button23.TabIndex = 2;
+            this.button23.Text = "8. Prepare masters";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(6, 77);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(446, 23);
+            this.button24.TabIndex = 2;
+            this.button24.Text = "10. Load";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(6, 48);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(446, 23);
+            this.button22.TabIndex = 2;
+            this.button22.Text = "9. Create 10000";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // groupBox2
             // 
@@ -229,8 +271,9 @@
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(446, 23);
             this.button17.TabIndex = 3;
-            this.button17.Text = "3. Views and inheritance";
+            this.button17.Text = "2. Views and inheritance";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button12
             // 
@@ -247,8 +290,9 @@
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(446, 23);
             this.button20.TabIndex = 3;
-            this.button20.Text = "2. Not stored/calculated properties";
+            this.button20.Text = "1. Not stored/calculated properties";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button10
             // 
@@ -348,48 +392,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select sample complexity level:";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button23);
-            this.groupBox3.Controls.Add(this.button24);
-            this.groupBox3.Controls.Add(this.button22);
-            this.groupBox3.Location = new System.Drawing.Point(6, 242);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(638, 131);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "A lot of objects with multiple masters";
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(6, 48);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(446, 23);
-            this.button22.TabIndex = 2;
-            this.button22.Text = "9. Create 10000";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(6, 19);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(446, 23);
-            this.button23.TabIndex = 2;
-            this.button23.Text = "8. Prepare masters";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(6, 77);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(446, 23);
-            this.button24.TabIndex = 2;
-            this.button24.Text = "10. Load";
-            this.button24.UseVisualStyleBackColor = true;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,11 +402,11 @@
             this.Text = "FLEXBERRY ORM samples";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
