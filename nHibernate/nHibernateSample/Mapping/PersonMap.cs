@@ -15,7 +15,7 @@ namespace nHibernateSample.Mapping {
         public PersonMap() {
 			Schema("dbo");
 			Lazy(true);
-			Id(x => x.Primarykey, map => map.Generator(Generators.Assigned));
+			Id(x => x.Primarykey, map => map.Generator(Generators.Guid));
 			Property(x => x.Firstname);
 			Property(x => x.Lastname);
         }

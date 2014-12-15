@@ -15,7 +15,7 @@ namespace nHibernateSample.Mapping {
         public DVDMap() {
 			Schema("dbo");
 			Lazy(true);
-			Id(x => x.Primarykey, map => map.Generator(Generators.Assigned));
+			Id(x => x.Primarykey, map => map.Generator(Generators.Guid));
 			Property(x => x.Version);
 			Property(x => x.Capacity);
 			Property(x => x.Name);

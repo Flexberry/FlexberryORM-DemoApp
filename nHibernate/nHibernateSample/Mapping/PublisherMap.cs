@@ -15,7 +15,7 @@ namespace nHibernateSample.Mapping {
         public PublisherMap() {
 			Schema("dbo");
 			Lazy(true);
-			Id(x => x.Primarykey, map => map.Generator(Generators.Assigned));
+			Id(x => x.Primarykey, map => map.Generator(Generators.Guid));
 			Property(x => x.Name);
 			ManyToOne(x => x.Country, map => { map.Column("Country"); map.Cascade(Cascade.None); });
         }

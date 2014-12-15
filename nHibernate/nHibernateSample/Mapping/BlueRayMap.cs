@@ -15,7 +15,7 @@ namespace nHibernateSample.Mapping {
         public BlueRayMap() {
 			Schema("dbo");
 			Lazy(true);
-			Id(x => x.Primarykey, map => map.Generator(Generators.Assigned));
+			Id(x => x.Primarykey, map => map.Generator(Generators.Guid));
 			Property(x => x.Capacity);
 			Property(x => x.Name);
 			ManyToOne(x => x.Publisher, map => { map.Column("Publisher"); map.Cascade(Cascade.None); });

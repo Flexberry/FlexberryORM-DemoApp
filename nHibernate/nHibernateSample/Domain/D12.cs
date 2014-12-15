@@ -15,8 +15,8 @@ namespace nHibernateSample.Domain {
         public virtual string S3 { get; set; }
         public virtual string S4 { get; set; }
         public virtual string S5 { get; set; }
-        public List<D121> D121List { get; set; }
-        public List<D122> D122List { get; set; }
-        public List<D123> D123List { get; set; }
+        public virtual List<D121> D121List { get; set; }
+        public virtual List<D122> D122List { get; set; }
+        public virtual List<D123> D123List { get; set; }
     }
 }

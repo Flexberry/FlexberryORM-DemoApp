@@ -15,7 +15,7 @@ namespace nHibernateSample.Mapping {
         public TrackMap() {
 			Schema("dbo");
 			Lazy(true);
-			Id(x => x.Primarykey, map => map.Generator(Generators.Assigned));
+			Id(x => x.Primarykey, map => map.Generator(Generators.Guid));
 			Property(x => x.Name);
 			Property(x => x.Length);
 			ManyToOne(x => x.Author, map => { map.Column("Author"); map.Cascade(Cascade.None); });
