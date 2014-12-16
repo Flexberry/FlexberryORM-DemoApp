@@ -2,10 +2,10 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 
-
-namespace nHibernateSample.Domain {
-    
-    public class Internal {
+namespace nHibernateSample.Domain
+{
+    public class Internal
+    {
         public virtual System.Guid Primarykey { get; set; }
         public virtual Master0 Master0 { get; set; }
         public virtual Master01 Master01 { get; set; }

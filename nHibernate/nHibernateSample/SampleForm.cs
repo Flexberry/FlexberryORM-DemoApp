@@ -9,6 +9,8 @@ using System.Windows.Forms;
 
 namespace nHibernateSample
 {
+    using System.Diagnostics;
+
     using nHibernateSample.Domain;
 
     public partial class SampleForm : Form
@@ -42,6 +44,31 @@ namespace nHibernateSample
                     textBox1.AppendText(cdda.Name+Environment.NewLine);
                 }
             }
+        }
+
+        private void openSession_Click(object sender, EventArgs e)
+        {
+            var factory = NHibernateHelper.SessionFactory;
+        }
+
+        private void createDetails_Click(object sender, EventArgs e)
+        {
+            var d0 = new D0();
+            DetailGenerator.Generate(d0, 10, "D");
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var trn = session.BeginTransaction())
+                {
+                    session.SaveOrUpdate(d0);
+                    trn.Commit();
+                    stopwatch.Stop();
+                }
+            }
+
+            MessageBox.Show(string.Format("Time taken for persistence: {0} ms", stopwatch.ElapsedMilliseconds));
         }
     }
 }

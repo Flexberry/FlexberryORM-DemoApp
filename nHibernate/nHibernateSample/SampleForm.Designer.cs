@@ -38,6 +38,7 @@
             this.loadMasters = new System.Windows.Forms.Button();
             this.create10000 = new System.Windows.Forms.Button();
             this.listItems = new System.Windows.Forms.Button();
+            this.openSession = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +47,7 @@
             // 
             this.groupBox1.Controls.Add(this.createDetails);
             this.groupBox1.Controls.Add(this.readD0);
-            this.groupBox1.Location = new System.Drawing.Point(12, 66);
+            this.groupBox1.Location = new System.Drawing.Point(12, 151);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(382, 77);
             this.groupBox1.TabIndex = 8;
@@ -61,6 +62,7 @@
             this.createDetails.TabIndex = 2;
             this.createDetails.Text = "3. Create";
             this.createDetails.UseVisualStyleBackColor = true;
+            this.createDetails.Click += new System.EventHandler(this.createDetails_Click);
             // 
             // readD0
             // 
@@ -73,9 +75,9 @@
             // 
             // readSomeProperties
             // 
-            this.readSomeProperties.Location = new System.Drawing.Point(12, 37);
+            this.readSomeProperties.Location = new System.Drawing.Point(12, 119);
             this.readSomeProperties.Name = "readSomeProperties";
-            this.readSomeProperties.Size = new System.Drawing.Size(355, 23);
+            this.readSomeProperties.Size = new System.Drawing.Size(361, 23);
             this.readSomeProperties.TabIndex = 7;
             this.readSomeProperties.Text = "2. Read some properties";
             this.readSomeProperties.UseVisualStyleBackColor = true;
@@ -95,9 +97,9 @@
             // 
             // readWithMaster
             // 
-            this.readWithMaster.Location = new System.Drawing.Point(12, 8);
+            this.readWithMaster.Location = new System.Drawing.Point(12, 90);
             this.readWithMaster.Name = "readWithMaster";
-            this.readWithMaster.Size = new System.Drawing.Size(355, 23);
+            this.readWithMaster.Size = new System.Drawing.Size(361, 23);
             this.readWithMaster.TabIndex = 5;
             this.readWithMaster.Text = "1. Read object with related master";
             this.readWithMaster.UseVisualStyleBackColor = true;
@@ -107,7 +109,7 @@
             // 
             this.groupBox2.Controls.Add(this.loadMasters);
             this.groupBox2.Controls.Add(this.create10000);
-            this.groupBox2.Location = new System.Drawing.Point(12, 149);
+            this.groupBox2.Location = new System.Drawing.Point(400, 151);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(382, 79);
             this.groupBox2.TabIndex = 9;
@@ -134,19 +136,30 @@
             // 
             // listItems
             // 
-            this.listItems.Location = new System.Drawing.Point(410, 8);
+            this.listItems.Location = new System.Drawing.Point(12, 37);
             this.listItems.Name = "listItems";
-            this.listItems.Size = new System.Drawing.Size(75, 23);
+            this.listItems.Size = new System.Drawing.Size(361, 23);
             this.listItems.TabIndex = 10;
             this.listItems.Text = "List";
             this.listItems.UseVisualStyleBackColor = true;
             this.listItems.Click += new System.EventHandler(this.listItems_Click);
+            // 
+            // openSession
+            // 
+            this.openSession.Location = new System.Drawing.Point(12, 8);
+            this.openSession.Name = "openSession";
+            this.openSession.Size = new System.Drawing.Size(361, 23);
+            this.openSession.TabIndex = 11;
+            this.openSession.Text = "Init SessionFactory";
+            this.openSession.UseVisualStyleBackColor = true;
+            this.openSession.Click += new System.EventHandler(this.openSession_Click);
             // 
             // SampleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 697);
+            this.Controls.Add(this.openSession);
             this.Controls.Add(this.listItems);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.readSomeProperties);
@@ -174,6 +187,7 @@
         private System.Windows.Forms.Button loadMasters;
         private System.Windows.Forms.Button create10000;
         private System.Windows.Forms.Button listItems;
+        private System.Windows.Forms.Button openSession;
     }
 }
 

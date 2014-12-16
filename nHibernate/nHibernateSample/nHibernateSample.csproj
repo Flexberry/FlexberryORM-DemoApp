@@ -65,11 +65,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetailGenerator.cs" />
     <Compile Include="Domain\BlueRay.cs" />
     <Compile Include="Domain\CD.cs" />
     <Compile Include="Domain\CDDA.cs" />
     <Compile Include="Domain\CDDD.cs" />
     <Compile Include="Domain\Country.cs" />
+    <Compile Include="Domain\D.cs" />
     <Compile Include="Domain\D0.cs" />
     <Compile Include="Domain\D1.cs" />
     <Compile Include="Domain\D11.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="Domain\Master10.cs" />
     <Compile Include="Domain\Master11.cs" />
     <Compile Include="Domain\Master12.cs" />
+    <Compile Include="Domain\MasterBase.cs" />
     <Compile Include="Domain\Masterderived01.cs" />
     <Compile Include="Domain\Masterderived02.cs" />
     <Compile Include="Domain\Masterderived03.cs" />
@@ -132,6 +135,7 @@
     <Compile Include="Domain\Publisher.cs" />
     <Compile Include="Domain\Track.cs" />
     <Compile Include="NHibernateHelper.cs" />
+    <Compile Include="RandomStringGenerator.cs" />
     <Compile Include="SampleForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -2,10 +2,10 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 
-
-namespace nHibernateSample.Domain {
-    
-    public class Track {
+namespace nHibernateSample.Domain
+{
+    public class Track
+    {
         public virtual System.Guid Primarykey { get; set; }
         public virtual Person Author { get; set; }
         public virtual Person Singer { get; set; }
