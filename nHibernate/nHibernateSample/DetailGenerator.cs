@@ -26,8 +26,6 @@ namespace nHibernateSample
             SetProperty(master, "S4", rnd.Generate(200));
             SetProperty(master, "S5", rnd.Generate(200));
             
-            Type masterType = master.GetType();
-
             if (baseDetailName.Length < 4)
             {
                 for (int i = 1; i <= 3; i++)
@@ -48,8 +46,7 @@ namespace nHibernateSample
                         detailCollection.Add(newDetail);
                     }
 
-                    masterType.GetProperty(detailName+"List").SetValue(master, detailCollection, null);
-
+                    SetProperty(master, detailName+"List", detailCollection);
                 }
             }
         }

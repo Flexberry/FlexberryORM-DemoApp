@@ -28,7 +28,6 @@ namespace nHibernateSample.Mapping
                 map =>
                     {
                         map.Column("D23");
-                        map.PropertyRef("Primarykey");
                         map.Cascade(Cascade.None);
                     });
         }
