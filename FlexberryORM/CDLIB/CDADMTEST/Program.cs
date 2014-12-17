@@ -15,15 +15,6 @@
         [STAThread]
         public static void Main()
         {
-            // Set DataDirectory domain property for relative connection string.
-            string executable = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            string path = Path.GetDirectoryName(executable);
-            if (path != null)
-            {
-                path = Path.GetFullPath(Path.Combine(path, @"..\..\..\..\..\DataBase"));
-                AppDomain.CurrentDomain.SetData("DataDirectory", path);
-            }
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
