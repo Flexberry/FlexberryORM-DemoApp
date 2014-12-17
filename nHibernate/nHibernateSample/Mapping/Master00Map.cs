@@ -10,12 +10,13 @@ using nHibernateSample.Domain;
 
 namespace nHibernateSample.Mapping
 {
-    public class Master0Map : ClassMapping<Master0>
+    public class Master00Map : ClassMapping<Master00>
     {
-        public Master0Map()
+        public Master00Map()
         {
             Schema("dbo");
-            Lazy(true);
+            Lazy(false);
+            Table("Master0");
             Id(x => x.Primarykey, map => map.Generator(Generators.Guid));
             Property(x => x.S0);
             Property(x => x.S1);

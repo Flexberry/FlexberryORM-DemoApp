@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace nHibernateSample.Domain
 {
-    public class Masterderived02 : Master0
+    public class Masterderived02 : Master00
     {
     }
 }

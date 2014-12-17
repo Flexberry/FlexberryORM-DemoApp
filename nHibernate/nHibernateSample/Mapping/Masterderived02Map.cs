@@ -15,7 +15,7 @@ namespace nHibernateSample.Mapping
         public Masterderived02Map()
         {
             Schema("dbo");
-            Lazy(true);
+           Lazy(false);
             Property(x => x.S0);
             Property(x => x.S1);
             Property(x => x.S2);

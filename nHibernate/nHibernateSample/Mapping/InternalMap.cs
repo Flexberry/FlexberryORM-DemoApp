@@ -29,7 +29,7 @@ namespace nHibernateSample.Mapping
             Property(x => x.S9);
 
             ManyToOne(
-                x => x.Master0,
+                x => x.Master00,
                 map =>
                     {
                         map.Column(c => c.Name("MasterSpecial_m0"));

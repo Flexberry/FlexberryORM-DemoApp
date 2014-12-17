@@ -65,7 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DetailGenerator.cs" />
+    <Compile Include="ObjectGenerator.cs" />
     <Compile Include="Domain\BlueRay.cs" />
     <Compile Include="Domain\CD.cs" />
     <Compile Include="Domain\CDDA.cs" />
@@ -114,7 +114,7 @@
     <Compile Include="Domain\D333.cs" />
     <Compile Include="Domain\DVD.cs" />
     <Compile Include="Domain\Internal.cs" />
-    <Compile Include="Domain\Master0.cs" />
+    <Compile Include="Domain\Master00.cs" />
     <Compile Include="Domain\Master01.cs" />
     <Compile Include="Domain\Master02.cs" />
     <Compile Include="Domain\Master03.cs" />
@@ -198,7 +198,7 @@
     <Compile Include="Mapping\Master07Map.cs" />
     <Compile Include="Mapping\Master08Map.cs" />
     <Compile Include="Mapping\Master09Map.cs" />
-    <Compile Include="Mapping\Master0Map.cs" />
+    <Compile Include="Mapping\Master00Map.cs" />
     <Compile Include="Mapping\Master10Map.cs" />
     <Compile Include="Mapping\Master11Map.cs" />
     <Compile Include="Mapping\Master12Map.cs" />

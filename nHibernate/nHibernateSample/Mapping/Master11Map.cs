@@ -15,7 +15,7 @@ namespace nHibernateSample.Mapping
         public Master11Map()
         {
             Schema("dbo");
-            Lazy(true);
+           Lazy(false);
             Id(x => x.Primarykey, map => map.Generator(Generators.Guid));
             Property(x => x.S0);
             Property(x => x.S1);

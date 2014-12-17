@@ -7,7 +7,7 @@ namespace nHibernateSample
 {
     using System.Collections;
 
-    class DetailGenerator
+    class ObjectGenerator
     {
         private static readonly RandomStringGenerator rnd = new RandomStringGenerator();
 
@@ -17,7 +17,7 @@ namespace nHibernateSample
             info.SetValue(obj, value, null);
         }
 
-        public static int Count(object master, string baseDetailName)
+        public static int CountDetails(object master, string baseDetailName)
         {
             int sum = 0;
 
@@ -27,11 +27,11 @@ namespace nHibernateSample
                 {
                     string detailName = string.Format("{0}{1}", baseDetailName, i);
                     var detailCollection = (IEnumerable)master.GetType().GetProperty(detailName + "List").GetValue(master, null);
-                    
+
                     sum += (int)detailCollection.GetType().GetProperty("Count").GetValue(detailCollection, null);
                     foreach (var detail in detailCollection)
                     {
-                        sum += Count(detail, detailName);
+                        sum += CountDetails(detail, detailName);
                     }
                 }
             }
@@ -39,7 +39,7 @@ namespace nHibernateSample
             return sum;
         }
 
-        public static void Generate(object master, int qty, string baseDetailName)
+        public static void GenerateDetails(object master, int qty, string baseDetailName)
         {
             SetProperty(master, "Name", System.IO.Path.GetRandomFileName());
             SetProperty(master, "S1", rnd.Generate(200));
@@ -47,7 +47,7 @@ namespace nHibernateSample
             SetProperty(master, "S3", rnd.Generate(200));
             SetProperty(master, "S4", rnd.Generate(200));
             SetProperty(master, "S5", rnd.Generate(200));
-            
+
             if (baseDetailName.Length < 4)
             {
                 for (int i = 1; i < 4; i++)
@@ -59,18 +59,41 @@ namespace nHibernateSample
                     var listType = typeof(List<>);
                     var constructedListType = listType.MakeGenericType(detailType);
                     var detailCollection = (IList)Activator.CreateInstance(constructedListType);
-                    
+
                     for (int j = 0; j < qty; j++)
                     {
                         object newDetail = Activator.CreateInstance(detailType);
                         SetProperty(newDetail, baseDetailName == "D" ? "D0" : baseDetailName, master);
-                        Generate(newDetail, qty, detailName);
+                        GenerateDetails(newDetail, qty, detailName);
                         detailCollection.Add(newDetail);
                     }
 
-                    SetProperty(master, detailName+"List", detailCollection);
+                    SetProperty(master, detailName + "List", detailCollection);
                 }
             }
+        }
+
+        public static IEnumerable<object> GenerateMasters(int qty)
+        {
+            var result = new List<object>(12 * qty);
+
+            for (int i = 0; i < 13; i++)
+            {
+                var masterTypeName = string.Format("nHibernateSample.Domain.Master{0:00}", i);
+                var masterType = Type.GetType(masterTypeName);
+                for (int j = 0; j < qty; j++)
+                {
+                    var newMaster = Activator.CreateInstance(masterType);
+                    for (int s = 0; s < 10; s++)
+                    {
+                        SetProperty(newMaster, "S" + s, rnd.Generate(200));
+                    }
+
+                    result.Add(newMaster);
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -35,6 +35,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.readWithMaster = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.createMasters = new System.Windows.Forms.Button();
             this.loadMasters = new System.Windows.Forms.Button();
             this.create10000 = new System.Windows.Forms.Button();
             this.listItems = new System.Windows.Forms.Button();
@@ -47,9 +48,9 @@
             // 
             this.groupBox1.Controls.Add(this.createDetails);
             this.groupBox1.Controls.Add(this.readD0);
-            this.groupBox1.Location = new System.Drawing.Point(12, 151);
+            this.groupBox1.Location = new System.Drawing.Point(12, 124);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(382, 77);
+            this.groupBox1.Size = new System.Drawing.Size(382, 104);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Multiple details";
@@ -60,7 +61,7 @@
             this.createDetails.Name = "createDetails";
             this.createDetails.Size = new System.Drawing.Size(355, 23);
             this.createDetails.TabIndex = 2;
-            this.createDetails.Text = "3. Create";
+            this.createDetails.Text = "Create detail hierarhy";
             this.createDetails.UseVisualStyleBackColor = true;
             this.createDetails.Click += new System.EventHandler(this.createDetails_Click);
             // 
@@ -70,17 +71,17 @@
             this.readD0.Name = "readD0";
             this.readD0.Size = new System.Drawing.Size(355, 23);
             this.readD0.TabIndex = 2;
-            this.readD0.Text = "4. Read D0";
+            this.readD0.Text = "Read random D0 with hierarhy";
             this.readD0.UseVisualStyleBackColor = true;
             this.readD0.Click += new System.EventHandler(this.readD0_Click);
             // 
             // readSomeProperties
             // 
-            this.readSomeProperties.Location = new System.Drawing.Point(12, 119);
+            this.readSomeProperties.Location = new System.Drawing.Point(12, 95);
             this.readSomeProperties.Name = "readSomeProperties";
             this.readSomeProperties.Size = new System.Drawing.Size(361, 23);
             this.readSomeProperties.TabIndex = 7;
-            this.readSomeProperties.Text = "2. Read some properties";
+            this.readSomeProperties.Text = "Read some properties";
             this.readSomeProperties.UseVisualStyleBackColor = true;
             this.readSomeProperties.Click += new System.EventHandler(this.readSomeProperties_Click);
             // 
@@ -98,42 +99,55 @@
             // 
             // readWithMaster
             // 
-            this.readWithMaster.Location = new System.Drawing.Point(12, 90);
+            this.readWithMaster.Location = new System.Drawing.Point(12, 66);
             this.readWithMaster.Name = "readWithMaster";
             this.readWithMaster.Size = new System.Drawing.Size(361, 23);
             this.readWithMaster.TabIndex = 5;
-            this.readWithMaster.Text = "1. Read object with related master";
+            this.readWithMaster.Text = "Read object with related master";
             this.readWithMaster.UseVisualStyleBackColor = true;
             this.readWithMaster.Click += new System.EventHandler(this.readWithMaster_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.createMasters);
             this.groupBox2.Controls.Add(this.loadMasters);
             this.groupBox2.Controls.Add(this.create10000);
-            this.groupBox2.Location = new System.Drawing.Point(400, 151);
+            this.groupBox2.Location = new System.Drawing.Point(400, 124);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(382, 79);
+            this.groupBox2.Size = new System.Drawing.Size(382, 106);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Multimaster";
             // 
+            // createMasters
+            // 
+            this.createMasters.Location = new System.Drawing.Point(6, 17);
+            this.createMasters.Name = "createMasters";
+            this.createMasters.Size = new System.Drawing.Size(355, 25);
+            this.createMasters.TabIndex = 3;
+            this.createMasters.Text = "Generate masters";
+            this.createMasters.UseVisualStyleBackColor = true;
+            this.createMasters.Click += new System.EventHandler(this.createMasters_Click);
+            // 
             // loadMasters
             // 
-            this.loadMasters.Location = new System.Drawing.Point(6, 48);
+            this.loadMasters.Location = new System.Drawing.Point(6, 77);
             this.loadMasters.Name = "loadMasters";
             this.loadMasters.Size = new System.Drawing.Size(355, 23);
             this.loadMasters.TabIndex = 2;
-            this.loadMasters.Text = "5. Load";
+            this.loadMasters.Text = "Load Internals with masters";
             this.loadMasters.UseVisualStyleBackColor = true;
+            this.loadMasters.Click += new System.EventHandler(this.loadMasters_Click);
             // 
             // create10000
             // 
-            this.create10000.Location = new System.Drawing.Point(6, 19);
+            this.create10000.Location = new System.Drawing.Point(6, 48);
             this.create10000.Name = "create10000";
             this.create10000.Size = new System.Drawing.Size(355, 23);
             this.create10000.TabIndex = 2;
-            this.create10000.Text = "4. Create 10000";
+            this.create10000.Text = "Create 10000 with masters";
             this.create10000.UseVisualStyleBackColor = true;
+            this.create10000.Click += new System.EventHandler(this.create10000_Click);
             // 
             // listItems
             // 
@@ -189,6 +203,7 @@
         private System.Windows.Forms.Button create10000;
         private System.Windows.Forms.Button listItems;
         private System.Windows.Forms.Button openSession;
+        private System.Windows.Forms.Button createMasters;
     }
 }
 
