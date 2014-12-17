@@ -72,6 +72,7 @@
             this.readD0.TabIndex = 2;
             this.readD0.Text = "4. Read D0";
             this.readD0.UseVisualStyleBackColor = true;
+            this.readD0.Click += new System.EventHandler(this.readD0_Click);
             // 
             // readSomeProperties
             // 

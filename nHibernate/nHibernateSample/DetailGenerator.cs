@@ -17,6 +17,28 @@ namespace nHibernateSample
             info.SetValue(obj, value, null);
         }
 
+        public static int Count(object master, string baseDetailName)
+        {
+            int sum = 0;
+
+            if (baseDetailName.Length < 4)
+            {
+                for (int i = 1; i < 4; i++)
+                {
+                    string detailName = string.Format("{0}{1}", baseDetailName, i);
+                    var detailCollection = (IEnumerable)master.GetType().GetProperty(detailName + "List").GetValue(master, null);
+                    
+                    sum += (int)detailCollection.GetType().GetProperty("Count").GetValue(detailCollection, null);
+                    foreach (var detail in detailCollection)
+                    {
+                        sum += Count(detail, detailName);
+                    }
+                }
+            }
+
+            return sum;
+        }
+
         public static void Generate(object master, int qty, string baseDetailName)
         {
             SetProperty(master, "Name", System.IO.Path.GetRandomFileName());
@@ -28,7 +50,7 @@ namespace nHibernateSample
             
             if (baseDetailName.Length < 4)
             {
-                for (int i = 1; i <= 3; i++)
+                for (int i = 1; i < 4; i++)
                 {
                     string detailName = string.Format("{0}{1}", baseDetailName, i);
 
