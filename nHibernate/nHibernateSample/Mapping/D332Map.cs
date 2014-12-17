@@ -15,6 +15,7 @@ namespace nHibernateSample.Mapping
         public D332Map()
         {
             Schema("dbo");
+            Lazy(false);
             Id(x => x.Primarykey, map => map.Generator(Generators.Guid));
             Property(x => x.Name);
             Property(x => x.S1);
