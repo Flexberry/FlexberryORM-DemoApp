@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B813A44A-02A9-46B9-9270-CE64209BE04C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nHibernateSample</RootNamespace>
+    <AssemblyName>nHibernateSample</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.4.0.2.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ObjectGenerator.cs" />
+    <Compile Include="Domain\BlueRay.cs" />
+    <Compile Include="Domain\CD.cs" />
+    <Compile Include="Domain\CDDA.cs" />
+    <Compile Include="Domain\CDDD.cs" />
+    <Compile Include="Domain\Country.cs" />
+    <Compile Include="Domain\D.cs" />
+    <Compile Include="Domain\D0.cs" />
+    <Compile Include="Domain\D1.cs" />
+    <Compile Include="Domain\D11.cs" />
+    <Compile Include="Domain\D111.cs" />
+    <Compile Include="Domain\D112.cs" />
+    <Compile Include="Domain\D113.cs" />
+    <Compile Include="Domain\D12.cs" />
+    <Compile Include="Domain\D121.cs" />
+    <Compile Include="Domain\D122.cs" />
+    <Compile Include="Domain\D123.cs" />
+    <Compile Include="Domain\D13.cs" />
+    <Compile Include="Domain\D131.cs" />
+    <Compile Include="Domain\D132.cs" />
+    <Compile Include="Domain\D133.cs" />
+    <Compile Include="Domain\D2.cs" />
+    <Compile Include="Domain\D21.cs" />
+    <Compile Include="Domain\D211.cs" />
+    <Compile Include="Domain\D212.cs" />
+    <Compile Include="Domain\D213.cs" />
+    <Compile Include="Domain\D22.cs" />
+    <Compile Include="Domain\D221.cs" />
+    <Compile Include="Domain\D222.cs" />
+    <Compile Include="Domain\D223.cs" />
+    <Compile Include="Domain\D23.cs" />
+    <Compile Include="Domain\D231.cs" />
+    <Compile Include="Domain\D232.cs" />
+    <Compile Include="Domain\D233.cs" />
+    <Compile Include="Domain\D3.cs" />
+    <Compile Include="Domain\D31.cs" />
+    <Compile Include="Domain\D311.cs" />
+    <Compile Include="Domain\D312.cs" />
+    <Compile Include="Domain\D313.cs" />
+    <Compile Include="Domain\D32.cs" />
+    <Compile Include="Domain\D321.cs" />
+    <Compile Include="Domain\D322.cs" />
+    <Compile Include="Domain\D323.cs" />
+    <Compile Include="Domain\D33.cs" />
+    <Compile Include="Domain\D331.cs" />
+    <Compile Include="Domain\D332.cs" />
+    <Compile Include="Domain\D333.cs" />
+    <Compile Include="Domain\DVD.cs" />
+    <Compile Include="Domain\Internal.cs" />
+    <Compile Include="Domain\Master00.cs" />
+    <Compile Include="Domain\Master01.cs" />
+    <Compile Include="Domain\Master02.cs" />
+    <Compile Include="Domain\Master03.cs" />
+    <Compile Include="Domain\Master04.cs" />
+    <Compile Include="Domain\Master05.cs" />
+    <Compile Include="Domain\Master06.cs" />
+    <Compile Include="Domain\Master07.cs" />
+    <Compile Include="Domain\Master08.cs" />
+    <Compile Include="Domain\Master09.cs" />
+    <Compile Include="Domain\Master10.cs" />
+    <Compile Include="Domain\Master11.cs" />
+    <Compile Include="Domain\Master12.cs" />
+    <Compile Include="Domain\MasterBase.cs" />
+    <Compile Include="Domain\Masterderived01.cs" />
+    <Compile Include="Domain\Masterderived02.cs" />
+    <Compile Include="Domain\Masterderived03.cs" />
+    <Compile Include="Domain\Person.cs" />
+    <Compile Include="Domain\Publisher.cs" />
+    <Compile Include="Domain\Track.cs" />
+    <Compile Include="NHibernateHelper.cs" />
+    <Compile Include="RandomStringGenerator.cs" />
+    <Compile Include="SampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleForm.Designer.cs">
+      <DependentUpon>SampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mapping\BlueRayMap.cs" />
+    <Compile Include="Mapping\CDDAMap.cs" />
+    <Compile Include="Mapping\CDDDMap.cs" />
+    <Compile Include="Mapping\CDMap.cs" />
+    <Compile Include="Mapping\CountryMap.cs" />
+    <Compile Include="Mapping\D0Map.cs" />
+    <Compile Include="Mapping\D111Map.cs" />
+    <Compile Include="Mapping\D112Map.cs" />
+    <Compile Include="Mapping\D113Map.cs" />
+    <Compile Include="Mapping\D11Map.cs" />
+    <Compile Include="Mapping\D121Map.cs" />
+    <Compile Include="Mapping\D122Map.cs" />
+    <Compile Include="Mapping\D123Map.cs" />
+    <Compile Include="Mapping\D12Map.cs" />
+    <Compile Include="Mapping\D131Map.cs" />
+    <Compile Include="Mapping\D132Map.cs" />
+    <Compile Include="Mapping\D133Map.cs" />
+    <Compile Include="Mapping\D13Map.cs" />
+    <Compile Include="Mapping\D1Map.cs" />
+    <Compile Include="Mapping\D211Map.cs" />
+    <Compile Include="Mapping\D212Map.cs" />
+    <Compile Include="Mapping\D213Map.cs" />
+    <Compile Include="Mapping\D21Map.cs" />
+    <Compile Include="Mapping\D221Map.cs" />
+    <Compile Include="Mapping\D222Map.cs" />
+    <Compile Include="Mapping\D223Map.cs" />
+    <Compile Include="Mapping\D22Map.cs" />
+    <Compile Include="Mapping\D231Map.cs" />
+    <Compile Include="Mapping\D232Map.cs" />
+    <Compile Include="Mapping\D233Map.cs" />
+    <Compile Include="Mapping\D23Map.cs" />
+    <Compile Include="Mapping\D2Map.cs" />
+    <Compile Include="Mapping\D311Map.cs" />
+    <Compile Include="Mapping\D312Map.cs" />
+    <Compile Include="Mapping\D313Map.cs" />
+    <Compile Include="Mapping\D31Map.cs" />
+    <Compile Include="Mapping\D321Map.cs" />
+    <Compile Include="Mapping\D322Map.cs" />
+    <Compile Include="Mapping\D323Map.cs" />
+    <Compile Include="Mapping\D32Map.cs" />
+    <Compile Include="Mapping\D331Map.cs" />
+    <Compile Include="Mapping\D332Map.cs" />
+    <Compile Include="Mapping\D333Map.cs" />
+    <Compile Include="Mapping\D33Map.cs" />
+    <Compile Include="Mapping\D3Map.cs" />
+    <Compile Include="Mapping\DVDMap.cs" />
+    <Compile Include="Mapping\InternalMap.cs" />
+    <Compile Include="Mapping\Master01Map.cs" />
+    <Compile Include="Mapping\Master02Map.cs" />
+    <Compile Include="Mapping\Master03Map.cs" />
+    <Compile Include="Mapping\Master04Map.cs" />
+    <Compile Include="Mapping\Master05Map.cs" />
+    <Compile Include="Mapping\Master06Map.cs" />
+    <Compile Include="Mapping\Master07Map.cs" />
+    <Compile Include="Mapping\Master08Map.cs" />
+    <Compile Include="Mapping\Master09Map.cs" />
+    <Compile Include="Mapping\Master00Map.cs" />
+    <Compile Include="Mapping\Master10Map.cs" />
+    <Compile Include="Mapping\Master11Map.cs" />
+    <Compile Include="Mapping\Master12Map.cs" />
+    <Compile Include="Mapping\Masterderived01Map.cs" />
+    <Compile Include="Mapping\Masterderived02Map.cs" />
+    <Compile Include="Mapping\Masterderived03Map.cs" />
+    <Compile Include="Mapping\PersonMap.cs" />
+    <Compile Include="Mapping\PublisherMap.cs" />
+    <Compile Include="Mapping\TrackMap.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SampleForm.resx">
+      <DependentUpon>SampleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\DataBase\FlexberryORMSample.mdf">
+      <Link>DataBase\FlexberryORMSample.mdf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\DataBase\FlexberryORMSample_log.ldf">
+      <Link>DataBase\FlexberryORMSample_log.ldf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
