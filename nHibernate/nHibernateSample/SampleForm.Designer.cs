@@ -31,7 +31,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.createDetails = new System.Windows.Forms.Button();
             this.readD0 = new System.Windows.Forms.Button();
-            this.readSomeProperties = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.readWithMaster = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -40,6 +39,8 @@
             this.create10000 = new System.Windows.Forms.Button();
             this.listItems = new System.Windows.Forms.Button();
             this.openSession = new System.Windows.Forms.Button();
+            this.generateSheme = new System.Windows.Forms.Button();
+            this.removeConstaint = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -48,9 +49,9 @@
             // 
             this.groupBox1.Controls.Add(this.createDetails);
             this.groupBox1.Controls.Add(this.readD0);
-            this.groupBox1.Location = new System.Drawing.Point(12, 124);
+            this.groupBox1.Location = new System.Drawing.Point(12, 95);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(382, 104);
+            this.groupBox1.Size = new System.Drawing.Size(382, 135);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Multiple details";
@@ -74,16 +75,6 @@
             this.readD0.Text = "Read random D0 with hierarhy";
             this.readD0.UseVisualStyleBackColor = true;
             this.readD0.Click += new System.EventHandler(this.readD0_Click);
-            // 
-            // readSomeProperties
-            // 
-            this.readSomeProperties.Location = new System.Drawing.Point(12, 95);
-            this.readSomeProperties.Name = "readSomeProperties";
-            this.readSomeProperties.Size = new System.Drawing.Size(361, 23);
-            this.readSomeProperties.TabIndex = 7;
-            this.readSomeProperties.Text = "Read some properties";
-            this.readSomeProperties.UseVisualStyleBackColor = true;
-            this.readSomeProperties.Click += new System.EventHandler(this.readSomeProperties_Click);
             // 
             // textBox1
             // 
@@ -109,12 +100,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.removeConstaint);
             this.groupBox2.Controls.Add(this.createMasters);
             this.groupBox2.Controls.Add(this.loadMasters);
             this.groupBox2.Controls.Add(this.create10000);
-            this.groupBox2.Location = new System.Drawing.Point(400, 124);
+            this.groupBox2.Location = new System.Drawing.Point(400, 95);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(382, 106);
+            this.groupBox2.Size = new System.Drawing.Size(382, 133);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Multimaster";
@@ -131,7 +123,7 @@
             // 
             // loadMasters
             // 
-            this.loadMasters.Location = new System.Drawing.Point(6, 77);
+            this.loadMasters.Location = new System.Drawing.Point(6, 103);
             this.loadMasters.Name = "loadMasters";
             this.loadMasters.Size = new System.Drawing.Size(355, 23);
             this.loadMasters.TabIndex = 2;
@@ -141,7 +133,7 @@
             // 
             // create10000
             // 
-            this.create10000.Location = new System.Drawing.Point(6, 48);
+            this.create10000.Location = new System.Drawing.Point(6, 74);
             this.create10000.Name = "create10000";
             this.create10000.Size = new System.Drawing.Size(355, 23);
             this.create10000.TabIndex = 2;
@@ -169,15 +161,35 @@
             this.openSession.UseVisualStyleBackColor = true;
             this.openSession.Click += new System.EventHandler(this.openSession_Click);
             // 
+            // generateSheme
+            // 
+            this.generateSheme.Location = new System.Drawing.Point(400, 8);
+            this.generateSheme.Name = "generateSheme";
+            this.generateSheme.Size = new System.Drawing.Size(382, 23);
+            this.generateSheme.TabIndex = 12;
+            this.generateSheme.Text = "Generate database sheme";
+            this.generateSheme.UseVisualStyleBackColor = true;
+            this.generateSheme.Click += new System.EventHandler(this.generateSheme_Click);
+            // 
+            // removeConstaint
+            // 
+            this.removeConstaint.Location = new System.Drawing.Point(6, 48);
+            this.removeConstaint.Name = "removeConstaint";
+            this.removeConstaint.Size = new System.Drawing.Size(355, 23);
+            this.removeConstaint.TabIndex = 4;
+            this.removeConstaint.Text = "Remove constraint at MasterSpecial_0 field";
+            this.removeConstaint.UseVisualStyleBackColor = true;
+            this.removeConstaint.Click += new System.EventHandler(this.removeConstaint_Click);
+            // 
             // SampleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 697);
+            this.Controls.Add(this.generateSheme);
             this.Controls.Add(this.openSession);
             this.Controls.Add(this.listItems);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.readSomeProperties);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.readWithMaster);
             this.Controls.Add(this.groupBox2);
@@ -195,7 +207,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button createDetails;
         private System.Windows.Forms.Button readD0;
-        private System.Windows.Forms.Button readSomeProperties;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button readWithMaster;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -204,6 +215,8 @@
         private System.Windows.Forms.Button listItems;
         private System.Windows.Forms.Button openSession;
         private System.Windows.Forms.Button createMasters;
+        private System.Windows.Forms.Button generateSheme;
+        private System.Windows.Forms.Button removeConstaint;
     }
 }
 

@@ -27,7 +27,7 @@ namespace nHibernateSample.Mapping
             Property(x => x.S7);
             Property(x => x.S8);
             Property(x => x.S9);
-
+            
             ManyToOne(
                 x => x.Master00,
                 map =>
@@ -36,27 +36,7 @@ namespace nHibernateSample.Mapping
                         map.NotNullable(true);
                         map.Cascade(Cascade.None);
                     });
-
-            //ManyToOne(x => x.Masterderived01, map => 
-            //{
-            //    map.Column("MasterSpecial_m1");
-            //    map.NotNullable(true);
-            //    map.Cascade(Cascade.None);
-            //});
-
-            //ManyToOne(x => x.Masterderived02, map => 
-            //{
-            //    map.Column("MasterSpecial_m2");
-            //    map.NotNullable(true);
-            //    map.Cascade(Cascade.None);
-            //});
-
-            //ManyToOne(x => x.Masterderived03, map => 
-            //{
-            //    map.Column("MasterSpecial_m3");
-            //    map.NotNullable(true);
-            //    map.Cascade(Cascade.None);
-            //});
+            
 
             ManyToOne(
                 x => x.Master01,
