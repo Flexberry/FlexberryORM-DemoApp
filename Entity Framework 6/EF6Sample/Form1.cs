@@ -210,13 +210,13 @@
                     typeof(Internal).GetProperty(string.Format("S{0}", j)).GetSetMethod().Invoke(intl[i], new object[] { rsg.Generate(200) }); 
                 }
 
-                for (int j = 1; j < 13; j++)
+                for (int j = 1; j < 13; j++) // Fill with random master links
                 {
                     string mastername = string.Format("Master{0:00}", j);
                     typeof(Internal).GetProperty(mastername).GetSetMethod().Invoke(intl[i], new object[] { masterscache[mastername][rnd.Next(0, masterscache[mastername].Count() - 1)].primaryKey });
                 }
 
-                for (int j = 1; j < 4; j++)
+                for (int j = 1; j < 4; j++) // Fill with random master links
                 {
                     string mastername = string.Format("MasterDerived{0:00}", j);
                     typeof(Internal).GetProperty(string.Format("MasterSpecial_m{0}", j)).GetSetMethod().Invoke(intl[i], new object[] { masterscache[mastername][rnd.Next(0, masterscache[mastername].Count() - 1)].primaryKey });
