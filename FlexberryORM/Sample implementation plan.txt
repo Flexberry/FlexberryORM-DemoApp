@@ -1,4 +1,4 @@
-Sample implementation plan
+Samples implementation plan
 -------------------------------------
 
 There are three levels of complexity to understand FLEXBERRY ORM:
@@ -17,7 +17,7 @@ There are three levels of complexity to understand FLEXBERRY ORM:
 2.1* How to create and maintain not stored (calculated) properties;
 2.2* Views and inheritance;
 2.3 Master association to a class with descendants. Instantiating descendant master. Type usages;
-2.4 Using stereotypes and custom types;
+2.4* Using type synonyms and custom types;
 2.5 Custom naming of DB structures;
 2.6 Switching storages and storage types.
 

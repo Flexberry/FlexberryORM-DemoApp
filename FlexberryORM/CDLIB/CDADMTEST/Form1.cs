@@ -62,6 +62,7 @@
             CDDA cdda = new CDDA();
             cdda.Publisher = pblshr1;
             cdda.Name = "Strange music";
+            cdda.Price = new Dollar(0, 87);
 
             // There is a creation of composited dataobjects (they acts as a part of aggregation dataobject).
             cdda.Track.Add(new Track()
@@ -84,6 +85,7 @@
             cddd.Publisher = pblshr2;
             cddd.Name = "Old software";
             cddd.Capacity = 640;
+            cddd.Price = new Dollar(1, 52);
 
             List<ICSSoft.STORMNET.DataObject> objstoupdlist = new List<ICSSoft.STORMNET.DataObject>();
 
@@ -93,6 +95,7 @@
                 dvd.Publisher = pblshr1;
                 dvd.Name = string.Format("Movie {0}", i);
                 dvd.Capacity = i * 100;
+                dvd.Price = new Dollar(2, 66);
                 objstoupdlist.Add(dvd);
             }
 
@@ -429,7 +432,7 @@
 
             // 4. Operations with views. Each view acts as a set of properties.
             ICSSoft.STORMNET.View view1 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView1", new string[] { "Name", "Publisher.Name" }), typeof(CDDA));
-            ICSSoft.STORMNET.View view2 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView1", new string[] { "Name", "TotalTracks" }), typeof(CDDA));
+            ICSSoft.STORMNET.View view2 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView2", new string[] { "Name", "TotalTracks" }), typeof(CDDA));
             // a. Concatenate views
             ICSSoft.STORMNET.View concatresult = (view1 | view2); // Concatenation result contains all properties of both source views ("Name", "Publisher.Name", "TotalTracks");
             // b. Intersection
@@ -442,5 +445,62 @@
 
             MessageBox.Show("OK.");
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            // Using stereotypes.
+            //-------------------------------
+            // You can add your own type synonym on a Flexberry diagram:
+            // Draw a class on the diagram, then change it's stereotype to "typedef".
+            // As result: you can use it as an attribute type for classes in a whole Flexberry stage. But it is only synonym. It leverages an abstraction level during modeling.
+            // You need to resolve "typedef" to an implementation language (C#, SQL) in Flexberry typemaps for every codegeneration plugin.
+            // Look at the String4000 class (in Flexberry sample repository, Entities diagram).
+            // It maps attributes (defined by this type) to C# as System.String, and to SQL as VARCHAR(4000). As example, look at CD.Description attribute.
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            // Using custom types
+            //-------------------------------
+            // You can make your own datatype on a Flexberry diagram:
+            // Draw a class on the diagram, then change it's stereotype to "type".
+            // As result: you can use it as an attribute type for classes in a whole Flexberry stage.
+            // Flexberry generates an empty class template in C#. Also, you need to resolve "typedef" to a storage type in Flexberry typemaps for storage plugins (SQL, MSSQL, ...)
+            // Look at the Dollar class on an Entities diagram and in code (CDLIB(Objects)/Dollar.cs).
+            // This class implemented by hand from a generated template. It represents dollars in good-looking manner.
+            // As example, look at CD.Price attribute. Values of this attribute will stored as decimal in SQL.
+
+            IDataService dataService = DataServiceProvider.DataService;
+            OrmSample ormSample = new OrmSample(dataService);
+            object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
+
+            CDDA cdda = new CDDA(); // Instantiate dataobject
+            cdda.SetExistObjectPrimaryKey(primaryKey);
+
+            // Getting some CDDA from DB
+            dataService.LoadObject(CD.Views.CD_E, cdda);
+            // Changing price
+            cdda.Price = new Dollar(0, 55);
+            dataService.UpdateObject(cdda);
+
+            MessageBox.Show(string.Format("CDDA price is {0}", cdda.Price));
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            //Custom naming of DB structures
+
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            //Switching storages and storage types
+
+        }
+
+
+
+
     }
 }
