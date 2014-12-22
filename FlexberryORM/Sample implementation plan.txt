@@ -24,7 +24,7 @@ There are three levels of complexity to understand FLEXBERRY ORM:
 3. Advanced features
 -------------------------------------
 3.1 How to construct advanced limit function;
-3.2 Working with views;
+3.2* Working with views;
 3.3 Advanced business service;
 3.4 How to replace a query in data service during execution;
 3.5 How to change primary key type and algorithm;

@@ -331,6 +331,7 @@
             this.button16.TabIndex = 0;
             this.button16.Text = "5. Working with views";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button8
             // 

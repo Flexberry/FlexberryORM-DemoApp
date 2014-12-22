@@ -416,31 +416,7 @@
             string[] commonviewnames = Information.AllViews(new Type[] { typeof(CDDA), typeof(CDDD) });
 
 
-            // TODO: Move to advanced part
-
-            // 3. How to create a view dynamically. 
-            // If you need to create a view "in code", just use one of following:
-            // a. Use default view constructor, then fill properties:
-            ICSSoft.STORMNET.View dynaview = new ICSSoft.STORMNET.View(); // Create an empty view.
-            dynaview.DefineClassType = typeof(CDDA); // Set a class for which the view is.
-            dynaview.AddProperties(new string[] { "Name", "TotalTracks", "Publisher.Name" }); // dynaview.AddProperty(...) // You can add own and master properties as an array or one by one
-            dynaview.AddMasterInView("Publisher"); // Add a master in view.
-            //Also you can use dynaview.AddDetailInView method to link detail views
-
-            //b. Creating a dytnamic view thru ViewAttribute:
-            ICSSoft.STORMNET.View dynaview1 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView", new string[] { "Name", "Publisher.Name" }), typeof(CDDA));
-
-            // 4. Operations with views. Each view acts as a set of properties.
-            ICSSoft.STORMNET.View view1 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView1", new string[] { "Name", "Publisher.Name" }), typeof(CDDA));
-            ICSSoft.STORMNET.View view2 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView2", new string[] { "Name", "TotalTracks" }), typeof(CDDA));
-            // a. Concatenate views
-            ICSSoft.STORMNET.View concatresult = (view1 | view2); // Concatenation result contains all properties of both source views ("Name", "Publisher.Name", "TotalTracks");
-            // b. Intersection
-            ICSSoft.STORMNET.View intersectresult = (view1 & view2); //Intersection result contains common properties only ("Name");
-            // c. Subtraction
-            ICSSoft.STORMNET.View subtractsectresult = (view1 - view2); //Subtraction result contains properties from view1, except all defined in view2 ("Publisher.Name");
-            // d. Exclusive concatenation
-            ICSSoft.STORMNET.View xconcatresult = (view1 ^ view2); // Common properties excluded ("Publisher.Name", "TotalTracks");
+            
 
 
             MessageBox.Show("OK.");
@@ -504,7 +480,8 @@
             // 5. A reference from CustomDBOwnClass to CustomDBMasterClass maps as CustomDBMaster column in CustomDBOwnClass table;
             // 6. Identifiers of both classes maps to pkey column of corresponding tables;
             
-            // Look ma! Custom DB structures naming really works!
+            // Look ma! Just create objects and persist them: it really works!
+            
             CustomDBOwnClass cdbo = new CustomDBOwnClass();
             CustomDBMasterClass cdbm = new CustomDBMasterClass();
             cdbm.CustomMasterAttribute = new RandomStringGenerator().Generate(200);
@@ -522,6 +499,42 @@
         {
             // Switching storages and storage types
 
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            // Advanced working with views.
+
+            // 1. You can create a view dynamically. 
+            // If you need to create a view "in code", just use one of following:
+            // a. Use default view constructor, then fill properties:
+            ICSSoft.STORMNET.View dynaview = new ICSSoft.STORMNET.View(); // Create an empty view.
+            dynaview.DefineClassType = typeof(CDDA); // Set a class for which the view is.
+            dynaview.AddProperties(new string[] { "Name", "TotalTracks", "Publisher.Name" }); // dynaview.AddProperty(...) // You can add own and master properties as an array or one by one
+            dynaview.AddMasterInView("Publisher"); // Add a master in view.
+            //Also you can use dynaview.AddDetailInView method to link detail views
+
+            // b. Creating a dytnamic view thru ViewAttribute:
+            ICSSoft.STORMNET.View dynaview1 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView", new string[] { "Name", "Publisher.Name" }), typeof(CDDA));
+
+            // 2. Operations with views. Each view acts as a set of properties.
+            ICSSoft.STORMNET.View view1 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView1", new string[] { "Name", "Publisher.Name" }), typeof(CDDA));
+            ICSSoft.STORMNET.View view2 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView2", new string[] { "Name", "TotalTracks" }), typeof(CDDA));
+            // a. Concatenate views
+            ICSSoft.STORMNET.View concatresult = (view1 | view2); // Concatenation result contains all properties of both source views ("Name", "Publisher.Name", "TotalTracks");
+            // b. Intersection
+            ICSSoft.STORMNET.View intersectresult = (view1 & view2); //Intersection result contains common properties only ("Name");
+            // c. Subtraction
+            ICSSoft.STORMNET.View subtractsectresult = (view1 - view2); //Subtraction result contains properties from view1, except all defined in view2 ("Publisher.Name");
+            // d. Exclusive concatenation
+            ICSSoft.STORMNET.View xconcatresult = (view1 ^ view2); // Common properties excluded ("Publisher.Name", "TotalTracks");
+
+            MessageBox.Show(string.Format("{1}{0}{0}{2}{0}{0}{3}{0}{0}{4}{0}{0}", Environment.NewLine,
+                string.Format("{0} | {1} = {2}", view1.ToString(true), view2.ToString(true), concatresult.ToString(true)),
+                string.Format("{0} & {1} = {2}", view1.ToString(true), view2.ToString(true), intersectresult.ToString(true)),
+                string.Format("{0} - {1} = {2}", view1.ToString(true), view2.ToString(true), subtractsectresult.ToString(true)),
+                string.Format("{0} ^ {1} = {2}", view1.ToString(true), view2.ToString(true), xconcatresult.ToString(true))
+                ));
         }
 
 
