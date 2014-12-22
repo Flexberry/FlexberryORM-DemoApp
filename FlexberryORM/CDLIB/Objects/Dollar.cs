@@ -24,6 +24,9 @@ namespace IIS.CDLIB
     /// </summary>
     // *** Start programmer edit section *** (Dollar CustomAttributes)
 
+    // There is StoreInstancesInType attribute which defines a resolution to storage type. SQLDataService and descendants will use decimals for values of type Dollar.
+    // You can add this attribute by hand or you can set corresponding property of Dollar class on a diagram in Flexberry.
+    // Attention! You need to add adequate implicit conversions to and from storage type.
     // *** End programmer edit section *** (Dollar CustomAttributes)
     [ICSSoft.STORMNET.StoreInstancesInType(typeof(SQLDataService), typeof(decimal))]
     public class Dollar
@@ -39,7 +42,7 @@ namespace IIS.CDLIB
 		private int fCents;
         
         /// <summary>
-        /// Just constructs new dollar
+        /// Just constructs a new dollar representation
         /// </summary>
         /// <param name="Dollars"></param>
         /// <param name="Cents"></param>
@@ -77,10 +80,23 @@ namespace IIS.CDLIB
 					throw new ParameterOutOfRangeException();
 			}
 		}
+
+
+        /// <summary>
+        /// Attention! You MUST realise such conversion for proper working of DataService
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator decimal(Dollar value)
 		{
 			return (decimal)value.Dollars+((decimal)value.Cents)/100;
 		}
+
+        /// <summary>
+        /// Attention! You MUST realise such conversion for proper working of DataService
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static implicit operator Dollar(decimal value)
 		{
             return new Dollar((int)value, (int)((value - (int)value) * 100));

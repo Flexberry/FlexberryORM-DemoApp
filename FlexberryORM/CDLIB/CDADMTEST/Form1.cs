@@ -463,12 +463,12 @@
             // Using custom types
             //-------------------------------
             // You can make your own datatype on a Flexberry diagram:
-            // Draw a class on the diagram, then change it's stereotype to "type".
+            // Draw a class on the diagram, then change stereotype to "type".
             // As result: you can use it as an attribute type for classes in a whole Flexberry stage.
             // Flexberry generates an empty class template in C#. Also, you need to resolve "typedef" to a storage type in Flexberry typemaps for storage plugins (SQL, MSSQL, ...)
             // Look at the Dollar class on an Entities diagram and in code (CDLIB(Objects)/Dollar.cs).
-            // This class implemented by hand from a generated template. It represents dollars in good-looking manner.
-            // As example, look at CD.Price attribute. Values of this attribute will stored as decimal in SQL.
+            // This class implemented by hand from a generated template. It represents dollars in good-looking manner (like $1.24 or .46¢).
+            // Look at CD.Price attribute. Values of this attribute stored as decimals in SQL.            
 
             IDataService dataService = DataServiceProvider.DataService;
             OrmSample ormSample = new OrmSample(dataService);
@@ -479,23 +479,48 @@
 
             // Getting some CDDA from DB
             dataService.LoadObject(CD.Views.CD_E, cdda);
-            // Changing price
+            // Change price
             cdda.Price = new Dollar(0, 55);
             dataService.UpdateObject(cdda);
 
-            MessageBox.Show(string.Format("CDDA price is {0}", cdda.Price));
+            MessageBox.Show(string.Format("'{0}' price is {1}", cdda.Name, cdda.Price));
 
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            //Custom naming of DB structures
+            // Custom naming of DB structures
+            // There are 2 ways to setup naming: by Flexberry or in-code by .NET-attributes. If you choose first way, Flexberry will generate corresponding attributes.
+            // You can map a dataobject and attributes to any DB structure names:
+            // 1. Table name for class (ClassStorage attribute, class scope);
+            // 2. Column name for attribute (PropertyStorage attribute, property scope);
+            // 3. Primary key column name for dataobject identifier (PrimaryKeyStorage attribute, class scope);
+            // 4. Foreighn key column name for references to master (PropertyStorage attribute, property scope);            
+            // Example: look at the "DB structures custom naming" diagram:
+            // 1. CustomDBOwnClass maps to CustomDBOwn table;
+            // 2. CustomDBOwnClass.CustomOwnAttribute maps to CustomOwn column in CustomDBOwn table;
+            // 3. CustomDBMasterClass maps to CustomDBMaster table;
+            // 4. CustomDBMasterClass.CustomMasterAttribute maps to CustomMaster column in CustomDBOwnCustomDBMaster table;
+            // 5. A reference from CustomDBOwnClass to CustomDBMasterClass maps as CustomDBMaster column in CustomDBOwnClass table;
+            // 6. Identifiers of both classes maps to pkey column of corresponding tables;
+            
+            // Look ma! Custom DB structures naming really works!
+            CustomDBOwnClass cdbo = new CustomDBOwnClass();
+            CustomDBMasterClass cdbm = new CustomDBMasterClass();
+            cdbm.CustomMasterAttribute = new RandomStringGenerator().Generate(200);
+            cdbo.CustomDBMasterClass = cdbm;
+            cdbo.CustomOwnAttribute = new RandomStringGenerator().Generate(200);
 
+            IDataService dataService = DataServiceProvider.DataService;
+            ICSSoft.STORMNET.DataObject[] objstoupd = new ICSSoft.STORMNET.DataObject[] {cdbo, cdbm};
+            dataService.UpdateObjects(ref objstoupd);
+
+            MessageBox.Show("OK!");
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            //Switching storages and storage types
+            // Switching storages and storage types
 
         }
 

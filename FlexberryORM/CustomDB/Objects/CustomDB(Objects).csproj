@@ -2,10 +2,10 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProjectGuid>{4FFE8227-C302-4C91-A904-B5E95033534B}</ProjectGuid>
+    <ProjectGuid>{D9FF0ECC-2B7F-4E4D-8A2D-C3659B980921}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <AssemblyName>CDLIB(Objects)</AssemblyName>
+    <AssemblyName>CustomDB(Objects)</AssemblyName>
     <OutputType>Library</OutputType>
     <RootNamespace>IIS.CDLIB</RootNamespace>
     <FileUpgradeFlags>
@@ -21,7 +21,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>CDLIB(Objects).xml</DocumentationFile>
+    <DocumentationFile>CustomDB(Objects).xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -43,7 +43,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>CDLIB(Objects).xml</DocumentationFile>
+    <DocumentationFile>CustomDB(Objects).xml</DocumentationFile>
     <DebugSymbols>false</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -61,7 +61,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>CDLIB%28Objects%29.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>CustomDB%28Objects%29.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
@@ -71,64 +71,23 @@
       <HintPath>System.XML.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.DataObject">
-      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.DataObject.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSSoft.STORMNET.Business">
-      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.Business.dll</HintPath>
+      <HintPath>..\..\..\..\..\CASEBERRY 2014\ICSSoft.STORMNET.DataObject.dll</HintPath>
     </Reference>
     <Reference Include="Repository">
       <HintPath>..\..\..\..\..\CASEBERRY 2014\Repository.dll</HintPath>
     </Reference>
-    <ProjectReference Include="..\..\MultiDetail\Objects\MultiDetail(Objects).csproj">
-      <Project>{D4B20CA9-B6C7-4CFC-B8DA-D86F4B2618DC}</Project>
-      <Name>MultiDetail(Objects)</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MultiMaster\Objects\MultiMaster(Objects).csproj">
-      <Project>{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}</Project>
-      <Name>MultiMaster(Objects)</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CustomDB\Objects\CustomDB(Objects).csproj">
-      <Project>{D9FF0ECC-2B7F-4E4D-8A2D-C3659B980921}</Project>
-      <Name>CustomDB(Objects)</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CD.cs">
+    <Compile Include="CustomDBMasterClass.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CDDA.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Track.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CDDD.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DVDVersion.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Country.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DVD.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Publisher.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BlueRay.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Person.cs">
+    <Compile Include="CustomDBOwnClass.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Dollar.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CustomDB%28Objects%29.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

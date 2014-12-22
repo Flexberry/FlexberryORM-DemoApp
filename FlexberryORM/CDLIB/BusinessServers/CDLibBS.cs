@@ -40,6 +40,9 @@ namespace IIS.CDLIB
         public virtual ICSSoft.STORMNET.DataObject[] OnUpdateCDDA(IIS.CDLIB.CDDA UpdatedObject)
         {
             // *** Start programmer edit section *** (OnUpdateCDDA)
+            // There is a good place to add your custom code.
+            // Don't make changes out of programmer edit section. They will be lost after overgeneration by Flexberry.
+
             // TotalTracks property needs to have same value as tracks counter. 
             UpdatedObject.TotalTracks = UpdatedObject.Track.Count;
             // Also, you can return additional dataobjects, - they will be updated with all objects in a single transaction
