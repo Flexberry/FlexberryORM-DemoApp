@@ -73,6 +73,17 @@ namespace nHibernateSample
             }
         }
 
+        private static object CreateMaster(Type masterType)
+        {
+            var newMaster = Activator.CreateInstance(masterType);
+            for (int s = 0; s < 10; s++)
+            {
+                SetProperty(newMaster, "S" + s, rnd.Generate(200));
+            }
+
+            return newMaster;
+        }
+
         public static IEnumerable<object> GenerateMasters(int qty)
         {
             var result = new List<object>(12 * qty);
@@ -83,13 +94,17 @@ namespace nHibernateSample
                 var masterType = Type.GetType(masterTypeName);
                 for (int j = 0; j < qty; j++)
                 {
-                    var newMaster = Activator.CreateInstance(masterType);
-                    for (int s = 0; s < 10; s++)
-                    {
-                        SetProperty(newMaster, "S" + s, rnd.Generate(200));
-                    }
+                    result.Add(CreateMaster(masterType));
+                }
+            }
 
-                    result.Add(newMaster);
+            for (int i = 1; i < 4; i++)
+            {
+                var masterTypeName = string.Format("nHibernateSample.Domain.Masterderived{0:00}", i);
+                var masterType = Type.GetType(masterTypeName);
+                for (int j = 0; j < qty; j++)
+                {
+                    result.Add(CreateMaster(masterType));
                 }
             }
 

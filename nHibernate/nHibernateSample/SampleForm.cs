@@ -10,8 +10,10 @@ using System.Windows.Forms;
 namespace nHibernateSample
 {
     using System.Diagnostics;
+    using System.IO;
 
     using NHibernate.Linq;
+    using NHibernate.Tool.hbm2ddl;
 
     using nHibernateSample.Domain;
 
@@ -128,7 +130,7 @@ namespace nHibernateSample
                 {
                     var inter = new Internal
                                     {
-                                        Master00 = (Master00)masterCache[0][rnd.Next(100)],
+                                        Master00 = (Master00)masterCache[0][rnd.Next(400)],
                                         Master01 = (Master01)masterCache[1][rnd.Next(100)],
                                         Master02 = (Master02)masterCache[2][rnd.Next(100)],
                                         Master03 = (Master03)masterCache[3][rnd.Next(100)],
@@ -192,6 +194,27 @@ namespace nHibernateSample
                 var internals = session.Query<Internal>().ToList();
                 stopwatch.Stop();
                 log("Read " + internals.Count + " items from Internals in " + stopwatch.ElapsedMilliseconds + " ms");
+                for (int i = 0; i < 100; i++)
+                {
+                    var inter = internals[i];
+                    log(string.Format("at {0} internal in Master0 live {1}", i, inter.Master00.GetType().FullName));
+                }
+            }
+        }
+
+        private void generateSheme_Click(object sender, EventArgs e)
+        {
+            var export = new SchemaExport(NHibernateHelper.Configuration);
+            export.Create(s => textBox1.AppendText(s), false);
+        }
+
+        private void removeConstaint_Click(object sender, EventArgs e)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                var command = session.Connection.CreateCommand();
+                command.CommandText = "ALTER TABLE [Internal] DROP CONSTRAINT [Internal_FMaster0_0]";
+                command.ExecuteNonQuery();
             }
         }
     }
