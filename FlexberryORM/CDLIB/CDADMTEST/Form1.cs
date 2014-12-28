@@ -62,6 +62,7 @@
             CDDA cdda = new CDDA();
             cdda.Publisher = pblshr1;
             cdda.Name = "Strange music";
+            cdda.Price = new Dollar(0, 87);
 
             // There is a creation of composited dataobjects (they acts as a part of aggregation dataobject).
             cdda.Track.Add(new Track()
@@ -84,6 +85,7 @@
             cddd.Publisher = pblshr2;
             cddd.Name = "Old software";
             cddd.Capacity = 640;
+            cddd.Price = new Dollar(1, 52);
 
             List<ICSSoft.STORMNET.DataObject> objstoupdlist = new List<ICSSoft.STORMNET.DataObject>();
 
@@ -93,6 +95,7 @@
                 dvd.Publisher = pblshr1;
                 dvd.Name = string.Format("Movie {0}", i);
                 dvd.Capacity = i * 100;
+                dvd.Price = new Dollar(2, 66);
                 objstoupdlist.Add(dvd);
             }
 
@@ -247,7 +250,7 @@
             stopwatch.Stop();
             MessageBox.Show(string.Format("Time taken for persistence: {0} ms", stopwatch.ElapsedMilliseconds));
         }
-        
+
         /// <summary>
         /// The button 21_ click.
         /// </summary>
@@ -405,9 +408,96 @@
             string[] commonviewnames = Information.AllViews(new Type[] { typeof(CDDA), typeof(CDDD) });
 
 
-            // TODO: Move to advanced part
+            
 
-            // 3. How to create a view dynamically. 
+
+            MessageBox.Show("OK.");
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            // Using stereotypes.
+            //-------------------------------
+            // You can add your own type synonym on a Flexberry diagram:
+            // Draw a class on the diagram, then change it's stereotype to "typedef".
+            // As result: you can use it as an attribute type for classes in a whole Flexberry stage. But it is only synonym. It leverages an abstraction level during modeling.
+            // You need to resolve "typedef" to an implementation language (C#, SQL) in Flexberry typemaps for every codegeneration plugin.
+            // Look at the String4000 class (in Flexberry sample repository, Entities diagram).
+            // It maps attributes (defined by this type) to C# as System.String, and to SQL as VARCHAR(4000). As example, look at CD.Description attribute.
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            // Using custom types
+            //-------------------------------
+            // You can make your own datatype on a Flexberry diagram:
+            // Draw a class on the diagram, then change stereotype to "type".
+            // As result: you can use it as an attribute type for classes in a whole Flexberry stage.
+            // Flexberry generates an empty class template in C#. Also, you need to resolve "typedef" to a storage type in Flexberry typemaps for storage plugins (SQL, MSSQL, ...)
+            // Look at the Dollar class on an Entities diagram and in code (CDLIB(Objects)/Dollar.cs).
+            // This class implemented by hand from a generated template. It represents dollars in good-looking manner (like $1.24 or .46¢).
+            // Look at CD.Price attribute. Values of this attribute stored as decimals in SQL.            
+
+            IDataService dataService = DataServiceProvider.DataService;
+            OrmSample ormSample = new OrmSample(dataService);
+            object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
+
+            CDDA cdda = new CDDA(); // Instantiate dataobject
+            cdda.SetExistObjectPrimaryKey(primaryKey);
+
+            // Getting some CDDA from DB
+            dataService.LoadObject(CD.Views.CD_E, cdda);
+            // Change price
+            cdda.Price = new Dollar(0, 55);
+            dataService.UpdateObject(cdda);
+
+            MessageBox.Show(string.Format("'{0}' price is {1}", cdda.Name, cdda.Price));
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // Custom naming of DB structures
+            // There are 2 ways to setup naming: by Flexberry or in-code by .NET-attributes. If you choose first way, Flexberry will generate corresponding attributes.
+            // You can map a dataobject and attributes to any DB structure names:
+            // 1. Table name for class (ClassStorage attribute, class scope);
+            // 2. Column name for attribute (PropertyStorage attribute, property scope);
+            // 3. Primary key column name for dataobject identifier (PrimaryKeyStorage attribute, class scope);
+            // 4. Foreighn key column name for references to master (PropertyStorage attribute, property scope);            
+            // Example: look at the "DB structures custom naming" diagram:
+            // 1. CustomDBOwnClass maps to CustomDBOwn table;
+            // 2. CustomDBOwnClass.CustomOwnAttribute maps to CustomOwn column in CustomDBOwn table;
+            // 3. CustomDBMasterClass maps to CustomDBMaster table;
+            // 4. CustomDBMasterClass.CustomMasterAttribute maps to CustomMaster column in CustomDBOwnCustomDBMaster table;
+            // 5. A reference from CustomDBOwnClass to CustomDBMasterClass maps as CustomDBMaster column in CustomDBOwnClass table;
+            // 6. Identifiers of both classes maps to pkey column of corresponding tables;
+            
+            // Look ma! Just create objects and persist them: it really works!
+            
+            CustomDBOwnClass cdbo = new CustomDBOwnClass();
+            CustomDBMasterClass cdbm = new CustomDBMasterClass();
+            cdbm.CustomMasterAttribute = new RandomStringGenerator().Generate(200);
+            cdbo.CustomDBMasterClass = cdbm;
+            cdbo.CustomOwnAttribute = new RandomStringGenerator().Generate(200);
+
+            IDataService dataService = DataServiceProvider.DataService;
+            ICSSoft.STORMNET.DataObject[] objstoupd = new ICSSoft.STORMNET.DataObject[] {cdbo, cdbm};
+            dataService.UpdateObjects(ref objstoupd);
+
+            MessageBox.Show("OK!");
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            // Switching storages and storage types
+
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            // Advanced working with views.
+
+            // 1. You can create a view dynamically. 
             // If you need to create a view "in code", just use one of following:
             // a. Use default view constructor, then fill properties:
             ICSSoft.STORMNET.View dynaview = new ICSSoft.STORMNET.View(); // Create an empty view.
@@ -416,12 +506,12 @@
             dynaview.AddMasterInView("Publisher"); // Add a master in view.
             //Also you can use dynaview.AddDetailInView method to link detail views
 
-            //b. Creating a dytnamic view thru ViewAttribute:
+            // b. Creating a dytnamic view thru ViewAttribute:
             ICSSoft.STORMNET.View dynaview1 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView", new string[] { "Name", "Publisher.Name" }), typeof(CDDA));
 
-            // 4. Operations with views. Each view acts as a set of properties.
+            // 2. Operations with views. Each view acts as a set of properties.
             ICSSoft.STORMNET.View view1 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView1", new string[] { "Name", "Publisher.Name" }), typeof(CDDA));
-            ICSSoft.STORMNET.View view2 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView1", new string[] { "Name", "TotalTracks" }), typeof(CDDA));
+            ICSSoft.STORMNET.View view2 = new ICSSoft.STORMNET.View(new ViewAttribute("DynaView2", new string[] { "Name", "TotalTracks" }), typeof(CDDA));
             // a. Concatenate views
             ICSSoft.STORMNET.View concatresult = (view1 | view2); // Concatenation result contains all properties of both source views ("Name", "Publisher.Name", "TotalTracks");
             // b. Intersection
@@ -431,7 +521,16 @@
             // d. Exclusive concatenation
             ICSSoft.STORMNET.View xconcatresult = (view1 ^ view2); // Common properties excluded ("Publisher.Name", "TotalTracks");
 
-            MessageBox.Show("OK.");
+            MessageBox.Show(string.Format("{1}{0}{0}{2}{0}{0}{3}{0}{0}{4}{0}{0}", Environment.NewLine,
+                string.Format("{0} | {1} = {2}", view1.ToString(true), view2.ToString(true), concatresult.ToString(true)),
+                string.Format("{0} & {1} = {2}", view1.ToString(true), view2.ToString(true), intersectresult.ToString(true)),
+                string.Format("{0} - {1} = {2}", view1.ToString(true), view2.ToString(true), subtractsectresult.ToString(true)),
+                string.Format("{0} ^ {1} = {2}", view1.ToString(true), view2.ToString(true), xconcatresult.ToString(true))
+                ));
         }
+
+
+
+
     }
 }

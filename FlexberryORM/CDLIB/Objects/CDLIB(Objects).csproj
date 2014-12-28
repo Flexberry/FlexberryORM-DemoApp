@@ -84,6 +84,10 @@
       <Project>{7E6A09CB-5A1D-46CE-98EF-83D05E6C9EFA}</Project>
       <Name>MultiMaster(Objects)</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\CustomDB\Objects\CustomDB(Objects).csproj">
+      <Project>{D9FF0ECC-2B7F-4E4D-8A2D-C3659B980921}</Project>
+      <Name>CustomDB(Objects)</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD.cs">
@@ -117,6 +121,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Dollar.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="CDLIB%28Objects%29.snk" />

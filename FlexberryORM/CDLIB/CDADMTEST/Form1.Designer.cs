@@ -244,8 +244,9 @@
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(446, 23);
             this.button18.TabIndex = 4;
-            this.button18.Text = "6. How to switch storage type";
+            this.button18.Text = "7. How to change storage type";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button15
             // 
@@ -253,8 +254,9 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(446, 23);
             this.button15.TabIndex = 3;
-            this.button15.Text = "6. Custom types";
+            this.button15.Text = "5. Custom types";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button14
             // 
@@ -262,8 +264,9 @@
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(446, 23);
             this.button14.TabIndex = 3;
-            this.button14.Text = "5. Stereotypes";
+            this.button14.Text = "4. Type synonyms";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button17
             // 
@@ -281,8 +284,9 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(446, 23);
             this.button12.TabIndex = 3;
-            this.button12.Text = "4. Custom naming of DB structures";
+            this.button12.Text = "6. Custom naming of DB structures";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button20
             // 
@@ -300,7 +304,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(446, 23);
             this.button10.TabIndex = 3;
-            this.button10.Text = "1. Inheritance: type usages for master associations";
+            this.button10.Text = "3. Inheritance: type usages for master associations";
             this.button10.UseVisualStyleBackColor = true;
             // 
             // tabPage3
@@ -327,6 +331,7 @@
             this.button16.TabIndex = 0;
             this.button16.Text = "5. Working with views";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button8
             // 
@@ -396,7 +401,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1457, 627);
+            this.ClientSize = new System.Drawing.Size(1066, 627);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "FLEXBERRY ORM samples";

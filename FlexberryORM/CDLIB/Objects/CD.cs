@@ -30,12 +30,18 @@ namespace IIS.CDLIB
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("CD_E", new string[] {
             "Name",
+            "Description",
+            "Price",
             "Publisher.Name",
             "Publisher.Country.Name"})]
     public class CD : ICSSoft.STORMNET.DataObject
     {
         
         private string fName;
+        
+        private string fDescription;
+        
+        private IIS.CDLIB.Dollar fPrice;
         
         private IIS.CDLIB.Publisher fPublisher;
         
@@ -73,6 +79,69 @@ namespace IIS.CDLIB
                 // *** Start programmer edit section *** (CD.Name Set end)
 
                 // *** End programmer edit section *** (CD.Name Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Description.
+        /// </summary>
+        // *** Start programmer edit section *** (CD.Description CustomAttributes)
+
+        // *** End programmer edit section *** (CD.Description CustomAttributes)
+        [StrLen(4000)]
+        public virtual string Description
+        {
+            get
+            {
+                // *** Start programmer edit section *** (CD.Description Get start)
+
+                // *** End programmer edit section *** (CD.Description Get start)
+                string result = this.fDescription;
+                // *** Start programmer edit section *** (CD.Description Get end)
+
+                // *** End programmer edit section *** (CD.Description Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (CD.Description Set start)
+
+                // *** End programmer edit section *** (CD.Description Set start)
+                this.fDescription = value;
+                // *** Start programmer edit section *** (CD.Description Set end)
+
+                // *** End programmer edit section *** (CD.Description Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Price.
+        /// </summary>
+        // *** Start programmer edit section *** (CD.Price CustomAttributes)
+
+        // *** End programmer edit section *** (CD.Price CustomAttributes)
+        public virtual IIS.CDLIB.Dollar Price
+        {
+            get
+            {
+                // *** Start programmer edit section *** (CD.Price Get start)
+
+                // *** End programmer edit section *** (CD.Price Get start)
+                IIS.CDLIB.Dollar result = this.fPrice;
+                // *** Start programmer edit section *** (CD.Price Get end)
+
+                // *** End programmer edit section *** (CD.Price Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (CD.Price Set start)
+
+                // *** End programmer edit section *** (CD.Price Set start)
+                this.fPrice = value;
+                // *** Start programmer edit section *** (CD.Price Set end)
+
+                // *** End programmer edit section *** (CD.Price Set end)
             }
         }
         
