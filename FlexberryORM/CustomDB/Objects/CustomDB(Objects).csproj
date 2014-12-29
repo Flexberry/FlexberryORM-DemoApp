@@ -64,17 +64,14 @@
     <AssemblyOriginatorKeyFile>CustomDB%28Objects%29.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSSoft.STORMNET.DataObject">
+      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.DataObject.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>System.dll</HintPath>
     </Reference>
     <Reference Include="System.XML">
       <HintPath>System.XML.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSSoft.STORMNET.DataObject">
-      <HintPath>..\..\..\..\..\CASEBERRY 2014\ICSSoft.STORMNET.DataObject.dll</HintPath>
-    </Reference>
-    <Reference Include="Repository">
-      <HintPath>..\..\..\..\..\CASEBERRY 2014\Repository.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
