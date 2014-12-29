@@ -495,9 +495,11 @@
             MessageBox.Show("OK!");
         }
 
+
         private void button18_Click(object sender, EventArgs e)
         {
             // Switching storages and storage types
+
 
         }
 
