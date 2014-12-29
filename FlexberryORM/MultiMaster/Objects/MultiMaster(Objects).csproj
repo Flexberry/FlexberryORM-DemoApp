@@ -67,9 +67,6 @@
     <Reference Include="ICSSoft.STORMNET.DataObject">
       <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.DataObject.dll</HintPath>
     </Reference>
-    <Reference Include="Repository">
-      <HintPath>..\..\packages\FlexberryORM.1.0.1\Repository.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <HintPath>System.dll</HintPath>
     </Reference>

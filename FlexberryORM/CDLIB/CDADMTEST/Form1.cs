@@ -104,7 +104,6 @@
 
             try
             {
-
                 ICSSoft.STORMNET.DataObject[] objstoupd = objstoupdlist.ToArray();
 
                 // DataServiceProvider.DataService creates data service from app.config. Look at keys: DataServiceType, CustomizationStrings
@@ -152,6 +151,7 @@
 
             // You would run in an intermediate window: cdda.GetStatus(). Ensure: an object status changed to Altered. Also you can see a set of changed properties by running cdda.GetAlteredPropertyNames(). Flexberry ORM will update only changed propertyes.
             dataService.UpdateObject(cdda); // You can persist only one object, it's OK.
+            MessageBox.Show("OK!");
         }
 
         /// <summary>
@@ -223,6 +223,7 @@
             dataService.LoadObject(CDDA.Views.CDDA_E, cdda);
             cdda.Name = "Huh! " + DateTime.Now;
             dataService.UpdateObject(cdda);
+            MessageBox.Show("OK!");
         }
 
         /// <summary>
@@ -249,10 +250,6 @@
             stopwatch.Stop();
             MessageBox.Show(string.Format("Time taken for persistence: {0} ms", stopwatch.ElapsedMilliseconds));
         }
-
-
-
-
 
         /// <summary>
         /// The button 21_ click.
@@ -330,12 +327,11 @@
             dataService.UpdateObjects(ref objstoupd);
             stopwatch.Stop();
             MessageBox.Show(string.Format("Time taken for masters creation: {0} ms", stopwatch.ElapsedMilliseconds));
-
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
-            // Create 10000 dataobjects of class Internal
+            // Create 10000 dataobjects of class Internal.
             IDataService dataService = DataServiceProvider.DataService;
             OrmSample ormSample = new OrmSample(dataService);
             Dictionary<string, MasterBase[]> masterscache = ormSample.LoadMasters(); // Load master dataobjects into a cache
@@ -361,7 +357,6 @@
                     string mastertypename = string.Format("Master{0:00}", j);
                     Information.SetPropValueByName(itnl, mastertypename, ormSample.GetRandomMaster(masterscache, mastertypename));
                 }
-
             }
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -369,7 +364,6 @@
             dataService.UpdateObjects(ref objstoupd); // Just persists created objects
             stopwatch.Stop();
             MessageBox.Show(string.Format("Time taken for creation: {0} ms", stopwatch.ElapsedMilliseconds));
-
         }
          
         private void button24_Click(object sender, EventArgs e)
@@ -398,12 +392,10 @@
             ICSSoft.STORMNET.DataObject[] persons = dataService.LoadObjects(lcs); // Load as dataobjects, notstored property calculated thru property getter.
             ObjectStringDataView[] osdvpersons = dataService.LoadStringedObjectView(';', lcs); // Load as comma delimited string, notstored property calculated thru dataservice expression.
             MessageBox.Show("OK.");
-            
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-
             // Working with views example
 
             // 1. Getting static views

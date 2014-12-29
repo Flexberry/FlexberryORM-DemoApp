@@ -1,14 +1,11 @@
 ﻿namespace CDADMTEST
 {
     using System;
-
+    using System.Collections.Generic;
+    using System.Linq;
     using ICSSoft.STORMNET;
     using ICSSoft.STORMNET.Business;
-
     using IIS.CDLIB;
-    using System.Collections.Generic;
-    using System.Text;
-    using System.Linq;
 
     /// <summary>
     /// Flexberry ORM Samples Logic placed here.
@@ -18,36 +15,42 @@
         /// <summary>
         /// Instance of <see cref="IDataService"/> for persistence operations.
         /// </summary>
-        private readonly IDataService dataService;
+        private readonly IDataService _dataService;
 
         /// <summary>
         /// DataService being resolved by <see cref="DataServiceProvider.DataService"/>.
         /// </summary>
         public OrmSample()
         {
-            dataService = DataServiceProvider.DataService;
+            _dataService = DataServiceProvider.DataService;
         }
 
         /// <summary>
         /// Logic with custom DataService instance.
         /// </summary>
-        /// <param name="ds">DataService for this instance.</param>
+        /// <param name="ds">
+        /// DataService for this instance.
+        /// </param>
         public OrmSample(IDataService ds)
         {
-            dataService = ds;
+            _dataService = ds;
         }
 
         /// <summary>
         /// Return primary key some object by specified type.
         /// </summary>
-        /// <param name="dataObjectType">Type of data object.</param>
-        /// <returns>Primary key.</returns>
+        /// <param name="dataObjectType">
+        /// Type of data object.
+        /// </param>
+        /// <returns>
+        /// Primary key.
+        /// </returns>
         internal object GetSomeObjectPrimaryKey(Type dataObjectType)
         {
             View dataObjectView = new View(dataObjectType, View.ReadType.OnlyThatObject);
             LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(dataObjectType, dataObjectView);
             lcs.ReturnTop = 1;
-            DataObject[] dataObjects = dataService.LoadObjects(lcs);
+            DataObject[] dataObjects = _dataService.LoadObjects(lcs);
             if (dataObjects.Length > 0)
             {
                 return dataObjects[0].__PrimaryKey;
@@ -62,10 +65,10 @@
         /// <param name="dobj">
         /// The dobj.
         /// </param>
-        /// <param name="QtyInEach">
+        /// <param name="qtyInEach">
         /// The qty in each.
         /// </param>
-        internal void GenDetails(D dobj, int QtyInEach)
+        internal void GenDetails(D dobj, int qtyInEach)
         {
             RandomStringGenerator rsg = new RandomStringGenerator();
             dobj.Name = rsg.Generate(200);
@@ -80,10 +83,10 @@
             {
                 DetailArray detarr = (DetailArray)Information.GetPropValueByName(dobj, detprops[i]);
                 Type dettypetocreate = Information.GetCompatibleTypesForDetailProperty(dobj.GetType(), detprops[i])[0];
-                for (int j = 0; j < QtyInEach; j++)
+                for (int j = 0; j < qtyInEach; j++)
                 {
                     D newobj = (D)Activator.CreateInstance(dettypetocreate);
-                    GenDetails(newobj, QtyInEach);
+                    GenDetails(newobj, qtyInEach);
                     detarr.AddObject(newobj);
                 }
             }
@@ -96,67 +99,74 @@
         /// <param name="dobj">
         /// The dobj.
         /// </param>
-        /// <param name="QtyInEach">
+        /// <param name="qtyInEach">
         /// The qty in each.
         /// </param>
         /// <exception cref="Exception">
         /// </exception>
-        internal void CheckDetailsQty(D dobj, int QtyInEach)
+        internal void CheckDetailsQty(D dobj, int qtyInEach)
         {
             string[] detprops = Information.GetPropertyNamesByType(dobj.GetType(), typeof(DetailArray));
             for (int i = 0; i < detprops.Length; i++)
             {
                 DetailArray detarr = (DetailArray)Information.GetPropValueByName(dobj, detprops[i]);
-                if (detarr.Count != QtyInEach) 
+                if (detarr.Count != qtyInEach) 
                     throw new Exception(string.Format("Missing reading of {0}!", detprops[i]));
 
                 for (int j = 0; j < detarr.Count; j++)
                 {
                     D obj = (D)detarr.ItemByIndex(j);
-                    CheckDetailsQty(obj, QtyInEach);
+                    CheckDetailsQty(obj, qtyInEach);
                 }
             }
 
         }
 
         /// <summary>
-        /// Creates fake master objects for multimaster sample
+        /// Creates fake master objects for multimaster sample.
         /// </summary>
-        /// <param name="QtyInEach"></param>
-        /// <returns></returns>
-        internal ICSSoft.STORMNET.DataObject[] CreateMasterXXs(int QtyInEach)
+        /// <param name="qtyInEach">
+        /// </param>
+        /// <returns>
+        /// The <see cref="DataObject[]"/>.
+        /// </returns>
+        internal DataObject[] CreateMasterXXs(int qtyInEach)
         {
-            List<ICSSoft.STORMNET.DataObject> objstoupdlist = new List<ICSSoft.STORMNET.DataObject>();
+            List<DataObject> objstoupdlist = new List<DataObject>();
 
             for (int i = 1; i < 13; i++)
             {
                 Type mastertype = Information.GetPropertyType(typeof(Internal), string.Format("Master{0:00}", i));
-                objstoupdlist.AddRange(CreateMasterXXObject(mastertype, QtyInEach));
+                objstoupdlist.AddRange(CreateMasterXXObject(mastertype, qtyInEach));
             }
 
             for (int i = 1; i < 4; i++)
             {
                 Type mastertype = Type.GetType(string.Format("IIS.CDLIB.MasterDerived{0:00}, MultiMaster(Objects), Version=1.0.0.1, Culture=neutral, PublicKeyToken=d9aab9804d43c217", i));
-                objstoupdlist.AddRange(CreateMasterXXObject(mastertype, QtyInEach));
+                objstoupdlist.AddRange(CreateMasterXXObject(mastertype, qtyInEach));
             }
 
-            ICSSoft.STORMNET.DataObject[] objstoupd = objstoupdlist.ToArray();
+            DataObject[] objstoupd = objstoupdlist.ToArray();
 
             return objstoupd;
         }
 
         /// <summary>
-        /// Create desired quantity of master objects of selected type
+        /// Create desired quantity of master objects of selected type.
         /// </summary>
-        /// <param name="MasterType"></param>
-        /// <param name="QtyInEach"></param>
-        /// <returns></returns>
-        internal MasterBase[] CreateMasterXXObject(Type MasterType, int QtyInEach)
+        /// <param name="MasterType">
+        /// </param>
+        /// <param name="qtyInEach">
+        /// </param>
+        /// <returns>
+        /// The <see cref="MasterBase[]"/>.
+        /// </returns>
+        internal MasterBase[] CreateMasterXXObject(Type MasterType, int qtyInEach)
         {
-            MasterBase[] result = new MasterBase[QtyInEach];
+            MasterBase[] result = new MasterBase[qtyInEach];
             RandomStringGenerator rsg = new RandomStringGenerator();
 
-            for (int i = 0; i < QtyInEach; i++)
+            for (int i = 0; i < qtyInEach; i++)
             {
                 MasterBase masterbase = (MasterBase)Activator.CreateInstance(MasterType);
                 for (int j = 0; j < 10; j++)
@@ -166,22 +176,26 @@
 
                 result[i] = masterbase;
             }
+
             return result;
         }
 
         /// <summary>
-        /// Load fake masters into a masters cache
+        /// Load fake masters into a masters cache.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// 
+        /// </returns>
         internal Dictionary<string, MasterBase[]> LoadMasters()
         {
             Dictionary<string, MasterBase[]> result = new Dictionary<string, MasterBase[]>();
             LoadingCustomizationStruct lcs = new LoadingCustomizationStruct(null);
-            lcs.View = new View(new ViewAttribute("someview", new string[] {"S0" }), typeof(MasterBase));
-            lcs.LoadingTypes = new Type[]{typeof(Master01), typeof(Master02), typeof(Master03), typeof(Master04), typeof(Master05), typeof(Master06), 
-                                          typeof(Master07), typeof(Master08), typeof(Master09), typeof(Master10), typeof(Master11), typeof(Master12),
-                                          typeof(MasterDerived01), typeof(MasterDerived02), typeof(MasterDerived03)};
-            IEnumerable<ICSSoft.STORMNET.DataObject> dobjs = dataService.LoadObjects(lcs);
+
+            lcs.View = new View { DefineClassType = typeof(MasterBase) };
+            lcs.View.AddProperty("S0");
+
+            lcs.LoadingTypes = new[] { typeof(Master01), typeof(Master02), typeof(Master03), typeof(Master04), typeof(Master05), typeof(Master06), typeof(Master07), typeof(Master08), typeof(Master09), typeof(Master10), typeof(Master11), typeof(Master12), typeof(MasterDerived01), typeof(MasterDerived02), typeof(MasterDerived03) };
+            IEnumerable<DataObject> dobjs = _dataService.LoadObjects(lcs);
 
             var querygroupbytype = from MasterBase dobj in dobjs
                         group dobj by dobj.GetType().Name;
@@ -190,61 +204,31 @@
             {
                 result.Add(objgroup.Key, objgroup.ToArray<MasterBase>());
             }
+
             return result;
             
         }
 
-        Random random = new Random();
-
-        internal MasterBase GetRandomMaster(Dictionary<string, MasterBase[]> mastercache, string mastertypename)
-        {
-            return mastercache[mastertypename][random.Next(0, 99)];
-        }
-
-    }
-
-    /// <summary>
-    /// Random string generator
-    /// </summary>
-    internal class RandomStringGenerator
-    {
-        List<char> _characters;
-        Random random = new Random();
-        public RandomStringGenerator()
-        {
-            _characters = new List<char>();
-            // Fill character list with A-Z.
-            for (int i = 65; i <= 90; i++)
-            {
-                _characters.Add((char)i);
-            }
-            // Fill character list with a-z.
-            for (int i = 97; i <= 122; i++)
-            {
-                _characters.Add((char)i);
-            }
-            // Fill character list with 0-9.
-            for (int i = 48; i <= 57; i++)
-            {
-                _characters.Add((char)i);
-            }
-        }
+        /// <summary>
+        /// The random.
+        /// </summary>
+        private readonly Random _random = new Random();
 
         /// <summary>
-        /// Generate random string
+        /// The get random master.
         /// </summary>
-        /// <param name="lenght">number of symbols</param>
-        /// <returns>random string</returns>
-        public string Generate(int lenght)
-        {            
-            StringBuilder buffer = new StringBuilder(lenght);
-            for (int i = 0; i < lenght; i++)
-            {
-                int randomNumber = random.Next(0, _characters.Count);
-                char randomChar = _characters[randomNumber];
-                buffer.Append(randomChar);
-            }
-            return buffer.ToString();
+        /// <param name="mastercache">
+        /// The mastercache.
+        /// </param>
+        /// <param name="mastertypename">
+        /// The mastertypename.
+        /// </param>
+        /// <returns>
+        /// The <see cref="MasterBase"/>.
+        /// </returns>
+        internal MasterBase GetRandomMaster(Dictionary<string, MasterBase[]> mastercache, string mastertypename)
+        {
+            return mastercache[mastertypename][_random.Next(0, 99)];
         }
     }
 }
