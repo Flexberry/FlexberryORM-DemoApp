@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.Services.CurrentUserService</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.Services.CurrentUser">
+            <summary>
+            Текущий пользователь приложения.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.Services.CurrentUserService.IUser">
+            <summary>
+            Учетные данные пользователя.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.Services.CurrentUserService">
+            <summary>
+            Сервис для получения текущего пользователя.
+            </summary>
+            <summary>
+            Сервис для получения текущего пользователя.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.Services.CurrentUserService._container">
+            <summary>
+            Контейнер Unity Framework.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.Services.CurrentUserService._defaultUser">
+            <summary>
+            Пользователь по умолчанию, используемый в случае, если тип пользователя 
+            не зарегистрирован в конфигурации unity, либо его не удалось разрешить.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.Services.CurrentUserService.#cctor">
+            <summary>
+            Инициализация сервиса.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.Services.CurrentUserService.ResolveUser``1">
+            <summary>
+            Изменить способ получения текущего пользователя.
+            </summary>
+            <typeparam name="T">Класс, ответственный за работу с текущим пользователем.</typeparam>
+        </member>
+        <member name="M:ICSSoft.Services.CurrentUserService.Reset">
+            <summary>
+            Инициализирует настройки сервиса по умолчанию.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.Services.CurrentUserService.GetRegisteredUser">
+            <summary>
+            Получить пользователя, тип которого зарегистрирован в конфигурации unity.
+            </summary>
+            <returns>Данные о зарегистрированном пользователе, либо <c>null</c>, если его не удалось разрешить.</returns>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentUserService.CurrentUser">
+            <summary>
+            Текущий пользователь.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.Services.CurrentUserService.IUser">
+            <summary>
+            Учетные данные пользователя.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentUserService.IUser.Login">
+            <summary>
+            Логин пользователя ("vpupkin").
+            </summary>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentUserService.IUser.Domain">
+            <summary>
+            Домен пользователя.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentUserService.IUser.FriendlyName">
+            <summary>
+            Имя пользователя ("VASYA Pupkin").
+            </summary>
+        </member>
+        <member name="F:ICSSoft.Services.CurrentUser._webHttpUser">
+            <summary>
+            Текущий web-пользователь.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.Services.CurrentUser._winUser">
+            <summary>
+            Текущий windows-пользователь.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.Services.CurrentUser.GetUser">
+            <summary>
+            Получить пользователя в текущем окружении.
+            </summary>
+            <returns>
+            Если текущее приложение исполняется в веб окружении, 
+            то вернет учетные данные о текущем web-пользователе, иначе о windows-пользователе.
+            </returns>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentUser.Login">
+            <summary>
+            Логин пользователя.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentUser.Domain">
+            <summary>
+            Домен пользователя.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentUser.FriendlyName">
+            <summary>
+            Имя пользователя.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.Services.CurrentWebHttpUser">
+            <summary>
+            Текущий пользователь в web-приложении.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.Services.CurrentWebHttpUser._login">
+            <summary>
+            Логин пользователя, заданный вручную.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.Services.CurrentWebHttpUser._domain">
+            <summary>
+            Домен пользователя, заданный вручную.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.Services.CurrentWebHttpUser._friendlyName">
+            <summary>
+            Имя пользователя, заданное вручную.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.Services.CurrentWebHttpUser.GetLogin">
+            <summary>
+            Получить логин пользователя в текущем веб окружении.
+            </summary>
+            <returns>Логин пользователя, либо <c>null</c>, если пользователь не авторизован.</returns>
+        </member>
+        <member name="M:ICSSoft.Services.CurrentWebHttpUser.GetDomain">
+            <summary>
+            Получить домен пользователя в текущем веб окружении.
+            </summary>
+            <returns>
+            Домен пользователя, либо <c>null</c>, если пользователь не авторизован.
+            Если домен в учетных данных не указан, то метод возвратит пустую строку.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.Services.CurrentWebHttpUser.GetIdentityName">
+            <summary>
+            Получить имя текущего пользователя (домен + логин) из текущего HTTP контекста.
+            </summary>
+            <returns>
+            Имя текущего пользователя, включающее домен и логин, разделенные обратным слэшем.
+            <para/>Если домен не задан, то метод вернет только логин.
+            <para/>Если пользователь не авторизован, метод вернет <c>null</c>.
+            </returns>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentWebHttpUser.Login">
+            <summary>
+            Логин пользователя.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentWebHttpUser.Domain">
+            <summary>
+            Домен пользователя.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentWebHttpUser.FriendlyName">
+            <summary>
+            Имя пользователя.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.Services.CurrentWindowsUser">
+            <summary>
+            Текущий пользователь в windows-приложении.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.Services.CurrentWindowsUser._login">
+            <summary>
+            Логин пользователя.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.Services.CurrentWindowsUser.#ctor">
+            <summary>
+            Создать класс текущего пользователя и инициализировать данные из windows-окружения.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.Services.CurrentWindowsUser.GetUserFriendlyName(System.String)">
+            <summary>
+            Получить полное имя пользователя по его логину в Windows.
+            </summary>
+            <param name="login">Логин пользователя.</param>
+            <returns>Полное имя пользователя, либо <c>null</c>, если его не удалось получить.</returns>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentWindowsUser.Login">
+            <summary>
+            Логин пользователя.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentWindowsUser.Domain">
+            <summary>
+            Домен пользователя.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.Services.CurrentWindowsUser.FriendlyName">
+            <summary>
+            Имя пользователя.
+            </summary>
+        </member>
+    </members>
+</doc>

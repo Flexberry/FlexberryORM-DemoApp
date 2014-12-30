@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.Business.ODBCDataService</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Business.ODBCAccessDataService">
+            <summary>
+            Summary description for ODBCAccessDataService.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.ODBCDataService">
+            <summary>
+            Summary description for ODBCDataService.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.ODBCAccessDataService.Clone">
+            <summary>
+            Создание копии экземпляра сервиса данных.
+            </summary>
+            <returns>Копии экземпляра сервиса данных.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.ODBCMySQLDataService">
+            <summary>
+            Summary description for ODBCMySQLDataService.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.ODBCMySQLDataService.Clone">
+            <summary>
+            Создание копии экземпляра сервиса данных.
+            </summary>
+            <returns>Копии экземпляра сервиса данных.</returns>
+        </member>
+    </members>
+</doc>

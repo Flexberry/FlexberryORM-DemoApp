@@ -1,0 +1,1356 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.Business.LINQProvider</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.Exceptions.MasterLevelException">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.Exceptions.MethodSignatureException">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.Exceptions.UnknownTypeException">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.Exceptions.NotSupportedRegexException">
+            <summary>
+            Исключение, сообщающее, что на настоящий момент данный шаблон regex не может быть преобразован в sql-like.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.Exceptions.NotSupportedRegexException.#ctor(System.String)">
+            <summary>
+            Формирование исключения.
+            </summary>
+            <param name="message"> Сообщение исключения (в начале сообщения будет добавлен текст "Представленное регулярное выражение не поддерживается. "). </param>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.FlexLinqExtensions">
+            <summary>
+            Расширения LINQ.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.FlexLinqExtensions.IsLike(System.String,System.String)">
+            <summary>
+            Реализация функции Like.
+            </summary>
+            <param name="source">Исходная строка.</param>
+            <param name="pattern">Паттерн для поиска.</param>
+            <returns>Результат: подходит или нет.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.FlexLinqExtensions.Between``1(``0,``0,``0)">
+            <summary>
+            Диапазон значений.
+            </summary>
+            <typeparam name="T">Тип, для которого строим выражение.</typeparam>
+            <param name="source">Что сравниваем.</param>
+            <param name="left">Левый операнд.</param>
+            <param name="right">Правый операнд.</param>
+            <returns>Результат попадания в диапазон.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.IExpressionTreeVisitor">
+            <summary>
+            Интерфейс для visitor'а, который обрабатывает дерево выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.IExpressionTreeVisitor.GetQueryModelVisitor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Создать экземпляр visitor'а для обработки запроса linq-выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.
+            </summary>
+            <param name="viewIsDynamic">Динамически создавать представление.</param>
+            <param name="view">Представление, если было указано.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+            <returns>Экземпляр visitor'а для обработки запроса linq-выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.IExpressionTreeVisitor.GetLcsExpression(System.Linq.Expressions.Expression)">
+            <summary>
+            Получить функцию ограничения для <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.
+            </summary>
+            <param name="linqExpression">Linq-выражение, для которого необходимо получить функцию ограничения.</param>
+            <returns>Функция ограничения для <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.IQueryModelVisitor">
+            <summary>
+            Интерфейс для основного visitor'а, который обрабатывает запрос linq-выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.IQueryModelVisitor.GetExpressionTreeVisitor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Создать экземпляр visitor'а для обработки дерева выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.
+            </summary>
+            <param name="viewIsDynamic">Динамически создавать представление.</param>
+            <param name="view">Представление, если было указано.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+            <returns>Экземпляр visitor'а для обработки дерева выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.IQueryModelVisitor.GenerateLcs(Remotion.Linq.QueryModel)">
+            <summary>
+            Получить <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/> для запроса linq-выражения.
+            </summary>
+            <param name="queryModel">Запроса linq-выражения.</param>
+            <returns><see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/> полученный для запроса linq-выражения.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon">
+            <summary>
+            Visitor, который обходит распарсенноое дерево (в большинстве случаев подходит эта реализация)
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase">
+            <summary>
+            Visitor, который обходит распарсенноое дерево
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase._ldef">
+            <summary>
+            Описание языка для построения lcs.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase._stacksHolder">
+            <summary>
+            Элемент для организации стека.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase._resolvingViews">
+            <summary>
+            Представления мастеров, нужные для получения их детейлов (в случае динамических представлений null)..
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase._previosVisitedMemberExpression">
+            <summary>
+            Сохраняет предыдущий посещенный член при многоуровневом вызове
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase._viewIsDynamic">
+            <summary>
+            Является ли представление динамическим  (формируется во время разбора выражения).
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.#ctor(ICSSoft.STORMNET.Business.LINQProvider.TreeVisitorStacksHolder)">
+            <summary>
+            Конструктор класса <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon"/>.
+            </summary>
+            <param name="stacksHolder"> Элемент, организующий стек. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.#ctor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Конструктор класса <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon"/>.
+            </summary>
+            <param name="viewIsDynamic"> Является ли представление динамическим (формируется во время разбора выражения). </param>
+            <param name="view"> Представление (в случае динамического представления может быть передано пустое представление, у которого задан только тип). </param>
+            <param name="resolvingViews"> Представления мастеров, нужные для получения их детейлов (в случае динамических представлений null). </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.GetLcsExpression">
+            <summary>
+            Получение сформированного lcs (берётся из стека).
+            </summary>
+            <returns> Сформированное lcs. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.GetLcsExpression(System.Linq.Expressions.Expression)">
+            <summary>
+            Получить функцию ограничения для <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.
+            </summary>
+            <param name="linqExpression">Linq-выражение, для которого необходимо получить функцию ограничения.</param>
+            <returns>Функция ограничения для <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.GetQueryModelVisitor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Создать экземпляр visitor'а для обработки запроса linq-выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.
+            </summary>
+            <param name="viewIsDynamic">Динамически создавать представление.</param>
+            <param name="view">Представление, если было указано.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+            <returns>Экземпляр visitor'а для обработки запроса linq-выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.VisitUnaryExpression(System.Linq.Expressions.UnaryExpression)">
+            <summary>
+            Обход унарной операции в дереве выражения.
+            </summary>
+            <param name="expression"> Элемент, соответствующий унарной операции. </param>
+            <returns> Фактически возвращается то же выражение, но при этом в стеке появляются необходимые параметры. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.VisitSubQueryExpression(Remotion.Linq.Clauses.Expressions.SubQueryExpression)">
+            <summary>
+            Обход подзапроса в дереве выражения.
+            </summary>
+            <param name="expression"> Выражение-подзапрос. </param>
+            <returns> Данный метод реализован только у потомков. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.VisitSubQueryExpressionHelper(Remotion.Linq.Clauses.Expressions.SubQueryExpression)">
+            <summary>
+            Вспомогательный метод, содержащий общую обработку VisitSubQueryExpression, используемую в потомках.
+            </summary>
+            <param name="expression"> Выражение, содержащее подзапрос. </param>
+            <returns> Фактически возвращается то же выражение, но при этом в стеке появляются необходимые параметры. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.VisitBinaryExpression(System.Linq.Expressions.BinaryExpression)">
+            <summary>
+            Обход бинарной операции в дереве выражения.
+            </summary>
+            <param name="expression"> Элемент, соответствующий бинарной операции. </param>
+            <returns> Фактически возвращается то же выражение, но при этом в стеке появляются необходимые параметры. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.VisitMemberExpression(System.Linq.Expressions.MemberExpression)">
+            <summary>
+            Обход элемента в дереве выражения, соответствующему свойству элемента.
+            </summary>
+            <param name="expression"> Выражение, соответствующему свойству элемента. </param>
+            <returns> Реализовано только в потомках, будет проброшено исключение. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.VisitMemberExpressionHelper(System.Linq.Expressions.MemberExpression)">
+            <summary>
+            Вспомогательный метод, содержащий общую обработку VisitMemberExpressionHelper, используемую в потомках.
+            </summary>
+            <param name="expression"> Выражение, содержащее обращение к свойству. </param>
+            <returns> Фактически возвращается то же выражение, но при этом в стеке появляются необходимые параметры. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.VisitConstantExpression(System.Linq.Expressions.ConstantExpression)">
+            <summary>
+            Обход константы в дереве выражения.
+            </summary>
+            <param name="expression"> Элемент, соответствующий константе. </param>
+            <returns> Фактически возвращается то же выражение, но при этом в стеке появляются необходимые параметры. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.VisitMethodCallExpression(System.Linq.Expressions.MethodCallExpression)">
+            <summary>
+            Обход вызова метода в дереве выражения.
+            </summary>
+            <param name="expression"> Элемент, соответствующий вызову метода. </param>
+            <returns> Фактически возвращается то же выражение, но при этом в стеке появляются необходимые параметры. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.VisitMethodIsMatch(System.Linq.Expressions.MethodCallExpression)">
+            <summary>
+            Обработка метода Regex.IsMatch в Linq-выражении.
+            </summary>
+            <param name="expression"> Выражение, содержащее IsMatch. </param>
+            <returns> Фактически возвращается то же выражение, но при этом в стеке появляются необходимые параметры. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.VisitMethodAnyOrAllForPseudoDetail(System.Linq.Expressions.MethodCallExpression,System.String)">
+            <summary>
+            Данная функция работает в ситуации обработки выражения вида:
+            new PseudoDetail_Порода, Кошка_(Кошка.Views.КошкаE,"Порода").Any(x => x.Кличка != "Барсик").
+            Выражение будет обработано и построено корректное DetailVariableDef
+            </summary>
+            <param name="expression"> Выражение типа new PseudoDetail(...).Any(...) </param>
+            <param name="methodName"> Какое выражение передано: All или Any. </param>
+            <returns>То же выражение, но это будет значить, что оно корректно обработано и в стек помещены нужные данные (либо null вернётся, если данный метод не может по какой-то причине обработать вызов метода). </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.CreatePseudoDetailQuery``1(System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Создаём lcs для ограничения на псевдодетейл.
+            Делается это так: создаётся запрос к объекту типа псевдодетейл и получается lcs, откуда берётся правильная функция ограничения.
+            </summary>
+            <typeparam name="T"> Тип псевдодетейла. </typeparam>
+            <param name="lambdaExpression"> Ограничение на псевдодетейл, из которого нужно получить LimitFunction. </param>
+            <returns> LimitFunction для псевдодетейла. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.CompareWithObject(System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,System.Boolean)">
+            <summary>
+            Обрабатывает стеки если имеет место сравнения с объектом иначе ничего не делает.
+            </summary>
+            <param name="one"> Первый операнд сравнения. </param>
+            <param name="two"> Второй операнд сравнения. </param>
+            <param name="course"> Очередность операндов. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.AddTwoParamInCourse(System.Object,System.Object,System.Boolean)">
+            <summary>
+            Кладет в стек два элемента с заданной очередностью.
+            </summary>
+            <param name="one"> Первый элемент. </param>
+            <param name="two"> Второй элемент. </param>
+            <param name="cource"> Сначала первый потом второй или наоборот. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.GetObjectTypeByType(System.Type)">
+            <summary>
+            Возвращает lcs тип по типу system.Type.
+            </summary>
+            <param name="memberType"> Обычный тип. </param>
+            <returns> Тип lcs. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.PushFunctionOfParent(System.Linq.Expressions.MemberExpression,System.String)">
+            <summary>
+            Возвращает функцию с учетом родителя данного expression.
+            </summary>
+            <param name="expression"> Выражение. </param>
+            <param name="func"> Имя функции. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.PushFunctionlike(System.Linq.Expressions.MethodCallExpression,System.String)">
+            <summary>
+            Функция предназначена для добавления в стек функций функции like с параметром в формате заданом строкой
+            </summary>
+            <param name="expression"> Выражение. </param>
+            <param name="format"> Формат строки. символ $ заменяется на значение взятое из стека. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorBase.VisitKeyGuidProperty(System.String,System.Object,System.String)">
+            <summary>
+            Проводим правильную обработку поля типа KeyGuid (это может быть первичный ключ, а может и просто свойство).
+            </summary>
+            <param name="expressionMemberName">Имя поля (короткое, если это цепочка из мастеров, то выводится только последнее почле точки).</param>
+            <param name="master">Мастеровой объект, извлечённый из объекта по этому свойству (если null, то это не ссылка на мастера).</param>
+            <param name="varname">Полное имя поля (выдаётся полная цепочка ссылок на мастеров).</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon.#ctor(ICSSoft.STORMNET.Business.LINQProvider.TreeVisitorStacksHolder)">
+            <summary>
+            Конструктор класса <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon"/>.
+            </summary>
+            <param name="stacksHolder"> Элемент, организующий стек. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon.#ctor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Конструктор класса <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon"/>.
+            </summary>
+            <param name="viewIsDynamic"> Является ли представление динамическим (формируется во время разбора выражения). </param>
+            <param name="view"> Представление (в случае динамического представления может быть передано пустое представление, у которого задан только тип). </param>
+            <param name="resolvingViews"> Представления мастеров, нужные для получения их детейлов (в случае динамических представлений null). </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon.GetQueryModelVisitor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Создать экземпляр visitor'а для обработки запроса linq-выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.
+            </summary>
+            <param name="viewIsDynamic">Динамически создавать представление.</param>
+            <param name="view">Представление, если было указано.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+            <returns>Экземпляр visitor'а для обработки запроса linq-выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon.GetLcsExpression(System.Linq.Expressions.Expression)">
+            <summary>
+            Получить функцию ограничения для <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.
+            </summary>
+            <param name="linqExpression">Linq-выражение, для которого необходимо получить функцию ограничения.</param>
+            <returns>Функция ограничения для <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon.VisitSubQueryExpression(Remotion.Linq.Clauses.Expressions.SubQueryExpression)">
+            <summary>
+            Обход подзапроса в дереве выражения.
+            </summary>
+            <param name="expression"> Выражение-подзапрос. </param>
+            <returns> Фактически возвращается то же выражение-подзапрос, но при этом в стеке появляется необходимая lcs. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon.VisitMemberExpression(System.Linq.Expressions.MemberExpression)">
+            <summary>
+            Обход элемента в дереве выражения, соответствующему свойству элемента.
+            </summary>
+            <param name="expression"> Выражение, соответствующему свойству элемента. </param>
+            <returns> Фактически возвращается то же выражение, но при этом в стеке появляются необходимые данные. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorExpressionTreeVisitorCommon.ProcessContainsResultOperator(Remotion.Linq.Clauses.ResultOperatorBase,System.Linq.Expressions.Expression)">
+            <summary>
+            Обработка подзапроса, содержащего операцию Contains (если запрос не содержит Contains, то вернётся false).
+            </summary>
+            <param name="resultOperator"> Оператор результата подзапроса, который может быть с Contains. </param>
+            <param name="fromExpr"> From-часть выражения подзапроса. </param>
+            <returns>False, если оператор результата подзапроса не содержит Contains (если содержит, но по какой-то причине обработка не прошла, то будет вызвано исключение). </returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor._resultLcs">
+            <summary>
+            Результирующий LCS
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.View">
+            <summary>
+            Представление
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor._viewIsDynamic">
+            <summary>
+            Является ли представление динамическим
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor._resolvingViews">
+            <summary>
+            Дополнительные представления, необходимые для построения ограничений, например, на детейлы
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.#ctor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor"/> class.
+            </summary>
+            <param name="viewIsDynamic">
+            The view is dynamic.
+            </param>
+            <param name="view">
+            The view.
+            </param>
+            <param name="resolvingViews">
+            The resolving views.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.GetExpressionTreeVisitor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Создать экземпляр visitor'а для обработки дерева выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.
+            </summary>
+            <param name="viewIsDynamic">Динамически создавать представление.</param>
+            <param name="view">Представление, если было указано.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+            <returns>Экземпляр visitor'а для обработки дерева выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.GenerateLcs(Remotion.Linq.QueryModel)">
+            <summary>
+            Получить <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/> для запроса linq-выражения.
+            </summary>
+            <param name="queryModel">Запроса linq-выражения.</param>
+            <returns><see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/> полученный для запроса linq-выражения.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.GetLcs">
+            <summary>
+            Получить внутреннюю пременную LCS. Перед вызовом убедитесь, что она готова.
+            </summary>
+            <returns>
+            The <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.VisitQueryModel(Remotion.Linq.QueryModel)">
+            <summary>
+            The visit query model.
+            </summary>
+            <param name="queryModel">
+            The query model.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.VisitWhereClause(Remotion.Linq.Clauses.WhereClause,Remotion.Linq.QueryModel,System.Int32)">
+            <summary>
+            Обработка фрагмента модели, соответствующей выражению с Where.
+            </summary>
+            <param name="whereClause"> Фрагмент модели, соответствующий выражению с Where. </param>
+            <param name="queryModel"> Общая построенная модель запроса. </param>
+            <param name="index"> Позиция фрагмента в общей модели. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.VisitResultOperator(Remotion.Linq.Clauses.ResultOperatorBase,Remotion.Linq.QueryModel,System.Int32)">
+            <summary>
+            The visit result operator.
+            </summary>
+            <param name="resultOperator">
+            The result operator.
+            </param>
+            <param name="queryModel">
+            The query model.
+            </param>
+            <param name="index">
+            The index.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.VisitOrderByClause(Remotion.Linq.Clauses.OrderByClause,Remotion.Linq.QueryModel,System.Int32)">
+            <summary>
+            The visit order by clause.
+            </summary>
+            <param name="orderByClause">
+            The order by clause.
+            </param>
+            <param name="queryModel">
+            The query model.
+            </param>
+            <param name="index">
+            The index.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.AddColumnSort(System.String,ICSSoft.STORMNET.Business.SortOrder)">
+            <summary>
+            Добавить сортировку на свойство объекта.
+            Порядок сортировки определяется порядком вызова метода для различных свойств.
+            </summary>
+            <param name="propertyName">Наименование свойства, по которому необходимо сортировать.</param>
+            <param name="sortOrder">Направление сортировки.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.GetOrder(Remotion.Linq.Clauses.OrderingDirection)">
+            <summary>
+            Преобразовать направление сортировки в формате LINQ в направление сортировки в формате LCS.
+            </summary>
+            <param name="od">
+            Направление сортировки в формате LINQ.
+            </param>
+            <returns>
+            The <see cref="T:ICSSoft.STORMNET.Business.SortOrder"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor.FillLcsLimitFunction(System.Linq.Expressions.Expression)">
+            <summary>
+            The fill lcs limit function.
+            </summary>
+            <param name="expression">
+            The linq expression.
+            </param>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQuery`2">
+            <summary>
+            The query.
+            </summary>
+            <typeparam name="T">
+            </typeparam>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.Query`1">
+            <summary>
+            Explicit interface implementation of IQueryable
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.Query`1.GetEnumerator">
+            <summary>
+            on the call to any of the System.Linq extension methods on IEnumerable{T}, this
+            method will get called.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.LINQProvider.Query`1.Expression">
+            <summary>
+            Выражение
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsQuery`2.#ctor(ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider{`0,`1})">
+            <summary>
+            Initializes a new instance of the <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.Query`1"/> class.
+            </summary>
+            <param name="provider">
+            The provider.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            </exception>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2.GetLcs(System.Linq.Expressions.Expression)">
+            <summary>
+            Получить <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/> для linq-выражения.
+            </summary>
+            <param name="expression">Linq-выражение, по которому необходимо сформировать <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</param>
+            <returns><see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>, полученное для linq-выражения.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.DateTimeEarlyExpressionTransformer">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs">
+            <summary>
+            The linq to lcs.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.GetLcs(System.Linq.Expressions.Expression,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Получить <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/> для указанного linq-выражения по представлению.
+            Будет использован <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor"/> в качестве основного visitor'а для разбора запроса linq-выражения.
+            </summary>
+            <param name="queryExpression">Linq-выражение, по которому будет сформирован <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</param>
+            <param name="view">Представление, по которому будут зачитаны данные.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+            <returns><see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>, полученный для указанного linq-выражения по представлению.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.GetLcs``1(System.Linq.Expressions.Expression)">
+            <summary>
+            Получить <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/> для указанного linq-выражения с динамически созданным представлением.
+            Будет использован <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor"/> в качестве основного visitor'а для разбора запроса linq-выражения.
+            </summary>
+            <param name="queryExpression">Linq-выражение, по которому будет сформирован <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</param>
+            <returns><see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>, полученный для указанного linq-выражения с динамически созданным представлением.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.GetLcs``1(System.Linq.Expressions.Expression,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Получить <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/> для указанного linq-выражения по представлению.
+            </summary>
+            <param name="queryExpression">Linq-выражение, по которому будет сформирован <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</param>
+            <param name="view">Представление, по которому будут зачитаны данные.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+            <returns><see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>, полученный для указанного linq-выражения по представлению.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.GetLcs``2(System.Linq.Expressions.Expression)">
+            <summary>
+            Получить <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/> для указанного linq-выражения с динамически созданным представлением.
+            </summary>
+            <param name="queryExpression">Linq-выражение, по которому будет сформирован <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</param>
+            <returns><see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>, полученный для указанного linq-выражения с динамически созданным представлением.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.GetLcs``1(System.Linq.Expressions.Expression,System.Type)">
+            <summary>
+            Получить <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/> для указанного linq-выражения с динамически созданным представлением.
+            </summary>
+            <param name="queryExpression">Linq-выражение, по которому будет сформирован <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</param>
+            <param name="type">Тип объекта данных, для которого необходимо сформировать <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</param>
+            <returns><see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>, полученный для указанного linq-выражения с динамически созданным представлением.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.GetLcs(System.Linq.Expressions.Expression,System.Type)">
+            <summary>
+            Получить <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/> для указанного linq-выражения с динамически созданным представлением.
+            Будет использован <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsGeneratorQueryModelVisitor"/> в качестве основного visitor'а для разбора запроса linq-выражения.
+            </summary>
+            <param name="queryExpression">Linq-выражение, по которому будет сформирован <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</param>
+            <param name="type">Тип объекта данных, для которого необходимо сформировать <see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>.</param>
+            <returns><see cref="T:ICSSoft.STORMNET.Business.LoadingCustomizationStruct"/>, полученный для указанного linq-выражения с динамически созданным представлением.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.CallCount(System.Linq.Expressions.Expression,System.Type)">
+            <summary>
+            The call count.
+            </summary>
+            <param name="expressionToQuery">
+            The expression to query.
+            </param>
+            <param name="t">
+            The t.
+            </param>
+            <returns>
+            The <see cref="T:System.Linq.Expressions.Expression"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.GetExpressionToQueryFromWhereExpression(System.Linq.Expressions.Expression,System.Type)">
+            <summary>
+            Из linq-выражения получаем lcs.
+            </summary>
+            <param name="whereExpression"> Linq-выражениe c ограничением. </param>
+            <param name="returnType"> Тип возвращаемого linq-выражением значения. </param>
+            <returns> Сформированное lcs. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.Query``1(ICSSoft.STORMNET.Business.SQLDataService,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Возвращает IQueryable, делающий запросы к SQLDataService
+            </summary>
+            <typeparam name="T">
+            Тип объектов для загрузки
+            </typeparam>
+            <param name="ds">
+            Сервис данных
+            </param>
+            <param name="view">
+            The view.
+            </param>
+            <param name="resolvingViews">
+            The resolving Views.
+            </param>
+            <returns>
+            IQueryable
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.Query``1(ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Возвращает IQueryable, делающий запросы к SQLDataService, динамически формируя представление
+            </summary>
+            <typeparam name="T">Тип объектов для загрузки</typeparam>
+            <param name="ds">Сервис данных</param>
+            <returns>IQueryable</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.Query``1(ICSSoft.STORMNET.Business.IDataService,System.String)">
+            <summary>
+            The query.
+            </summary>
+            <param name="ds">
+            The ds.
+            </param>
+            <param name="viewName">
+            The view name.
+            </param>
+            <typeparam name="T">
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Linq.IQueryable"/>.
+            </returns>
+            <exception cref="T:ICSSoft.STORMNET.Exceptions.CantFindViewException">
+            Представление не может быть найдено
+            </exception>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.Execute(ICSSoft.STORMNET.Business.SQLDataService,System.String,System.Type,System.Linq.Expressions.Expression)">
+            <summary>
+            The execute.
+            </summary>
+            <param name="ds">
+            The ds.
+            </param>
+            <param name="viewName">
+            The view name.
+            </param>
+            <param name="t">
+            The t.
+            </param>
+            <param name="expr">
+            The expr.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.Execute(ICSSoft.STORMNET.Business.SQLDataService,System.String,System.Type,System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Получить значения по сформированному ограничению.
+            Является расширением функциональности.
+            </summary>
+            <param name="ds">
+            Сервис данных, для которого будет вызван данный метод.
+            </param>
+            <param name="viewName">
+            Имя представления, по которому будет производиться вычитка.
+            </param>
+            <param name="t">
+            Тип объектов, на который мы накладываем ограничение.
+            </param>
+            <param name="expr">
+            Выражение, задающее ограничение.
+            </param>
+            <param name="resolvingViews">
+            Представления, которые в некоторых местах используются для восполнения недостающих свойств в представлении.
+            </param>
+            <returns>
+            Найденные в соответствии с ограничением элемента.
+            </returns>
+            <exception cref="T:ICSSoft.STORMNET.Exceptions.CantFindViewException">
+            Представление не может быть найдено.
+            </exception>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.LinqToLcs.GetQueryModelVisitor``1(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Получить экземпляр visitor'а для обработки linq-выражения.
+            </summary>
+            <typeparam name="Q">Тип visitor'а для обработки linq-выражения.</typeparam>
+            <param name="viewIsDynamic">Динамически создавать представление.</param>
+            <param name="view">Представление, если было указано.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+            <returns>Созданный экземпляр visitor'а для обработки linq-выражения.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.ParamSet">
+            <summary>
+            Служебный класс для представления параметров в ограничениях LINQ
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.ParamSet.Get``1(System.String)">
+            <summary>
+            Получить значение параметра по имени
+            </summary>
+            <typeparam name="T">Тип параметра (и его значения)</typeparam>
+            <param name="paramName">Имя параметра</param>
+            <returns>Значение параметра</returns>
+            <remarks>На самом деле метод пока никогда не вызывается в рантайме
+            и служит только для создания соответствующих выражений</remarks>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.ParamsUtils">
+            <summary>
+            Вспомогательные методы для работы с параметрами
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.ParamsUtils.GenerateParameterAccess(System.Type,System.String)">
+            <summary>
+            Сгенерировать выражение для доступа к параметру (например, параметру ограничения)
+            </summary>
+            <param name="parameterType">Тип параметра</param>
+            <param name="parameterName">Название параметра</param>
+            <returns>Выражение для доступа к параметру. Результирующее значение выражения
+            будет иметь тип parameterType</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.ParamsUtils.IsItParameter(System.Linq.Expressions.Expression)">
+            <summary>
+            Является ли текущий рассматриваемый элемент вызовом параметра.
+            </summary>
+            <param name="checkExpression">Рассматриваемое выражение.</param>
+            <returns><c>True</c>, если это вызов параметра.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2">
+            <summary>
+            Вспомогательный класс, который в Linq-выражении обозначает псевдодетейл.
+            </summary>
+            <typeparam name="T"> Тип мастера. </typeparam>
+            <typeparam name="TP"> Тип детейла. </typeparam>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2._pseudoDetailView">
+            <summary>
+            Представление псевдодетейла.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2._masterConnectProperties">
+            <summary>
+            Свойства мастера, по которым можно произвести соединение.
+            Фактически соединяем так: Агрегатор.MasterConnectProperties = Псевдодетейл.MasterLinkName.
+            Аналог OwnerConnectProp для <see cref="T:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef"/> в lcs.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.#ctor(ICSSoft.STORMNET.View,System.String)">
+            <summary>
+            Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
+            </summary>
+            <param name="view"> Представление псевдодетейла. </param>
+            <param name="masterLinkName"> Имя связи от псевдодетейла к мастеру. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.#ctor(ICSSoft.STORMNET.View,System.Linq.Expressions.Expression{System.Func{`1,System.Object}})">
+            <summary>
+            Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
+            </summary>
+            <param name="view"> Представление псевдодетейла. </param>
+            <param name="masterLink"> Метод, определяющий имя связи от псевдодетейла к мастеру (определение идёт через "Information.ExtractPropertyPath(masterLink)"). </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.#ctor(ICSSoft.STORMNET.View)">
+            <summary>
+            Конструктор сущности, представляющей в Linq-выражении настоящий детейл (для псевдодетейлов данный метод будет некорректен).
+            </summary>
+            <param name="view"> Представление детейла. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.#ctor(ICSSoft.STORMNET.View,System.Linq.Expressions.Expression{System.Func{`1,System.Object}},System.String)">
+            <summary>
+            Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
+            </summary>
+            <param name="view"> Представление псевдодетейла. </param>
+            <param name="masterLink"> Метод, определяющий имя связи от псевдодетейла к мастеру (определение идёт через "Information.ExtractPropertyPath(masterLink)"). </param>
+            <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.#ctor(ICSSoft.STORMNET.View,System.Linq.Expressions.Expression{System.Func{`1,System.Object}},System.String,System.String[])">
+            <summary>
+            Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
+            </summary>
+            <param name="view"> Представление псевдодетейла. </param>
+            <param name="masterLink"> Метод, определяющий имя связи от псевдодетейла к мастеру (определение идёт через "Information.ExtractPropertyPath(masterLink)"). </param>
+            <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
+            <param name="masterConnectProperties"> Свойства мастера, по которым можно произвести соединение. Аналог OwnerConnectProp для <see cref="T:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef"/> в lcs. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.#ctor(ICSSoft.STORMNET.View,System.String,System.String)">
+            <summary>
+            Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
+            </summary>
+            <param name="view"> Представление псевдодетейла. </param>
+            <param name="masterLinkName"> Имя связи от псевдодетейла к мастеру. </param>
+            <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.#ctor(ICSSoft.STORMNET.View,System.String,System.String,System.String[])">
+            <summary>
+            Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
+            </summary>
+            <param name="view"> Представление псевдодетейла. </param>
+            <param name="masterLinkName"> Имя связи от псевдодетейла к мастеру. </param>
+            <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
+            <param name="masterConnectProperties"> Свойства мастера, по которым можно произвести соединение. Аналог OwnerConnectProp для <see cref="T:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef"/> в lcs. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.Any(System.Linq.Expressions.Expression{System.Func{`1,System.Boolean}})">
+            <summary>
+            Вспомогательный метод, преобразуемый на этапе компиляции Linq-выражения в funcExist.
+            </summary>
+            <param name="predicate"> LimitFunction для псевдодетейла. </param>
+            <returns> При компиляции вернёт true, при интерпретации в Linq формируется DetailVariableDef. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.Any">
+            <summary>
+            Вспомогательный метод, преобразуемый на этапе компиляции Linq-выражения в funcExist.
+            </summary>
+            <returns> При компиляции вернёт true, при интерпретации в Linq формируется DetailVariableDef. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.All(System.Linq.Expressions.Expression{System.Func{`1,System.Boolean}})">
+            <summary>
+            Вспомогательный метод, преобразуемый на этапе компиляции Linq-выражения в funcExistExact.
+            </summary>
+            <param name="predicate"> LimitFunction для псевдодетейла. </param>
+            <returns> При компиляции вернёт true, при интерпретации в Linq формируется DetailVariableDef. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.GetMasterLinkNameForRealDetail">
+            <summary>
+            Вспомогательный метод, который для настоящего детейла определяет имя свойства, по которому он связывается с мастером.
+            </summary>
+            <returns> Имя свойства, по которому детейл связывается с мастером </returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.PseudoDetailView">
+            <summary>
+            Представление псевдодетейла.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.MasterLinkName">
+            <summary>
+            Имя связи от псевдодетейла к мастеру.
+            Аналог ConnectMasterPorp для <see cref="T:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef"/> в lcs.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.MasterToDetailPseudoProperty">
+            <summary>
+            Имя связи от мастера к псевдодетейлу (псевдосвойство).
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetail`2.MasterConnectProperties">
+            <summary>
+            Свойства мастера, по которым можно произвести соединение.
+            Фактически соединяем так: Агрегатор.MasterConnectProperties = Псевдодетейл.MasterLinkName.
+            Аналог OwnerConnectProp для <see cref="T:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef"/> в lcs.
+            Значение по умолчанию: "new string[] { SQLWhereLanguageDef.StormMainObjectKey }".
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetailConsts">
+            <summary>
+            Вспомогательный класс, содержащий константы для получения свойств объекта типа PseudoDetail через Reflection.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetailConsts.PseudoDetailViewPropertyName">
+            <summary>
+            Имя свойства PseudoDetailView.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetailConsts.MasterLinkNamePropertyName">
+            <summary>
+            Имя свойства MasterLinkName.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetailConsts.MasterToDetailPseudoPropertyPropertyName">
+            <summary>
+            Имя свойства MasterToDetailPseudoProperty.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetailConsts.MasterConnectPropertiesPropertyName">
+            <summary>
+            Имя свойства MasterToDetailPseudoProperty.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetailExtension">
+            <summary>
+            Методы-расширения linq для работы с псевдодетейлами.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetailExtension.Where``2(System.Linq.IQueryable{``0},ICSSoft.STORMNET.View,System.String,System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{``1},System.Boolean}},System.String)">
+            <summary>
+            Задание ограничений на псевдодетейлы (в случае обычных детейлов лучше использовать стандартный функционал):
+            выбрать экземпляры класса, хотя бы один псевдодетейл которого удовлетворяют условию.
+            </summary>
+            <param name="source"> Множество элементов класса, на псевдодетейлы которого и накладывается ограничение.  </param>
+            <param name="view"> Имя представления детейла, по которому будет осуществляться поиск.  </param>
+            <param name="masterLinkName"> Имя свойства в классе псевдодетейла, по которому идёт обращение к мастеру.   </param>
+            <param name="predicate"> Ограничение на псевдодетейл.  </param>
+            <param name="masterToDetailPseudoProperty"> Имя свойства, которое будет обозначать связь от мастера к детейлу.  </param>
+            <typeparam name="T"> Тип объектов, к которым делается запрос.  </typeparam>
+            <typeparam name="TP"> Тип псевдодетейла.  </typeparam>
+            <returns> Экземпляры класса, псевдодетейлы которого удовлетворяют условию.  </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetailExtension.Where``2(System.Linq.IQueryable{``0},ICSSoft.STORMNET.View,System.Linq.Expressions.Expression{System.Func{``1,System.Object}},System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{``1},System.Boolean}},System.String)">
+            <summary>
+            Задание ограничений на псевдодетейлы (в случае обычных детейлов лучше использовать стандартный функционал):
+            выбрать экземпляры класса, хотя бы один псевдодетейл которого удовлетворяют условию.
+            </summary>
+            <param name="source"> Множество элементов класса, на псевдодетейлы которого и накладывается ограничение.  </param>
+            <param name="view"> Имя представления детейла, по которому будет осуществляться поиск. </param>
+            <param name="masterLink"> Свойство в классе псевдодетейла, по которому идёт обращение к мастеру.  </param>
+            <param name="predicate"> Ограничение на псевдодетейл. </param>
+            <param name="masterToDetailPseudoProperty"> Имя свойства, которое будет обозначать связь от мастера к детейлу. </param>
+            <typeparam name="T"> Тип объектов, к которым делается запрос. </typeparam>
+            <typeparam name="TP"> Тип псевдодетейла. </typeparam>
+            <returns> Экземпляры класса, псевдодетейлы которого удовлетворяют условию.  </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.PseudoDetailExtension.Where``2(System.Linq.IQueryable{``0},ICSSoft.STORMNET.View,System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{``1},System.Boolean}},System.String)">
+            <summary>
+            Задание ограничений на детейлы (на псевдодетейлы данная функциональность не распространяется).
+            </summary>
+            <param name="source"> Множество элементов класса, на псевдодетейлы которого и накладывается ограничение.   </param>
+            <param name="view"> Имя представления детейла, по которому будет осуществляться поиск.  </param>
+            <param name="predicate"> Ограничение на псевдодетейл.  </param>
+            <param name="masterToDetailPseudoProperty"> Имя свойства, которое будет обозначать связь от мастера к детейлу. </param>
+            <typeparam name="T"> Тип объектов, к которым делается запрос.  </typeparam>
+            <typeparam name="TP"> Тип псевдодетейла. </typeparam>
+            <returns> Экземпляры класса, псевдодетейлы которого удовлетворяют условию.   </returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.ReplacingExpressionTreeVisitorWithProperType">
+            <summary>
+            Данный класс представляет собой по сути ReplacingExpressionTreeVisitor с выправленным нужным образом методом VisitMemberExpression,
+            который убирает привязку свойства псевдодетейла к объекту типа мастера.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.ReplacingExpressionTreeVisitorWithProperType.#ctor(System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)">
+            <summary>
+            Конструктор класса <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.ReplacingExpressionTreeVisitorWithProperType"/>.
+            </summary>
+            <param name="replacedExpression"> Аргумент, который будет подменяться в выражении. </param>
+            <param name="replacementExpression"> Текущая версия сформированного выражения. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.ReplacingExpressionTreeVisitorWithProperType.Replace(System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)">
+            <summary>
+            Выполнить замену и привязку аргумента в выражении.
+            </summary>
+            <param name="replacedExpression"> Аргумент, который будет подменяться в выражении. </param>
+            <param name="replacementExpression"> Текущая версия сформированного выражения. </param>
+            <param name="sourceTree"> Выражение, в котором будет производиться замена. </param>
+            <returns> Сформированное в модель выражение (замена аргумента не произведена, поскольку необходима привязка к другому типу). </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.ReplacingExpressionTreeVisitorWithProperType.VisitExpression(System.Linq.Expressions.Expression)">
+            <summary>
+            Перевод в модель полученного выражения.
+            </summary>
+            <param name="expression"> Выражение. </param>
+            <returns> Преобразованное во внутреннее представление выражение. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.ReplacingExpressionTreeVisitorWithProperType.VisitSubQueryExpression(Remotion.Linq.Clauses.Expressions.SubQueryExpression)">
+            <summary>
+            Перевод в модель полученного подзапроса.
+            </summary>
+            <param name="expression"> Подзапрос. </param>
+            <returns> Преобразованный во внутреннее представление подзапрос. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.ReplacingExpressionTreeVisitorWithProperType.VisitUnknownNonExtensionExpression(System.Linq.Expressions.Expression)">
+            <summary>
+            Перевод в модель полученной неизвестной структуры.
+            </summary>
+            <param name="expression"> Неизвестная структура. </param>
+            <returns> Вместо исключения как в базовом типе будет просто возвращено выражение без изменений. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.ReplacingExpressionTreeVisitorWithProperType.VisitMemberExpression(System.Linq.Expressions.MemberExpression)">
+            <summary>
+            Перевод в модель аргумента.
+            </summary>
+            <param name="expression"> Аргумент выражения. </param>
+            <returns> Вернётся аргумент, преобразование и привязка выполнена не будет, поскольку привязка будет пытаться выполниться для другого типа. </returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.TreeVisitorStacksHolder">
+            <summary>
+            Хранитель стеков для TreeVisitor
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.UtilsDetail">
+            <summary>
+                TODO: Update summary.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsDetail.GetOwnerConnectProp(System.Linq.Expressions.Expression)">
+            <summary>
+            The get owner connect prop.
+            </summary>
+            <param name="fromExpr">
+            The from expr.
+            </param>
+            <returns>
+            The <see cref="!:string[]"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsDetail.GetResolvedView(System.Type,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Ищет View для типа
+            </summary>
+            <param name="type">
+            The type.
+            </param>
+            <param name="resolvingViews">
+            The resolving Views.
+            </param>
+            <returns>
+            The <see cref="T:ICSSoft.STORMNET.View"/>.
+            </returns>
+            <exception cref="T:System.Exception">
+            </exception>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs">
+            <summary>
+                Вспомогательные методы
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.RegexCheckPattern">
+            <summary>
+            Шаблон, по которому проверяется, поддерживается ли перевод из Regex в sql-like.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.RegexDatabaseDependedPattern">
+            <summary>
+            Шаблон, по которому проверяются ограничения по переводу из Regex в sql-like, связанные с тем, что для разных диалектов sql пока что недоступно формирование разных шаблонов для like. 
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.RegexDatabaseDependedPatternBack">
+            <summary>
+            Шаблон, по которому проверяются ограничения по переводу из sql-like в Regex, связанные с тем, что для разных диалектов sql пока что недоступно формирование разных шаблонов для like. 
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.RegexChecker">
+            <summary>
+            Regex, которым будет проверяться шаблон для регулярки для перевода из Regex в sql-like.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.RegexDatabaseDependedChecker">
+            <summary>
+            Regex, которым будет дополнительно проверяться шаблон для регулярки для перевода из Regex в sql-like на временные ограничениясвязанные с тем, что для разных диалектов sql пока что недоступно формирование разных шаблонов для like.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.RegexDatabaseDependedCheckerBack">
+            <summary>
+            Regex, которым будет дополнительно проверяться шаблон для регулярки для перевода из sql-like в Regex на временные ограничениясвязанные с тем, что для разных диалектов sql пока что недоступно формирование разных шаблонов для like.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.symbolsToEscape">
+            <summary>
+            Символы, которые при переводе из sql-like в Regex нужно экранировать.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.ldef">
+            <summary>
+                The ldef.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.CheckMethodArguments(System.Linq.Expressions.MethodCallExpression,System.Type[])">
+            <summary>
+            Проверка актуальных параметров метода на соответствие ожидаемым
+            </summary>
+            <param name="expression">
+            Выражение-вызов метода
+            </param>
+            <param name="args">
+            Ожидаемый массив типов аргументов метода
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.CreateDefaultProcessor(Remotion.Linq.Parsing.ExpressionTreeVisitors.Transformation.IExpressionTranformationProvider)">
+            <summary>
+            The create default processor.
+            </summary>
+            <param name="provider">
+            The provider.
+            </param>
+            <returns>
+            The <see cref="T:Remotion.Linq.Parsing.Structure.ExpressionTreeProcessors.CompoundExpressionTreeProcessor"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.CreateQueryParser">
+            <summary>
+                The create query parser.
+            </summary>
+            <returns>
+                The <see cref="T:Remotion.Linq.Parsing.Structure.IQueryParser"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.ExpressionMethodEquals(System.Linq.Expressions.MethodCallExpression,System.String,System.Type[])">
+            <summary>
+            Проверка равен ли метод из expression заданному параметрами name и args
+            </summary>
+            <param name="expression">
+            Expression
+            </param>
+            <param name="name">
+            имя метода
+            </param>
+            <param name="args">
+            массив типов аргументов метода
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.GetCompareWithNullFunction(System.Linq.Expressions.ExpressionType,System.Object)">
+            <summary>
+            The get compare with null function.
+            </summary>
+            <param name="exprType">
+            The expr type.
+            </param>
+            <param name="par">
+            The par.
+            </param>
+            <returns>
+            The <see cref="T:ICSSoft.STORMNET.FunctionalLanguage.Function"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.GetFalseFunc">
+            <summary>
+                The get false func.
+            </summary>
+            <returns>
+                The <see cref="T:ICSSoft.STORMNET.FunctionalLanguage.Function"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.GetFuncNameByExpressionType(System.Linq.Expressions.ExpressionType)">
+            <summary>
+            The get func name by expression type.
+            </summary>
+            <param name="exprType">
+            The expr type.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+            <exception cref="T:System.Exception">
+            </exception>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.GetFunctionAndParam(System.Object,System.Object,ICSSoft.STORMNET.FunctionalLanguage.Function@,System.String@)">
+            <summary>
+            The get function and param.
+            </summary>
+            <param name="p1">
+            The p 1.
+            </param>
+            <param name="p2">
+            The p 2.
+            </param>
+            <param name="func">
+            The func.
+            </param>
+            <param name="stringVal">
+            The string val.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.GetFunctionByName(System.String)">
+            <summary>
+            возвращает lcs функцию по имени функции C#
+            </summary>
+            <param name="name">
+            имя функции из C#
+            </param>
+            <returns>
+            функция lcs
+            </returns>
+            <exception cref="T:ICSSoft.STORMNET.Business.LINQProvider.Exceptions.MethodSignatureException">
+            в lcs нет аналога этой функции
+            </exception>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.GetLikePatternByFunctionName(System.String)">
+            <summary>
+            Получение шаблона для функции Like, куда будет вставлена строка поиска, по имени функции.
+            </summary>
+            <param name="name"> Имя функции. </param>
+            <returns> Шаблон, соответствующий имени функции. </returns>
+            <exception cref="T:System.Exception"> Если передано имя функции, для которой неизвестен шаблон, то пройдёт исключение. </exception>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.MinimalSqlCheck(System.String)">
+            <summary>
+            Минимальная проверка шаблона sql-like: то, что в нём нет символов, которые пока нельзя перевести в Regex и обратно. 
+            </summary>
+            <param name="sqlString"> Шаблон поиска в sql-like. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.ConvertSqlToRegex(System.String)">
+            <summary>
+            Метод преобразует шаблон поиска в стиле sql-like в шаблон в стиле Regex.
+            Как будет переводиться (*, а не %, поскольку так переводит SQLDataService):
+            *abc* => abc
+            abc* => ^abc 
+            *abc => abc$
+            abc*d => abc.*d
+            ab_c => ab.c
+            </summary>
+            <param name="sqlString"> Строка, которая была в шаблоне поиска для sql-like. </param>
+            <returns> Сформированный шаблон поиска для Regex. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.MinimalRegexCheck(System.String)">
+            <summary>
+            Минимальная проверка шаблона регулярных выражений: то, что он вообще валиден, и то, что в нём нет символов, которые нельзя перевести в sql-like. 
+            </summary>
+            <param name="regexString"> Шаблон регулярного выражения. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.ConvertRegexToSql(System.String)">
+            <summary>
+            Преобразование из шаблона поиска Regex в шаблон поиска для sql-функции like.
+            Как будет переводиться (*, а не %, поскольку так переводит SQLDataService):
+            abc => *abc*
+            ^abc => abc*
+            abc$ => *abc
+            abc.*d => abc*d
+            ab.c => ab_c
+            Порядок замены: 
+            1. Экранируются _. //TODO: временно не делается
+            2. .* (точка не экранирована, это проверилось ранее)
+            3. . (если точка не экранирована)
+            4. ^, $ (если они не экранированы) и их отсутствие.
+            5. Снимается экранирование со всех символов, кроме *, [, ]. //TODO: временно экранирование снимается со всех символов, поскольку в разных версиях sql экранирование для шаблона like проходит по-разному.
+            </summary>
+            <param name="regexString"> Шаблон поиска в нотации для regex. </param>
+            <returns> Шаблон поиска в нотации для sql-функции like. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.GetObjectPropertyValue(System.Object,System.String)">
+            <summary>
+            The get object property value.
+            </summary>
+            <param name="obj">
+            The obj.
+            </param>
+            <param name="propertyName">
+            The property name.
+            </param>
+            <returns>
+            The <see cref="T:System.Reflection.PropertyInfo"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.GetParamBinaryFunc(System.Linq.Expressions.ExpressionType,System.Object,System.Object)">
+            <summary>
+            The get param binary func.
+            </summary>
+            <param name="exprType">
+            The expr type.
+            </param>
+            <param name="par1">
+            The par 1.
+            </param>
+            <param name="par2">
+            The par 2.
+            </param>
+            <returns>
+            The <see cref="T:ICSSoft.STORMNET.FunctionalLanguage.Function"/>.
+            </returns>
+            <exception cref="T:ICSSoft.STORMNET.Business.LINQProvider.Exceptions.MethodSignatureException">
+            </exception>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.TryExecuteBinaryOberation(System.Linq.Expressions.ExpressionType,System.Object,System.Object)">
+            <summary>
+            Попытка скомпилировать бинарное выражение и вместо сложного выражения записать в lcs уже простую константу.
+            </summary>
+            <param name="exprType">Тип выражения (Add, Subtract, Multiply, Divide).</param>
+            <param name="par2"></param>
+            <param name="par1"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.GetSqlWherePattern(System.Int32,System.Int32)">
+            <summary>
+            The get sql where pattern.
+            </summary>
+            <param name="startIndex">
+            The start index.
+            </param>
+            <param name="count">
+            The count.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.GetTrueFunc">
+            <summary>
+                The get true func.
+            </summary>
+            <returns>
+                The <see cref="T:ICSSoft.STORMNET.FunctionalLanguage.Function"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.IsExactFunction(System.Object,System.String)">
+            <summary>
+            Проверяет, что объект - функция с определенным именем
+            </summary>
+            <param name="f">
+            </param>
+            <param name="fName">
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.AddPropertyToView(ICSSoft.STORMNET.View,System.String,System.Boolean)">
+            <summary>
+            Проверить, есть ли требуемое свойство в представлении.
+            Если представление динамическое, то при отсутствии свойства оно добавляется.
+            </summary>
+            <param name="view">Текущее сформированное представление.</param>
+            <param name="propertyName">Имя свойства, которое ищется в представлении.</param>
+            <param name="viewIsDynamic">Является ли представление динамическим (если да, то в него можно добавлять недостающие свойства).</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.AddMasterToView(ICSSoft.STORMNET.View,System.String,System.Boolean)">
+            <summary>
+            Проверить, есть ли требуемый мастер в представлении.
+            Если представление динамическое, то при отсутствии мастера он добавляется.
+            </summary>
+            <param name="view">Представление</param>
+            <param name="masterName">Имя мастера</param>
+            <param name="viewIsDynamic">Является ли представление динамическим</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.AddDetailViewToView(ICSSoft.STORMNET.View,System.String,System.Boolean)">
+            <summary>
+            Возвращает представление детейла из представления агрегатора.
+            Если представление динамическое и в нем не оказалось нужного детейла, то 
+            добавляет его, задавая в качестве представления пустое представление (которое будет заполняться
+            при разборе подзапросов к данному детейлу)
+            </summary>
+            <param name="view">Представление агрегатора</param>
+            <param name="detailName">Имя детейла</param>
+            <param name="viewIsDynamic">Является ли представление динамическим</param>
+            <returns>Представление детейла</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LINQProvider.UtilsLcs.GetNameForDynamicView(System.Type)">
+            <summary>
+            Формируем динамическое имя для представления на основе типа.
+            </summary>
+            <param name="dataObjectType">Тип объекта данных, для представления которого формируется имя.</param>
+            <returns>Сформированное имя.</returns>
+        </member>
+    </members>
+</doc>

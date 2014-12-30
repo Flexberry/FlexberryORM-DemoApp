@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.BF</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Business.BFBase">
+            <summary>
+            Базовый класс для бизнес-фасада. Обеспечивает необходимую общую функциональность по реализации бизнес-фасада.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.BFBase.m_objTcpChannel">
+            <summary>
+            канал для com+
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.BFBase.m_objHttpChannel">
+            <summary>
+            канал для iis
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.BFBase.#ctor">
+            <summary>
+            конструктор по умолчанию
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.BFBase.Finalize">
+            <summary>
+            деструктор - освобождаем задействованные каналы
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.BFBase.prv_BeforeCOMPlusMethod">
+            <summary>
+            подготовка к вызову метода com+ компонента. В случае необходимости создает нужный канал
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.BFBase.prv_AfterCOMPlusMethod(System.Object)">
+            <summary>
+            заключительные действия по окончанию метода
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.BFBase.prv_BeforeHttpMethod">
+            <summary>
+            подготовка к вызову метода iis компонента. В случае необходимости создает нужный канал
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.BFBase.prv_AfterHttpMethod(System.Object)">
+            <summary>
+            заключительные действия по окончанию метода
+            </summary>
+        </member>
+    </members>
+</doc>

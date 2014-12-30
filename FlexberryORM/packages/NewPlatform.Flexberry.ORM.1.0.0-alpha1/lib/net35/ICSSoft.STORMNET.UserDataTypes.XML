@@ -1,0 +1,1037 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.UserDataTypes</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.UserDataTypes.Blob">
+            <summary>
+            Бинарный объект.
+            Используется для хранения данных в хранилищах поддерживающих бинарные объекты.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Blob.Name">
+            <summary>
+            Наименование. Используется по разному.  
+            Например, после десериализации от Lily-сервера поле Name остается пустым - фактически Name толком не используется.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Blob.Size">
+            <summary>
+            Размеры бинарного объекта (колличество байт).
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Blob.MimeType">
+            <summary>
+            Тип бинарного объекта.
+            Бинарный объект имеет свои типа специфичные для каждого хранилища в отдельности.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Blob.Value">
+            <summary>
+            Значение бинарного объекта в виде набора байт.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UserDataTypes.Contact">
+            <summary>
+            Класс, описывающий единичный контакт пользователя (e-mail, телефон и проч.)
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.Contact.Compare(System.Object)">
+            <summary>
+            Сравнение объектов по содержанию, а не по ссылке
+            </summary>
+            <param name="obj">Контакт для сравнения с текущим</param>
+            <returns>Результат сравнения</returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Contact.Name">
+            <summary>
+            Имя контакта (например, рабочий телефон)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Contact.Value">
+            <summary>
+            Значение контакта (например, номер телефона)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Contact.ContactType">
+            <summary>
+            Имя контакта (например, телефон)
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FileType.File">
+            <summary>
+            Тип данных File
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FileType.File.#ctor">
+            <summary>
+            Конструктор класса. Ничего не делает.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FileType.File.op_Explicit(ICSSoft.STORMNET.FileType.File)~System.String">
+            <summary>
+            Из типа File в тип byte[]
+            </summary>
+            <param name="value"> Что нужно преобразовать </param>
+            <returns> Преобразованное значение </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FileType.File.op_Explicit(System.String)~ICSSoft.STORMNET.FileType.File">
+            <summary>
+            Из типа byte[] в тип File
+            </summary>
+            <param name="value"> Что нужно преобразовать </param>
+            <returns> Преобразованное значение </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FileType.File.InitializeByState(System.String)">
+            <summary>
+            Инициализация по сериализованному значению
+            </summary>
+            <param name="value"> Сериализованное состояние </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FileType.File.FromNormalToZip(System.String)">
+            <summary>
+            Перевод с файла на диске во внутреннее представление в виде zip-архива
+            </summary>
+            <param name="loadFilePath"> Путь к файлу</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FileType.File.FromNormalToZip(System.String,System.String)">
+            <summary>
+            Перевод с файла на диске во внутреннее представление в виде zip-архива
+            </summary>
+            <param name="loadFilePath"> Путь к файлу</param>
+            <param name="fileName"> Имя файла</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FileType.File.SetZippedValue(System.IO.MemoryStream)">
+            <summary>
+            Перевод с файла на диске во внутреннее представление в виде zip-архива
+            </summary>
+            <param name="memoryStream"> Stream с файлом </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FileType.File.FromZipToNormal(System.String)">
+            <summary>
+            Перевод из внутреннего представления в виде zip-архива в файл на диске
+            </summary>
+            <param name="saveFilePath"> Путь к файлу</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FileType.File.GetUnzippedFile">
+            <summary>
+            Перевод из внутреннего представления в виде zip-архива в файл на диске
+            </summary>
+            <returns> Stream с содержимым файла (без zip-архивации) </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FileType.File.GetFile(System.String)">
+            <summary>
+            Записать файл в массив байт
+            </summary>
+            <param name="path">Путь к файлу</param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FileType.File.Name">
+            <summary>
+            Gets or sets: Имя выбранного файла
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FileType.File.ZippedValue">
+            <summary>
+            Gets or sets: Сархивированное значение
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FileType.File.Size">
+            <summary>
+             Gets or sets: Размер выбранного файла
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FileType.File.CompressionLevel">
+            <summary>
+             Gets or sets: Степень сжатия изменяется от 0 до 9 (9 - максимальная)
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UserDataTypes.GeoData">
+            <summary>
+            Класс, описывающий единичный контакт пользователя (e-mail, телефон и проч.)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.GeoData.Name">
+            <summary>
+            Имя объекта
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.GeoData.AxesSystem">
+            <summary>
+            Система координат
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.GeoData.Poligons">
+            <summary>
+            Полигоны в формате WKT (см. http://en.wikipedia.org/wiki/Well-known_text)
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UserDataTypes.Image">
+            <summary>
+            Пользовательский тип - изображение;
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.Image.Compare(System.Object)">
+            <summary>
+            Сравнение объектов по содержанию, а не по ссылке
+            </summary>
+            <param name="obj">Картинка для сравнения с текущей</param>
+            <returns>Результат сравнения</returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Image.Name">
+            <summary>
+            Имя файла - изображения
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Image.Format">
+            <summary>
+            Формат изображения
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Image.Width">
+            <summary>
+            Ширина изображения
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Image.Height">
+            <summary>
+            Высота изображения
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Image.Data">
+            <summary>
+            Изображение (в байтах).
+            Временное решение, планируется сделать BLOB'ом, когда в Lily появится поддержка чтения BLOB'ов из вложенных записей.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Image.URL">
+            <summary>
+            Путь до файла.
+            Указывается в случае, если изображение храниться не в базе.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UserDataTypes.Event">
+            <summary>
+            Пользовательский тип - событие;
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Event.Name">
+            <summary>
+            Тема события
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Event.Description">
+            <summary>
+            Описание события
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Event.StartTime">
+            <summary>
+            Время начала события
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Event.FinishTime">
+            <summary>
+            Время конца события
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Event.Author">
+            <summary>
+            Автор события
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Event.Place">
+            <summary>
+            Место события
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.Event.Category">
+            <summary>
+            Категория события (info / warning / error / проч)
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UserDataTypes.NullableDateTime">
+            <summary>
+            DateTime с поддержкой null (в ту эпоху, когда ещё не было DateTime? у нас уже был этот класс - так и повелось).
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.#ctor">
+            <summary>
+            Конструктор без параметров, нужен для Activator.CreateInstance
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.op_LessThan(ICSSoft.STORMNET.UserDataTypes.NullableDateTime,ICSSoft.STORMNET.UserDataTypes.NullableDateTime)">
+            <summary>
+            Меньше
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <returns>x меньше y</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.op_LessThanOrEqual(ICSSoft.STORMNET.UserDataTypes.NullableDateTime,ICSSoft.STORMNET.UserDataTypes.NullableDateTime)">
+            <summary>
+            Меньше либо равно
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <returns>x меньше либо равен y</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.op_GreaterThan(ICSSoft.STORMNET.UserDataTypes.NullableDateTime,ICSSoft.STORMNET.UserDataTypes.NullableDateTime)">
+            <summary>
+            Больше
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <returns>x больше y</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.op_GreaterThanOrEqual(ICSSoft.STORMNET.UserDataTypes.NullableDateTime,ICSSoft.STORMNET.UserDataTypes.NullableDateTime)">
+            <summary>
+            Больше либо равно
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <returns>x больше либо равен y</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.op_Equality(ICSSoft.STORMNET.UserDataTypes.NullableDateTime,ICSSoft.STORMNET.UserDataTypes.NullableDateTime)">
+            <summary>
+            Равно
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <returns>x == y</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.op_Inequality(ICSSoft.STORMNET.UserDataTypes.NullableDateTime,ICSSoft.STORMNET.UserDataTypes.NullableDateTime)">
+            <summary>
+            Не равно
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <returns>x != y</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.op_Explicit(ICSSoft.STORMNET.UserDataTypes.NullableDateTime)~System.DateTime">
+            <summary>
+            Преобразование NullableDateTime в DateTime
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.op_Explicit(ICSSoft.STORMNET.UserDataTypes.NullableDateTime)~System.Nullable{System.DateTime}">
+            <summary>
+            Преобразование NullableDateTime в DateTime?
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.op_Explicit(System.Nullable{System.DateTime})~ICSSoft.STORMNET.UserDataTypes.NullableDateTime">
+            <summary>
+            Преобразование  DateTime? в NullableDateTime
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.op_Explicit(System.DateTime)~ICSSoft.STORMNET.UserDataTypes.NullableDateTime">
+            <summary>
+            Преобразование DateTime в NullableDateTime
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.op_Explicit(System.DBNull)~ICSSoft.STORMNET.UserDataTypes.NullableDateTime">
+            <summary>
+            Преобразование DBNull в NullableDateTime
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.Parse(System.String)">
+            <summary>
+            Разбор строки и создание NullableDateTime
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToString">
+            <summary>
+            В строку
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.Equals(System.Object)">
+            <summary>
+            сравнение
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.CompareTo(System.Object)">
+            <summary>
+            сравнение
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToUInt64(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToSByte(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToDouble(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToDateTime(System.IFormatProvider)">
+            <summary>
+            преобразование в DateTime
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToSingle(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToBoolean(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToInt32(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToUInt16(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToInt16(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.System#IConvertible#ToString(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToByte(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToChar(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToInt64(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.GetTypeCode">
+            <summary>
+            Не реализовано
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToDecimal(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToType(System.Type,System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="conversionType"></param>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.ToUInt32(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.GetSchema">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.Value">
+            <summary>
+            Значение
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.Today">
+            <summary>
+            Сегодня (DateTime.Today)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.Now">
+            <summary>
+            DateTime.Now
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.NullableDateTime.UtcNow">
+            <summary>
+            DateTime.UtcNow
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UserDataTypes.NullableInt">
+            <summary>
+            Int с поддержкой null (в ту эпоху, когда ещё не было int? у нас уже был этот класс - так и повелось).
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.#ctor">
+            <summary>
+            Конструктор без параметров, нужен для Activator.CreateInstance
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Explicit(ICSSoft.STORMNET.UserDataTypes.NullableInt)~System.Int32">
+            <summary>
+            Преобразование возможно только явное, поскольку программист должен отдавать себе отчёт в том, что NullableInt может быть null, поэтому не забывайте проверять перед таким преобразованием
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Implicit(System.Int32)~ICSSoft.STORMNET.UserDataTypes.NullableInt">
+            <summary>
+            Неявное преобразование тут можно использовать, поскольку невозможно сломать NullableInt засунув ему int
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Explicit(ICSSoft.STORMNET.UserDataTypes.NullableInt)~System.Nullable{System.Int32}">
+            <summary>
+            Преобразование возможно только явное, поскольку программист должен отдавать себе отчёт в том, что NullableInt может быть null, поэтому не забывайте проверять перед таким преобразованием
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Implicit(System.Nullable{System.Int32})~ICSSoft.STORMNET.UserDataTypes.NullableInt">
+            <summary>
+            Неявное преобразование тут можно использовать, поскольку невозможно сломать NullableInt засунув ему int
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Explicit(System.DBNull)~ICSSoft.STORMNET.UserDataTypes.NullableInt">
+            <summary>
+            DBNull в NullableInt
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Explicit(System.Decimal)~ICSSoft.STORMNET.UserDataTypes.NullableInt">
+            <summary>
+            Decimal в NullableInt
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.ToString">
+            <summary>
+            в строку
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.Parse(System.String)">
+            <summary>
+            Разбор строки и создание NullableInt
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.Parse(System.String,System.IFormatProvider)">
+            <summary>
+            Разбор строки и создание NullableInt с провайдером формата
+            </summary>
+            <param name="s"></param>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.Equals(System.Object)">
+            <summary>
+            Сравнение
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Equality(ICSSoft.STORMNET.UserDataTypes.NullableInt,ICSSoft.STORMNET.UserDataTypes.NullableInt)">
+            <summary>
+            ==
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Inequality(ICSSoft.STORMNET.UserDataTypes.NullableInt,ICSSoft.STORMNET.UserDataTypes.NullableInt)">
+            <summary>
+            !=
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_GreaterThan(ICSSoft.STORMNET.UserDataTypes.NullableInt,ICSSoft.STORMNET.UserDataTypes.NullableInt)">
+            <summary>
+            >
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_GreaterThanOrEqual(ICSSoft.STORMNET.UserDataTypes.NullableInt,ICSSoft.STORMNET.UserDataTypes.NullableInt)">
+            <summary>
+            >=
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_LessThan(ICSSoft.STORMNET.UserDataTypes.NullableInt,ICSSoft.STORMNET.UserDataTypes.NullableInt)">
+            <summary>
+            меньше
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_LessThanOrEqual(ICSSoft.STORMNET.UserDataTypes.NullableInt,ICSSoft.STORMNET.UserDataTypes.NullableInt)">
+            <summary>
+            меньше =
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.Compare(System.Object,System.Object)">
+            <summary>
+            сравнение
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.CompareTo(System.Object)">
+            <summary>
+            сравнение
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Subtraction(ICSSoft.STORMNET.UserDataTypes.NullableInt,ICSSoft.STORMNET.UserDataTypes.NullableInt)">
+            <summary>
+            -
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Subtraction(System.Int32,ICSSoft.STORMNET.UserDataTypes.NullableInt)">
+            <summary>
+            - 
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Subtraction(ICSSoft.STORMNET.UserDataTypes.NullableInt,System.Int32)">
+            <summary>
+            -
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Addition(ICSSoft.STORMNET.UserDataTypes.NullableInt,ICSSoft.STORMNET.UserDataTypes.NullableInt)">
+            <summary>
+            +
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Addition(System.Int32,ICSSoft.STORMNET.UserDataTypes.NullableInt)">
+            <summary>
+            +
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.op_Addition(ICSSoft.STORMNET.UserDataTypes.NullableInt,System.Int32)">
+            <summary>
+            +
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.ToDouble(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.ToDateTime(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.ToBoolean(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.System#IConvertible#ToString(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.ToChar(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.GetTypeCode">
+            <summary>
+            Не реализовано
+            </summary>        
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.ToType(System.Type,System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableInt.GetSchema">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.NullableInt.Value">
+            <summary>
+            Значение
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UserDataTypes.NullableDecimal">
+            <summary>
+            Decimal с поддержкой null (в ту эпоху, когда ещё не было Decimal? у нас уже был этот класс - так и повелось).
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.#ctor">
+            <summary>
+            Конструктор без параметров, нужен для Activator.CreateInstance
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Explicit(ICSSoft.STORMNET.UserDataTypes.NullableDecimal)~System.Decimal">
+            <summary>
+            Явное преобразование к Decimal
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Explicit(System.Decimal)~ICSSoft.STORMNET.UserDataTypes.NullableDecimal">
+            <summary>
+            Явное преобразование Decimal к NullableDecimal
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Explicit(ICSSoft.STORMNET.UserDataTypes.NullableDecimal)~System.Nullable{System.Decimal}">
+            <summary>
+            Явное преобразование к Decimal
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Explicit(System.Nullable{System.Decimal})~ICSSoft.STORMNET.UserDataTypes.NullableDecimal">
+            <summary>
+            Явное преобразование Decimal к NullableDecimal
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Explicit(System.DBNull)~ICSSoft.STORMNET.UserDataTypes.NullableDecimal">
+            <summary>
+            Явное преобразование DBNull к NullableDecimal
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Equality(ICSSoft.STORMNET.UserDataTypes.NullableDecimal,ICSSoft.STORMNET.UserDataTypes.NullableDecimal)">
+            <summary>
+            ==
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Inequality(ICSSoft.STORMNET.UserDataTypes.NullableDecimal,ICSSoft.STORMNET.UserDataTypes.NullableDecimal)">
+            <summary>
+            !=
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_GreaterThan(ICSSoft.STORMNET.UserDataTypes.NullableDecimal,ICSSoft.STORMNET.UserDataTypes.NullableDecimal)">
+            <summary>
+            >
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_GreaterThanOrEqual(ICSSoft.STORMNET.UserDataTypes.NullableDecimal,ICSSoft.STORMNET.UserDataTypes.NullableDecimal)">
+            <summary>
+            >=
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_LessThan(ICSSoft.STORMNET.UserDataTypes.NullableDecimal,ICSSoft.STORMNET.UserDataTypes.NullableDecimal)">
+            <summary>
+            меньше
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_LessThanOrEqual(ICSSoft.STORMNET.UserDataTypes.NullableDecimal,ICSSoft.STORMNET.UserDataTypes.NullableDecimal)">
+            <summary>
+            меньше =
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.ToString">
+            <summary>
+            В строку
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.Parse(System.String)">
+            <summary>
+            Разобрать и получить NullableDecimal из строки
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.Parse(System.String,System.IFormatProvider)">
+            <summary>
+            Разобрать и получить NullableDecimal из строки с провайдером формата
+            </summary>
+            <param name="s"></param>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.TryParse(System.String,ICSSoft.STORMNET.UserDataTypes.NullableDecimal@)">
+            <summary>
+            Разобрать и получить NullableDecimal из строки
+            </summary>
+            <param name="s"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,ICSSoft.STORMNET.UserDataTypes.NullableDecimal@)">
+            <summary>
+            Разобрать и получить NullableDecimal из строки с провайдером формата
+            </summary>
+            <param name="s"></param>
+            <param name="styles"></param>
+            <param name="provider"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.Equals(System.Object)">
+            <summary>
+            Сравнение
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.CompareTo(System.Object)">
+            <summary>
+            Сравнение
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.Compare(System.Object,System.Object)">
+            <summary>
+            сравнение
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Subtraction(ICSSoft.STORMNET.UserDataTypes.NullableDecimal,ICSSoft.STORMNET.UserDataTypes.NullableDecimal)">
+            <summary>
+            -
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Subtraction(System.Decimal,ICSSoft.STORMNET.UserDataTypes.NullableDecimal)">
+            <summary>
+            - 
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Subtraction(ICSSoft.STORMNET.UserDataTypes.NullableDecimal,System.Decimal)">
+            <summary>
+            -
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Addition(ICSSoft.STORMNET.UserDataTypes.NullableDecimal,ICSSoft.STORMNET.UserDataTypes.NullableDecimal)">
+            <summary>
+            +
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Addition(System.Decimal,ICSSoft.STORMNET.UserDataTypes.NullableDecimal)">
+            <summary>
+            +
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.op_Addition(ICSSoft.STORMNET.UserDataTypes.NullableDecimal,System.Decimal)">
+            <summary>
+            +
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.ToDouble(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.ToDateTime(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.ToBoolean(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.System#IConvertible#ToString(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.ToChar(System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.GetTypeCode">
+            <summary>
+            Не реализовано
+            </summary>        
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.ToType(System.Type,System.IFormatProvider)">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.GetSchema">
+            <summary>
+            Не реализовано
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.NullableDecimal.Value">
+            <summary>
+            Собственно значение
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UserDataTypes.Record">
+            <summary>
+             Данный класс необходим для определения StoreInstancesInType.
+             Он необходим в том случае, когда пользовательский тип typedef должен храниться в виде отдельной записи.
+             Используется для NOSQL-хранилищ.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UserDataTypes.WebFile">
+            <summary>
+            Структура для хранения файлов в Web-приложении
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UserDataTypes.WebFile.#ctor">
+            <summary>
+            Конструктор без параметров, нужен для Activator.CreateInstance
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.WebFile.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.WebFile.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UserDataTypes.WebFile.Size">
+            <summary>
+            Размер
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,927 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.Tools</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Tools.BinarySerializer">
+            <summary>
+            Бинарный сереализатор.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.BinarySerializer.DeserializeFromString``1(System.String)">
+            <summary>
+            Десереализация объекта сереализованного ранее в бинарный формат.
+            </summary>
+            <typeparam name="TData">
+            Тип с атрибутом <see cref="T:System.SerializableAttribute"/>. 
+            Типы всех сереализуемых полей и свойств класса должны также иметь этот атрибут.
+            </typeparam>
+            <param name="serializedObject">
+            Сереализованный прежде объект в виде строки.
+            </param>
+            <returns>Десереализованный объект.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.BinarySerializer.SerializeToString``1(``0)">
+            <summary>
+            Сереализация объекта в бинарный формат.
+            </summary>
+            <typeparam name="TData">
+            Тип с атрибутом <see cref="T:System.SerializableAttribute"/>. 
+            Типы всех сереализуемых полей и свойств класса должны также иметь этот атрибут.
+            </typeparam>
+            <param name="object">
+            Объект, который необходимо сереализовать.
+            </param>
+            <returns>Сереализованный объект в виде строки.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.BinarySerializer.DeserializeFromBytes``1(System.Byte[])">
+            <summary>
+            Десереализация объекта сереализованного ранее в бинарный формат.
+            </summary>
+            <typeparam name="TData">
+            Тип с атрибутом <see cref="T:System.SerializableAttribute"/>. 
+            Типы всех сереализуемых полей и свойств класса должны также иметь этот атрибут.
+            </typeparam>
+            <param name="serializedObject">
+            Сереализованный прежде объект в виде массива байт.
+            </param>
+            <returns>Десереализованный объект.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.BinarySerializer.SerializeToBytes``1(``0)">
+            <summary>
+            Сереализация объекта в бинарный формат.
+            </summary>
+            <typeparam name="TData">
+            Тип с атрибутом <see cref="T:System.SerializableAttribute"/>. 
+            Типы всех сереализуемых полей и свойств класса должны также иметь этот атрибут.
+            </typeparam>
+            <param name="object">
+            Объект, который необходимо сереализовать.
+            </param>
+            <returns>Сереализованный объект в виде массива байт.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.CaptionTool">
+            <summary>
+            Вспомогательный класс для обработки и получения Caption'ов и других имён
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.CaptionTool.TransformTitle(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Формирование из текста читаемого заголовка(caption)
+            (ранее данный метод находится в STORM.NET Case Tool plugin)
+            </summary>
+            <param name="propertyName">Исходный текст</param>
+            <param name="splitWords">Разделять ли слова</param>
+            <param name="hideMasters">Скрывать ли имена мастеров</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.CaptionTool.TransformCaptionToName(System.String)">
+            <summary>
+            Преобразовать заголовок в имя (имя записывается почти в camel-нотации).
+            В имени остаются только буквы и цифры (цифра не может быть в первой позиции).
+            </summary>
+            <param name="captionText"> Текст, который нужно преобразовать. </param>
+            <returns>Имя, преобразованное из заголовка.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.CaptionTool.GetAttrCaptionByView(ICSSoft.STORMNET.View,System.String)">
+            <summary>
+            Класс для получения Caption'a поля по его имени
+            (если представление null или поле с таким именем не найдено, то отобразится просто 
+            имя поля, разделённое из camel-нотации)
+            </summary>
+            <param name="currentView">
+            Представление, по которому будет получаться Caption
+            </param>
+            <param name="fieldName">
+            Имя поля
+            </param>
+            <returns>
+            Результат
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.CaptionTool.GetValidName(System.String)">
+            <summary>
+            Получение корректного имени из набора символов (лишние символы просто отбрасываются).
+            Корректными считаются буквы, цифры (не в первой позиции) и нижнее подчёркивание.
+            </summary>
+            <param name="objectName"> Исходный набор символов, которые необходимо преобразовать. </param>
+            <returns> Строка с исключёнными недопустимыми символами. </returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.DirectoryServicesTools">
+            <summary>
+            Класс предназначен для работы с System.DirectoryServices.
+            К нему относится все, что касается системных групп, пользователей и доменов.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.DirectoryServicesTools.GetUserFullNameFromLocalMachine(System.String)">
+            <summary>
+            Получить имя пользователя по логину на локальном комьютере.
+            </summary>
+            <param name="userLogin">Логин для поиска пользователя.</param>
+            <returns>Имя найденного пользователя. Будет пустым, если не найдется.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.DirectoryServicesTools.GetUserFullNameFromActiveDirectory(System.String,System.String)">
+            <summary>
+            Получить имя пользователя по логину в указанной Active Directory.
+            </summary>
+            <param name="activeDirectoryName">Active Directory в которой будем искать.</param>
+            <param name="userLogin">Логин для поиска пользователя.</param>
+            <returns>Имя найденного пользователя. Будет пустым, если не найдется.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.GuidExtensions">
+            <summary>
+            Класс содержащий вспомогательные методы для работы с <see cref="T:System.Guid"/>
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.GuidExtensions.ToFriendlyString(System.Guid)">
+            <summary>
+            Получить строковое представление идентификатора в формате пригодном для работы в файловой системе как части пути.
+            </summary>
+            <param name="guid">Идентификатор для преобразования в строку.</param>
+            <returns>Строковое представление идентификатора в формате пригодном для работы в файловой системе как части пути.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.MAPIWrapper">
+            <summary>
+            Класс для отправки писем с вложением. Поддерживается функция открытия почтового клиента.
+            Основано на http://www.codeproject.com/KB/IP/SendFileToNET.aspx 
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper">
+            <summary>
+            Класс, предназначенный для непосредственной работы с MSSQL базой данных.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper._liveInstancesCount">
+            <summary>
+            Количество живых инстанций враппера.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper._hasDeatached">
+            <summary>
+            Были база данных уже отсоединена.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper._hasDroped">
+            <summary>
+            Была ли база данных уже удалена.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper._hasDbFileRemoved">
+            <summary>
+            Были ли удалены файлы базы данных.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper.#ctor(System.Byte[],System.String)">
+            <summary>
+            Создать экземпляр MSSQL базы данных.
+            </summary>
+            <param name="mdfFileBytes">
+            Необходимый mdf-файл.
+            </param>
+            <param name="tempDataBasesPath">
+            Каталог для копирования базы данных.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper.Dispose">
+            <summary>
+            Метод, вызываемый перед освобождением ресурсов от данного объекта. В нём происходит уничтожение базы данных.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper.DetachDataBase(System.String)">
+            <summary>
+            Делает mdf-файл доступным для копирования.
+            </summary>
+            <param name="dataBaseName">
+            Имя базы данных которую необходимо настроить.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper.DropDataBase(System.String)">
+            <summary>
+            Удалить базу данных из локального SQL Servier'а.
+            </summary>
+            <param name="dataBaseName">Имя базы данных, которую необходимо удалить.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper.RemoveDbFile(System.String)">
+            <summary>
+            Удалить файлы базы данных из временного каталога.
+            </summary>
+            <param name="dataBaseName">Имя базы данных, файлы которой необходимо удалить.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper.GetRealDatabaseName(System.String)">
+            <summary>
+            Получить наименование базы данных через соединения с самой базой данных.
+            Данный метод необходим при подключении mdf-файла как базы данных.
+            Потому что путь до файла может быть очень длинным, в таком случае SQL Server самостоятельно сокращает наименование базы данных.
+            Сокращение имени базы данных идет через хеш-функцию, результат которой предсказать невозможно.
+            </summary>
+            <param name="connectionString">
+            Строка соединения с базой данных, имя которой мы хотим получить.
+            </param>
+            <returns>
+            Реальное наименование базы данных, которая в данный момент находится в SQl Server Express.
+            </returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper.ConnectionString">
+            <summary>
+            Строка соединения с базой данных.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Tools.MssqlDataBaseWrapper.ConnectionStringLocalSqlServer">
+            <summary>
+            Строка подключения к локальному SQL Server'у.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.ToolXML">
+            <summary>
+            Инструмент для сериализации-десериализации в XML
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.XMLDocument2DataObject(ICSSoft.STORMNET.DataObject@,System.Xml.XmlDocument)">
+            <summary>
+            Получение объекта данных из ранее полученного XML документа
+            </summary>
+            <param name="dataObject"> Объект данных, в который будем десериализовывать </param>
+            <param name="xmlDoc"> Сериализованный объект данных </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.DataObject2XMLDocument(ICSSoft.STORMNET.DataObject@)">
+            <summary>
+            Получение XML документа из объекта данных
+            </summary>
+            <param name="dataObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.DataObject2XMLDocument(ICSSoft.STORMNET.DataObject@,System.Boolean)">
+            <summary>
+            Получение XML документа из объекта данных
+            </summary>
+            <param name="dataObject"></param>
+            <param name="serializeAggregators"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.DataObject2XMLDocument(ICSSoft.STORMNET.DataObject@,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Получение XML документа из объекта данных
+            </summary>
+            <param name="dataObject"></param>
+            <param name="serializeAggregators"></param>
+            <param name="setObjectLoadingStateLoaded"></param>
+            <param name="setObjectStatusCreated"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.DataObject2XMLDocument(ICSSoft.STORMNET.DataObject@,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Получение XML документа из объекта данных
+            </summary>
+            <param name="dataObject"> Сам объект данных </param>
+            <param name="serializeAggregators"> Следует ли сериализовать детейлы </param>
+            <param name="setObjectLoadingStateLoaded"> Установить LoadingState объекта в Loaded </param>
+            <param name="setObjectStatusCreated"> Установить ObjectStatus объекта в Created </param>
+            <param name="serializeMasters"> Проводить полную сериализацию мастеров объектов </param>
+            <returns> Сериализованное представление объекта </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.prv_DataObject2XmlElement(System.Xml.XmlElement,ICSSoft.STORMNET.DataObject,System.Collections.SortedList,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            Получение XML документа из объекта данных
+            </summary>
+            <param name="xmlEl"> Текущий XmlElement, куда записываются данные и от которого создаются потомки </param>
+            <param name="dataObject"> Сериализуемый объект данных </param>
+            <param name="assemblies"> Имена сборок (будут записаны в xml) </param>
+            <param name="serializeAggregators"> Следует ли сериализовать детейлы </param>
+            <param name="setObjectLoadingStateLoaded"> Установить LoadingState объекта в Loaded </param>
+            <param name="setObjectStatusCreated"> Установить ObjectStatus объекта в Created </param>
+            <param name="serializeMasters"> Сериализовать мастеров объектов </param>
+            <param name="usedPrimaryKeyList"> Вспомогательный список первичных ключей объектов, которые уже были сериализованы </param>
+            <returns> Сериализованное представление объекта </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.ObjectToString(System.Object)">
+            <summary>
+             Сериализация объекта при помощи SoapFormatter
+            </summary>
+            <param name="o">Объект для сериализации</param>
+            <returns>Сериализованный объект</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.ObjectFromString(System.String)">
+            <summary>
+            Десериализация объекта при помощи SoapFormatter
+            </summary>
+            <param name="s">Сериализованный объект</param>
+            <returns>Востановленный объект</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.prv_XmlElement2DataObject(System.Xml.XmlElement,ICSSoft.STORMNET.DataObject,System.Collections.SortedList,ICSSoft.STORMNET.DataObjectCache,System.Collections.Generic.Dictionary{System.String,ICSSoft.STORMNET.DataObject})">
+            <summary>
+            Извлечение объекта данных из строки
+            </summary>
+            <param name="xmlEl"> Текущий элемент xml </param>
+            <param name="dataObject"> Текущий объект данных </param>
+            <param name="assemblies"> Необходимые сборки </param>
+            <param name="DataObjectCache"> DataObjectCache </param>
+            <param name="deserializedObjectsList"> Словарь десериализованных объектов с их первичными ключами </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.prv_ReadProperty(System.Xml.XmlElement,ICSSoft.STORMNET.DataObject,System.String,System.Collections.SortedList,ICSSoft.STORMNET.DataObjectCache,System.Collections.Generic.Dictionary{System.String,ICSSoft.STORMNET.DataObject})">
+            <summary>
+            Прочитать свойство объекта (с целью его дальнейшей десериализации)
+            </summary>
+            <param name="xmlEl"> Текущий элемент xml </param>
+            <param name="dataObject"> Текущий объект данных </param>
+            <param name="propname"> Читаемое свойство объекта </param>
+            <param name="assemblies"> Необходимые сборки </param>
+            <param name="DataObjectCache"> DataObjectCache </param>
+            <param name="deserializedObjectsList"> Словарь десериализованных объектов с их первичными ключами </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.prv_ReadMaster(System.Xml.XmlNode,ICSSoft.STORMNET.DataObject,System.Collections.SortedList,ICSSoft.STORMNET.DataObjectCache,System.Collections.Generic.Dictionary{System.String,ICSSoft.STORMNET.DataObject})">
+            <summary>
+            Извлечение мастера из сериализованного представления
+            </summary>
+            <param name="masternode"> Текущий элемент xml </param>
+            <param name="dataObject"> Текущий объект данных </param>
+            <param name="assemblies"> Необходимые сборки </param>
+            <param name="DataObjectCache"> DataObjectCache </param>
+            <param name="deserializedObjectsList"> Словарь десериализованных объектов с их первичными ключами </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolXML.prv_ReadDetail(System.Xml.XmlNodeList,ICSSoft.STORMNET.DetailArray,System.Collections.SortedList,ICSSoft.STORMNET.DataObjectCache,System.Collections.Generic.Dictionary{System.String,ICSSoft.STORMNET.DataObject})">
+            <summary>
+            Извлечение детейла из сериализованного представления
+            </summary>
+            <param name="xmldetailobjects"> Текущий элемент xml </param>
+            <param name="detail"> Текущий список детейлов </param>
+            <param name="assemblies"> Необходимые сборки </param>
+            <param name="DataObjectCache"> DataObjectCache </param>
+            <param name="deserializedObjectsList"> Словарь десериализованных объектов с их первичными ключами </param>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.ToolBinarySerializer">
+            <summary>
+             Инструмент для бинарной сериализации-десериализации
+             Используется для Function
+             Сериализованные байты конвертируются в ToBase64String
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolBinarySerializer.ObjectToString(System.Object)">
+            <summary>
+             Сериализация объекта при помощи BinaryFormatter
+            </summary>
+            <param name="o">Объект</param>
+            <returns>Строка</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolBinarySerializer.ObjectFromString(System.String)">
+            <summary>
+            Десериализация объекта при помощи BinaryFormatter
+            </summary>
+            <param name="s">Сериализованный объект</param>
+            <returns>Востановленный объект</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolBinarySerializer.ObjectFromString(System.String,System.Runtime.Serialization.SerializationBinder)">
+            <summary>
+            Десериализация объекта при помощи BinaryFormatter
+            </summary>
+            <param name="s">Сериализованный объект</param>
+            <param name="binder">
+            Binder, который необходимо указать, если при десереализации
+            необходимо реализовать собственную логику по поиску типов.
+            </param>
+            <returns>Востановленный объект</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.AssemblyLoader">
+            <summary>
+            Помощь при загрузке сборок, которые были подписаны
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.AssemblyLoader.LoadAssembly(System.String)">
+            <summary>
+            Загрузка сборки сначала по полному переданному пути, потом с обрезкой PublicKeyToken (Если не получилось, то Exception)
+            </summary>
+            <param name="asmName">Полное имя сборки</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.AssemblyLoader.GetTypeWithAssemblyName(System.String)">
+            <summary>
+            Получить тип по имени с указанием сборки (должен работать, даже если изменился PublicKeyToken)
+            </summary>
+            <param name="assemblyQualifiedName">Полное имя типа</param>
+            <returns>Тип</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.AssemblyLoader.CurrentDomainAssemblyResolve(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Обработчик события на неразрешённую сборку. Пробуем загружать сборки для десериализации по неполному описанию.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+            <returns>null - если не нашлось ничего</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.AssemblyLoader.CurrentDomainTypeResolve(System.Object,System.ResolveEventArgs)">
+            <summary>
+             Разрешить тип
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.AllowAllAssemblyVersionsDeserializationBinder">
+            <summary>
+             
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolZIP.Compress(System.IO.MemoryStream)">
+            <summary>
+            Сжатие
+            </summary>
+            <param name="ms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolZIP.Decompress(System.IO.MemoryStream)">
+            <summary>
+            Разжатие
+            </summary>
+            <param name="ms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolZIP.Compress(System.String)">
+            <summary>
+            Сжатие и кодирование в base64
+            </summary>
+            <param name="несжатаяСтрока">входная строчка</param>
+            <returns>сжатая строчка</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.ToolZIP.Decompress(System.String)">
+            <summary>
+            Разжатие
+            </summary>
+            <param name="сжатаяСтрока">сжатая строчка</param>
+            <returns>исходная строка</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.Transliteration">
+            <summary>
+            Класс, организующий транслитерацию из русского в английский и наоборот.
+            (Класс ранее был в asp-генераторе).
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.Transliteration.gost">
+            <summary>
+            Словарь, содержащий транслитерацию, соответствующую ГОСТ 16876-71.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.Transliteration.iso">
+            <summary>
+            Словарь, содержащий транслитерацию, соответствующую ISO 9-95.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.Transliteration.regexToSearchEnglish">
+            <summary>
+            Регулярное выражение для поиска английских символов.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.Transliteration.Front(System.String)">
+            <summary>
+            Перевод с русского на английский (по стандарту ISO 9-95).
+            </summary>
+            <param name="text">Переводимый текст на русском языке.</param>
+            <returns>Переведённый текст на английском языке.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.Transliteration.Front(System.String,ICSSoft.STORMNET.Tools.Transliteration.TransliterationType)">
+            <summary>
+            Перевод с русского на английский по указанному стандарту.
+            (Если в результате транслитерации получится пустая строка, то вернётся ""Transliteration" + random").
+            </summary>
+            <param name="text">Переводимый текст на русском языке.</param>
+            <param name="type">Используемый стандарт.</param>
+            <returns>Переведённый текст на английском языке.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.Transliteration.Back(System.String)">
+            <summary>
+            Перевод с английского на русский (по стандарту ISO 9-95).
+            </summary>
+            <param name="text">Переводимый текст на английском языке.</param>
+            <returns>Переведённый текст на русском языке.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.Transliteration.Back(System.String,ICSSoft.STORMNET.Tools.Transliteration.TransliterationType)">
+            <summary>
+            Перевод с английского на русский по указанному стандарту.
+            (Если в результате транслитерации получится пустая строка, то вернётся ""Транслитерация" + random").
+            </summary>
+            <param name="text">Переводимый текст на английском языке.</param>
+            <param name="type">Используемый стандарт.</param>
+            <returns>Переведённый текст на русском языке.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.Transliteration.ReleaseStringFromEnglishSymbols(System.String)">
+            <summary>
+            Удалить из строки оставшиеся символы английского алфавита.
+            </summary>
+            <param name="releaseString">Строка, из которой необходимо убрать символы.</param>
+            <returns>Строка без английских символов.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.Transliteration.GetDictionaryByType(ICSSoft.STORMNET.Tools.Transliteration.TransliterationType)">
+            <summary>
+            Получение словаря для словаря для указанного стандарта.
+            </summary>
+            <param name="type">Стандарт транслитерации.</param>
+            <returns>Словарь стандарта.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.Transliteration.#cctor">
+            <summary>
+            Заполнение словарей стандартов.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.Transliteration.TransliterationType">
+            <summary>
+            Используемый при транслитерации стандарт.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.Transliteration.TransliterationType.Gost">
+            <summary>
+            ГОСТ 16876-71
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.Transliteration.TransliterationType.ISO">
+            <summary>
+            ISO 9-95
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.TypeManager">
+            <summary>
+            Вспомагательный класс для работы <see cref="T:ICSSoft.STORMNET.Tools.XMLManager"/>.
+            Содержит методы для работы с типами данных.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.TypeManager._formatComma">
+            <summary>
+            Строковый формат числа с запятой.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.TypeManager._formatPoint">
+            <summary>
+            Строковый формат числа с точкой.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.TypeManager.TryParseDouble(System.String,System.Double@)">
+            <summary>
+            Попробовать распарсить <see cref="T:System.Double"/> из строки без учета культуры.
+            </summary>
+            <param name="value">Строковое значение, которое следует распарсить.</param>
+            <param name="result">Распарсеное значение. Результат аналогичен при работе метода <see cref="M:System.Double.TryParse(System.String,System.Double@)"/>.</param>
+            <returns>Удалось ли распарсить значение из строки.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.TypeManager.TryParseDecimal(System.String,System.Decimal@)">
+            <summary>
+            Попробовать распарсить <see cref="T:System.Decimal"/> из строки без учета культуры.
+            </summary>
+            <param name="value">Строковое значение, которое следует распарсить.</param>
+            <param name="result">Распарсеное значение. Результат аналогичен при работе метода <see cref="M:System.Decimal.TryParse(System.String,System.Decimal@)"/>.</param>
+            <returns>Удалось ли распарсить значение из строки.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.TypeManager.GetFormatForString(System.String)">
+            <summary>
+            Поллучить актуальный формат для парсинга числа из строки.
+            </summary>
+            <param name="stringValue">Строка для которой будет получен формат.</param>
+            <returns>Формат для парсинга числа из строки.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.XMLManager">
+            <summary>
+            Manager для работы с xml. Упрощает создание новых вершин, запись и чтение атрибутов различных типов.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Tools.XMLManager._document">
+            <summary>
+            Экземпляр xml-Документа с которым работает класс.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.GetAttributeValue(System.Xml.XmlNode,System.String)">
+            <summary>
+            Получить значение атрибута указанной вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="name">Наименование атрибута, значение которого будет читаться.</param>
+            <returns>Строковое значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.TryReadValue(System.Xml.XmlNode,System.String,System.Int32@)">
+            <summary>
+            Попытаться прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="value">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Удалось ли прочитать значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.ReadValue(System.Xml.XmlNode,System.String,System.Int32)">
+            <summary>
+            Прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="defaultValue">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Прочитаное значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.TryReadValue(System.Xml.XmlNode,System.String,System.Int64@)">
+            <summary>
+            Попытаться прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="value">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Удалось ли прочитать значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.ReadValue(System.Xml.XmlNode,System.String,System.Int64)">
+            <summary>
+            Прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="defaultValue">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Прочитаное значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.TryReadValue(System.Xml.XmlNode,System.String,System.Boolean@)">
+            <summary>
+            Попытаться прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="value">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Удалось ли прочитать значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.ReadValue(System.Xml.XmlNode,System.String,System.Boolean)">
+            <summary>
+            Прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="defaultValue">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Прочитаное значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.TryReadValue(System.Xml.XmlNode,System.String,System.Double@)">
+            <summary>
+            Попытаться прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="value">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Удалось ли прочитать значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.ReadValue(System.Xml.XmlNode,System.String,System.Double)">
+            <summary>
+            Прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="defaultValue">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Прочитаное значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.TryReadValue(System.Xml.XmlNode,System.String,System.String@)">
+            <summary>
+            Попытаться прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="value">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Удалось ли прочитать значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.ReadValue(System.Xml.XmlNode,System.String,System.String)">
+            <summary>
+            Прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="defaultValue">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Прочитаное значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.TryReadValue(System.Xml.XmlNode,System.String,System.Decimal@)">
+            <summary>
+            Попытаться прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="value">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Удалось ли прочитать значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.ReadValue(System.Xml.XmlNode,System.String,System.Decimal)">
+            <summary>
+            Прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="defaultValue">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Прочитаное значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.TryReadValue(System.Xml.XmlNode,System.String,System.DateTime@)">
+            <summary>
+            Попытаться прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="value">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Удалось ли прочитать значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.ReadValue(System.Xml.XmlNode,System.String,System.DateTime)">
+            <summary>
+            Прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="defaultValue">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Прочитаное значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.TryReadValue(System.Xml.XmlNode,System.String,System.Guid@)">
+            <summary>
+            Попытаться прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="value">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Удалось ли прочитать значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.ReadValue(System.Xml.XmlNode,System.String,System.Guid)">
+            <summary>
+            Прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="defaultValue">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Прочитаное значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.TryReadValue(System.Xml.XmlNode,System.String,System.Drawing.Color@)">
+            <summary>
+            Попытаться прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="value">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Удалось ли прочитать значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.ReadValue(System.Xml.XmlNode,System.String,System.Drawing.Color)">
+            <summary>
+            Прочитать значение атрибута вершины.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="defaultValue">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Прочитаное значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.TryReadValue``1(System.Xml.XmlNode,System.String,``0@)">
+            <summary>
+            Попытаться прочитать значение атрибута вершины.
+            Метод для чтения перечислений.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="value">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Удалось ли прочитать значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.ReadValue``1(System.Xml.XmlNode,System.String,``0)">
+            <summary>
+            Прочитать значение атрибута вершины.
+            Метод для чтения перечислений.
+            </summary>
+            <param name="node">Вершина, атрибут которой будет искаться.</param>
+            <param name="attributeName">Наименование атрибута, значение которого будет читаться.</param>
+            <param name="defaultValue">Значение по умолчанию для читаемого атрибута. Оно будет указано в случае, если атрибут не будет найден или не сможет прочитаться.</param>
+            <returns>Прочитаное значение атрибута вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.#ctor(System.Xml.XmlDocument)">
+            <summary>
+            Создать экземпляр manager'а для работы с xml.
+            </summary>
+            <param name="xmlDocument">Xml-Документ с которым будет работать класс выполняя операции добавления вершин, чтения и записи значений атрибутов.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.AppendChild(System.Xml.XmlNode,System.String)">
+            <summary>
+            Добавить вершину в xml-документ.
+            </summary>
+            <param name="parentNode">Родительская вершина, внутрь которой следует добавить вновь созданую. Если создаваемая вершина должна стать корневой, то необходимо передать сам документ.</param>
+            <param name="name">Наименование создаваемой вершины.</param>
+            <returns>Созданная вершина в xml-документе.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.AppendAttribute(System.Xml.XmlNode,System.String,System.String)">
+            <summary>
+            Добавить атрибут для вершины.
+            </summary>
+            <param name="node">Вершина для которой следует добавить атрибут.</param>
+            <param name="name">Наименование создаваемого атрибута.</param>
+            <param name="value">Значение атрибута в строковом виде. Данный метод в основном используется самим классом. Лучше использовать специальные методы записи значений атрибутов.</param>
+            <returns>Созданный атрибут для вершины.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.WriteValue(System.Xml.XmlNode,System.String,System.String)">
+            <summary>
+            Записать значение атрибута для вершины.
+            </summary>
+            <param name="node">Вершина для атрибута которой будет записано значение.</param>
+            <param name="name">Наименование атрибута значение которое необходимо записать.</param>
+            <param name="value">Значение, которое необходимо записать в атрибут.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.WriteValue(System.Xml.XmlNode,System.String,System.Int32)">
+            <summary>
+            Записать значение атрибута для вершины.
+            </summary>
+            <param name="node">Вершина для атрибута которой будет записано значение.</param>
+            <param name="name">Наименование атрибута значение которое необходимо записать.</param>
+            <param name="value">Значение, которое необходимо записать в атрибут.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.WriteValue(System.Xml.XmlNode,System.String,System.Boolean)">
+            <summary>
+            Записать значение атрибута для вершины.
+            </summary>
+            <param name="node">Вершина для атрибута которой будет записано значение.</param>
+            <param name="name">Наименование атрибута значение которое необходимо записать.</param>
+            <param name="value">Значение, которое необходимо записать в атрибут.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.WriteValue(System.Xml.XmlNode,System.String,System.Double)">
+            <summary>
+            Записать значение атрибута для вершины.
+            </summary>
+            <param name="node">Вершина для атрибута которой будет записано значение.</param>
+            <param name="name">Наименование атрибута значение которое необходимо записать.</param>
+            <param name="value">Значение, которое необходимо записать в атрибут.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.WriteValue(System.Xml.XmlNode,System.String,System.DateTime)">
+            <summary>
+            Записать значение атрибута для вершины.
+            </summary>
+            <param name="node">Вершина для атрибута которой будет записано значение.</param>
+            <param name="name">Наименование атрибута значение которое необходимо записать.</param>
+            <param name="value">Значение, которое необходимо записать в атрибут.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.WriteValue(System.Xml.XmlNode,System.String,System.Decimal)">
+            <summary>
+            Записать значение атрибута для вершины.
+            </summary>
+            <param name="node">Вершина для атрибута которой будет записано значение.</param>
+            <param name="name">Наименование атрибута значение которое необходимо записать.</param>
+            <param name="value">Значение, которое необходимо записать в атрибут.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.WriteValue(System.Xml.XmlNode,System.String,System.Guid)">
+            <summary>
+            Записать значение атрибута для вершины.
+            </summary>
+            <param name="node">Вершина для атрибута которой будет записано значение.</param>
+            <param name="name">Наименование атрибута значение которое необходимо записать.</param>
+            <param name="value">Значение, которое необходимо записать в атрибут.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.WriteValue(System.Xml.XmlNode,System.String,System.Int64)">
+            <summary>
+            Записать значение атрибута для вершины.
+            </summary>
+            <param name="node">Вершина для атрибута которой будет записано значение.</param>
+            <param name="name">Наименование атрибута значение которое необходимо записать.</param>
+            <param name="value">Значение, которое необходимо записать в атрибут.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.WriteValue(System.Xml.XmlNode,System.String,System.Drawing.Color)">
+            <summary>
+            Записать значение атрибута для вершины.
+            </summary>
+            <param name="node">Вершина для атрибута которой будет записано значение.</param>
+            <param name="name">Наименование атрибута значение которое необходимо записать.</param>
+            <param name="value">Значение, которое необходимо записать в атрибут.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XMLManager.WriteValue(System.Xml.XmlNode,System.String,System.Enum)">
+            <summary>
+            Записать значение атрибута для вершины.
+            </summary>
+            <param name="node">Вершина для атрибута которой будет записано значение.</param>
+            <param name="name">Наименование атрибута значение которое необходимо записать.</param>
+            <param name="value">Значение, которое необходимо записать в атрибут.</param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Tools.XMLManager.XmlDocument">
+            <summary>
+            Экземпляр xml-Документа с которым работает класс.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Tools.XmlTools">
+            <summary>
+            Инструменты для работы с Xml.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XmlTools.GetXDocumentByXElement(System.Xml.Linq.XElement,System.String,System.String)">
+            <summary>
+            Конвертация <see cref="T:System.Xml.Linq.XElement"/> в <see cref="T:System.Xml.XmlDocument"/>.
+            </summary>
+            <param name="xElement">
+            XDocument для конвертации.
+            </param>
+            <param name="versionXmlDoc">
+            Версия создаваемого xml документа.
+            </param>
+            <param name="encodingXmlDoc">
+            Кодировка для создаваемого xml документа.
+            </param>
+            <returns>
+            Результат конвертации XmlDocument.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Tools.XmlTools.LoadXml(System.String,System.Text.Encoding)">
+            <summary>
+            Прочитать Xml-файл. Может автоматически определить кодировку.
+            </summary>
+            <param name="filePath">
+            Путь до Xml-файла.
+            </param>
+            <param name="encoding">
+            Кодировка, которую необходимо использовать для чтения Xml-файла.
+            </param>
+            <returns>
+            Вычитанный Xml-файл в формате <see cref="T:System.Xml.XmlDocument"/>.
+            </returns>
+        </member>
+    </members>
+</doc>

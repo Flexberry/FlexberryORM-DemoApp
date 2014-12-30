@@ -1,0 +1,670 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NewPlatform.Flexberry.Data.ODataService</name>
+    </assembly>
+    <members>
+        <member name="T:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider">
+            <summary>
+            Провайдер для работы с метаданными, доступными через <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider._containerName">
+            <summary>
+            Наименование контейнера, используется для кэширования провайдера.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider._namespaceName">
+            <summary>
+            Пространство имен, используется вместе с <see cref="P:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.ContainerName"/> для кэширования.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider._metadata">
+            <summary>
+            Метаданные, с которыми работает провайдер.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.#ctor(NewPlatform.Flexberry.Data.IMetaData)">
+            <summary>
+            Создать экземпляр провайдера для работы с метаданными доступными через <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </summary>
+            <param name="metaData">Метаданные, с которыми работат данный провайдер.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.TryResolveResourceSet(System.String,System.Data.Services.Providers.ResourceSet@)">
+            <summary>
+            Попробовать получить <see cref="T:System.Data.Services.Providers.ResourceSet"/> из метаданных.
+            </summary>
+            <param name="name">Наименование <see cref="T:System.Data.Services.Providers.ResourceSet"/>, который необходимо получить.</param>
+            <param name="resourceSet">Набор ресурсов, который получилось найти в метаданных.</param>
+            <returns>Получилось ли найти <see cref="T:System.Data.Services.Providers.ResourceSet"/> в метаданных.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.GetResourceAssociationSet(System.Data.Services.Providers.ResourceSet,System.Data.Services.Providers.ResourceType,System.Data.Services.Providers.ResourceProperty)">
+            <summary>
+            Получить ассоциацию для <see cref="T:System.Data.Services.Providers.ResourceSet"/>.
+            </summary>
+            <param name="resourceSet">Набор ресурсов, для которого необходимо получить ассоциацию.</param>
+            <param name="resourceType">Тип ресурса, который имеет ссылку на ассоциацию.</param>
+            <param name="resourceProperty">Свойство, являющееся ссылкой на другой ресурс.</param>
+            <returns>Ассоциация полученная для <see cref="T:System.Data.Services.Providers.ResourceSet"/>.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.TryResolveResourceType(System.String,System.Data.Services.Providers.ResourceType@)">
+            <summary>
+            Попробовать получить <see cref="T:System.Data.Services.Providers.ResourceType"/>.
+            </summary>
+            <param name="name">Наименование <see cref="T:System.Data.Services.Providers.ResourceType"/>, который необходимо получить.</param>
+            <param name="resourceType">Найденный тип ресурса.</param>
+            <returns>Получилось ли найти <see cref="T:System.Data.Services.Providers.ResourceType"/>.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.GetDerivedTypes(System.Data.Services.Providers.ResourceType)">
+            <summary>
+            Получить типы ресурсов, являющиеся наследниками для указанного типа.
+            </summary>
+            <param name="resourceType">Тип ресурса, для которого необходимо получить наследников.</param>
+            <returns>Типы ресурсов, являющиеся наследниками для указанного типа.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.HasDerivedTypes(System.Data.Services.Providers.ResourceType)">
+            <summary>
+            Проверить является ли указанный тип ресурса чьим либо наследником.
+            </summary>
+            <param name="resourceType">Тип ресурса, который необходимо проверить.</param>
+            <returns>Является ли указанный тип ресурса чьим либо наследником.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.TryResolveServiceOperation(System.String,System.Data.Services.Providers.ServiceOperation@)">
+            <summary>
+            Попробовать получить операцию по имени.
+            </summary>
+            <param name="name">Имя операции, который необходимо поулчить.</param>
+            <param name="serviceOperation">Найденная операция.</param>
+            <returns>Получилось ли найти операцию по имени.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.SetReadOnly">
+            <summary>
+            Сделать метаданные "только для чтения", чтобы их нельзя было редактировать при работе с ними.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.ContainerNamespace">
+            <summary>
+            Пространство имен, используется вместе с <see cref="P:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.ContainerName"/> для кэширования.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.ContainerName">
+            <summary>
+            Наименование контейнера, используется для кэширования провайдера.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.ResourceSets">
+            <summary>
+            Наборы ресурсов метаданных.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.Types">
+            <summary>
+            Типы русерсов метаданных.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.DataObjectsMetaDataProvider.ServiceOperations">
+            <summary>
+            Доступные операции.
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.DataObjectsProviderBehavior">
+            <summary>
+            Провайдер, содержащий <see cref="P:NewPlatform.Flexberry.Data.DataObjectsProviderBehavior.ProviderBehavior"/>, который определяет поведение других провайдеров.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.DataObjectsProviderBehavior._providerBehavior">
+            <summary>
+            Провайдер определяющий поведение других провайдеров.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsProviderBehavior.#ctor">
+            <summary>
+            Конструктор провайдера содержащий <see cref="P:NewPlatform.Flexberry.Data.DataObjectsProviderBehavior.ProviderBehavior"/>, который определяет поведение других провайдеров.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.DataObjectsProviderBehavior.ProviderBehavior">
+            <summary>
+            Провайдер определяющий поведение других провайдеров.
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.DataObjectsResourceQueryProvider">
+            <summary>
+            Провайдер для получения данных через <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.DataObjectsResourceQueryProvider._metadata">
+            <summary>
+            Метаданные, с которыми работает провайдер.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsResourceQueryProvider.#ctor(NewPlatform.Flexberry.Data.IMetaData)">
+            <summary>
+            Создать провайдер для получения данных через <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </summary>
+            <param name="metaData">Метаданные для работы провайдера.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsResourceQueryProvider.GetQueryRootForResourceSet(System.Data.Services.Providers.ResourceSet)">
+            <summary>
+            Получить данные для <see cref="T:System.Data.Services.Providers.ResourceSet"/>.
+            </summary>
+            <param name="resourceSet">Набор ресурсов, для которого необходимо получить данные.</param>
+            <returns>Доступ к данным реализующий интерфейс <see cref="T:System.Linq.IQueryable"/>. Позволяет в дальнейшем применять инструкции linq-выражения.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsResourceQueryProvider.GetResourceType(System.Object)">
+            <summary>
+            Получить тип ресурса по экземпляру объекта данных.
+            </summary>
+            <param name="target">Экземпляр объекта данных, в данном контескте не может быть жестко типизированным.</param>
+            <returns>Тип ресурса полученный для экземпляра объекта данных.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsResourceQueryProvider.GetPropertyValue(System.Object,System.Data.Services.Providers.ResourceProperty)">
+            <summary>
+            Получить значение свойства объекта данных.
+            </summary>
+            <param name="target">Экземпляр объекта данных, в данном контескте не может быть жестко типизированным.</param>
+            <param name="resourceProperty">Свойство типа ресурса.</param>
+            <returns>Значение свойства объекта данных.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsResourceQueryProvider.GetOpenPropertyValue(System.Object,System.String)">
+            <summary>
+            Получить значение детейлового свойства объекта данных.
+            </summary>
+            <param name="target">Экземпляр объекта данных, в данном контескте не может быть жестко типизированным.</param>
+            <param name="propertyName">Имя свойства типа ресурса.</param>
+            <returns>Значение детейлового свойства объекта данных.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsResourceQueryProvider.GetOpenPropertyValues(System.Object)">
+            <summary>
+            Получить значения детейлов объекта данных.
+            </summary>
+            <param name="target">Детейлы, которые необходимо преобразовать к специальному интерфейсу.</param>
+            <returns>Значения детейлов объекта данных.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectsResourceQueryProvider.InvokeServiceOperation(System.Data.Services.Providers.ServiceOperation,System.Object[])">
+            <summary>
+            Выполнить операцию, определенную в метаданных.
+            </summary>
+            <param name="serviceOperation">Операция, которую необходимо выплнить.</param>
+            <param name="parameters">Параметры операции.</param>
+            <returns>Результат выполненя операции.</returns>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.DataObjectsResourceQueryProvider.CurrentDataSource">
+            <summary>
+            Источник данных, с которым должен работать провайдер. В других реализациях, он используется для организации доступа к данным.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.DataObjectsResourceQueryProvider.IsNullPropagationRequired">
+            <summary>
+            Определяет может ли быть указано <c>null</c> значение в linq-выражениях.
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.DataObjectUpdateProvider">
+            <summary>
+            Провайдер для выполнения операций создания, обновления и удаления объектов данных.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.DataObjectUpdateProvider._metadata">
+            <summary>
+            Метаданные, с которыми работает провайдер.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.DataObjectUpdateProvider._pendingChanges">
+            <summary>
+            Накапливаемый набор изменений для выполнения commit'а.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.#ctor(NewPlatform.Flexberry.Data.IMetaData)">
+            <summary>
+            Создать экземпляр провайдера для выполнения операций создания, обновления и удаления объектов данных.
+            </summary>
+            <param name="metaData">Метаданные, с которыми работает провайдер.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.CreateResource(System.String,System.String)">
+            <summary>
+            Создать ресурс по его типу.
+            </summary>
+            <param name="containerName">Наименование типа ресурса.</param>
+            <param name="fullTypeName">Полное наименование типа ресурса (с пространством имен).</param>
+            <returns>Созданный объект данных.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.GetResource(System.Linq.IQueryable,System.String)">
+            <summary>
+            Получить ресурс из запроса.
+            </summary>
+            <param name="query">Запрос ресурса.</param>
+            <param name="fullTypeName">Полное наименование типа ресурса (с пространством имен).</param>
+            <returns>Объект данных полученный из запроса.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.ResetResource(System.Object)">
+            <summary>
+            Сбросить значения всех свойств ресурса.
+            </summary>
+            <param name="resource">Ресурс, у которого необходимо стросить значения всех свойств.</param>
+            <returns>Ресурс со сброшенными значениями свойств.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.SetValue(System.Object,System.String,System.Object)">
+            <summary>
+            Установить значение свойства объекта данных.
+            </summary>
+            <param name="targetResource">Объект данных со свойством, которому необходимо установить значение.</param>
+            <param name="propertyName">Имя свойства объекта данных, которому необходимо установить значение.</param>
+            <param name="propertyValue">Значение, которое необходимо установить.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.GetValue(System.Object,System.String)">
+            <summary>
+            Получить значение свойства объекта данных.
+            </summary>
+            <param name="targetResource">Объект данных со свойством, значение которого необходимо получить.</param>
+            <param name="propertyName">Имя свойства, значение которого необходимо получить.</param>
+            <returns>Значение свойства объекта данных.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.SetReference(System.Object,System.String,System.Object)">
+            <summary>
+            Установить ссылку на другой объект данных (мастера).
+            </summary>
+            <param name="targetResource">Объект данных с мастеровым свойством.</param>
+            <param name="propertyName">Наименование мастеровго свойства.</param>
+            <param name="propertyValue">Значение мастера.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.AddReferenceToCollection(System.Object,System.String,System.Object)">
+            <summary>
+            Добавить детейл.
+            </summary>
+            <param name="targetResource">Объект данных с детейловым свойством.</param>
+            <param name="propertyName">Наименование детейлового свойства.</param>
+            <param name="resourceToBeAdded">Новый детейл.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.RemoveReferenceFromCollection(System.Object,System.String,System.Object)">
+            <summary>
+            Удалить детейл.
+            </summary>
+            <param name="targetResource">Объект данных с детейловым свойством.</param>
+            <param name="propertyName">Наименование детейлового свойства.</param>
+            <param name="resourceToBeRemoved">Детейл, который необходимо удалить.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.DeleteResource(System.Object)">
+            <summary>
+            Удалить ресурс.
+            </summary>
+            <param name="targetResource">Ресурс, который необходимо удалить.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.SaveChanges">
+            <summary>
+            Применить все изменения.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.ResolveResource(System.Object)">
+            <summary>
+            Сопоставить ресурсу реальный объект.
+            </summary>
+            <param name="resource">Ресурс, который необходимо сопоставить.</param>
+            <returns>Сам ресурс, потому что в методе <see cref="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.CreateResource(System.String,System.String)"/> создается реальный объект.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.ClearChanges">
+            <summary>
+            Отменить все изменения.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.SetConcurrencyValues(System.Object,System.Nullable{System.Boolean},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <summary>
+            Supplies the eTag value for the given entity resource.
+            </summary>
+            <param name="resourceCookie">Cookie that represents the resource.</param>
+            <param name="checkForEquality">A Boolean that is true when property values must be compared for equality; false when property values must be compared for inequality.</param>
+            <param name="concurrencyValues">An <see cref="T:System.Collections.Generic.IEnumerable`1"/> list of the eTag property names and corresponding values.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.ValidateResource(System.Object)">
+            <summary>
+            Проверить валидность ресурса.
+            </summary>
+            <param name="resource">Ресурс, который необходимо проверить.</param>
+            <returns>Объект данных для проверенного ресурса.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.GetResourceSetByName(System.String)">
+            <summary>
+            Получить <see cref="T:System.Data.Services.Providers.ResourceSet"/> по имени.
+            </summary>
+            <param name="resourceSetName">Имя набора ресурсов.</param>
+            <returns>Набор ресурсов.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.DataObjectUpdateProvider.GetResourceSetForResource(System.Object)">
+            <summary>
+            Получить <see cref="T:System.Data.Services.Providers.ResourceSet"/> для ресурса.
+            </summary>
+            <param name="resource">Ресурс, для которого необходимо получить <see cref="T:System.Data.Services.Providers.ResourceSet"/>.</param>
+            <returns>Набор ресурсов.</returns>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.ExpandExpressionVisitor">
+            <summary>
+            Visitor для обработки $expand в запросах к сервису.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.ExpandExpressionVisitor.GetSequenceValueMethodInfo">
+            <summary>MethodInfo for IEnumerable&lt;T&gt; DataServiceProviderMethods.GetSequenceValue(this object value, ResourceProperty property).</summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.ExpandExpressionVisitor.ConvertMethodInfo">
+            <summary>MethodInfo for Convert.</summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.ExpandExpressionVisitor.TypeIsMethodInfo">
+            <summary>MethodInfo for TypeIs.</summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.ExpandExpressionVisitor.VisitParameter(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Метод обработки выражения типа <see cref="T:System.Linq.Expressions.ParameterExpression"/>.
+            TODO метод не закончен. Необходимо разбираться нужно ли здесь писать логику.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.ExpandExpressionVisitor.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)">
+            <summary>
+            Метод обработки выражений типа <see cref="T:System.Linq.Expressions.MethodCallExpression"/>.
+            TODO Метод не закончен. Необходимо разобраться, что делать в каждом случае. Возможно все ветки не нужны.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.ExpandExpressionVisitor.VisitUnary(System.Linq.Expressions.UnaryExpression)">
+            <summary>
+            Метод обработки выражений типа <see cref="T:System.Linq.Expressions.UnaryExpression"/>.
+            TODO метод не закончен. Необходимо разбраться до конца, как именно строить выражения для обработки $expand.
+            </summary>
+            <param name="u">Выражение, которое обрабатывается.</param>
+            <returns>Выражение - результат обработки.</returns>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.ExpressionUtils">
+            <summary>
+            Класс взятый из примера MongoOData.
+            В нем множество полезных методов для работы с <see cref="T:System.Linq.Expressions.Expression"/> и его наследниками.
+            TODO удалить лишние методы по окончании разработки сервиса.
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.Extensions.DataObjectExtensions">
+            <summary>
+            Класс содержащий методы расширения для <see cref="T:ICSSoft.STORMNET.DataObject"/>.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.Extensions.DataObjectExtensions.GetPropertyValueByResourceProperty(ICSSoft.STORMNET.DataObject,System.Data.Services.Providers.ResourceProperty)">
+            <summary>
+            Получить значение свойства объекта данных по ресурсу свойства.
+            </summary>
+            <param name="dataObject">Объект данных, значение свойства которого необходимо получить.</param>
+            <param name="resourceProperty">Ресурс свойства, значение которого необходимо получить.</param>
+            <returns>Значение свойства объекта данных по ресурсу свойства.</returns>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.Extensions.ResourceExtensions">
+            <summary>
+            Методы расширения для ресурсов используемых в <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.Extensions.ResourceExtensions.GetAnnotation(System.Data.Services.Providers.ResourceProperty)">
+            <summary>
+            Получить дополнительную информацию об объекте <see cref="T:System.Data.Services.Providers.ResourceProperty"/>.
+            </summary>
+            <param name="resourceProperty">Свойство типа ресурса, для которого необходимо получить дополнительную информацию.</param>
+            <returns>Дополнительная информация об объекте <see cref="T:System.Data.Services.Providers.ResourceProperty"/>.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.Extensions.ResourceExtensions.GetAnnotation(System.Data.Services.Providers.ResourceType)">
+            <summary>
+            Получить дополнительную информацию об объекте <see cref="T:System.Data.Services.Providers.ResourceType"/>.
+            </summary>
+            <param name="resourceType">Типа ресурса, для которого необходимо получить дополнительную информацию.</param>
+            <returns>Дополнительная информация об объекте <see cref="T:System.Data.Services.Providers.ResourceType"/>.</returns>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.IDataSource">
+            <summary>
+            Интерфейс для источника данных <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.IDataSource.GetDataObjectsAssembliesNames">
+            <summary>
+            Получить список имен сборок с объектами данных, для которых необходимо добавить метаданные.
+            </summary>
+            <returns>Список имен сборок с объектами данных, для которых необходимо добавить метаданные.</returns>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.IMetaData">
+            <summary>
+            Интерфейс для метаданных для <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.IMetaData.ResourceTypes">
+            <summary>
+            Все типы ресурсов.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.IMetaData.ResourceSets">
+            <summary>
+            Все наборы ресурсов.
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.MetaData`1">
+            <summary>
+            Метаданные для сервиса <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </summary>
+            <typeparam name="T">
+            Тип источника данных для <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </typeparam>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.MetaData`1._exceptedProperties">
+            <summary>
+            Свойства объекта <see cref="T:ICSSoft.STORMNET.DataObject"/>, которые необходимо исключить при формировании <see cref="T:System.Data.Services.Providers.ResourceType"/>.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.MetaData`1._keyPropertyName">
+            <summary>
+            Наименование свойства <see cref="T:ICSSoft.STORMNET.DataObject"/>, являющегося первичным ключом объекта данных.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.MetaData`1._resourceTypes">
+            <summary>
+            Типы ресурсов.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.MetaData`1._resourceSets">
+            <summary>
+            Наборы ресурсов.
+            </summary>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.MetaData`1._notAddedReferences">
+            <summary>
+            Свойства объектов данных, которые не были добавлены из-за циклических кофликтов.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.MetaData`1.#ctor">
+            <summary>
+            Создать экземпляр метаданных для сервиса <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.MetaData`1.AddResourceTypes(System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Добавить типы ресурсов в мета данных.
+            </summary>
+            <param name="types">CLR-типы для добавления о них метаданных.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.MetaData`1.AddPropertyForType(System.Reflection.PropertyInfo,System.Data.Services.Providers.ResourceType)">
+            <summary>
+            Добавить свойство CLR-типа в <see cref="T:System.Data.Services.Providers.ResourceType"/>.
+            </summary>
+            <param name="property">Cвойство CLR-типа, которые необходимо добавить в <see cref="T:System.Data.Services.Providers.ResourceType"/>.</param>
+            <param name="resourceType">Тип ресурса, в которые необходимо обавить свойство.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.MetaData`1.AddReferenceProperty(System.Data.Services.Providers.ResourceType,System.String,System.Data.Services.Providers.ResourceSet,System.Boolean)">
+            <summary>Добавить ссылочное слойство в <see cref="T:System.Data.Services.Providers.ResourceType"/>.</summary>
+            <param name="resourceType">Тип ресурса, в который необходимо добавить свойство.</param>
+            <param name="name">Наименование добавляемого свойства.</param>
+            <param name="targetResourceSet"><see cref="T:System.Data.Services.Providers.ResourceSet"/> на который ссылается ссылочное свойство.</param>
+            <param name="resourceSetReference"><c>true</c> если добавляемое свойство должн быть детейлом, иначе будет добавлен мастер.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.MetaData`1.AddKeyProperty(System.Data.Services.Providers.ResourceType,System.String)">
+            <summary>
+            Добавить свойство в <see cref="T:System.Data.Services.Providers.ResourceType"/>, которые является ключом.
+            </summary>
+            <param name="resourceType">Тип ресурса, в который необходимо добавить свойство.</param>
+            <param name="name">Наименование добавляемого свойства.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.MetaData`1.AddPrimitiveProperty(System.Data.Services.Providers.ResourceType,System.String,System.Type,System.Boolean)">
+            <summary>
+            Добавить собственное свойство в <see cref="T:System.Data.Services.Providers.ResourceType"/>.
+            </summary>
+            <param name="resourceType">Тип ресурса, в который необходимо добавить свойство.</param>
+            <param name="name">Наименование добавляемого свойства.</param>
+            <param name="propertyType">CLR-тип свойства ресурса.</param>
+            <param name="isKey">Является ли добавляемое свойство ключом.</param>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.MetaData`1.ResourceTypes">
+            <summary>
+            Типы ресрсов.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.MetaData`1.ResourceSets">
+            <summary>
+            Наборы ресурсов.
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.OdataExpressionTreeVisitor">
+            <summary>
+            Visitor, который обрабатывает дерево выражения для <see cref="T:NewPlatform.Flexberry.Data.OdataLinqProvider`1"/>.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataExpressionTreeVisitor.#ctor(ICSSoft.STORMNET.Business.LINQProvider.TreeVisitorStacksHolder)">
+            <summary>
+            Создать экземпляр visitor'а, который обрабатывает дерево выражения для <see cref="T:NewPlatform.Flexberry.Data.OdataLinqProvider`1"/>.
+            </summary>
+            <param name="stacksHolder">Кантейнер стеков для <see cref="T:Remotion.Linq.Parsing.ExpressionTreeVisitor"/>.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataExpressionTreeVisitor.#ctor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Создать экземпляр visitor'а, который обрабатывает дерево выражения для <see cref="T:NewPlatform.Flexberry.Data.OdataLinqProvider`1"/>.
+            </summary>
+            <param name="viewIsDynamic">Динамически создавать представление.</param>
+            <param name="view">Представление, если было указано.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataExpressionTreeVisitor.GetQueryModelVisitor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Создать экземпляр visitor'а для обработки запроса linq-выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.
+            </summary>
+            <param name="viewIsDynamic">Динамически создавать представление.</param>
+            <param name="view">Представление, если было указано.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+            <returns>Экземпляр visitor'а для обработки запроса linq-выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataExpressionTreeVisitor.VisitMethodCallExpression(System.Linq.Expressions.MethodCallExpression)">
+            <summary>
+            Обработать элементы linq-выражения с типом <see cref="T:System.Linq.Expressions.MethodCallExpression"/>.
+            </summary>
+            <param name="expression">Linq-выражение для обработки.</param>
+            <returns>Обработанное linq-выражение.</returns>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.OdataLinqProvider`1">
+            <summary>
+            Провайдер для работы с linq-выражениями в терминах OData.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataLinqProvider`1.#ctor(ICSSoft.STORMNET.Business.IDataService,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Создать экземпляр провайдер для работы с linq-выражениями в терминах OData.
+            </summary>
+            <param name="ds">Сервис данных, с которым будет работать провайдер.</param>
+            <param name="view">Представление объекта данных, если необходимо.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataLinqProvider`1.CreateProjectionQuery``1(System.Linq.Expressions.Expression)">
+            <summary>
+            Создание запроса с использование $expand и $select.
+            </summary>
+            <param name="expression">Выражение, по которому необходимо построить запрос.</param>
+            <returns>Linq-запрос данных.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataLinqProvider`1.ProcessProjection``2(System.Linq.Expressions.Expression,System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            Обработка проекции данных linq-запроса.
+            </summary>
+            <param name="source">Выражение основного запроса.</param>
+            <param name="lambda">Выражение для обработки проекции ($expand и $select).</param>
+            <returns>Linq-запрос данных.</returns>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.OdataQueryModelVisitor">
+            <summary>
+            Visitor для обработки запроса linq-выражения для <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataQueryModelVisitor.#ctor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Создать экземпляр visitor'а для обработки запроса linq-выражения для <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.
+            </summary>
+            <param name="viewIsDynamic">Динамически создавать представление.</param>
+            <param name="view">Представление, если было указано.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+            <returns>Экземпляр visitor'а для обработки запроса linq-выражения для <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/>.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataQueryModelVisitor.GetExpressionTreeVisitor(System.Boolean,ICSSoft.STORMNET.View,System.Collections.Generic.IEnumerable{ICSSoft.STORMNET.View})">
+            <summary>
+            Создать экземпляр visitor'а для обработки дерева выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.
+            </summary>
+            <param name="viewIsDynamic">Динамически создавать представление.</param>
+            <param name="view">Представление, если было указано.</param>
+            <param name="resolvingViews">Представления мастеров, необходимые для получения их детейлов, в случае динамических представлений. </param>
+            <returns>Экземпляр visitor'а для обработки дерева выражения для <see cref="T:ICSSoft.STORMNET.Business.LINQProvider.LcsQueryProvider`2"/>.</returns>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataQueryModelVisitor.VisitSelectClause(Remotion.Linq.Clauses.SelectClause,Remotion.Linq.QueryModel)">
+            <summary>
+            Обработкать инструкцию select в запросе linq-выражения.
+            Инструкция для запроса через <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/> будет выглядеть как $select.
+            </summary>
+            <param name="selectClause">Инструкция select в запросе linq-выражения.</param>
+            <param name="queryModel">Модель запроса linq-выражения.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataQueryModelVisitor.VisitOrderByClause(Remotion.Linq.Clauses.OrderByClause,Remotion.Linq.QueryModel,System.Int32)">
+            <summary>
+            Обработать инструкцию orderby в запрос linq-выражения.
+            Инструкция для запроса через <see cref="T:NewPlatform.Flexberry.Data.ODataService`1"/> будет выглядеть как $orderby.
+            </summary>
+            <param name="orderByClause">Инструкция orderby в запросе linq-выражения.</param>
+            <param name="queryModel">Модель запроса linq-выражения.</param>
+            <param name="index">Некий индекс для вызова базового метода.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.OdataQueryModelVisitor.MakeFullView">
+            <summary>
+            Сделать текущее представление полным, добавив в него все свойства объекта данных.
+            </summary>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.ODataService`1">
+            <summary>
+            Сервис данных для OData.
+            </summary>
+            <typeparam name="T">Тип источника данных для сервиса.</typeparam>
+        </member>
+        <member name="F:NewPlatform.Flexberry.Data.ODataService`1._metadata">
+            <summary>
+            Метаданные, описывающие ресурсы сервиса.
+            </summary>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.ODataService`1.InitializeService(System.Data.Services.DataServiceConfiguration)">
+            <summary>
+            Метод инициализации сервиса данных.
+            Определяется именно статическим, он будет вызван автоматически, если сервис был указан в роутинге.
+            </summary>
+            <param name="config">Настройки сервиса данных.</param>
+        </member>
+        <member name="M:NewPlatform.Flexberry.Data.ODataService`1.GetService(System.Type)">
+            <summary>
+            Метод получения сервисов выполняющих все дополнительную работу сервиса данных.
+            </summary>
+            <param name="serviceType">Тип сервиса, который запрашивается.</param>
+            <returns>Экземпляр сервиса переданного типа.</returns>
+        </member>
+        <member name="T:NewPlatform.Flexberry.Data.ResourceTypeCustomState">
+            <summary>
+            Класс определяющий структуру <see cref="P:System.Data.Services.Providers.ResourceType.CustomState"/>.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.ResourceTypeCustomState.ResourceSet">
+            <summary>
+            Набор ресурсов, ссылающийся на данный тип ресурса.
+            </summary>
+        </member>
+        <member name="P:NewPlatform.Flexberry.Data.ResourceTypeCustomState.ClrType">
+            <summary>
+            CLR-тип ресурса.
+            </summary>
+        </member>
+    </members>
+</doc>

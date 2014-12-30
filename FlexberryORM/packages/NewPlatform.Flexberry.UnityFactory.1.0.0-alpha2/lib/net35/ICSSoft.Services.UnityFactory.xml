@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.Services.UnityFactory</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.Services.UnityFactory">
+            <summary>
+            Класс для работы с Unity Framework.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.Services.UnityFactory.CreateContainer">
+            <summary>
+            Создает контейнер, используя настройки из конфигурационного файла (секция 'unity').
+            </summary>
+            <returns>Контейнер Unity Framework.</returns>
+        </member>
+    </members>
+</doc>

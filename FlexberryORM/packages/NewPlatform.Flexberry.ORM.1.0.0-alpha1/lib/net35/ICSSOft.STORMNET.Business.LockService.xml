@@ -1,0 +1,452 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.Business.LockService</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Business.LockService">
+            <summary>
+            Классический сервис блокировок
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LockService.dataService">
+            <summary>
+            Сервис данных, через который по умолчанию нужно делать запрос к БД.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.#ctor">
+            <summary>
+            Конструктор без параметров. В качестве сервиса данных по умолчанию будет использоваться DataServiceProvider.DataService.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.#ctor(ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Конструктор с определением сервиса данных.
+            </summary>
+            <param name="dataService">
+            Сервис данных, через который по умолчанию нужно делать запрос к БД.
+            Если передан null, то будет использоваться DataServiceProvider.DataService.
+            </param>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LockService.viewsbytypes">
+            <summary>
+            The viewsbytypes.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LockService.AllLocks">
+            <summary>
+            Кеш блокировок
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LockService.username">
+            <summary>
+            Для совместимости
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.ClearAllUserLocks(ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Удалить все блокировки текущего юзера (какие есть в базе).
+            В качестве сервиса данных используется переданный сервис данных.
+            <param name="dataService">Сервис данных.</param>
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.ClearAllUserLocks">
+            <summary>
+            Удалить все блокировки текущего юзера (какие есть в базе).
+            В качестве сервиса данных используется DataServiceProvider.DataService.
+            Если нужно использовать другой DataService, используйте другую перегрузку метода.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.GetUserName">
+            <summary>
+            The get user name.
+            </summary>
+            <returns>
+            The get user name.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.SetUserName(System.String)">
+            <summary>
+            The set user name.
+            </summary>
+            <param name="newusername">
+            The newusername.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.ClearAllLocks">
+            <summary>
+            удалить все текущие блокировки (осуществимые текущим экземпляром сервиса)
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.ClearLock(System.String,System.String)">
+            <summary>
+            Очистить блокировку
+            </summary>
+            <param name="LockKey">
+            </param>
+            <param name="userName">
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.ClearLock(ICSSoft.STORMNET.DataObject,System.String)">
+            <summary>
+            Очистить блокировку
+            </summary>
+            <param name="dobj">
+            </param>
+            <param name="userName">
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.ClearLock(System.String)">
+            <summary>
+            Очистить блокировку
+            </summary>
+            <param name="LockKey">
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.ClearLock(ICSSoft.STORMNET.DataObject)">
+            <summary>
+            Очистить блокировку
+            </summary>
+            <param name="dobj">
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.ClearWebLock(ICSSoft.STORMNET.DataObject,ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Снять блокировку с объекта для текущего пользователя
+            </summary>
+            <param name="dobj">
+            Объект данных
+            </param>
+            <param name="ds">
+            Сервис данных
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.ClearWebLock(ICSSoft.STORMNET.DataObject,System.String,ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Снять блокировку с объекта для указанного пользователя
+            </summary>
+            <param name="dobj">
+            Объект данных
+            </param>
+            <param name="userName">
+            Пользователь
+            </param>
+            <param name="ds">
+            Сервис данных
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.ClearWebLock(System.String,System.String,ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Снять блокировку по ключу для указанного пользователя
+            </summary>
+            <param name="LockKey">
+            ключ блокировки
+            </param>
+            <param name="userName">
+            пользователь
+            </param>
+            <param name="ds">
+            Сервис данных
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.GetLock(ICSSoft.STORMNET.DataObject)">
+            <summary>
+            Получить блокировку
+            </summary>
+            <param name="dobj">
+            </param>
+            <returns>
+            The get lock.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.GetLocks(ICSSoft.STORMNET.DataObject)">
+            <summary>
+            Получить блокировки (в т.ч. на детейлы).
+            </summary>
+            <param name="dobj">
+            Для какого объекта спрашиваем блокировку.
+            </param>
+            <returns>
+            Массив имен пользователей, для которых установлены блокировки на данный объект.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.GetLocks(ICSSoft.STORMNET.DataObject,System.Boolean@)">
+            <summary>
+            Получить блокировки
+            </summary>
+            <param name="dobj">
+            Для какого объекта спрашиваем блокировку
+            </param>
+            <param name="retdailscontains">
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.GetWebLock(ICSSoft.STORMNET.DataObject,ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Получить блокировку
+            </summary>
+            <param name="dobj">
+            Объект данных, для которого получаем блокировку
+            </param>
+            <param name="ds">
+            Сервис данных
+            </param>
+            <returns>
+            The get web lock.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.SetLock(System.String,System.String)">
+            <summary>
+            The set lock.
+            </summary>
+            <param name="LockKey">
+            The lock key.
+            </param>
+            <param name="userName">
+            The user name.
+            </param>
+            <returns>
+            The set lock.
+            </returns>
+            <exception cref="T:ICSSoft.STORMNET.Exceptions.DataServiceNotFoundException">
+            </exception>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.SetLock(ICSSoft.STORMNET.DataObject,System.String)">
+            <summary>
+            The set lock.
+            </summary>
+            <param name="dobj">
+            The dobj.
+            </param>
+            <param name="userName">
+            The user name.
+            </param>
+            <returns>
+            The set lock.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.SetLock(System.String)">
+            <summary>
+            The set lock.
+            </summary>
+            <param name="LockKey">
+            The lock key.
+            </param>
+            <returns>
+            The set lock.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.SetLock(ICSSoft.STORMNET.DataObject)">
+            <summary>
+            The set lock.
+            </summary>
+            <param name="dobj">
+            The dobj.
+            </param>
+            <returns>
+            The set lock.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.SetWebLock(ICSSoft.STORMNET.DataObject,ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Установить блокировку на объект
+            </summary>
+            <param name="dobj">
+            Объект данны
+            </param>
+            <param name="ds">
+            Сервис данных
+            </param>
+            <returns>
+            Имя пользователя, под которым блокировка находится, 
+            string.Empty - если блокировки не было и мы её только поставили
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.SetWebLock(ICSSoft.STORMNET.DataObject,System.String,ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Установить блокировку на объект для указанного пользователя
+            </summary>
+            <param name="dobj">
+            Объект данных
+            </param>
+            <param name="userName">
+            Пользователь
+            </param>
+            <param name="ds">
+            Сервис данных
+            </param>
+            <returns>
+            Имя пользователя, под которым блокировка находится, 
+            string.Empty - если блокировки не было и мы её только поставили
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.SetWebLock(System.String,System.String,ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Установить блокировку
+            </summary>
+            <param name="LockKey">
+            Ключ
+            </param>
+            <param name="userName">
+            Пользователь
+            </param>
+            <param name="ds">
+            Сервис данных
+            </param>
+            <returns>
+            Имя пользователя, под которым блокировка находится, 
+            string.Empty - если блокировки не было и мы её только поставили
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.CreateViewForCheckLocks(System.Type)">
+            <summary>
+            The create view for check locks.
+            </summary>
+            <param name="type">
+            The type.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.LightingView(ICSSoft.STORMNET.View)">
+            <summary>
+            The lighting view.
+            </summary>
+            <param name="view">
+            The view.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.OldGetUserName">
+            <summary>
+            The old get user name.
+            </summary>
+            <returns>
+            The old get user name.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.OldSetUserName(System.String)">
+            <summary>
+            The old set user name.
+            </summary>
+            <param name="newusername">
+            The newusername.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockService.GetAllLocks(ICSSoft.STORMNET.DataObject,System.Collections.Specialized.StringCollection,ICSSoft.STORMNET.View)">
+            <summary>
+            The get all locks.
+            </summary>
+            <param name="dobj">
+            The dobj.
+            </param>
+            <param name="locks">
+            The locks.
+            </param>
+            <param name="view">
+            The view.
+            </param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.LockService.UseMachineNameInKey">
+            <summary>
+            Использовать ли имя компьютера в блокировке
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.LockData">
+            <summary>
+            The lock data.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.LockData.fieldUserName">
+            <summary>
+            The field user name.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.LockData.CombinedKey">
+            <summary>
+            The combined key.
+            </summary>
+            <returns>
+            The combined key.
+            </returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.LockData.LockKey">
+            <summary>
+            Gets or sets LockKey.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.LockData.UserName">
+            <summary>
+            Gets or sets UserName.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.LockData.__PrimaryKey">
+            <summary>
+            Gets or sets __PrimaryKey.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.StringKeyGen">
+            <summary>
+            The string key gen.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.StringKeyGen.Generate(System.Type)">
+            <summary>
+            The generate.
+            </summary>
+            <param name="dataObjectType">
+            The data object type.
+            </param>
+            <returns>
+            The generate.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.StringKeyGen.Generate(System.Type,System.Object)">
+            <summary>
+            The generate.
+            </summary>
+            <param name="dataObjectType">
+            The data object type.
+            </param>
+            <param name="sds">
+            The sds.
+            </param>
+            <returns>
+            The generate.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.StringKeyGen.GenerateUniqe(System.Type)">
+            <summary>
+            The generate uniqe.
+            </summary>
+            <param name="dataObjectType">
+            The data object type.
+            </param>
+            <returns>
+            The generate uniqe.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.StringKeyGen.GenerateUniqe(System.Type,System.Object)">
+            <summary>
+            The generate uniqe.
+            </summary>
+            <param name="dataObjectType">
+            The data object type.
+            </param>
+            <param name="sds">
+            The sds.
+            </param>
+            <returns>
+            The generate uniqe.
+            </returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.StringKeyGen.KeyType">
+            <summary>
+            Gets KeyType.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.StringKeyGen.Unique">
+            <summary>
+            Gets a value indicating whether Unique.
+            </summary>
+        </member>
+    </members>
+</doc>
