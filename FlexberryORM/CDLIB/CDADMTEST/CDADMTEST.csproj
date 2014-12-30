@@ -56,9 +56,6 @@
     <AssemblyOriginatorKeyFile>CDADMTEST.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AppSettingsService">
-      <HintPath>..\..\packages\FlexberryORM.1.0.1\AppSettingsService.dll</HintPath>
-    </Reference>
     <Reference Include="ExternalLangDef">
       <HintPath>..\..\packages\NewPlatform.Flexberry.ORM.1.0.0-alpha1\lib\net35\ExternalLangDef.dll</HintPath>
     </Reference>
@@ -70,9 +67,6 @@
     </Reference>
     <Reference Include="ICSSoft.Services.UnityFactory">
       <HintPath>..\..\packages\NewPlatform.Flexberry.UnityFactory.1.0.0-alpha2\lib\net35\ICSSoft.Services.UnityFactory.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSSoft.STORMNET.AzManBridge">
-      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.AzManBridge.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.BF">
       <HintPath>..\..\packages\NewPlatform.Flexberry.ORM.1.0.0-alpha1\lib\net35\ICSSoft.STORMNET.BF.dll</HintPath>
@@ -118,9 +112,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NewPlatform.Flexberry.ORM.1.0.0-alpha1\lib\net35\ICSSoft.STORMNET.FunctionalLanguage.dll</HintPath>
     </Reference>
-    <Reference Include="ICSSoft.STORMNET.RightManager">
-      <HintPath>..\..\packages\FlexberryORM.1.0.1\ICSSoft.STORMNET.RightManager.dll</HintPath>
-    </Reference>
     <Reference Include="ICSSoft.STORMNET.Tools, Version=1.0.0.1, Culture=neutral, PublicKeyToken=c824f5305b237be9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NewPlatform.Flexberry.ORM.1.0.0-alpha1\lib\net35\ICSSoft.STORMNET.Tools.dll</HintPath>
@@ -156,9 +147,6 @@
     </Reference>
     <Reference Include="Remotion.Linq">
       <HintPath>..\..\packages\Remotion.Linq.1.13.183.0\lib\net35\Remotion.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="Repository">
-      <HintPath>..\..\packages\FlexberryORM.1.0.1\Repository.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
