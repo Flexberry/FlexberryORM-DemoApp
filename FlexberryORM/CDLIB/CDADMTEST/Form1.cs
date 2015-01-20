@@ -491,8 +491,16 @@
         private void button18_Click(object sender, EventArgs e)
         {
             // Switching storages and storage types
+            
+            // An example: try to use Postgre RDBMS:
+            // 0. We hope you had installed Postgre RDBMS. If had not, consider to visit http://www.postgresql.org/;
+            // 1. Please create database by running a scrypt file "FlexberryORM\Database\POSTGRES\create.sql";
+            // 2. Then open app.config and look at the appSettings section;
+            // 3. Comment sections with keys DataServiceType and CustomizationStrings, then change keys of DataServiceType_POSTGRE and CustomizationStrings_POSTGRE to DataServiceType and CustomizationStrings;
+            // 4. Change CustomizationStrings to properly connect to your Postgre server and database;
+            // 5. Run an example to ensure it works: try to test any examples with data creation and loading.
 
-
+            MessageBox.Show("Read comments in code under this button!");
         }
 
         private void button16_Click(object sender, EventArgs e)
