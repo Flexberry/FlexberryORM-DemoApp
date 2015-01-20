@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.Business.PostgresDataService</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Business.PostgresDataService">
+            <summary>
+            DataService для PostgreSQL
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.PostgresDataService.GetConnection">
+            <summary>
+            Получает подключение к базе через Npgsql
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
