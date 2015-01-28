@@ -19,7 +19,7 @@ There are three levels of complexity to understand FLEXBERRY ORM:
 2.3 Master association to a class with descendants. Instantiating descendant master. Type usages;
 2.4* Using type synonyms and custom types;
 2.5* DB structures custom naming;
-2.6 Switching storages and storage types.
+2.6* Switching storages and storage types.
 
 3. Advanced features
 -------------------------------------
