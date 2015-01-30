@@ -7,6 +7,7 @@
     using System.IO;
     using System.Text;
     using System.Windows.Forms;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// User control for sample visualization.
@@ -152,33 +153,56 @@
         /// <param name="e">Event arguments.</param>
         private void RunSampleToolStripButton_Click(object sender, EventArgs e)
         {
-            RunSampleAction(SelectedSample);
+            RunSampleActions(new SampleData[]{ SelectedSample});
         }
 
         /// <summary>
-        /// Run sample action.
+        /// Run a set of sample actions.
         /// </summary>
         /// <param name="sampleData">Sample data to run.</param>
-        private void RunSampleAction(SampleData sampleData)
+        private void RunSampleActions(SampleData[] sampleData)
         {
-            if (sampleData == null)
-            {
-                return;
-            }
+            List<Action> actions =  CollectActions(sampleData);
 
-            if (sampleData.SampleAction != null)
-            {
-                sampleData.SampleAction.Invoke();
-            }
+            Task.Factory.StartNew(() => 
+                                {
+                                    for (int i=0; i<actions.Count; i++)
+                                    {
+                                        actions[i].Invoke();
+                                    }
+                                }
+                                );
+        }
 
-            if (sampleData.ChildNodesList != null)
+        /// <summary>
+        /// Collect actions from every SampleData
+        /// </summary>
+        /// <param name="sampleData"></param>
+        /// <returns></returns>
+        private List<Action> CollectActions(SampleData[] sampleData)
+        {
+            List<Action> result = new List<Action>();
+            for (int i = 0; i < sampleData.Length; i++)
             {
-                foreach (SampleData sample in sampleData.ChildNodesList)
+                if (sampleData[i] == null)
                 {
-                    RunSampleAction(sample);
+                    continue;
+                }
+
+                if (sampleData[i].SampleAction != null)
+                {
+                    result.Add(sampleData[i].SampleAction);
+                }
+
+                if (sampleData[i].ChildNodesList != null)
+                {
+                    result.AddRange(CollectActions(sampleData[i].ChildNodesList.ToArray()));
                 }
             }
+            return result;
         }
+
+
 
         /// <summary>
         /// Handle load this control event. Set console output to the <see cref="LogTextBox"/>.
@@ -223,8 +247,18 @@
             {
                 base.Write(value);
 
+                string textToWrite = value.ToString(CultureInfo.InvariantCulture);
                 // When character data is written, append it to the text box.
-                _output.AppendText(value.ToString(CultureInfo.InvariantCulture));
+                if (_output.InvokeRequired) //It called from an another thread
+                {
+                    _output.BeginInvoke((Action)delegate() { _output.AppendText(textToWrite); });
+                }
+                else //It caled from the GUI thread
+                {
+                    _output.AppendText(textToWrite);
+                    Application.DoEvents();
+                }
+                
             }
 
             /// <summary>

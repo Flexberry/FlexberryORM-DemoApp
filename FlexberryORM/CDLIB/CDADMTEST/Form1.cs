@@ -215,7 +215,7 @@
             dataService.LoadObject(CDDA.Views.CDDA_E, cdda);
 
             // Load dataobject in specific view. View is a set of specific properties. You can define view in CASEBERRY tool, or in code by ViewAttribute.
-            // Look at composed tracks in watch: they are read also.
+            // Look at composed tracks in watch: they had read.
             // Try to run in intermediate window: cdda.GetStatus(). Ensure object status is UnAltered. Also you can see loaded properties by running cdda.GetLoadedProperties().
             cdda.Name = "Blablabla " + DateTime.Now;
 
