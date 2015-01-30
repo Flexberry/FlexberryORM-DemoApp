@@ -176,6 +176,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CDLIB\BusinessServers\CDLIB%28BusinessServers%29.csproj">
+      <Project>{f94a0105-78b7-4344-a08c-1a5436b43a41}</Project>
+      <Name>CDLIB%28BusinessServers%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CDLIB\CDADMTEST\CDADMTEST.csproj">
       <Project>{d4bb8ba4-b4e9-4fa4-b861-8641057ac6f7}</Project>
       <Name>CDADMTEST</Name>
@@ -184,10 +188,29 @@
       <Project>{4ffe8227-c302-4c91-a904-b5e95033534b}</Project>
       <Name>CDLIB%28Objects%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CustomDB\Objects\CustomDB%28Objects%29.csproj">
+      <Project>{d9ff0ecc-2b7f-4e4d-8a2d-c3659b980921}</Project>
+      <Name>CustomDB%28Objects%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MultiDetail\Objects\MultiDetail%28Objects%29.csproj">
       <Project>{d4b20ca9-b6c7-4cfc-b8da-d86f4b2618dc}</Project>
       <Name>MultiDetail%28Objects%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MultiMaster\Objects\MultiMaster%28Objects%29.csproj">
+      <Project>{7e6a09cb-5a1d-46ce-98ef-83d05e6c9efa}</Project>
+      <Name>MultiMaster%28Objects%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\DataBase\FlexberryORMSample.mdf">
+      <Link>DataBase\FlexberryORMSample.mdf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\DataBase\FlexberryORMSample_log.ldf">
+      <Link>DataBase\FlexberryORMSample_log.ldf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>FlexberryORMSample.mdf</DependentUpon>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

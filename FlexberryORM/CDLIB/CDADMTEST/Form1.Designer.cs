@@ -58,13 +58,16 @@
             this.button19 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.samplesControl1 = new NewPlatform.Flexberry.Samples.SamplesControl();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,11 +107,12 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(3, 16);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1041, 603);
+            this.tabControl1.Size = new System.Drawing.Size(896, 608);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -122,7 +126,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1033, 577);
+            this.tabPage1.Size = new System.Drawing.Size(888, 582);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1. Basic";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -187,7 +191,7 @@
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(446, 23);
             this.button13.TabIndex = 2;
-            this.button13.Text = "5 Create";
+            this.button13.Text = "5. Create";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -233,7 +237,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1033, 577);
+            this.tabPage2.Size = new System.Drawing.Size(888, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2. Standard";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -318,7 +322,7 @@
             this.tabPage3.Controls.Add(this.button4);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1033, 577);
+            this.tabPage3.Size = new System.Drawing.Size(888, 582);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "3. Advanced";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -387,21 +391,40 @@
             this.button4.Text = "1. Custom data service";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.samplesControl1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(888, 582);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Samples tree";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tabControl1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 2);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1047, 622);
+            this.groupBox1.Size = new System.Drawing.Size(902, 627);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select sample complexity level:";
+            // 
+            // samplesControl1
+            // 
+            this.samplesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.samplesControl1.Location = new System.Drawing.Point(0, 0);
+            this.samplesControl1.Name = "samplesControl1";
+            this.samplesControl1.Size = new System.Drawing.Size(888, 582);
+            this.samplesControl1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 627);
+            this.ClientSize = new System.Drawing.Size(902, 627);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "FLEXBERRY ORM samples";
@@ -411,6 +434,7 @@
             this.groupBox2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -449,6 +473,8 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.TabPage tabPage4;
+        private NewPlatform.Flexberry.Samples.SamplesControl samplesControl1;
     }
 }
 

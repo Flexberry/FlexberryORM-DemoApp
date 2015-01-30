@@ -119,7 +119,6 @@
                     CheckDetailsQty(obj, qtyInEach);
                 }
             }
-
         }
 
         /// <summary>
