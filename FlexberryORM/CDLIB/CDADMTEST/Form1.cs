@@ -78,7 +78,7 @@
         /// <summary>
         /// 1. How to instantiate dataobjects and persist into DB.
         /// </summary>
-        public void Basic1()
+        public static void Basic1()
         {
             Console.WriteLine("1. How to instantiate dataobjects and persist into DB.");
 
@@ -198,7 +198,7 @@
         /// <summary>
         /// 2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state.
         /// </summary>
-        public void Basic2()
+        public static void Basic2()
         {
             Console.WriteLine("2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state.");
 
@@ -248,7 +248,7 @@
         /// <summary>
         /// 3. How to load a set of dataobjects in specific view, limitation, quantity, etc..
         /// </summary>
-        public void Basic3()
+        public static void Basic3()
         {
             Console.WriteLine("3. How to load a set of dataobjects in specific view, limitation, quantity, etc..");
 
@@ -307,7 +307,7 @@
         /// <summary>
         /// 4. How to do something at persistence moment.
         /// </summary>
-        public void Basic4()
+        public static void Basic4()
         {
             Console.WriteLine("4. How to do something at persistence moment.");
             IDataService dataService = DataServiceProvider.DataService;
@@ -348,7 +348,7 @@
         /// <summary>
         /// 5. Create.
         /// </summary>
-        public void Basic5()
+        public static void Basic5()
         {
             Console.WriteLine("5. Create a dataobject with multiple details.");
 
@@ -385,7 +385,7 @@
         /// <summary>
         /// 6. Loading.
         /// </summary>
-        public void Basic6()
+        public static void Basic6()
         {
             Console.WriteLine("6. Loading a dataobject with multiple details.");
             
@@ -426,7 +426,7 @@
         /// <summary>
         /// 7. Prototyping.
         /// </summary>
-        public void Basic7()
+        public static void Basic7()
         {
             Console.WriteLine("7. Prototyping.");
             IDataService dataService = DataServiceProvider.DataService;
@@ -468,7 +468,7 @@
         /// <summary>
         /// 8. Prepare masters.
         /// </summary>
-        public void Basic8()
+        public static void Basic8()
         {
             Console.WriteLine("8. Create master objects for multimaster example.");
 
@@ -495,7 +495,7 @@
         /// <summary>
         /// 9. Create 10000.
         /// </summary>
-        public void Basic9()
+        public static void Basic9()
         {
             Console.WriteLine("9. Create 10000.");
 
@@ -548,7 +548,7 @@
         /// <summary>
         /// 10. Load.
         /// </summary>
-        public void Basic10()
+        public static void Basic10()
         {
             Console.WriteLine("10. Load.");
 

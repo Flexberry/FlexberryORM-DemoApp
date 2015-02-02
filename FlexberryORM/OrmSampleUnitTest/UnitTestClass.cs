@@ -54,19 +54,18 @@ namespace OrmSampleUnitTest
         public void BasicSamplesTest()
         {
             // Arrange.
-            Form1 form = new Form1();
 
             // Act.
-            form.Basic1();
-            form.Basic2();
-            form.Basic3();
-            form.Basic4();
-            form.Basic5();
-            form.Basic6();
-            form.Basic7();
-            form.Basic8();
-            form.Basic9();
-            form.Basic10();
+            Form1.Basic1();
+            Form1.Basic2();
+            Form1.Basic3();
+            Form1.Basic4();
+            Form1.Basic5();
+            Form1.Basic6();
+            Form1.Basic7();
+            Form1.Basic8();
+            Form1.Basic9();
+            Form1.Basic10();
 
             // Assert.
         }

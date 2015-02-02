@@ -61,6 +61,16 @@
             <param name="propertyExpression">Выражение, которое будет возвращать поле объекта. Например, "x => x.Свойство1".</param>
             <returns><c>True</c>, если значение отличается от значения в копии данных.</returns>
         </member>
+        <member name="T:ICSSoft.STORMNET.DOCacheNotFoundException">
+            <summary>
+            Кеш не найден.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.DOCacheObjectAlreadyExistsException">
+            <summary>
+            Объект уже присутствует в кеше.
+            </summary>
+        </member>
         <member name="T:ICSSoft.STORMNET.GetHandler">
             <summary>
             делегат для GetProperty
@@ -1668,10 +1678,10 @@
         </member>
         <member name="M:ICSSoft.STORMNET.DataObject.GetInitializedProperties(System.Boolean)">
             <summary>
-            Получить проинициализированные свойства (загруженные+означенные)
+            Получить проинициализированные свойства (загруженные+означенные).
             </summary>
-            <param name="WithMasters">Если True, мастеровые учитываются</param>
-            <returns>строковый массив имён свойств</returns>
+            <param name="withMasters">Если True, мастеровые учитываются.</param>
+            <returns>Строковый массив имён свойств.</returns>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObject.SetKey1(System.Object,ICSSoft.STORMNET.DataObjectCache)">
             <summary>
@@ -1709,39 +1719,46 @@
         </member>
         <member name="M:ICSSoft.STORMNET.DataObject.SetLoadingState(ICSSoft.STORMNET.LoadingState)">
             <summary>
-            Установка состояния загрузки
+            Установка состояния загрузки.
             </summary>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObject.GetLoadedProperties">
             <summary>
             Получение списка свойств, значения в которые установлены 
-            (требуется в случае, когда состояние загрузки -- LightLoaded)
+            (требуется в случае, когда состояние загрузки -- LightLoaded).
             </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.DataObject.GetLoadedPropertiesList">
+            <summary>
+            Получение списка свойств, значения в которые установлены 
+            (требуется в случае, когда состояние загрузки -- LightLoaded).
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObject.SetLoadedProperties(System.String[])">
             <summary>
             Установить список свойств, значения в которые установлены 
-            (требуется в случае, когда состояние загрузки -- LightLoaded)
+            (требуется в случае, когда состояние загрузки -- LightLoaded).
             </summary>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObject.AddLoadedProperties(System.String[])">
             <summary>
             Добавить список свойств, значения в которые установлены 
-            (требуется в случае, когда состояние загрузки -- LightLoaded)
+            (требуется в случае, когда состояние загрузки -- LightLoaded).
             </summary>
-            <param name="addingLoadedProperties"></param>
+            <param name="addingLoadedProperties">Массив добавляемых свойств.</param>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObject.AddLoadedProperties(System.Collections.Generic.List{System.String})">
             <summary>
-             Добавить список свойств, значения в которые установлены 
-             (требуется в случае, когда состояние загрузки -- LightLoaded)
+            Добавить список свойств, значения в которые установлены 
+            (требуется в случае, когда состояние загрузки -- LightLoaded).
             </summary>
-            <param name="addingLoadedProperties">массив добавляемых свойств</param>
+            <param name="propertyNamesList">Массив добавляемых свойств.</param>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObject.CheckLoadedProperty(System.String)">
             <summary>
             Проверить, установлено ли значение в указанное свойство
-            (требуется в случае, когда состояние загрузки -- LightLoaded)
+            (требуется в случае, когда состояние загрузки -- LightLoaded).
             </summary>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObject.CopyToObjectWithoutCache(ICSSoft.STORMNET.DataObject@,System.Boolean,System.Boolean)">
@@ -1915,39 +1932,58 @@
             Объект получает статусы ObjectStatus.UnAltered,LoadingState.NotLoaded
             </summary>
         </member>
-        <member name="M:ICSSoft.STORMNET.DataObject.prv_ToString(System.String[],System.Boolean,System.Boolean)">
-            <summary>
-            Перевод DataObject в строковое представление
-            </summary>
-            <param name="propNames">
-            Имена свойств
-            </param>
-            <param name="bIncludeDynamicProperties">
-            Включать ли динамические свойства
-            </param>
-            <returns>
-            Строковое представление
-            </returns>
-        </member>
         <member name="M:ICSSoft.STORMNET.DataObject.ToString">
             <summary>
-            Преобразование к строке
+            Преобразуем объект данных в его строковое представление.
+            При этом включаются все свойства объекта, в том числе динамические; нединамические свойства сортируются по алфавиту.
             </summary>
-            <returns>Представление в виде строки</returns>
+            <returns>Сформированное строковое представление объекта данных.</returns>
         </member>
-        <member name="M:ICSSoft.STORMNET.DataObject.ToString(System.String[],System.Boolean)">
+        <member name="M:ICSSoft.STORMNET.DataObject.ToString(System.String[])">
             <summary>
-            Преобразование к строке только по загруженным свойствам (используется в аудите)
+            Преобразуем объект данных в его строковое представление.
+            При этом не включаются динамические свойства, свойства сортируются по алфавиту.
             </summary>
             <param name="propNames">
-            Имена свойств
+            Свойства, значения которых будут включены в строковое представление.
+            Если будет передано <c>null</c>, то в результате не будет отображаться ни одно свойство.
             </param>
-            <param name="needOrder">
-            Нужно пересортировать свойства по алфавиту
+            <returns>Сформированное строковое представление объекта данных.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.DataObject.ToStringForAudit(ICSSoft.STORMNET.View)">
+            <summary>
+            Преобразование к строке только по видимым нединамическим свойствам (используется в аудите).
+            При этом не включаются динамические свойства, свойства не сортируются по алфавиту (пишутся по представлению уже так, как пользователь задал).
+            </summary>
+            <param name="stringView">
+            Представление, по которому нужно создавать строковое представление (берётся видимость полей и заголовки классов).
+            Если передано <c>null</c>, то будут взяты все загруженные свойства и записаны в алфавитном порядке.
             </param>
-            <returns>
-            Представление в виде строки
-            </returns>
+            <returns> Представление объекта данных в виде строки. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.DataObject.ToStringPropertyWithCaption(System.String,System.String)">
+            <summary>
+            Преобразование в строковое представление собственных, нединамических свойств объекта.
+            </summary>
+            <param name="propertyName">Имя свойства.</param>
+            <param name="propertyCaption">Заголовок для свойства.</param>
+            <returns>Сформированное строковое представление для значения свойства объекта.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.DataObject.ToStringFormResult(System.String)">
+            <summary>
+            Формируем из строки, сгенерированной для строкового представления значений свойств объекта, итоговое строковое представление объекта. 
+            </summary>
+            <param name="propertiesString">Строка, сгенерированная для строкового представления значений свойств объекта.</param>
+            <returns>Строковое представление объекта данных.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.DataObject.ToStringAllData(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Перевод объекта данных в строковое представление.
+            </summary>
+            <param name="propNamesArray"> Имена свойств, которые должны попасть в строковое представление. </param>
+            <param name="includeDynamicProperties"> Включать ли динамические свойства. </param>
+            <param name="needOrder"> Должны ли быть свойства в строковом представлении отсортированы по алфавиту. </param>
+            <returns> Строковое представление объекта данных. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObject.CheckNotNullProperties(System.Collections.Generic.Dictionary{System.Type,System.Boolean})">
             <summary>
@@ -2352,125 +2388,152 @@
             <param name="cntrl"></param>
             <returns></returns>
         </member>
-        <member name="T:ICSSoft.STORMNET.TypeKeyPair">
-            <summary>
-            Вспомогательный класс для объединения в пары типа объекта и ключа
-            Используется в коллекции "живущих" сейчас объектов, собственно,
-            для доступа к объекту.
-            </summary> 
-        </member>
-        <member name="F:ICSSoft.STORMNET.TypeKeyPair.Type">
-            <summary>
-            .Net-тип объекта данных
-            </summary>
-        </member>
-        <member name="F:ICSSoft.STORMNET.TypeKeyPair.Key">
-            <summary>
-            Первичный ключ объекта данных
-            </summary>
-        </member>
-        <member name="M:ICSSoft.STORMNET.TypeKeyPair.CompareTo(System.Object)">
-            <summary>
-            Сравнение
-            </summary>
-            <param name="obj"></param>
-            <returns></returns>
-        </member>
-        <member name="T:ICSSoft.STORMNET.DOCacheNotFoundException">
-            <summary>
-            кеш не найден
-            </summary>
-        </member>
-        <member name="M:ICSSoft.STORMNET.DOCacheNotFoundException.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:ICSSoft.STORMNET.DOCacheObjectAlreadyExistsException">
-            <summary>
-            объект уже присутствует в кеше
-            </summary>
-        </member>
-        <member name="M:ICSSoft.STORMNET.DOCacheObjectAlreadyExistsException.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="T:ICSSoft.STORMNET.DataObjectCache">
             <summary>
-            кеш объектов данных, ключ кешей контекст вызова
+            Кеш объектов данных, ключ кешей контекст вызова.
             </summary>
         </member>
-        <member name="M:ICSSoft.STORMNET.DataObjectCache.ContextedLivingObjects">
+        <member name="M:ICSSoft.STORMNET.DataObjectCache.#ctor">
             <summary>
-            вернуть список с объектами по определенному контексту
+            Кеш объектов данных.
             </summary>
-            <param name="context">контекст</param>
-            <returns> список с объектами</returns>
+        </member>
+        <member name="F:ICSSoft.STORMNET.DataObjectCache._objectCreator">
+            <summary>
+            The m_ object creator.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.DataObjectCache._objectCaches">
+            <summary>
+            Кеш объектов данных.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.DataObjectCache._objectCachesUseCounter">
+            <summary>
+            Кэш объектов данных с использованием счётчиков.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.DataObjectCache._lastCacheIndex">
+            <summary>
+            Индекс последнего кеша.
+            </summary>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObjectCache.StartCaching(System.Boolean)">
             <summary>
-            начать кеширование
+            Начать кеширование.
             </summary>
-            <param name="ClipParentCache">запретить использовать родительский кеш</param>
+            <param name="clipParentCache">
+            Запретить использовать родительский кеш.
+            </param>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObjectCache.StopCaching">
             <summary>
-            закончить кеширование
+            Закончить кеширование.
             </summary>
-            <param name="ClipParentCache">запретить использовать родительский кеш</param>
         </member>
-        <member name="M:ICSSoft.STORMNET.DataObjectCache.AddLivingDataObject(ICSSoft.STORMNET.DataObject)">
+        <member name="M:ICSSoft.STORMNET.DataObjectCache.GetLivingDataObject(System.Type,System.Object)">
             <summary>
-            добавить объект в кеш
+            Get the living data object.
             </summary>
-            <param name="dataobject"></param>
-        </member>
-        <member name="M:ICSSoft.STORMNET.DataObjectCache.RemoveLivingDataObject(System.Type,System.Object)">
-            <summary>
-            Удалить объект из кеша
-            </summary>
-            <param name="typeofdataobject">тип объекта</param>
-            <param name="key">первичный ключ</param>
-        </member>
-        <member name="M:ICSSoft.STORMNET.DataObjectCache.ChangeKeyForLivingDataObject(ICSSoft.STORMNET.DataObject,System.Object)">
-            <summary>
-            изменить ключ у кешированного объекта
-            </summary>
-            <param name="dataobject">объект</param>
-            <param name="oldkey">предыдущий ключ</param>
-        </member>
-        <member name="M:ICSSoft.STORMNET.DataObjectCache.prvGetLivingDataObject(System.Type,System.Object)">
-            <summary>
-            Получить "живой" внутри приложения объект данных по указанию
-            типа объекта данных и первичного ключа.
-            Возвращается null, если объект не найден или он уже "умер"
-            </summary> 
+            <param name="typeofdataobject">
+            The type of data object.
+            </param>
+            <param name="key">
+            The key of data object.
+            </param>
+            <returns>
+            The <see cref="T:ICSSoft.STORMNET.DataObject"/>.
+            </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObjectCache.CreateDataObject(System.Type,System.Object)">
             <summary>
             Получить "живой" внутри приложения объект данных по указанию
             типа объекта данных и первичного ключа.
-            Возвращается null, если объект не найден или он уже "умер"
+            Возвращается <c>null</c>, если объект не найден или он уже "умер".
             </summary>
-            <param name="typeofdataobject">тип</param>
-            <param name="Key">ключ</param>
-            <returns></returns>
+            <param name="typeofdataobject">
+            Тип объекта данных.
+            </param>
+            <param name="key">
+            Ключ объекта данных.
+            </param>
+            <returns>
+            Объект данных.
+            </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.DataObjectCache.AddDataObject(ICSSoft.STORMNET.DataObject)">
             <summary>
-            Добавить объект в кеш
+            Добавить объект в кеш.
             </summary>
-            <param name="dobj">объект</param>
+            <param name="dobj">
+            Объект для добавления.
+            </param>
         </member>
-        <member name="P:ICSSoft.STORMNET.DataObjectCache.NoCaches">
+        <member name="M:ICSSoft.STORMNET.DataObjectCache.ChangeKeyForLivingDataObject(ICSSoft.STORMNET.DataObject,System.Object)">
             <summary>
-            есть объекты в кеше?
+            Изменить ключ у кешированного объекта.
             </summary>
+            <param name="dataobject">
+            Объект данных.
+            </param>
+            <param name="oldkey">
+            Предыдущий ключ.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.DataObjectCache.RemoveLivingDataObject(System.Type,System.Object)">
+            <summary>
+            Удалить объект из кеша.
+            </summary>
+            <param name="typeofdataobject">
+            Тип объекта.
+            </param>
+            <param name="key">
+            Первичный ключ.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.DataObjectCache.PrvRemoveLivingDataObject(System.Type,System.Object)">
+            <summary>
+            Удалить "живой" объект данных из кеша.
+            </summary>
+            <param name="typeofdataobject">
+            Тип объекта данных.
+            </param>
+            <param name="key">
+            Ключ объекта данных.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.DataObjectCache.AddLivingDataObject(ICSSoft.STORMNET.DataObject)">
+            <summary>
+            Добавить объект в кеш.
+            </summary>
+            <param name="dataobject">
+            Объект данных.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.DataObjectCache.PrvGetLivingDataObject(System.Type,System.Object)">
+            <summary>
+            Получить "живой" внутри приложения объект данных по указанию
+            типа объекта данных и первичного ключа.
+            Возвращается null, если объект не найден или он уже "умер".
+            </summary>
+            <param name="typeofdataobject">
+            The typeofdataobject.
+            </param>
+            <param name="key">
+            The key.
+            </param>
+            <returns>
+            The <see cref="T:ICSSoft.STORMNET.DataObject"/>.
+            </returns>
         </member>
         <member name="P:ICSSoft.STORMNET.DataObjectCache.Creator">
             <summary>
-            Зоздавалка объектов
+            Создавалка объектов.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.DataObjectCache.NoCaches">
+            <summary>
+            Есть объекты в кеше.
             </summary>
         </member>
         <member name="T:ICSSoft.STORMNET.Exceptions.NoSuchPropertyException">
@@ -3769,24 +3832,65 @@
             Интерфейс для менеджера полномочий. Является основным API для доступа к подсистеме полномочий со стороны программистов.
             </summary>
         </member>
+        <member name="M:ICSSoft.STORMNET.Security.ISecurityManager.AccessCheck(System.Int32)">
+            <summary>
+            Упрощённая проверка полномочий (на одну числовую операцию).
+            </summary>
+            <param name="operation">Идентификатор операции (такой, как указан для операции в AzMan или в имени операции).</param>
+            <returns>Если у текущего пользователя есть доступ, то <c>true</c>.</returns>
+        </member>
         <member name="M:ICSSoft.STORMNET.Security.ISecurityManager.AccessObjectCheck(System.Type,ICSSoft.STORMNET.Security.tTypeAccess,System.Boolean)">
             <summary> 
-            Проверка операций с объектом.
+            Проверка операций с объектом по его типу. Работает только на тип целиком.
             </summary>
             <param name="type">Тип объекта данных.</param>
             <param name="operation">Тип операции.</param>
             <param name="throwException">Генерировать ли исключение.</param>
             <returns>Если у текущего пользователя есть доступ, то <c>true</c>.</returns>
         </member>
+        <member name="M:ICSSoft.STORMNET.Security.ISecurityManager.AccessObjectCheck(System.Object,ICSSoft.STORMNET.Security.tTypeAccess,System.Boolean)">
+            <summary> 
+            Проверка операций с объектом.
+            </summary>
+            <param name="type">Объект данных.</param>
+            <param name="operation">Тип операции.</param>
+            <param name="throwException">Генерировать ли исключение.</param>
+            <returns>Если у текущего пользователя есть доступ, то <c>true</c>.</returns>
+        </member>
         <member name="M:ICSSoft.STORMNET.Security.ISecurityManager.GetLimitForAccess(System.Type,ICSSoft.STORMNET.Security.tTypeAccess,System.Object@,System.Boolean@)">
             <summary>
-            Получить ограничение для текущего пользователя (CheckingMode.SessionCheck только поддерживается).
+            Получить ограничение для текущего пользователя.
             </summary>
             <param name="subjectType">Тип объекта.</param>
-            <param name="operation">Тип операции ("Full", "Read", "Update", "Insert", "Delete", "Execute").</param>
+            <param name="operation">Тип операции.</param>
             <param name="limit">Ограничение, которое есть для текущего пользователя.</param>
             <param name="canAccess">Есть ли доступ к этому типу у пользователя.</param>
             <returns>Результат выполнения операции.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Security.ISecurityManager.GetLimitStrForRoles(System.Type,System.Collections.Generic.List{ICSSoft.STORMNET.Security.RoleWithAccesses}@)">
+            <summary>
+            Получить роли с заданными ограничениями, которые реализуют функцию разграничения по объектам.
+            </summary>
+            <param name="subjectType">Класс, для которого получаем ограничения.</param>
+            <param name="rolesWithAccesses">Роли с заданными ограничениями для этих ролей.</param>
+            <returns>Результат выполнения операции.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Security.ISecurityManager.SetLimitStrForRole(System.Type,ICSSoft.STORMNET.Security.tTypeAccess,System.String,System.String)">
+            <summary>
+            Задать ограничение для указанной роли.
+            </summary>
+            <param name="typeName">Тип объектов данных, для которых будет применяться данный фильтр.</param>
+            <param name="operation">Тип доступа, для которого применяется этот фильтр.</param>
+            <param name="roleName">Название роли.</param>
+            <param name="filter">Сериализованный фильтр, который будет применяться для указанной роли.</param>
+            <returns>Результат выполнения операции.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Security.ISecurityManager.CheckExistLogin(System.String)">
+            <summary>
+            Проверить наличие в системе логина (чувствительность к регистру зависит от настроек источника данных). Уникальность проверяется без контроля доменов, то есть гарантируется уникальность в рамках всей таблицы. Отключенные пользователи тоже учитываются, как занимающие логин.
+            </summary>
+            <param name="login">Логин, который проверяем.</param>
+            <returns>Если логин свободен, то <see cref="F:ICSSoft.STORMNET.Security.OperationResult.ЛогинСвободен"/>, если занят, то <see cref="F:ICSSoft.STORMNET.Security.OperationResult.ЛогинЗанят"/>, если произошла ошибка, то <see cref="F:ICSSoft.STORMNET.Security.OperationResult.ОшибкаВыполненияОперации"/>, если переданы неправильные аргументы, то <see cref="F:ICSSoft.STORMNET.Security.OperationResult.ОшибочныеАргументы"/>.</returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Security.ISecurityManager.CheckAccessToAttribute(System.String,System.String@)">
             <summary>
@@ -3794,11 +3898,16 @@
             </summary>
             <param name="expression">Строка <see cref="T:ICSSoft.STORMNET.DataServiceExpressionAttribute"/>.</param>
             <param name="deniedAccessValue">Значение, которое должен получить атрибут при отсутствии прав.</param>
-            <returns><c>true</c> - права есть, <c>false</c> - прав нет.</returns>
+            <returns>Если у текущего пользователя есть доступ, то <c>true</c>.</returns>
         </member>
         <member name="P:ICSSoft.STORMNET.Security.ISecurityManager.Enabled">
             <summary>
             Полномочия включены.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Security.ISecurityManager.UseRightsOnObjects">
+            <summary>
+            Используется режим проверки вплоть до объектов (а не для всего типа сразу).
             </summary>
         </member>
         <member name="P:ICSSoft.STORMNET.Security.ISecurityManager.UseRightsOnAttribute">
@@ -3811,24 +3920,65 @@
             Регулярное выражение для извлечения информации о контроле прав на атрибуты из <see cref="!:DataServiceExpression"/>.
             </summary>
         </member>
+        <member name="M:ICSSoft.STORMNET.Security.EmptySecurityManager.AccessCheck(System.Int32)">
+            <summary>
+            Упрощённая проверка полномочий (на одну числовую операцию). Всегда возвращается <c>true</c>.
+            </summary>
+            <param name="operation">Идентификатор операции (такой, как указан для операции в AzMan или в имени операции).</param>
+            <returns>Всегда возвращается <c>true</c>.</returns>
+        </member>
         <member name="M:ICSSoft.STORMNET.Security.EmptySecurityManager.AccessObjectCheck(System.Type,ICSSoft.STORMNET.Security.tTypeAccess,System.Boolean)">
             <summary> 
-            Проверка операций с объектом.
+            Проверка операций с объектом. Всегда возвращается <c>true</c>.
             </summary>
             <param name="type">Тип объекта данных.</param>
             <param name="operation">Тип операции.</param>
             <param name="throwException">Генерировать ли исключение.</param>
-            <returns>Если у текущего пользователя есть доступ, то <c>true</c>.</returns>
+            <returns>Всегда возвращается <c>true</c>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Security.EmptySecurityManager.AccessObjectCheck(System.Object,ICSSoft.STORMNET.Security.tTypeAccess,System.Boolean)">
+            <summary> 
+            Проверка операций с объектом. Всегда возвращается <c>true</c>.
+            </summary>
+            <param name="type">Объект данных.</param>
+            <param name="operation">Тип операции.</param>
+            <param name="throwException">Генерировать ли исключение.</param>
+            <returns>Всегда возвращается <c>true</c>.</returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Security.EmptySecurityManager.GetLimitForAccess(System.Type,ICSSoft.STORMNET.Security.tTypeAccess,System.Object@,System.Boolean@)">
             <summary>
-            Получить ограничение для текущего пользователя (CheckingMode.SessionCheck только поддерживается).
+            Получить ограничение для текущего пользователя.
             </summary>
             <param name="subjectType">Тип объекта.</param>
-            <param name="operation">Тип операции ("Full", "Read", "Update", "Insert", "Delete", "Execute").</param>
-            <param name="limit">Ограничение, которое есть для текущего пользователя.</param>
-            <param name="canAccess">Есть ли доступ к этому типу у пользователя.</param>
-            <returns>Результат выполнения операции.</returns>
+            <param name="operation">Тип операции.</param>
+            <param name="limit">Ограничение, которое есть для текущего пользователя. Всегда возвращается <c>null</c>.</param>
+            <param name="canAccess">Есть ли доступ к этому типу у пользователя. Всегда возвращается <c>true</c>.</param>
+            <returns>Всегда возвращается <see cref="F:ICSSoft.STORMNET.Security.OperationResult.Успешно"/>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Security.EmptySecurityManager.GetLimitStrForRoles(System.Type,System.Collections.Generic.List{ICSSoft.STORMNET.Security.RoleWithAccesses}@)">
+            <summary>
+            Получить роли с заданными ограничениями, которые реализуют функцию разграничения по объектам. Всегда возвращается <c>null</c>.
+            </summary>
+            <param name="subjectType">Класс, для которого получаем ограничения.</param>
+            <param name="rolesWithAccesses">Роли с заданными ограничениями для этих ролей.</param>
+            <returns>Всегда возвращается <see cref="F:ICSSoft.STORMNET.Security.OperationResult.Успешно"/>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Security.EmptySecurityManager.SetLimitStrForRole(System.Type,ICSSoft.STORMNET.Security.tTypeAccess,System.String,System.String)">
+            <summary>
+            Задать ограничение для указанной роли.
+            </summary>
+            <param name="typeName">Тип объектов данных, для которых будет применяться данный фильтр.</param>
+            <param name="operation">Тип доступа, для которого применяется этот фильтр.</param>
+            <param name="roleName">Название роли.</param>
+            <param name="filter">Сериализованный фильтр, который будет применяться для указанной роли.</param>
+            <returns>Всегда возвращается <see cref="F:ICSSoft.STORMNET.Security.OperationResult.Успешно"/>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Security.EmptySecurityManager.CheckExistLogin(System.String)">
+            <summary>
+            Проверить наличие в системе логина. Всегда возвращается <see cref="F:ICSSoft.STORMNET.Security.OperationResult.ЛогинСвободен"/>.
+            </summary>
+            <param name="login">Логин, который проверяем.</param>
+            <returns>Всегда возвращается <see cref="F:ICSSoft.STORMNET.Security.OperationResult.ЛогинСвободен"/>.</returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Security.EmptySecurityManager.CheckAccessToAttribute(System.String,System.String@)">
             <summary>
@@ -3840,12 +3990,17 @@
         </member>
         <member name="P:ICSSoft.STORMNET.Security.EmptySecurityManager.Enabled">
             <summary>
-            Полномочия включены.
+            Полномочия выключены, всегда возвращается <c>false</c>.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Security.EmptySecurityManager.UseRightsOnObjects">
+            <summary>
+            Режим проверки вплоть до объектов, а не для всего типа сразу, выключен - всегда возвращается <c>false</c>.
             </summary>
         </member>
         <member name="P:ICSSoft.STORMNET.Security.EmptySecurityManager.UseRightsOnAttribute">
             <summary>
-            Используется режим проверки атрибутов объектов.
+            Режим проверки атрибутов объектов выключен - всегда возвращается <c>false</c>.
             </summary>
         </member>
         <member name="P:ICSSoft.STORMNET.Security.EmptySecurityManager.AttributeCheckExpressionPattern">
@@ -4002,6 +4157,11 @@
             
             </summary>
         </member>
+        <member name="F:ICSSoft.STORMNET.Security.tTypeAccess.Print">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:ICSSoft.STORMNET.Security.UpdateResult">
             <summary>
             Результат обновления пользователя.
@@ -4026,6 +4186,39 @@
             <summary>
             Во время выполнения операции произошла ошибка.
             </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.TypeKeyPair">
+            <summary>
+            Вспомогательный класс для объединения в пары типа объекта и ключа
+            Используется в коллекции "живущих" сейчас объектов, собственно,
+            для доступа к объекту.
+            </summary> 
+        </member>
+        <member name="M:ICSSoft.STORMNET.TypeKeyPair.#ctor(System.Type,System.Object)">
+            <summary>
+            Вспомогательный класс для объединения в пары типа объекта и ключа
+            Используется в коллекции "живущих" сейчас объектов, собственно,
+            для доступа к объекту.
+            </summary>
+            <param name="type">Тип объекта.</param>
+            <param name="key">Ключ объекта.</param>
+        </member>
+        <member name="F:ICSSoft.STORMNET.TypeKeyPair.Type">
+            <summary>
+            Тип объекта данных (.NET).
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.TypeKeyPair.Key">
+            <summary>
+            Первичный ключ объекта данных.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.TypeKeyPair.CompareTo(System.Object)">
+            <summary>
+            Сравнение двух пар.
+            </summary>
+            <param name="obj">Объект для сравнения.</param>
+            <returns>Результат сравнения.</returns>
         </member>
         <member name="T:ICSSoft.STORMNET.TypePropertyAtrValueCollection">
             <summary>
@@ -4831,10 +5024,10 @@
         </member>
         <member name="M:ICSSoft.STORMNET.View.TestObjectForViewing(ICSSoft.STORMNET.DataObject)">
             <summary>
-            проверить объект на вичитанность по представлению
+            Проверить объект на вычитанность по представлению.
             </summary>
-            <param name="dobject"></param>
-            <returns></returns>
+            <param name="dobject">Объект данных, который проверяется по загруженности по представлению.</param>
+            <returns><c>True</c>, если объект вычитан по представлению.</returns>
         </member>
         <member name="M:ICSSoft.STORMNET.View.GetCommonTypeForViews(ICSSoft.STORMNET.View[])">
             <summary>

@@ -75,9 +75,69 @@
             ????????????????????????????
             </summary>
         </member>
+        <member name="T:ICSSoft.STORMNET.Business.Audit.EmptyAudit">
+            <summary>
+            Класс-заглушка для сервиса аудита, через который никакой аудит не пишется.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.Audit.IAudit">
+            <summary>
+            Интерфейс для аудита (основная логика).
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.Audit.IAudit.WriteCommonAuditOperation(ICSSoft.STORMNET.Business.Audit.CommonAuditParameters)">
+            <summary>
+            Создание записи аудита об операции удаления, создания и изменения объекта.
+            </summary>
+            <param name="commonAuditParameters">
+            Объект, содержащий данные для аудита.
+            </param>
+            <returns>
+            Id сформированной записи аудита.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.Audit.IAudit.RatifyAuditOperation(ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters)">
+            <summary>
+            Подверждение созданных ранее операций аудита.
+            </summary>
+            <param name="ratificationAuditParameters">
+            Параметры для утверждения внесённых ранее записей аудита.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.Audit.IAudit.WriteCustomAuditOperation(ICSSoft.STORMNET.Business.Audit.CheckedCustomAuditParameters)">
+            <summary>
+            Создание записи аудита о собственной операции или действии над собственным объектом.
+            </summary>
+            <param name="checkedCustomAuditParameters">
+            Параметры аудита.
+            </param>
+            <returns>
+            Id сформированной записи аудита.
+            </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.Audit.EmptyAudit.WriteCommonAuditOperation(ICSSoft.STORMNET.Business.Audit.CommonAuditParameters)">
+            <summary>
+            Метод ничего не делает, возвращается случайный идентификатор.
+            </summary>
+            <param name="commonAuditParameters"> Объект, содержащий данные для аудита. </param>
+            <returns> Случайный идентификатор. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.Audit.EmptyAudit.RatifyAuditOperation(ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters)">
+            <summary>
+            Метод ничего не делает.
+            </summary>
+            <param name="ratificationAuditParameters"> Объект, содержащий данные для аудита. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.Audit.EmptyAudit.WriteCustomAuditOperation(ICSSoft.STORMNET.Business.Audit.CheckedCustomAuditParameters)">
+            <summary>
+            Метод ничего не делает, возвращается случайный идентификатор.
+            </summary>
+            <param name="checkedCustomAuditParameters"> Объект, содержащий данные для аудита. </param>
+            <returns> Случайный идентификатор. </returns>
+        </member>
         <member name="T:ICSSoft.STORMNET.Business.Audit.AsyncAuditController">
             <summary>
-            Контроллер, отвечающий за асинхронность при работе аудита
+            Контроллер, отвечающий за асинхронность при работе аудита.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AsyncAuditController._audit">
@@ -454,19 +514,9 @@
             Режим работы приложения: win или web
             </summary>
         </member>
-        <member name="F:ICSSoft.STORMNET.Business.Audit.DatabaseAuditParameters.IsDatabaseLocal">
-            <summary>
-            Является ли база данных аудита локальной к приложению
-            </summary>
-        </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.DatabaseAuditParameters.AuditConnectionStringName">
             <summary>
             Имя строки подключения к БД аудита
-            </summary>
-        </member>
-        <member name="F:ICSSoft.STORMNET.Business.Audit.DatabaseAuditParameters.ApplicationConnectionStringName">
-            <summary>
-            Имя строки подключения к БД приложения
             </summary>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditParameters.GetDataObjectFromXml(System.String,System.String,System.String)">
@@ -659,7 +709,7 @@
         </member>
         <member name="T:ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters">
             <summary>
-            Вспомогательный класс для установки в очередь сообщений при асинхронной записи аудита о подтверждении записи аудита
+            Вспомогательный класс для установки в очередь сообщений при асинхронной записи аудита о подтверждении записи аудита.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters.AuditOperationInfoList">
@@ -667,7 +717,7 @@
             Информация, которую необходимо дописать в аудит (с указанием идентификаторов записей аудита).
             </summary>
         </member>
-        <member name="M:ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters.#ctor(ICSSoft.STORMNET.Business.Audit.Objects.tExecutionVariant,System.DateTime,System.Collections.Generic.List{ICSSoft.STORMNET.Business.Audit.HelpStructures.AuditAdditionalInfo},ICSSoft.STORMNET.Business.Audit.Objects.tWriteMode,ICSSoft.STORMNET.Business.Audit.AppMode,System.Boolean,System.String,System.String,System.Boolean)">
+        <member name="M:ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters.#ctor(ICSSoft.STORMNET.Business.Audit.Objects.tExecutionVariant,System.DateTime,System.Collections.Generic.List{ICSSoft.STORMNET.Business.Audit.HelpStructures.AuditAdditionalInfo},ICSSoft.STORMNET.Business.Audit.Objects.tWriteMode,ICSSoft.STORMNET.Business.Audit.AppMode,System.String,System.Boolean)">
             <summary>
             Конструктор класса, который позволяет дописывать определённую информацию в аудит.
             </summary>
@@ -676,10 +726,14 @@
             <param name="auditOperationInfoList">Информация, которую необходимо дописать в аудит (с указанием идентификаторов записей аудита).</param>
             <param name="writeMode">Режим записи: синхронный или асинхронный.</param>
             <param name="applicationMode">Режим работы аудита: под win или web.</param>
-            <param name="isDatabaseLocal">Является ли БД, куда всё пишется, локальной.</param>
             <param name="auditConnectionStringName">Имя строки соединения с БД, куда идут записи аудита.</param>
-            <param name="applicationConnectionStringName">Имя строки соединения с БД приложения.</param>
-            <param name="needSerialization">Нужна ли сериализация (на случай передачи по wcf)</param>
+            <param name="needSerialization">Нужна ли сериализация (на случай передачи по wcf).</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters.CloneWithoutAuditOperationInfoList">
+            <summary>
+            Создаём копию структуры, за исключением <see cref="F:ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters.AuditOperationInfoList"/>, он не копируется.
+            </summary>
+            <returns>Сформированная копия.</returns>
         </member>
         <member name="T:ICSSoft.STORMNET.Business.Audit.HelpStructures.CheckHelper">
             <summary>
@@ -930,41 +984,6 @@
             Интерфейс для AuditWcfService
             (на настоящий момент представляет собой наследника IAudit)
             </summary>
-        </member>
-        <member name="T:ICSSoft.STORMNET.Business.Audit.IAudit">
-            <summary>
-            Интерфейс для аудита (основная логика)
-            </summary>
-        </member>
-        <member name="M:ICSSoft.STORMNET.Business.Audit.IAudit.WriteCommonAuditOperation(ICSSoft.STORMNET.Business.Audit.CommonAuditParameters)">
-            <summary>
-            Создание записи аудита об операции удаления, создания и изменения объекта.
-            </summary>
-            <param name="commonAuditParameters">
-            Объект, содержащий данные для аудита.
-            </param>
-            <returns>
-            Id сформированной записи аудита.
-            </returns>
-        </member>
-        <member name="M:ICSSoft.STORMNET.Business.Audit.IAudit.RatifyAuditOperation(ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters)">
-            <summary>
-            Подверждение созданных ранее операций аудита.
-            </summary>
-            <param name="ratificationAuditParameters">
-            Параметры для утверждения внесённых ранее записей аудита.
-            </param>
-        </member>
-        <member name="M:ICSSoft.STORMNET.Business.Audit.IAudit.WriteCustomAuditOperation(ICSSoft.STORMNET.Business.Audit.CheckedCustomAuditParameters)">
-            <summary>
-            Создание записи аудита о собственной операции или действии над собственным объектом.
-            </summary>
-            <param name="checkedCustomAuditParameters">
-            Параметры аудита.
-            </param>
-            <returns>
-            Id сформированной записи аудита.
-            </returns>
         </member>
         <member name="T:ICSSoft.STORMNET.Business.Audit.AppMode">
             <summary>
@@ -1268,7 +1287,7 @@
         </member>
         <member name="T:ICSSoft.STORMNET.Business.Audit.AuditService">
             <summary>
-            Статическая обёртка для класса, наследующего от IAuditService
+            Статическая обёртка для класса, наследующего от <see cref="T:ICSSoft.STORMNET.Business.Audit.IAuditService"/>.
             </summary>
         </member>
         <member name="T:ICSSoft.STORMNET.Business.Audit.IAuditService">
@@ -1479,49 +1498,49 @@
             Режим, в котором работает приложение: win или web
             </summary>
         </member>
-        <member name="F:ICSSoft.STORMNET.Business.Audit.AuditService.currentAuditService">
+        <member name="F:ICSSoft.STORMNET.Business.Audit.AuditService._currentAuditService">
             <summary>
-            Текущий класс для работы с сервисом аудита
+            Текущий класс для работы с сервисом аудита.
             </summary>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.InitAuditService(ICSSoft.STORMNET.Business.Audit.Objects.AuditAppSetting,ICSSoft.STORMNET.Business.Audit.IAudit)">
             <summary>
-            Инициализация текущего сервиса аудита
+            Инициализация текущего сервиса аудита.
             </summary>
-            <param name="appSetting"> Настройки аудита приложения </param>
-            <param name="audit"> Элемент, реализующий логику аудита </param>
+            <param name="appSetting"> Настройки аудита приложения. </param>
+            <param name="audit"> Элемент, реализующий логику аудита. </param>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditService._audit">
             <summary>
-            Элемент, реализующий логику аудита
+            Элемент, реализующий логику аудита.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditService._applicationMode">
             <summary>
-            Режим, в котором работает приложение: win или web
+            Режим, в котором работает приложение: win или web.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditService._asyncAuditController">
             <summary>
-            Контроллер для организации асинхронной записи аудита
+            Контроллер для организации асинхронной записи аудита.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditService._remoteAuditController">
             <summary>
-            Контроллер для организации удалённой записи аудита
+            Контроллер для организации удалённой записи аудита.
             </summary>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.EnableAudit(System.Boolean)">
             <summary>
             Включить ведение аудита в приложении
-            (предварительно должны быть проинициализированы AppSetting и Audit)
+            (предварительно должны быть проинициализированы <see cref="P:ICSSoft.STORMNET.Business.Audit.AuditService.AppSetting"/> и <see cref="P:ICSSoft.STORMNET.Business.Audit.AuditService.Audit"/>).
             </summary>
-            <param name="throwExceptions"> Следует ли вызывать исключения в ошибочной ситуации </param>
-            <returns> Удалось ли включить аудит </returns>
+            <param name="throwExceptions"> Следует ли вызывать исключения в ошибочной ситуации. </param>
+            <returns> Удалось ли включить аудит. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.DisableAudit">
             <summary>
-            Отключить ведение аудита в приложении
+            Отключить ведение аудита в приложении.
             </summary>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.WriteCommonAuditOperationWithAutoFields(ICSSoft.STORMNET.DataObject,ICSSoft.STORMNET.Business.IDataService,System.Boolean,System.Data.IDbTransaction)">
@@ -1530,27 +1549,27 @@
             </summary>
             <param name="operationedObject"> Объект, над которым выполняется операция. </param>
             <param name="dataService"> Сервис данных, который выполянет операцию. </param>
-            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение (по умолчанию - true).</param>
+            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение (по умолчанию - <c>true</c>).</param>
             <param name="transaction">
             Транзакция, через которую необходимо проводить выполнение зачиток из БД приложения аудиту
-            (при работе AuditService иногда необходимо дочитать объект или получить сохранённую копию, 
+            (при работе <see cref="T:ICSSoft.STORMNET.Business.Audit.AuditService"/> иногда необходимо дочитать объект или получить сохранённую копию, 
             а выполнение данного действия без транзакции может привести к взаимоблокировке).
-            По умолчанию - null. 
+            По умолчанию - <c>null</c>. 
             </param>
             <returns> Ответ о том, можно ли выполнять операцию (если null, то значит, что что-то пошло не так). </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.RatifyAuditOperationWithAutoFields(ICSSoft.STORMNET.Business.Audit.Objects.tExecutionVariant,System.Collections.Generic.List{ICSSoft.STORMNET.Business.Audit.HelpStructures.AuditAdditionalInfo},ICSSoft.STORMNET.Business.IDataService,System.Boolean)">
             <summary>
             Подверждение созданных ранее операций аудита (выполнение зависит от выбранного режима записи данных аудита)
-            (если аудит идёт в одну БД с приложением, 
-            то будет в сервис аудита передаваться имя строки соединения,
-            найденное в AuditService.Current.AppSetting.AuditDSSettings по параметрам переданного сервиса данных)
+            (если аудит идёт в одну БД с приложением, то будет в сервис аудита передаваться имя строки соединения,
+            найденное в AuditService.Current.AppSetting.AuditDSSettings по параметрам переданного сервиса данных).
+            Также будут проверяться настройки класса на случай, если там заданы особые настройки класса.
             </summary>
-            <param name="executionVariant"> Какой статус будет присвоен операции </param>
+            <param name="executionVariant"> Какой статус будет присвоен операции. </param>
             <param name="auditOperationInfoList"> Дополнительная информация, которую необходимо передать в аудит. </param>
-            <param name="dataService"> Сервис данных, по параметрам которого (строка соединения и тип) осуществляется поиск в AuditService.Current.AppSetting.AuditDSSettings </param>
-            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение</param>
-            <returns> True, если всё закончилось без ошибок </returns>
+            <param name="dataService"> Сервис данных, по параметрам которого (строка соединения и тип) осуществляется поиск в AuditService.Current.AppSetting.AuditDSSettings. </param>
+            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение.</param>
+            <returns> <c>True</c>, если всё закончилось без ошибок. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GetViewByAuditRecord(ICSSoft.STORMNET.Business.Audit.IAuditRecord)">
             <summary>
@@ -1559,92 +1578,91 @@
             Данное представление будет использоваться для получения кэпшенов полей.
             </summary>
             <param name="auditRecord">Запись из аудита, по которой необходимо определить представление.</param>
-            <returns>Найденное представление (если что-то не удалось, то выдастся null; исключения не должно быть в любом случае).</returns>
+            <returns>Найденное представление (если что-то не удалось, то выдастся <c>null</c>; исключения не должно быть в любом случае).</returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GetAuditViewByType(System.Type,ICSSoft.STORMNET.Business.Audit.Objects.tTypeOfAuditOperation)">
             <summary>
             Получение представления для аудита у определенного типа.
             </summary>
             <param name="type">Тип, у которого нужно получить представление для аудита.</param>
-            <param name="operationType">Тип аудируемой операции, для которой нужно получить представление 
-            (Select, Insert, Update или Delete).</param>
+            <param name="operationType">Тип аудируемой операции, для которой нужно получить представление (Select, Insert, Update или Delete).</param>
             <returns>Представление для аудита.</returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.WriteCustomAuditOperation(ICSSoft.STORMNET.Business.Audit.CustomAuditParameters,System.Boolean)">
             <summary>
             Сделать запись в аудит
-            (если аудит идёт в одну БД с приложением, то будет использован сервис данных по умолчанию)
+            (если аудит идёт в одну БД с приложением, то будет использован сервис данных по умолчанию).
             </summary>
-            <param name="customAuditParameters"> Параметры аудита </param>
-            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение</param>
-            <returns> Id записи аудита </returns>
+            <param name="customAuditParameters"> Параметры аудита. </param>
+            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение.</param>
+            <returns> Идентификатор записи аудита. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.WriteCustomAuditOperation(ICSSoft.STORMNET.Business.Audit.CustomAuditParameters,ICSSoft.STORMNET.Business.IDataService,System.Boolean)">
             <summary>
             Сделать запись в аудит
             (если аудит идёт в одну БД с приложением, 
             то будет в сервис аудита передаваться имя строки соединения,
-            найденное в AuditService.Current.AppSetting.AuditDSSettings по параметрам переданного сервиса данных)
+            найденное в AuditService.Current.AppSetting.AuditDSSettings по параметрам переданного сервиса данных).
             </summary>
-            <param name="customAuditParameters"> Параметры аудита </param>
-            <param name="dataService"> Сервис данных, по параметрам которого (строка соединения и тип) осуществляется поиск в AuditService.Current.AppSetting.AuditDSSettings </param>
-            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение</param>
-            <returns> Id записи аудита </returns>
+            <param name="customAuditParameters"> Параметры аудита. </param>
+            <param name="dataService"> Сервис данных, по параметрам которого (строка соединения и тип) осуществляется поиск в AuditService.Current.AppSetting.AuditDSSettings. </param>
+            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение.</param>
+            <returns> Идентификатор записи аудита. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.WriteCustomAuditOperation(ICSSoft.STORMNET.Business.Audit.CustomAuditParameters,System.String,System.Type,System.Boolean)">
             <summary>
             Сделать запись в аудит
             (если аудит идёт в одну БД с приложением, 
             то будет в сервис аудита передаваться имя строки соединения,
-            найденное в AuditService.Current.AppSetting.AuditDSSettings по параметрам переданного сервиса данных)
+            найденное в AuditService.Current.AppSetting.AuditDSSettings по параметрам переданного сервиса данных).
             </summary>
-            <param name="customAuditParameters"> Параметры аудита  </param>
-            <param name="dataServiceConnectionString"> Строка соединения сервиса данных, который выполняет запись в БД приложения </param>
-            <param name="dataServiceType"> Тип сервиса данных, который выполняет запись в БД приложения </param>
-            <param name="throwExceptions"> Следует ли пробрасывать дальше возникшее исключение </param>
-            <returns> Id записи аудита  </returns>
+            <param name="customAuditParameters"> Параметры аудита.  </param>
+            <param name="dataServiceConnectionString"> Строка соединения сервиса данных, который выполняет запись в БД приложения. </param>
+            <param name="dataServiceType"> Тип сервиса данных, который выполняет запись в БД приложения. </param>
+            <param name="throwExceptions"> Следует ли пробрасывать дальше возникшее исключение. </param>
+            <returns> Идентификатор записи аудита.  </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.IsTypeAuditable(System.Type)">
             <summary>
-            Является ли класс аудируемым (проверяются настройки по аудиту приложения + настройки класса)
+            Является ли класс аудируемым (проверяются настройки по аудиту приложения + настройки класса).
             </summary>
-            <param name="curType"> Исследуемый тип </param>
-            <returns> True, если является и нужно вести аудит </returns>
+            <param name="curType"> Исследуемый тип. </param>
+            <returns> <c>True</c>, если является и нужно вести аудит. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.RatifyAuditOperation(ICSSoft.STORMNET.Business.Audit.Objects.tExecutionVariant,System.Collections.Generic.List{System.Guid},System.Boolean)">
             <summary>
             Подверждение созданных ранее операций аудита
-            (если аудит идёт в одну БД с приложением, то будет использован сервис данных по умолчанию)
+            (если аудит идёт в одну БД с приложением, то будет использован сервис данных по умолчанию).
             </summary>
-            <param name="executionVariant">Какой статус будет присвоен операции</param>
-            <param name="auditOperationIdList">Список айдишников записей аудита</param>
-            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение</param>
-            <returns>True, если всё закончилось без ошибок</returns>
+            <param name="executionVariant">Какой статус будет присвоен операции.</param>
+            <param name="auditOperationIdList">Список айдишников записей аудита.</param>
+            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение.</param>
+            <returns><c>True</c>, если всё закончилось без ошибок.</returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.RatifyAuditOperation(ICSSoft.STORMNET.Business.Audit.Objects.tExecutionVariant,System.Collections.Generic.List{System.Guid},System.String,System.Type,System.Boolean)">
             <summary>
             Подверждение созданных ранее операций аудита
-            (если аудит идёт в одну БД с приложением, то будет использован сервис данных по умолчанию)
+            (если аудит идёт в одну БД с приложением, то будет использован сервис данных по умолчанию).
             </summary>
-            <param name="executionVariant"> Какой статус будет присвоен операции </param>
-            <param name="auditOperationIdList"> Список айдишников записей аудита </param>
-            <param name="dataServiceConnectionString"> Строка соединения сервиса данных, который выполняет запись в БД приложения  </param>
-            <param name="dataServiceType"> Тип сервиса данных, который выполняет запись в БД приложения  </param>
-            <param name="throwExceptions"> Следует ли пробрасывать дальше возникшее исключение </param>
-            <returns> True, если всё закончилось без ошибок </returns>
+            <param name="executionVariant"> Какой статус будет присвоен операции. </param>
+            <param name="auditOperationIdList"> Список айдишников записей аудита. </param>
+            <param name="dataServiceConnectionString"> Строка соединения сервиса данных, который выполняет запись в БД приложения.  </param>
+            <param name="dataServiceType"> Тип сервиса данных, который выполняет запись в БД приложения.  </param>
+            <param name="throwExceptions"> Следует ли пробрасывать дальше возникшее исключение. </param>
+            <returns> <c>True</c>, если всё закончилось без ошибок. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.RatifyAuditOperation(ICSSoft.STORMNET.Business.Audit.Objects.tExecutionVariant,System.Collections.Generic.List{System.Guid},ICSSoft.STORMNET.Business.IDataService,System.Boolean)">
             <summary>
             Подверждение созданных ранее операций аудита (выполнение зависит от выбранного режима записи данных аудита)
             (если аудит идёт в одну БД с приложением, 
             то будет в сервис аудита передаваться имя строки соединения,
-            найденное в AuditService.Current.AppSetting.AuditDSSettings по параметрам переданного сервиса данных)
+            найденное в AuditService.Current.AppSetting.AuditDSSettings по параметрам переданного сервиса данных).
             </summary>
-            <param name="executionVariant"> Какой статус будет присвоен операции </param>
-            <param name="auditOperationIdList"> Список айдишников записей аудита </param>
-            <param name="dataService"> Сервис данных, по параметрам которого (строка соединения и тип) осуществляется поиск в AuditService.Current.AppSetting.AuditDSSettings </param>
-            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение</param>
-            <returns> True, если всё закончилось без ошибок </returns>
+            <param name="executionVariant"> Какой статус будет присвоен операции. </param>
+            <param name="auditOperationIdList"> Список айдишников записей аудита. </param>
+            <param name="dataService"> Сервис данных, по параметрам которого (строка соединения и тип) осуществляется поиск в AuditService.Current.AppSetting.AuditDSSettings. </param>
+            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение.</param>
+            <returns> <c>True</c>, если всё закончилось без ошибок. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.WriteCommonAuditOperation(ICSSoft.STORMNET.DataObject,ICSSoft.STORMNET.Business.IDataService,System.Boolean,System.Data.IDbTransaction)">
             <summary>
@@ -1652,14 +1670,14 @@
             </summary>
             <param name="operationedObject"> Объект, над которым выполняется операция. </param>
             <param name="dataService"> Сервис данных, который выполянет операцию. </param>
-            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение (по умолчанию - true).</param>
+            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение (по умолчанию - <c>true</c>).</param>
             <param name="transaction">
             Транзакция, через которую необходимо проводить выполнение зачиток из БД приложения аудиту
-            (при работе AuditService иногда необходимо дочитать объект или получить сохранённую копию, 
+            (при работе <see cref="T:ICSSoft.STORMNET.Business.Audit.AuditService"/> иногда необходимо дочитать объект или получить сохранённую копию, 
             а выполнение данного действия без транзакции может привести к взаимоблокировке).
-            По умолчанию - null. 
+            По умолчанию - <c>null</c>. 
             </param>
-            <returns> Ответ о том, можно ли выполнять операцию (если null, то значит, что что-то пошло не так). </returns>
+            <returns> Ответ о том, можно ли выполнять операцию (если <c>null</c>, то значит, что что-то пошло не так). </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.WriteCommonAuditOperationPrivate(ICSSoft.STORMNET.DataObject,ICSSoft.STORMNET.Business.IDataService,System.Boolean,System.Data.IDbTransaction)">
             <summary>
@@ -1667,163 +1685,161 @@
             </summary>
             <param name="operationedObject"> Объект, над которым выполняется операция. </param>
             <param name="dataService"> Сервис данных, который выполянет операцию. </param>
-            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение (по умолчанию - true).</param>
+            <param name="throwExceptions">Следует ли пробрасывать дальше возникшее исключение (по умолчанию - <c>true</c>).</param>
             <param name="transaction">
             Транзакция, через которую необходимо проводить выполнение зачиток из БД приложения аудиту
-            (при работе AuditService иногда необходимо дочитать объект или получить сохранённую копию, 
+            (при работе <see cref="T:ICSSoft.STORMNET.Business.Audit.AuditService"/> иногда необходимо дочитать объект или получить сохранённую копию, 
             а выполнение данного действия без транзакции может привести к взаимоблокировке).
-            По умолчанию - null. 
+            По умолчанию - <c>null</c>. 
             </param>
-            <returns> Ответ о том, можно ли выполнять операцию (если null, то значит, что что-то пошло не так). </returns>
+            <returns> Ответ о том, можно ли выполнять операцию (если <c>null</c>, то значит, что что-то пошло не так). </returns>
         </member>
-        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.RatifyAuditOperation(ICSSoft.STORMNET.Business.Audit.Objects.tExecutionVariant,System.Collections.Generic.List{ICSSoft.STORMNET.Business.Audit.HelpStructures.AuditAdditionalInfo},System.String,System.Type,System.Boolean)">
+        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.RatifyAuditOperation(ICSSoft.STORMNET.Business.Audit.Objects.tExecutionVariant,System.Collections.Generic.List{ICSSoft.STORMNET.Business.Audit.HelpStructures.AuditAdditionalInfo},System.String,System.Type,System.Boolean,System.Boolean)">
             <summary>
             Подверждение созданных ранее операций аудита
-            (если аудит идёт в одну БД с приложением, то будет использован сервис данных по умолчанию)
+            (если аудит идёт в одну БД с приложением, то будет использован сервис данных по умолчанию).
             </summary>
-            <param name="executionVariant"> Какой статус будет присвоен операции </param>
+            <param name="executionVariant"> Какой статус будет присвоен операции. </param>
             <param name="auditOperationInfoList"> Информация о том, что и куда в аудит нужно добавить. </param>
-            <param name="dataServiceConnectionString"> Строка соединения сервиса данных, который выполняет запись в БД приложения  </param>
-            <param name="dataServiceType"> Тип сервиса данных, который выполняет запись в БД приложения  </param>
-            <param name="throwExceptions"> Следует ли пробрасывать дальше возникшее исключение </param>
-            <returns> True, если всё закончилось без ошибок </returns>
+            <param name="dataServiceConnectionString"> Строка соединения сервиса данных, который выполняет запись в БД приложения.  </param>
+            <param name="dataServiceType"> Тип сервиса данных, который выполняет запись в БД приложения.  </param>
+            <param name="throwExceptions"> Следует ли пробрасывать дальше возникшее исключение. </param>
+            <param name="checkClassAuditSettings"> Следует ли проверять настройки аудита самого класса. </param>
+            <returns> <c>True</c>, если всё закончилось без ошибок. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.CheckAndSendToAudit(ICSSoft.STORMNET.Business.Audit.CommonAuditParameters,System.Object)">
             <summary>
-            Проверка режима записи данных аудита и в зависимости от этого отправка нужным способом данных аудита
+            Проверка режима записи данных аудита и в зависимости от этого отправка нужным способом данных аудита.
             </summary>
-            <param name="commonAuditParameters">
-            The audit Parameters.
-            </param>
-            <param name="auditClassSettings">
-            Настройки класса, объект которого отправляют на аудит 
-            </param>
-            <returns>
-            Guid записи об аудите  
-            </returns>
+            <param name="commonAuditParameters"> Параметры аудита. </param>
+            <param name="auditClassSettings"> Настройки класса, объект которого отправляют на аудит. </param>
+            <returns> Идентификатор записи об аудите. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.CheckAndSendToAudit(ICSSoft.STORMNET.Business.Audit.CheckedCustomAuditParameters)">
             <summary>
-            Проверка режима записи данных аудита и в зависимости от этого отправка нужным способом данных аудита
+            Проверка режима записи данных аудита и в зависимости от этого отправка нужным способом данных аудита.
             </summary>
-            <param name="checkedCustomAuditParameters">
-            The audit api parameters.
-            </param>
-            <returns>
-            Guid записи об аудите
-            </returns>
+            <param name="checkedCustomAuditParameters"> Параметры аудита. </param>
+            <returns> Идентификатор записи об аудите. </returns>
         </member>
-        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.CheckAndSendToAudit(ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters)">
+        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.CheckAndSendToAudit(ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters,System.Boolean)">
             <summary>
-            Проверка режима записи данных аудита и в зависимости от этого отправка нужным способом данных аудита
+            Проверка режима записи данных аудита и в зависимости от этого отправка нужным способом данных аудита.
             </summary>
-            <param name="ratificationAuditParameters">
-            The audit ratify parameters.
-            </param>
-            <returns>
-            Успешно ли была выполнена запись данных аудита
-            </returns>
+            <param name="ratificationAuditParameters"> Параметры аудита. </param>
+            <param name="checkClassAuditSettings"> Следует ли проверять настройки аудита в классах. </param>
         </member>
-        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GenerateBaseCommonAuditParameters(System.String,System.String,ICSSoft.STORMNET.Business.IDataService,System.Boolean)">
+        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.ProperRatificationWithClassSettings(ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters,System.Boolean)">
             <summary>
-            Генерация базовой части CommonAuditParameters
-            (остальное генерится по-своему в зависимости от типа операции)
+            Определяем в зависимости от настроек класса, через что и кудабудет писаться данные для аудита.
             </summary>
-            <param name="fullUserLogin">
-            Полный логин текущего пользователя 
-            </param>
-            <param name="userName">
-            Имя текущего пользователя (на крайний случай - логин) 
-            </param>
-            <param name="dataService">
-            Текущий сервис данных
-            </param>
-            <param name="throwExceptions">
-            Используемый при конструировании параметр, следует ли пробрасывать исключение
-            </param>
-            <returns>
-            Сконструированные параметры аудита 
-            </returns>
+            <param name="ratificationAuditParameters">Параметры аудита.</param>
+            <param name="checkClassAuditSettings">Следует ли проверять настройки аудита в классах.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GenerateBaseCommonAuditParameters(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Генерация базовой части <see cref="T:ICSSoft.STORMNET.Business.Audit.CommonAuditParameters"/>
+            (остальное генерится по-своему в зависимости от типа операции).
+            </summary>
+            <param name="fullUserLogin"> Полный логин текущего пользователя. </param>
+            <param name="userName"> Имя текущего пользователя (на крайний случай - логин). </param>
+            <param name="connectionStringName"> Имя строки соединения, которое должно использоваться сервисом аудита. </param>
+            <param name="throwExceptions"> Используемый при конструировании параметр, следует ли пробрасывать исключение. </param>
+            <returns> Сконструированные параметры аудита. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GetConnectionStringName(ICSSoft.STORMNET.Business.IDataService)">
             <summary>
             Получение имени строки соединения с БД приложения на основании переданного сервиса данных
-            (поиск осуществляется среди DetailArrayOfAuditDSSetting по строке соединения и типу сервиса данных;
-            если переданный сервис данных null, то берётся первое валидное имя строки соединения в DetailArrayOfAuditDSSetting)
+            (поиск осуществляется среди <see cref="T:ICSSoft.STORMNET.Business.Audit.Objects.DetailArrayOfAuditDSSetting"/> по строке соединения и типу сервиса данных;
+            если переданный сервис данных null, то берётся первое валидное имя строки соединения в <see cref="T:ICSSoft.STORMNET.Business.Audit.Objects.DetailArrayOfAuditDSSetting"/>).
             </summary>
-            <param name="dataService"> Сервис данных </param>
-            <returns> Имя строки соединения с БД приложения </returns>
+            <param name="dataService"> Сервис данных. </param>
+            <returns> Имя строки соединения с БД приложения. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GetConnectionStringName(System.String,System.Type)">
             <summary>
             Получение имени строки соединения с БД приложения на основании переданного сервиса данных
-            (поиск осуществляется среди DetailArrayOfAuditDSSetting по строке соединения и типу сервиса данных;
-            если переданный сервис данных null, то берётся первое валидное имя строки соединения в DetailArrayOfAuditDSSetting)
+            (поиск осуществляется среди <see cref="T:ICSSoft.STORMNET.Business.Audit.Objects.DetailArrayOfAuditDSSetting"/> по строке соединения и типу сервиса данных;
+            если переданный сервис данных null, то берётся первое валидное имя строки соединения в <see cref="T:ICSSoft.STORMNET.Business.Audit.Objects.DetailArrayOfAuditDSSetting"/>).
             </summary>
-            <param name="dataServiceConnectionString"> Строка соединения сервиса данных, который выполняет запись в БД приложения  </param>
-            <param name="dataServiceType"> Тип сервиса данных, который выполняет запись в БД приложения  </param>
-            <returns> Имя строки соединения с БД приложения </returns>
+            <param name="dataServiceConnectionString"> Строка соединения сервиса данных, который выполняет запись в БД приложения.  </param>
+            <param name="dataServiceType"> Тип сервиса данных, который выполняет запись в БД приложения. </param>
+            <returns> Имя строки соединения с БД приложения. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GetAuditSettingsFromType(System.Type)">
             <summary>
-            Получение настроек аудита из типа объекта
+            Получение настроек аудита из типа объекта.
             </summary>
-            <param name="curType"> Тип объекта </param>
-            <returns> Класс с настройками аудита (если они есть) </returns>
+            <param name="curType"> Тип объекта. </param>
+            <returns> Класс с настройками аудита (если они есть). </returns>
         </member>
-        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GetAuditSettingValue(System.Object,System.String)">
+        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GetAuditSettingValue(System.Object,System.String,System.Boolean)">
             <summary>
-            Получение необходимой настройки аудита из переданного хранилища настроек
+            Получение необходимой настройки аудита из переданного хранилища настроек.
             </summary>
-            <param name="auditClassSettings">
-            Хранилище настроек аудита
-            </param>
-            <param name="propertyName">
-            Имя настройки, которую необходимо извлечь
-            </param>
-            <returns>
-            Значение настройки
-            </returns>
+            <param name="auditClassSettings"> Хранилище настроек аудита. </param>
+            <param name="propertyName"> Имя настройки, которую необходимо извлечь. </param>
+            <param name="needFieldExist"> Обязательно ли, чтобы искомое поле существовало в объекте. </param>
+            <returns> Значение настройки. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.AddCreateAuditInformation(ICSSoft.STORMNET.DataObject)">
             <summary>
-            Добавление информации о том, кто и когда создал объект, если он это поддерживает
+            Добавление информации о том, кто и когда создал объект, если он это поддерживает.
             </summary>
-            <param name="operationedObject">
-            Объект, куда добавляется информация
-            </param>
+            <param name="operationedObject"> Объект, куда добавляется информация. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.AddCreateAuditInformation(ICSSoft.STORMNET.DataObject,System.String)">
+            <summary>
+            Добавление информации о том, кто и когда создал объект, если он это поддерживает.
+            </summary>
+            <param name="operationedObject">Объект, куда добавляется информация.</param>
+            <param name="currentUserInfo">Информация о пользователе.</param>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(ICSSoft.STORMNET.DataObject)">
             <summary>
-            Добавление информации о том, кто и когда отредактировал объект, если он это поддерживает
+            Добавление информации о том, кто и когда отредактировал объект, если он это поддерживает.
             </summary>
-            <param name="operationedObject">
-            Объект, куда добавляется информация
-            </param>
+            <param name="operationedObject"> Объект, куда добавляется информация. </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.AddEditAuditInformation(ICSSoft.STORMNET.DataObject,System.String)">
+            <summary>
+            Добавление информации о том, кто и когда отредактировал объект, если он это поддерживает.
+            </summary>
+            <param name="operationedObject"> Объект, куда добавляется информация. </param>
+            <param name="currentUserInfo">Информация о пользователе.</param>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GetViewName(System.Object,System.String)">
             <summary>
-            Получение имени представления из настроек аудита класса
+            Получение имени представления из настроек аудита класса.
             </summary>
-            <param name="auditClassSettings"> Настройки аудита класса </param>
-            <param name="propertyName"> Свойство, где находится имя представления </param>
-            <returns> Имя представления </returns>
+            <param name="auditClassSettings"> Настройки аудита класса. </param>
+            <param name="propertyName"> Свойство, где находится имя представления. </param>
+            <returns> Имя представления. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GetView(System.Object,System.String,System.Type)">
             <summary>
-            Получение представления для соответствующей операции у объекта
+            Получение представления для соответствующей операции у объекта.
             </summary>
-            <param name="auditClassSettings"> Настройки аудита в классе </param>
-            <param name="propertyName"> Имя свойства, где в настройках лежит правильное имя представления </param>
-            <param name="operationedObjectType"> Тип объекта, для которого пишем аудит </param>
-            <returns> Полученное представление </returns>
+            <param name="auditClassSettings"> Настройки аудита в классе. </param>
+            <param name="propertyName"> Имя свойства, где в настройках лежит правильное имя представления. </param>
+            <param name="operationedObjectType"> Тип объекта, для которого пишем аудит. </param>
+            <returns> Полученное представление. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.CopyAlteredNotSavedDataObject(ICSSoft.STORMNET.DataObject,ICSSoft.STORMNET.DataObject,ICSSoft.STORMNET.View)">
+            <summary>
+            Скопировать недостающие свойства из старого объекта, которые не загружены в новом объекте.
+            </summary>
+            <param name="oldObject">Старый вариант объекта (как он лежит в БД).</param>
+            <param name="newObject">Текущая версия объекта (как она сейчас будет записана в БД).</param>
+            <param name="auditView">Представление, по которому должна быть загружена текущая версия.</param>
+            <returns>"Дозагруженные" (вручную проставленные) свойства объекта.</returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.CopyNotSavedDataObject(ICSSoft.STORMNET.DataObject)">
             <summary>
-            Скопировать объект, который ещё не был сохранён
+            Скопировать объект, который ещё не был сохранён.
             </summary>
-            <param name="operationedObject"> Объект для копирования </param>
-            <returns> Копия </returns>
+            <param name="operationedObject"> Объект для копирования. </param>
+            <returns> Копия объекта. </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.LoadDatabaseCopy(ICSSoft.STORMNET.DataObject,ICSSoft.STORMNET.View,ICSSoft.STORMNET.Business.IDataService,System.Data.IDbTransaction)">
             <summary>
@@ -1833,7 +1849,7 @@
             <param name="curView"> Представление, по которому будем вычитывать из БД. </param>
             <param name="dataService"> Сервис данных. </param>
             <param name="transaction"> Транзакция, через которую необходимо проводить дочитывание объекта, чтобы не привести к взаимоблокировке. </param>
-            <returns> Вычитанный из БД объект (null, если что-то пошло не так). </returns>
+            <returns> Вычитанный из БД объект (<c>null</c>, если что-то пошло не так). </returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GetCurrentUserInfo(ICSSoft.STORMNET.Business.Audit.AppMode,System.Boolean)">
             <summary>
@@ -1846,37 +1862,37 @@
         </member>
         <member name="M:ICSSoft.STORMNET.Business.Audit.AuditService.GetSourceInfo(ICSSoft.STORMNET.Business.Audit.AppMode)">
             <summary>
-            Получение информации о том, откуда выполняется аудируемая операция
+            Получение информации о том, откуда выполняется аудируемая операция.
             </summary>
-            <param name="curMode"> Текущий режим работы приложения </param>
-            <returns> Информация о том, откуда выполняется аудируемая операция </returns>
-            <exception cref="T:System.Exception"> Если задан неподдерживаемый режим, то произойдёт исключение </exception>
+            <param name="curMode"> Текущий режим работы приложения. </param>
+            <returns> Информация о том, откуда выполняется аудируемая операция. </returns>
+            <exception cref="T:System.Exception"> Если задан неподдерживаемый режим, то произойдёт исключение. </exception>
         </member>
         <member name="P:ICSSoft.STORMNET.Business.Audit.AuditService.Current">
             <summary>
-            Текущий класс для работы с сервисом аудита
+            Текущий класс для работы с сервисом аудита.
             </summary>
         </member>
         <member name="P:ICSSoft.STORMNET.Business.Audit.AuditService.ApplicationMode">
             <summary>
-            Режим, в котором работает приложение: win или web
+            Режим, в котором работает приложение: win или web.
             </summary>
         </member>
         <member name="P:ICSSoft.STORMNET.Business.Audit.AuditService.IsAuditEnabled">
             <summary>
-            Включён ли аудит для приложения
+            Включён ли аудит для приложения.
             </summary>
         </member>
         <member name="P:ICSSoft.STORMNET.Business.Audit.AuditService.IsAuditRemote">
             <summary>
-            Выполняется ли аудит удалённо (то есть через вызов AuditWinService)
+            Выполняется ли аудит удалённо (то есть через вызов AuditWinService).
             </summary>
         </member>
         <member name="P:ICSSoft.STORMNET.Business.Audit.AuditService.AuditConnectionStringName">
             <summary>
-            Получение имени строки соединения с БД аудита
+            Получение имени строки соединения с БД аудита.
             (используется для загрузки данных из БД).
-            Если используется запись аудита через windows-сервис, то будет возвращено null
+            Если используется запись аудита через windows-сервис, то будет возвращено <c>null</c>.
             </summary>
         </member>
         <member name="P:ICSSoft.STORMNET.Business.Audit.AuditService.ShowPrimaryKey">
@@ -1886,218 +1902,248 @@
         </member>
         <member name="P:ICSSoft.STORMNET.Business.Audit.AuditService.AppSetting">
             <summary>
-            Настройки аудита в приложении
+            Настройки аудита в приложении.
             </summary>
         </member>
         <member name="P:ICSSoft.STORMNET.Business.Audit.AuditService.Audit">
             <summary>
-            Элемент, реализующий логику аудита
+            Элемент, реализующий логику аудита.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Business.Audit.AuditService.ProperRatificationInfo">
+            <summary>
+            Вспомогательный класс для метода <see cref="M:ICSSoft.STORMNET.Business.Audit.AuditService.ProperRatificationWithClassSettings(ICSSoft.STORMNET.Business.Audit.RatificationAuditParameters,System.Boolean)"/>.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.Audit.AuditService.ProperRatificationInfo.Audit">
+            <summary>
+            Вариант аудита, через который идёт работа.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.Audit.AuditService.ProperRatificationInfo.ConnectionStringName">
+            <summary>
+            Имя строки соединения с БД аудита.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Business.Audit.AuditService.ProperRatificationInfo.AuditAdditionalInfoList">
+            <summary>
+            Список изменениний, которые необходимо послать в аудит.
             </summary>
         </member>
         <member name="T:ICSSoft.STORMNET.Business.Audit.AuditConstants">
             <summary>
-            Константы для аудита
+            Константы для аудита.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.AuditSettingsClassName">
             <summary>
-            Имя класса, который добавляется в DataObject
+            Имя класса, который добавляется в DataObject.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.DefaultAuditViewName">
             <summary>
-            Имя по умолчанию для представления аудита
+            Имя по умолчанию для представления аудита.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.FieldValueDeletedConst">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.FieldNamePrimaryKey">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.DefaultDsTypeConfigName">
             <summary>
             Название настройки в конфиге, используемом классом, пишущим аудит,
-            определяющей тип сервиса данных для записи данных аудита по умолчанию
+            определяющей тип сервиса данных для записи данных аудита по умолчанию.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.DefaultDataServiceType">
             <summary>
-            Тип сервиса данных по умолчанию
+            Тип сервиса данных по умолчанию.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.AuditEnabledFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.AuditEnabledFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.UseDefaultViewFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.UseDefaultViewFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.SelectAuditFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.SelectAuditFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.SelectAuditViewNameFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.SelectAuditViewNameFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.InsertAuditFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.InsertAuditFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.InsertAuditViewNameFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.InsertAuditViewNameFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.UpdateAuditFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.UpdateAuditFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.UpdateAuditViewNameFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.UpdateAuditViewNameFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.DeleteAuditFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.DeleteAuditFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.DeleteAuditViewNameFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.DeleteAuditViewNameFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.FormUrlFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.FormUrlFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.WriteModeFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.WriteModeFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.PrunningLengthFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.PrunningLengthFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.ShowPrimaryKeyFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.ShowPrimaryKeyFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.KeepOldValueFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.KeepOldValueFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.CompressFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.CompressFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.KeepAllValuesFieldName">
             <summary>
-            Имя соответствующего поля
+            Имя соответствующего поля.
             </summary>
         </member>
         <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.KeepAllValuesFieldSummary">
             <summary>
-            Комментарий к соответствующему полю
+            Комментарий к соответствующему полю.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.AuditClassServiceFieldName">
+            <summary>
+            Имя поля, где хранится сервиса аудита, который будет писать аудит для конкретного класса.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Business.Audit.AuditConstants.AuditClassConnectionStringNameFieldName">
+            <summary>
+            Имя поля, где хранится имя строки соединения с БД, куда необходимо писать аудит для конкретного класса.
             </summary>
         </member>
         <member name="T:ICSSoft.STORMNET.Business.Audit.IDataObjectWithAuditFields">
@@ -4140,15 +4186,21 @@
             По умолчанию - null. 
             </param>
         </member>
+        <member name="M:ICSSoft.STORMNET.Business.SQLDataService.GetDataObjectFromSearchedList(System.Collections.Generic.List{ICSSoft.STORMNET.DataObject},ICSSoft.STORMNET.DataObject)">
+            <summary>
+            Поиск в списке объектов аналогичного указанному (должен совпасть тип и идентификатор).
+            </summary>
+            <param name="searchedDataObjectList">Список объектов, где производится поиск.</param>
+            <param name="searchedDataObject">Объект, который ищется.</param>
+            <returns>Найденный объект или <c>null</c>.</returns>
+        </member>
         <member name="M:ICSSoft.STORMNET.Business.SQLDataService.GenerateAuditForAggregators(System.Collections.ArrayList,ICSSoft.STORMNET.DataObjectCache,System.Collections.Generic.List{ICSSoft.STORMNET.DataObject}@,System.Data.IDbTransaction)">
             <summary>
-            Сгенерировать объекты для учета аудита агрегаторов обновляемых объектов, если они обновляются
-            отдельно от агрегатора.
+            Сгенерировать объекты для учета аудита агрегаторов обновляемых объектов, если они обновляются отдельно от агрегатора.
             </summary>
             <param name="processingObjects">Объекты, которые необходимо обработать.</param>
             <param name="dataObjectCache">Кэш объектов данных.</param>
-            <param name="auditObjects">Список объектов, для которых нужно создать записи аудита. Сюда записывается
-            результат работы метода.</param>
+            <param name="auditObjects">Список объектов, для которых нужно создать записи аудита. Сюда записывается результат работы метода.</param>
             <param name="transaction">Транзакция, в которой необходимо производить чтение (необязательный параметр).</param>
         </member>
         <member name="M:ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(System.Collections.Specialized.StringCollection,System.Collections.Specialized.StringCollection,System.Collections.Specialized.StringCollection,System.Collections.Specialized.StringCollection,System.Collections.Specialized.StringCollection,System.Collections.Specialized.StringCollection,System.Collections.SortedList,System.Collections.Specialized.StringCollection,System.Boolean,System.Collections.ArrayList,ICSSoft.STORMNET.DataObjectCache,System.Collections.Generic.List{ICSSoft.STORMNET.DataObject},ICSSoft.STORMNET.DataObject[])">
