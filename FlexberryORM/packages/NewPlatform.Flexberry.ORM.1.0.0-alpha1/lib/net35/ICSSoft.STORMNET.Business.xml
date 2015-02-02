@@ -4102,7 +4102,7 @@
             The query order.
             </param>
         </member>
-        <member name="M:ICSSoft.STORMNET.Business.SQLDataService.AddDeletedViewToDeleteDictionary(ICSSoft.STORMNET.View,ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary,System.Object,System.Collections.Specialized.StringCollection,ICSSoft.STORMNET.DataObject[]@,System.Collections.Specialized.StringCollection,System.Collections.SortedList,System.Collections.Specialized.StringCollection,ICSSoft.STORMNET.DataObjectCache,System.Collections.Specialized.StringCollection)">
+        <member name="M:ICSSoft.STORMNET.Business.SQLDataService.AddDeletedViewToDeleteDictionary(ICSSoft.STORMNET.View,ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary,System.Object,System.Collections.Specialized.StringCollection,ICSSoft.STORMNET.DataObject[]@,System.Collections.Specialized.StringCollection,System.Collections.SortedList,System.Collections.Specialized.StringCollection,ICSSoft.STORMNET.DataObjectCache)">
             <summary>
             У основного представления есть связь на представление на детейлы. Часть из них вообще не загружалась, данная функция обрабатывает как раз их.
             Данная функция либо возвращает объекты детейлов, если есть навешенные на них бизнес-сервера,
@@ -4144,9 +4144,30 @@
             Набор объектов, которые необходимо занести в аудит
             </returns>
         </member>
+        <member name="M:ICSSoft.STORMNET.Business.SQLDataService.AddToProcessingObjectsKeys(System.Collections.Generic.Dictionary{ICSSoft.STORMNET.TypeKeyPair,System.Boolean},ICSSoft.STORMNET.DataObject)">
+            <summary>
+            Добавление в словаре обрабатываемых объектов.
+            </summary>
+            <param name="processedDictionary">Словарь обрабатываемых объектов.</param>
+            <param name="dob">Объект данных.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.SQLDataService.ContainsKeyINProcessing(System.Collections.Generic.Dictionary{ICSSoft.STORMNET.TypeKeyPair,System.Boolean},ICSSoft.STORMNET.DataObject)">
+            <summary>
+            Проверка на наличие объекта в коллекции обрабатываемых объектов.
+            </summary>
+            <param name="processedDictionary">
+            Словарь обрабатываемых объектов.
+            </param>
+            <param name="dob">
+            Объект данных.
+            </param>
+            <returns>
+            Если объект содержится в коллекции, то <c>true</c>.
+            </returns>
+        </member>
         <member name="M:ICSSoft.STORMNET.Business.SQLDataService.GenerateQueriesForUpdateObjects(System.Collections.Specialized.StringCollection,System.Collections.Specialized.StringCollection,System.Collections.Specialized.StringCollection,System.Collections.Specialized.StringCollection,System.Collections.Specialized.StringCollection,System.Collections.Specialized.StringCollection,System.Collections.SortedList,System.Collections.Specialized.StringCollection,System.Boolean,System.Collections.ArrayList,ICSSoft.STORMNET.DataObjectCache,ICSSoft.STORMNET.DataObject[])">
             <summary>
-            Генерация запросов для изменения объектов 
+            Генерация запросов для изменения объектов.
             </summary>
             <param name="deleteQueries"> Запросы для удаление </param>
             <param name="deleteTables"> The Delete Tables. </param>
