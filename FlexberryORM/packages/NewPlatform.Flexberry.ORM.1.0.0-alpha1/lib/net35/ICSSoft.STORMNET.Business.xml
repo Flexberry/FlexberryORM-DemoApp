@@ -3044,7 +3044,7 @@
             </summary>
             <param name="customizationStructs">массив структур</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:ICSSoft.STORMNET.Business.IDataService.LoadObjects(ICSSoft.STORMNET.View,ICSSoft.STORMNET.Business.ChangeViewForTypeDelegate)" -->
+        <!-- Некорректный комментарий в формате XML для члена "M:ICSSoft.STORMNET.Business.IDataService.LoadObjects(ICSSoft.STORMNET.View,ICSSoft.STORMNET.Business.ChangeViewForTypeDelegate)" проигнорирован -->
         <member name="M:ICSSoft.STORMNET.Business.IDataService.LoadObjects(ICSSoft.STORMNET.View[],ICSSoft.STORMNET.Business.ChangeViewForTypeDelegate)">
             <summary>
             Загрузка объектов данных по массиву представлений

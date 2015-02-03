@@ -149,6 +149,46 @@
             Упорядоченный список собственных свойств, мастеров и детейлов представления + псевдодетейлов.
             </summary>
         </member>
+        <member name="T:ICSSoft.STORMNET.Convertors.Formatter">
+            <summary>
+            Позволяет использовать в строке форматирования параметр вида {* ,}.
+            Пример: 
+            "Результат: {*, }" c параметрами object[]{1,2,3} ->
+            "Результат: 1, 2, 3",
+            а формат вида: "Преобразование: {*->}" ->
+            "Преобразование: 1->2->3".
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Convertors.Formatter.formats">
+            <summary>
+            Кеш форматов.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Convertors.Formatter.#ctor">
+            <summary>
+            Запрет создания экземпляров данного класса.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Convertors.Formatter.Format(System.String,System.Object[])">
+            <summary>
+            Отформатировать параметры <see cref="T:ICSSoft.STORMNET.Convertors.Formatter"/>.
+            </summary>
+            <param name="format">Формат параметров.</param>
+            <param name="parameters">Параметры для форматирования.</param>
+            <returns>Отформатированные параметры.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Convertors.Formatter.transfertformat(System.String,System.Int32)">
+            <summary>
+            Преобразовать строку форматирования к стандартному виду.
+            Пример:
+            "Результат: {*, }" 
+            с parameterscount=3 дает
+            "Результат: {0}, {1}, {2}".
+            </summary>
+            <param name="format">Формат для преобразования.</param>
+            <param name="parameterscount">Количество параметров.</param>
+            <returns>Преобразованная строка.</returns>
+        </member>
         <member name="T:ICSSoft.STORMNET.IComparableType">
             <summary>
             Интерфейс для пользовательских типов, которые должны иметь специальную логику сравнения (по умолчанию для кастом-типов вызывается ToString() и сравнение по строкам). Сравнение выполняется хотя бы для определения изменённых свойств.
@@ -3773,54 +3813,94 @@
             Возвращает тип ключа (например, для GUIDGenerator это typeof(Guid))
             </summary>
         </member>
-        <member name="T:ICSSoft.STORMNET.Convertors.Formatter">
-            <summary>
-            позваляет использовать в строке форматирования параметр вида {* ,}
-            Пример : "Результат: {*, }" c параметрами object[]{1,2,3} ->
-            		 "Результат: 1, 2, 3"
-            	   а формат вида : "Преобразование: {*->}"   ->
-            	   "Преобразование: 1->2->3"
-            </summary>
-        </member>
-        <member name="M:ICSSoft.STORMNET.Convertors.Formatter.Format(System.String,System.Object[])">
-            <summary>
-            Отформатировать параметры<see cref="T:ICSSoft.STORMNET.Convertors.Formatter"/>
-            </summary>
-            <param name="format"></param>
-            <param name="parameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:ICSSoft.STORMNET.Convertors.Formatter.transfertformat(System.String,System.Int32)">
-            <summary>
-            Преобразовать строку форматирования к стандартному виду
-              Пример "Результат: {*, }" с parameterscount=3 дает
-              "Результат: {0}, {1}, {2}"
-            </summary>
-            <param name="format"></param>
-            <param name="parameterscount"></param>
-            <returns></returns>
-        </member>
         <member name="T:ICSSoft.STORMNET.Convertors.InOperatorsConverter">
             <summary>
-            Класс конвертации значений одного типа к другому типу посредством одного преобразования (Implicit или Explicit)
-            (Только статические методы работы)
+            Класс конвертации значений одного типа к другому типу посредством одного преобразования (Implicit или Explicit).
+            Только статические методы работы.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Convertors.InOperatorsConverter.#ctor">
+            <summary>
+            Запретим создавать экземпляры этого класса.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Convertors.InOperatorsConverter.ParsedTypes">
+            <summary>
+            Кеш разобранных ранее типов.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeToTypeMethods">
+            <summary>
+            Кеш методов конвертации типов.
             </summary>
         </member>
         <member name="M:ICSSoft.STORMNET.Convertors.InOperatorsConverter.CanConvert(System.Type,System.Type)">
             <summary>
-            Можно ли преобразовать один тип к другому
+            Можно ли преобразовать один тип к другому.
             </summary>
-            <param name="fromType">откуда будем преобразовывать</param>
-            <param name="toType">куда будем преобразовывать</param>
-            <returns></returns>
+            <param name="fromType">Откуда будем преобразовывать.</param>
+            <param name="toType">Куда будем преобразовывать.</param>
+            <returns>Если можно преобразовать, то <c>true</c>.</returns>
         </member>
         <member name="M:ICSSoft.STORMNET.Convertors.InOperatorsConverter.Convert(System.Object,System.Type)">
             <summary>
-            преобразовать значение
+            Преобразовать значение.
             </summary>
-            <param name="value"></param>
-            <param name="toType"></param>
-            <returns></returns>
+            <param name="value">Значение для преобразования.</param>
+            <param name="toType">Тип, в который надо преобразовать.</param>
+            <returns>Преобразованное значение.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Convertors.InOperatorsConverter.AddTypeOperator(System.Type)">
+            <summary>
+            Добавить тип и все его преобразования в кеш.
+            </summary>
+            <param name="type">Тип для добавления.</param>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePair">
+            <summary>
+            Пара типов, применяется для организации ключей в коллекции.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePair.FromType">
+            <summary>
+            Первый тип в паре.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePair.ToType">
+            <summary>
+            Второй тип в паре.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePair.#ctor(System.Type,System.Type)">
+            <summary>
+            Пара типов, применяется для организации ключей в коллекции.
+            </summary>
+            <param name="fromType">Первый тип в паре.</param>
+            <param name="toType">Второй тип в паре.</param>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePairEqualityComparer">
+            <summary>
+            Класс для сравнения объектов типа <see cref="T:ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePair"/>.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePairEqualityComparer.Equals(ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePair,ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePair)">
+            <summary>
+            Determines whether two objects of type <see cref="T:ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePair"/> are equal.
+            </summary>
+            <returns>
+            If the specified objects are equal then <c>true</c>; otherwise, <c>false</c>.
+            </returns>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePairEqualityComparer.GetHashCode(ICSSoft.STORMNET.Convertors.InOperatorsConverter.TypeTypePair)">
+            <summary>
+            Serves as a hash function for the specified object for hashing algorithms and data structures, such as a hash table.
+            </summary>
+            <returns>
+            A hash code for the specified object.
+            </returns>
+            <param name="obj">The object for which to get a hash code.</param><exception cref="T:System.ArgumentNullException">The type of <paramref name="obj"/> is a reference type and <paramref name="obj"/> is null.</exception>
         </member>
         <member name="T:ICSSoft.STORMNET.Security.EmptySecurityManager">
             <summary>

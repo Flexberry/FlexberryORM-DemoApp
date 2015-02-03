@@ -456,6 +456,15 @@
             Определение переменной ограничения, предназначенное для описания детейлов.
             </summary>
         </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef.GetPossibleDynamicView(System.String,System.Type)">
+            <summary>
+            Получение представления по его имени и типу.
+            Если представление не найдено среди статических, то есть возможность сформировать его динамически (используется в редакторе ограничений).
+            </summary>
+            <param name="viewName">Имя представления, которое требуется получить.</param>
+            <param name="dataObjectType">Тип объекта, для которого нужно представление.</param>
+            <returns>Найденное/сформированное представление или <c>null</c>.</returns>
+        </member>
         <member name="M:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef.FromSimpleValue(System.Object,ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef)">
             <summary>
             Извлекаем описание ограничения на детейл из особой сериализованной структуры.
