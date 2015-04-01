@@ -1,0 +1,613 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.Collections</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Collections.ArrayOperations">
+            <summary>
+            Summary description for ArrayOperations.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.ArrayOperations.ConcatArrays(System.Type,System.Array[])">
+            <summary>
+            соединить массивы
+            </summary>
+            <param name="elementType"></param>
+            <param name="arrays"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary">
+            <summary>
+            Summary description for CaseSensivityStringDictionary.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.Add(System.String,System.String)">
+            <summary>
+            добавить элемент
+            </summary>
+            <param name="name">имя</param>
+            <param name="value">значение</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.Clear">
+            <summary>
+            очистить
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.Get(System.Int32)">
+            <summary>
+            взять по индексу
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.Get(System.String)">
+            <summary>
+            взять по имени
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.Set(System.Int32,System.String)">
+            <summary>
+            положить по индексу
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.Set(System.String,System.String)">
+            <summary>
+            положить по имени
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.GetAllKeys">
+            <summary>
+            получить все ключи-имена
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.GetAllValues">
+            <summary>
+            получить все значения
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.GetAllValues(System.Type)">
+            <summary>
+            получить все значения оперделенного типа
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.GetKey(System.Int32)">
+            <summary>
+            получить ключ по индексу
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.HasKeys">
+            <summary>
+            есть ли непустые ключи
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.Remove(System.String)">
+            <summary>
+            удалить по имени
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.RemoveAt(System.Int32)">
+            <summary>
+            удалить по индексу
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.ContainsKey(System.String)">
+            <summary>
+            есть ли значение с заданным ключем
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.Item(System.Int32)">
+            <summary>
+            доступ по порядковому номеру
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Collections.CaseSensivityStringDictionary.Item(System.String)">
+            <summary>
+            доступ по имени элемента
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Collections.NameObjectCollection">
+            <summary>
+            коллекция со строковыми ключами
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.Add(System.String,System.Object)">
+            <summary>
+            добавить элемент
+            </summary>
+            <param name="name">имя</param>
+            <param name="value">значение</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.Add(System.Object)">
+            <summary>
+            Добавить элемент, при этом ключом будет случайный Guid, приведённый к строке
+            (Сам метод нужен для того, чтобы работала XML-сериализация, логика не)
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.Clear">
+            <summary>
+            очистить
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.Get(System.Int32)">
+            <summary>
+            взять по индексу
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.Get(System.String)">
+            <summary>
+            взять по имени
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.Set(System.Int32,System.Object)">
+            <summary>
+            положить по индексу
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.Set(System.String,System.Object)">
+            <summary>
+            положить по имени
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.GetAllKeys">
+            <summary>
+            получить все ключи-имена
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.GetAllValues">
+            <summary>
+            получить все значения
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.GetAllValues(System.Type)">
+            <summary>
+            получить все значения оперделенного типа
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.GetKey(System.Int32)">
+            <summary>
+            получить ключ по индексу
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.HasKeys">
+            <summary>
+            есть ли непустые ключи
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.Remove(System.String)">
+            <summary>
+            удалить по имени
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.RemoveAt(System.Int32)">
+            <summary>
+            удалить по индексу
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.NameObjectCollection.ContainsKey(System.String)">
+            <summary>
+            есть ли значение с заданным ключем
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Collections.NameObjectCollection.Item(System.Int32)">
+            <summary>
+            доступ по порядковому номеру
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Collections.NameObjectCollection.Item(System.String)">
+            <summary>
+            доступ по имени элемента
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Collections.TypeBaseCollection">
+            <summary>
+            коллекция со Type -  ключами
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.Contains(System.Type)">
+            <summary>
+            содержит ли ключ
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.Clear">
+            <summary>
+            почистить
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.Add(System.Type,System.Object)">
+            <summary>
+            добавить элемент
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.Insert(System.Int32,System.Type,System.Object)">
+            <summary>
+            вставить элемент
+            </summary>
+            <param name="index"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.Remove(System.Int32)">
+            <summary>
+            удалить по индексу
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.Remove(System.Type)">
+            <summary>
+            удалить по ключу
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.Key(System.Int32)">
+            <summary>
+            ключ по индексу
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.GetMostCompatible(System.Type)">
+            <summary>
+            вернуть по шаблону(наиболее подходящий)
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.GetCompatible(System.Type)">
+            <summary>
+            вернуть по шаблону
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypeBaseCollection.ToDictionary">
+            <summary>
+            Вернуть элементы коллекции в виде стандартного словаря.
+            </summary>
+            <returns>Объект словаря System.Collections.Generic.Dictionary</returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Collections.TypeBaseCollection.Count">
+            <summary>
+            количество
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Collections.TypeBaseCollection.Item(System.Type)">
+            <summary>
+            доступ по ключу
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Collections.TypeBaseCollection.Item(System.Int32)">
+            <summary>
+            доступ по индексу
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Collections.TypesArrayList">
+            <summary>
+            Список типов
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="capacity"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Adapter(System.Collections.IList)">
+            <summary>
+            Array wrapper
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Add(System.Type)">
+            <summary>
+            добавить
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.BinarySearch(System.Type)">
+            <summary>
+            поиск
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.BinarySearch(System.Int32,System.Int32,System.Type)">
+            <summary>
+            поиск
+            </summary>
+            <param name="index"></param>
+            <param name="count"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Clear">
+            <summary>
+            очистить
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Contains(System.Type)">
+            <summary>
+            проверка на вхождение
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.CopyTo(System.Type[])">
+            <summary>
+            копирование
+            </summary>
+            <param name="array"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.CopyTo(System.Type[],System.Int32)">
+            <summary>
+            копирование
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.CopyTo(System.Int32,System.Type[],System.Int32,System.Int32)">
+            <summary>
+            копирование
+            </summary>
+            <param name="index"></param>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Equals(System.Object)">
+            <summary>
+            проверка на равенство
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Equals(System.Object,System.Object)">
+            <summary>
+            проверка на равенство
+            </summary>
+            <param name="objA"></param>
+            <param name="objB"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.IndexOf(System.Type)">
+            <summary>
+            индекс объекта
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.IndexOf(System.Type,System.Int32)">
+            <summary>
+            индекс объекта
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.IndexOf(System.Type,System.Int32,System.Int32)">
+            <summary>
+            индекс объекта
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Insert(System.Int32,System.Type)">
+            <summary>
+            Вставить объект
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.LastIndexOf(System.Type)">
+            <summary>
+            индекс объекта с конца
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.LastIndexOf(System.Type,System.Int32)">
+            <summary>
+            индекс объекта с конца
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.LastIndexOf(System.Type,System.Int32,System.Int32)">
+            <summary>
+            индекс объекта с конца
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Remove(System.Type)">
+            <summary>
+            удалить объект
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.RemoveAt(System.Int32)">
+            <summary>
+            удалить по индексу
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            удалить кучу
+            </summary>
+            <param name="index"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Repeat(ICSSoft.STORMNET.Collections.TypesArrayList,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Reverse">
+            <summary>
+            вывернуть
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Reverse(System.Int32,System.Int32)">
+            <summary>
+            вывернуть
+            </summary>
+            <param name="index"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Sort">
+            <summary>
+            отсортировать
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.Sort(System.Int32,System.Int32)">
+            <summary>
+            отсортировать
+            </summary>
+            <param name="index"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.ToArray">
+            <summary>
+            преобразовать в массив
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.ToString">
+            <summary>
+            в строку
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Collections.TypesArrayList.TrimToSize">
+            <summary>
+            обрезать лишнее
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Collections.TypesArrayList.Capacity">
+            <summary>
+            емкость
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Collections.TypesArrayList.Count">
+            <summary>
+            количество элементов
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Collections.TypesArrayList.Item(System.Int32)">
+            <summary>
+            вернуть по индексу
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Collections.TypesArrayList.SyncRoot">
+            <summary>
+            объект для синхронизации доступа к массиву
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LogService</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.LogService">
+            <summary>
+            Общий сервис для ведения логов (смотри документацию по log4net: http://logging.apache.org/log4net/).
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.LogService.Log">
+            <summary>
+            Собственно логгер (log4net).
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogError(System.Object)">
+            <summary>
+            Обёртка для Log.Error, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="message">
+            Сообщение, которое будет передано в логгер.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogError(System.Object,System.Exception)">
+            <summary>
+            Обёртка для Log.Error, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="message">
+            Сообщение, которое будет передано в логгер.
+            </param>
+            <param name="exception">
+            Исключение, которое будет передано в логгер.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogErrorFormat(System.String,System.Object[])">
+            <summary>
+            Обёртка для Log.ErrorFormat, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="format">
+            Формат записи.
+            </param>
+            <param name="args">
+            Аргументы, которые будут переданы в логгер.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogInfo(System.Object)">
+            <summary>
+            Обёртка для Log.Info, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="message">
+            Сообщение, которое будет передано в логгер.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogInfo(System.Object,System.Exception)">
+            <summary>
+            Обёртка для Log.Info, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="message">
+            Сообщение, которое будет передано в логгер.
+            </param>
+            <param name="exception">
+            Исключение, которое будет передано в логгер.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogInfoFormat(System.String,System.Object[])">
+            <summary>
+            Обёртка для Log.InfoFormat, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="format">
+            Формат записи.
+            </param>
+            <param name="args">
+            Аргументы, которые будут переданы в логгер.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogWarn(System.Object)">
+            <summary>
+            Обёртка для Log.Warn, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="message">
+            Сообщение, которое будет передано в логгер.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogWarn(System.Object,System.Exception)">
+            <summary>
+            Обёртка для Log.Warn, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="message">
+            Сообщение, которое будет передано в логгер.
+            </param>
+            <param name="exception">
+            Исключение, которое будет передано в логгер.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogWarnFormat(System.String,System.Object[])">
+            <summary>
+            Обёртка для Log.InfoFormat, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="format">
+            Формат записи.
+            </param>
+            <param name="args">
+            Аргументы, которые будут переданы в логгер.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogDebug(System.Object)">
+            <summary>
+            Обёртка для Log.Warn, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="message">
+            Сообщение, которое будет передано в логгер.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogDebug(System.Object,System.Exception)">
+            <summary>
+            Обёртка для Log.Warn, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="message">
+            Сообщение, которое будет передано в логгер.
+            </param>
+            <param name="exception">
+            Исключение, которое будет передано в логгер.
+            </param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.LogService.LogDebugFormat(System.String,System.Object[])">
+            <summary>
+            Обёртка для Log.InfoFormat, включающая соответствующую проверку, что логирование включено.
+            </summary>
+            <param name="format">
+            Формат записи.
+            </param>
+            <param name="args">
+            Аргументы, которые будут переданы в логгер.
+            </param>
+        </member>
+        <member name="T:ICSSoft.STORMNET.CustomAdoNetAppender">
+            <summary>
+            Класс наследник <see cref="T:log4net.Appender.AdoNetAppender"/>. Необходим для переопределения логики работы со строкой соединения.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.CustomAdoNetAppender._connectionString">
+            <summary>
+            Строка соединения с базой данных.
+            Сокроем реальное значение строки соединения в этом классе, чтобы никто не смог его изменить.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.CustomAdoNetAppender.ConnectionString">
+            <summary>
+            Строка соединения с базой данных.
+            Переопределяет базовую, чтобы выполнить собственную логику по получению значения.
+            Так как в базовом классе методы get и set не содержат логики, это вполне безопасно.
+            </summary>
+        </member>
+    </members>
+</doc>

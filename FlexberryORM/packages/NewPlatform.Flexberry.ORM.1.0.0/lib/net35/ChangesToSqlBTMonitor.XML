@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ChangesToSqlBTMonitor</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.Services.ChangesToSqlBTMonitor">
+            <summary>
+            Писалка запросов на обновление, вставку и удаление данных в StringBuilder.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.Services.ChangesToSqlBTMonitor._queries">
+            <summary>
+            Все запросы будем писать в массив для того, чтобы подтверждать выполнение (Если что-то упало, то такой запрос нам не нужен).
+            </summary>
+        </member>
+        <member name="M:ICSSoft.Services.ChangesToSqlBTMonitor.Print(System.String,System.Object)">
+            <summary>
+            Фильтровать лишние события, а не лишние записывать.
+            </summary>
+            <param name="input">входная строка</param>
+            <param name="id">id задачи</param>
+        </member>
+        <member name="P:ICSSoft.Services.ChangesToSqlBTMonitor.Record">
+            <summary>
+            Записанные запросы, которые были завершены.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.Services.ChangesToSqlBTMonitor.Filters">
+            <summary>
+            Фильтровать запросы к таблицам. Настраивается через конфигурационный файл по ключу "ChangesToSqlExcept", перечисленные через запятую.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.Services.ChangesToSqlBTMonitor.QueryWithApprovement">
+            <summary>
+            Запрос и подтверждение.
+            </summary>
+        </member>
+    </members>
+</doc>

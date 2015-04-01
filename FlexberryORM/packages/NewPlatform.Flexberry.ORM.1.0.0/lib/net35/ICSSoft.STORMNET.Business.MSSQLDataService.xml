@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.Business.MSSQLDataService</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Business.MSSQLDataService">
+            <summary>
+            Сервис данных для работы с Microsoft SQL Server.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.MSSQLDataService.#ctor">
+            <summary>
+            Создание сервиса данных для Microsoft SQL Server без параметров.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.MSSQLDataService.#ctor(ICSSoft.STORMNET.Security.ISecurityManager)">
+            <summary>
+            Создание сервиса данных для Microsoft SQL Server с указанием настроек проверки полномочий.
+            </summary>
+            <param name="securityManager">Сконструированный менеджер полномочий.</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.MSSQLDataService.GetConnection">
+            <summary>
+            Вернуть объект <see cref="T:System.Data.IDbConnection"/>, предназначенный для работы с MSSQLServer и настроенный на строку соединения <see cref="P:ICSSoft.STORMNET.Business.SQLDataService.CustomizationString"/>.
+            </summary>
+            <returns>Соединение с БД.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.MSSQLDataService.GetIfNullExpression(System.String[])">
+            <summary>
+            Вернуть ISNULL выражение (IfNull - на псевдокоде).
+            </summary>
+            <param name="identifiers">Идентифткаторы выражения.</param>
+            <returns>Строка для вставки в запрос.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.MSSQLDataService.ConvertSimpleValueToQueryValueString(System.Object)">
+            <summary>
+            Конвертация константных значений в строки запроса в соответствиями с требованиями MSSQLServer.
+            </summary>
+            <param name="value">Константное значение.</param>
+            <returns>Строка запроса.</returns>
+        </member>
+    </members>
+</doc>

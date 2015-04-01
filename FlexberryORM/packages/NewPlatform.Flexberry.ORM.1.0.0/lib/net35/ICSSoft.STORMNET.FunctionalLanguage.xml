@@ -1,0 +1,1144 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.FunctionalLanguage</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.FunctionForControls">
+            <summary>
+            Функция для контролов (используется при: сериализации-десериализации LoadingCustomizationStruct, ExtendedTextBox, ObjectListVeiw и пр.)
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.FunctionForControls.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.FunctionForControls.View">
+            <summary>
+            Представление
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionForControls.#ctor(ICSSoft.STORMNET.View,ICSSoft.STORMNET.FunctionalLanguage.Function)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="view"></param>
+            <param name="func"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionForControls.#ctor(System.String,System.Type,ICSSoft.STORMNET.FunctionalLanguage.Function)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="View"></param>
+            <param name="type"></param>
+            <param name="func"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionForControls.#ctor(ICSSoft.STORMNET.FunctionalLanguage.FunctionDef,System.String,System.Type,System.Object[])">
+            <summary>
+            конструктор
+            </summary>
+            <param name="def"></param>
+            <param name="View"></param>
+            <param name="type"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionForControls.#ctor(ICSSoft.STORMNET.View,ICSSoft.STORMNET.FunctionalLanguage.FunctionDef,System.Object[])">
+            <summary>
+            конструктор
+            </summary>
+            <param name="view"></param>
+            <param name="def"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionForControls.ToString">
+            <summary>
+            В строку
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionForControls.Parse(System.String,System.Type,System.String)">
+            <summary>
+            Разбор
+            </summary>
+            <param name="value"></param>
+            <param name="type"></param>
+            <param name="viewname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionForControls.Parse(System.String,ICSSoft.STORMNET.View)">
+            <summary>
+            Разбор
+            </summary>
+            <param name="value"></param>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionForControls.Function">
+            <summary>
+            Функция
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.TypesCompatibilities">
+            <summary>
+            Совместимость типов
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.TypesCompatibilities.No">
+            <summary>
+             Не совместимы
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.TypesCompatibilities.Convertable">
+            <summary>
+            Конвертируемы
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.TypesCompatibilities.Equal">
+            <summary>
+            Равны
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.CompatibilityTypeTest">
+            <summary>
+            Класс для проверки совместимости типов
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.CompatibilityTypeTest._stack">
+            <summary>
+            TODO: надо убедиться, что этот стек может быть разделён между потоками
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.CompatibilityTypeTest.FoundTransform(System.String,System.String)">
+            <summary>
+            Найти преобразование
+            </summary>
+            <param name="from"></param>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.CompatibilityTypeTest.Check(System.Type,System.Type)">
+            <summary>
+            Проверка на совместимость типов
+            </summary>
+            <param name="from"></param>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef">
+            <summary>
+            Определение языка ограничений для конструирования ограничивающих функций
+            </summary> 
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.UilibraryName">
+            <summary>
+            Имя сборки ICSSoft.STORMNET.UI, где раньше лежали классы ExternalLangDef.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.ExternalLangDefLibraryName">
+            <summary>
+            Имя сборки ExternalLangDef, где раньше лежали только ссылки на классы ExternalLangDef.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.GetFunctionDef(System.Int32)">
+            <summary>
+            Получить определение функции
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.GetFunctionDefByStringedView(System.String)">
+            <summary>
+            Получить определение функции по его строковому представлению
+            </summary>
+            <param name="stringedView">Строковое представление идентифицирующие определение функции</param>
+            <returns>Найденное строковое представление. Выдает исключение в случае неудачи, поэтому результат не может быть пустым.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.GetObjectType(System.String)">
+            <summary>
+            Получить наше описание типа по имени
+            </summary>
+            <param name="typeName">Имя типа</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.FunctionToSimpleStruct(ICSSoft.STORMNET.FunctionalLanguage.Function)">
+            <summary>
+            Разбор функции "по-косточкам" в специальный массив
+            </summary>
+            <param name="f">функция</param>
+            <returns>new object[] { f.FunctionDef.ID, pars, types }</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.FunctionFromSimpleStruct(System.Object)">
+            <summary>
+            Восстановление функции из простой структуры 
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.TryGetOldType(System.String,System.Boolean)">
+            <summary>
+            Попытка получения типа из UI-сборки вместо ExternalLangDef (для обратной совместимости после переноса классов из UI в ExternalLangDef).
+            </summary>
+            <param name="typeName">Исходное имя типа.</param>
+            <param name="throwException">Следует ли пробрасывать исключение, если тип не удалось найти.</param>
+            <returns>Найденный тип (или null, если в UI такой сборки уже нет).</returns>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.fieldUpFunctionType">
+            <summary>
+            Тип функции для возврата значения
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.GetObjectTypeForNetType(System.Type)">
+            <summary>
+            Получатель ObjectType по .NET-типу (для DataObject возвращается тип первичного ключа)
+            </summary>
+            <param name="type">.NET-тип</param>
+            <returns>ObjectType-тип</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.#ctor">
+            <summary>
+            Конструктор (вызывается InitializeDefs())
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.InitializeDefs">
+            <summary>
+            Инициализация определений функций языка (для определения связки количества и типов параметров)
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.FunctionsByStringedViewList">
+            <summary>
+            Список функций с ключом в виде строкового определения
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.InitFunctionsByStringedViewList">
+            <summary>
+            Инициализировать массив функции с ключом в виде строкового определения
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.GetFunction(System.String,System.Object[])">
+            <summary>
+            Создание ограничивающей функции
+            </summary>
+            <param name="functionString">Функция (langdef.funcEQ, например)</param>
+            <param name="parameters">Параметры. Например, new VariableDef(langdef.StringType, "Фамилия"), "Иванов"</param>
+            <returns>Ограничивающая функция</returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.MaxFuncID">
+            <summary>
+            Индекс последней функции в списке
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.Types">
+            <summary>
+            Типы (Детейл)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.Variables">
+            <summary>
+            Переменные (Детейл)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.Functions">
+            <summary>
+            Функции (Детейл)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.UpFunctionType">
+            <summary>
+            Тип функции для возврата значения
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.NotFoundFunctionBySignatureException">
+            <summary>
+            Не найдена функция по сигнатуре
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.NotFoundFunctionBySignatureException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.NotFoundFunctionParametersException">
+            <summary>
+            Не найден параметр функции
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.NotFoundFunctionParametersException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfVariableDef">
+            <summary>
+            DetailArray Of VariableDef
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfVariableDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef)">
+            <summary>
+            constructor
+            </summary>
+            <param name="masterObj"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfVariableDef.Item(System.Int32)">
+            <summary>
+            return (VariableDef)ItemByIndex(index);
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfFunctionDef">
+            <summary>
+            DetailArray Of FunctionDef
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfFunctionDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef)">
+            <summary>
+            constructor
+            </summary>
+            <param name="masterObj"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfFunctionDef.Item(System.Int32)">
+            <summary>
+            return (FunctionDef)ItemByIndex(index);
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfObjectType">
+            <summary>
+            DetailArray Of ObjectType
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfObjectType.#ctor(ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef)">
+            <summary>
+            constructor
+            </summary>
+            <param name="masterObj"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfObjectType.Item(System.Int32)">
+            <summary>
+             return (ObjectType)ItemByIndex(index);
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.FunctionDef">
+            <summary>
+            Определение функции
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.TypedObject">
+            <summary>
+            Расширение класса <see cref="T:ICSSoft.STORMNET.FunctionalLanguage.ViewedObject"/> за счёт введения <see cref="T:ICSSoft.STORMNET.FunctionalLanguage.ObjectType"/>-типа (атрибут Type)
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.ViewedObject">
+            <summary>
+            Нехранимая реализация DataObject с полями Caption и StringedView для различных классов языка задания ограничений
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.ViewedObject.#ctor">
+            <summary>
+            конструктор
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.ViewedObject.#ctor(System.String,System.Drawing.Image,System.String)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="objStringedView"></param>
+            <param name="objImagedView"></param>
+            <param name="Caption"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.ViewedObject.StringedView">
+            <summary>
+            Строковое представление
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.ViewedObject.Caption">
+            <summary>
+            Заголовок
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.TypedObject.#ctor">
+            <summary>
+            конструктор
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.TypedObject.#ctor(ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String,System.String,System.Drawing.Image)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="objType"></param>
+            <param name="objStringedView"></param>
+            <param name="objCaption"></param>
+            <param name="objImagedView"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.TypedObject.Type">
+            <summary>
+            ObjectType-тип
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionDef.#ctor(System.Int32,ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String,System.String,System.Drawing.Image,System.String)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="ID"></param>
+            <param name="returnType"></param>
+            <param name="objStringedView"></param>
+            <param name="objCaption"></param>
+            <param name="objImagedView"></param>
+            <param name="userViewFormat"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionDef.#ctor(System.Int32,ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String,System.String,System.Drawing.Image,System.String,ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef[])">
+            <summary>
+            конструктор
+            </summary>
+            <param name="ID"></param>
+            <param name="returnType"></param>
+            <param name="objStringedView"></param>
+            <param name="objCaption"></param>
+            <param name="objImagedView"></param>
+            <param name="userViewFormat"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionDef.#ctor(System.Int32,ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String,System.String,System.Drawing.Image,System.String,System.Boolean,ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef[])">
+            <summary>
+            конструктор
+            </summary>
+            <param name="ID"></param>
+            <param name="returnType"></param>
+            <param name="objStringedView"></param>
+            <param name="objCaption"></param>
+            <param name="objImagedView"></param>
+            <param name="userViewFormat"></param>
+            <param name="FreeQuery"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionDef.ID">
+            <summary>
+            Целочисленный ключ определения функции
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionDef.FreeQuery">
+            <summary>
+            Влияет на генерацию SQL-запроса. Если true, то добавляются все поля
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionDef.ReturnType">
+            <summary>
+            Тип возвращаемого значения
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionDef.Parameters">
+            <summary>
+            Параметры функции
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionDef.UserViewFormat">
+            <summary>
+            формат отображения пользователю (используется на форме задания ограничений)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionDef.Language">
+            <summary>
+            Язык ограничений, в рамках которого существует данное определение функции (язык включает все определения как детейлы)
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfFunctionalParameterDef">
+            <summary>
+            массив параметров
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfFunctionalParameterDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.FunctionDef)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="masterObj"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfFunctionalParameterDef.Add(ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef)">
+            <summary>
+            добавление
+            </summary>
+            <param name="dataobject"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.DetailArrayOfFunctionalParameterDef.Item(System.Int32)">
+            <summary>
+            получить функцию по индексу
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef">
+            <summary>
+            Унаследованный от TypedObject класс для определения параметров функции
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String,System.String,System.Drawing.Image)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="objType"></param>
+            <param name="objStringedView"></param>
+            <param name="objCaption"></param>
+            <param name="objImagedView"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String,System.String,System.Drawing.Image,System.Boolean)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="objType"></param>
+            <param name="objStringedView"></param>
+            <param name="objCaption"></param>
+            <param name="objImagedView"></param>
+            <param name="multiValueSupport"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String,System.String)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="objType"></param>
+            <param name="objStringedView"></param>
+            <param name="objCaption"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String,System.String,System.Boolean)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="objType"></param>
+            <param name="objStringedView"></param>
+            <param name="objCaption"></param>
+            <param name="multiValueSupport"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.ObjectType)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="objType"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.Boolean)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="objType"></param>
+            <param name="multiValueSupport"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef.FunctionDef">
+            <summary>
+            Определение функции (агрегатор)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef.MultiValueSupport">
+            <summary>
+            Поддерживается ли много значений одного параметра
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.CheckConstDelegate">
+            <summary>
+            проверить константу
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.ObjectType">
+            <summary>
+            Мета-описание типа (используется для описания типов операндов функций) (наследуется от ViewedObject)
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.ObjectType.#ctor(System.String,System.String,System.Drawing.Image,System.Type)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="objStringedView"></param>
+            <param name="objCaption"></param>
+            <param name="objImagedView"></param>
+            <param name="netCompatibilityType"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.ObjectType.#ctor(System.String,System.String,System.Drawing.Image,System.Type,System.Boolean)">
+            <summary>
+            конструктор
+            </summary>
+            <param name="objStringedView"></param>
+            <param name="objCaption"></param>
+            <param name="objImagedView"></param>
+            <param name="netCompatibilityType"></param>
+            <param name="EditableInTextBox"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.ObjectType.CompatWith(ICSSoft.STORMNET.FunctionalLanguage.ObjectType)">
+            <summary>
+            Совместим с...
+            </summary>
+            <param name="type">тип</param>
+            <returns>совместим ли</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.ObjectType.CompatWithEqual(ICSSoft.STORMNET.FunctionalLanguage.ObjectType)">
+            <summary>
+            Получить только совпадающие типы
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.ObjectType.SimplificationValue">
+            <summary>
+            упрощение значения
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.ObjectType.UnSimplificationValue">
+            <summary>
+            разупрощение значения
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.ObjectType.ValueToSimpleValue(System.Object)">
+            <summary>
+            Значение в простое значение
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.ObjectType.SimpleValueToValue(System.Object)">
+            <summary>
+            Простое значение в значение
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.ObjectType.NetCompatibilityType">
+            <summary>
+            .NET тип для этого типа
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.ObjectType.EditableInTextBox">
+            <summary>
+            Можно ли его поредактировать в текстбоксе
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.ObjectType.Language">
+            <summary>
+            Язык, в рамках которого определён этот тип
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.SimplificationDelegate">
+            <summary>
+            упрощение
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.VariableDef">
+            <summary>
+            Определение переменной в ограничении (обычно указывает на атрибут в объекте)
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.VariableDef.#ctor">
+            <summary>
+             пустой конструктор
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.VariableDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String,System.String,System.Drawing.Image)">
+            <summary>
+             Определение переменной в ограничении (обычно указывает на атрибут в объекте)
+            </summary>
+            <param name="objType">ObjectType-Тип переменной. (Например, langdef.StringType)</param>
+            <param name="objStringedView">Собственно имя свойства объекта, по которому собираемся строить ограничение</param>
+            <param name="objCaption"></param>
+            <param name="objImagedView"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.VariableDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String,System.Drawing.Image)">
+            <summary>
+             Определение переменной в ограничении (обычно указывает на атрибут в объекте)
+            </summary>
+            <param name="objType">ObjectType-Тип переменной. (Например, langdef.StringType)</param>
+            <param name="objStringedView">Собственно имя свойства объекта, по которому собираемся строить ограничение</param>
+            <param name="objImagedView"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.VariableDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String,System.String)">
+            <summary>
+             Определение переменной в ограничении (обычно указывает на атрибут в объекте)
+            </summary>
+            <param name="objType">ObjectType-Тип переменной. (Например, langdef.StringType)</param>
+            <param name="objStringedView">Собственно имя свойства объекта, по которому собираемся строить ограничение</param>
+            <param name="objCaption"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.VariableDef.#ctor(ICSSoft.STORMNET.FunctionalLanguage.ObjectType,System.String)">
+            <summary>
+             Самый распространённый конструктор, который используется при построении ограничений
+            </summary>
+            <param name="objType">ObjectType-Тип переменной. (Например, langdef.StringType)</param>
+            <param name="objStringedView">Собственно имя свойства объекта, по которому собираемся строить ограничение</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.VariableDef.#ctor(System.Type,System.String,System.String,ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef)">
+            <summary>
+             Определение переменной в ограничении (обычно указывает на атрибут в объекте)
+            </summary>
+            <param name="baseType"></param>
+            <param name="property"></param>
+            <param name="objCaption"></param>
+            <param name="ldef"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.VariableDef.#ctor(System.Type,System.String,ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef)">
+            <summary>
+             Определение переменной в ограничении (обычно указывает на атрибут в объекте)
+            </summary>
+            <param name="baseType"></param>
+            <param name="property"></param>
+            <param name="ldef"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.VariableDef.ToSimpleValue">
+            <summary>
+             вместо сериализации
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.VariableDef.ExtraTypeResolver">
+            <summary>
+            Делегат для получения типа по его имени в методе SimpleValueToDataObject
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.VariableDef.FromSimpleValue(System.Object,ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef)">
+            <summary>
+            вместо десериализации (вполне может выдать Exception, если тип переменной не будет найден в ldef или Type.GetType((string[])value[0]), так что try-catch снаружи крайне рекомендуется)
+            </summary>
+            <param name="value">Массив в который закручен наш VariableDef</param>
+            <param name="ldef">Определение языка</param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.VariableDef.Language">
+            <summary>
+             Язык описания ограничений
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.TypeResolveDelegate">
+            <summary>
+            Делегат для получения типа по его имени (используется в особых случаях, когда стандартные методы почему-то не помогают)
+            </summary>
+            <param name="typeName">Имя типа.</param>
+            <returns> Сформированный по имени тип </returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.Function">
+            <summary>
+            Ограничивающая функция. Применяется для задания ограничений.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.Function.FuncName">
+            <summary>
+            Константа для сериализации
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.#ctor">
+            <summary>
+            Пустой конструктор по-умолчанию
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.#ctor(ICSSoft.STORMNET.FunctionalLanguage.FunctionDef,System.Object[])">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="functionDefinition">Определение функции</param>
+            <param name="parameters">Параметры</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Конструктор для десереализации
+            </summary>
+            <param name="info"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Сериализация
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.GetLimitProperties">
+            <summary>
+            Получить свойства, участвующие в ограничении
+            </summary>
+            <returns>Список свойств из ограничения</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.Equals(ICSSoft.STORMNET.FunctionalLanguage.Function)">
+            <summary>
+            Переопределяем сравнение функций (сравнение идёт по функциям, получаемым методом ToString).
+            </summary>
+            <param name="otherFunction"> Функция, с которой идёт сравнение на равенство текущей функции. </param>
+            <returns> True, если значение ToString совпало. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.Equals(System.Object)">
+            <summary>
+            Переопределяем сравнение функций (сравнение идёт по функциям, получаемым методом ToString).
+            </summary>
+            <param name="obj"> Объект, с которым идёт сравнение (если это не Function, то вернётся null). </param>
+            <returns> True, если значение ToString совпало. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.GetHashCode">
+            <summary>
+            Получаем хэш-код (для реализации переопределения сравнения хэш-код считается от значения, получаемого через ToString).
+            </summary>
+            <returns> Получаемый хэш-код. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.op_Equality(ICSSoft.STORMNET.FunctionalLanguage.Function,ICSSoft.STORMNET.FunctionalLanguage.Function)">
+            <summary>
+            Переопределеяем оператор "==", чтобы сравнение шло как ToString.
+            </summary>
+            <param name="function1"> Первая сравниваемая функция. </param>
+            <param name="function2"> Вторая сравниваемая функция. </param>
+            <returns> Являются ли ToString функций равными. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.op_Inequality(ICSSoft.STORMNET.FunctionalLanguage.Function,ICSSoft.STORMNET.FunctionalLanguage.Function)">
+            <summary>
+            Переопределеяем оператор "!=", чтобы сравнение шло как ToString.
+            </summary>
+            <param name="function1"> Первая сравниваемая функция. </param>
+            <param name="function2"> Вторая сравниваемая функция. </param>
+            <returns> Являются ли ToString функций неравными. </returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.ToString">
+            <summary>
+            в строку
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.ToUserFriendlyString">
+            <summary>
+            Преобразование функции в строковое дружественное пользователю представление
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.CheckWithSubFolders">
+            <summary>
+            Проверка с вложениями
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.CheckWithOutSubFolders">
+            <summary>
+            Проверка без вложений
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.CheckWithoutSubFoldersSafetly">
+            <summary>
+            Проверка совместимости функции и параметров без выбрасывания эксепшенов
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.Clone">
+            <summary>
+            Клонирование функции
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.CheckSafetly(System.Boolean)">
+            <summary>
+            Проверить соответствие функции и параметров без выбрасывания эксепшенов
+            </summary>
+            <param name="checkSubFunctions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.Function.Check(System.Boolean)">
+            <summary>
+             Проверка функции с выбросом эксепшенов
+            </summary>
+            <param name="checkSubFunctions"></param>
+            <exception cref="T:ICSSoft.STORMNET.FunctionalLanguage.NullFunctionDefException"></exception>
+            <exception cref="T:ICSSoft.STORMNET.FunctionalLanguage.ParameterCountException"></exception>
+            <exception cref="T:ICSSoft.STORMNET.FunctionalLanguage.UncompatibleParameterTypeException"></exception>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.Function.FunctionDef">
+            <summary>
+            Определение функции
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.Function.Parameters">
+            <summary>
+            Массив параметров
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.NullFunctionDefException">
+            <summary>
+            Не задано определение функции.
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.ParameterCountException">
+            <summary>
+            Неверное количество параметров
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegateConvertValueToQueryValueString">
+            <summary>
+            делегат для конвертации значений на FunctionalLanguage в значения на SQL
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegatePutIdentifierToBrackets">
+            <summary>
+            Делегат для помещения в скобки-кавычки идентификаторов
+            </summary>
+            <param name="identifier">идентификатор</param>
+            <returns>идентификатор в скобках-кавычках</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef">
+            <summary>
+            Определение языка ограничений для конструирования ограничивающих функций
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.StormMainObjectKey">
+            <summary>
+            Константа для STORMMainObjectKey
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.#ctor">
+            <summary>
+            Конструктор по-умолчанию (CaseInsensitive берётся из конфига с флагом CaseInsensitive).
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.#ctor(System.Boolean)">
+            <summary>
+            Конструктор с параметром.
+            </summary>
+            <param name="caseInsensitive">Нечувствительный к регистру (если true, то для строк при сравнении делаем UPPER).</param>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef._lngDef">
+            <summary>
+            Описане языка - одно на всех
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.GetObjectTypeForNetType(System.Type)">
+            <summary>
+            Получатель ObjectType по .NET-типу (для DataObject возвращается тип первичного ключа)
+            </summary>
+            <param name="type">.NET-тип</param>
+            <returns>ObjectType-тип</returns>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.OptimizeINOperator">
+            <summary>
+             Если в IN будет участвовать один объект, то IN заменится на =
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.SQLTranslSwitch(System.Object,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegateConvertValueToQueryValueString,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegatePutIdentifierToBrackets)">
+            <summary>
+            Перенаправитель для обработки параметров: value is Function или value is VariableDef или это просто значение
+            </summary>
+            <param name="value"></param>
+            <param name="convertValue"></param>
+            <param name="convertIdentifier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.SQLTranslVariable(ICSSoft.STORMNET.FunctionalLanguage.VariableDef,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegateConvertValueToQueryValueString,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegatePutIdentifierToBrackets)">
+            <summary>
+            Транслировать в SQL переменную
+            </summary>
+            <param name="value">переменная</param>
+            <param name="convertValue">конвертилка выражений</param>
+            <param name="convertIdentifier">помещатель в скобки-кавычки</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.SQLTranslFunction(ICSSoft.STORMNET.FunctionalLanguage.Function,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegateConvertValueToQueryValueString,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegatePutIdentifierToBrackets)">
+            <summary>
+            Транслировать в SQL функцию
+            </summary>
+            <param name="value">функция</param>
+            <param name="convertValue">конвертилка выражений</param>
+            <param name="convertIdentifier">помещатель в скобки-кавычки</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.TrimAndUnbrake(System.String)">
+            <summary>
+            Убирает все пробелы и удаляет скобки с краев, например, "(( ( 0))" превратится в "(0"
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.AddUpper(System.Object,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegateConvertValueToQueryValueString,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegatePutIdentifierToBrackets)">
+            <summary>
+            В зависимости от CaseInsensitive добавляет UPPER
+            </summary>
+            <param name="value">Function.Parameters[i]</param>
+            <param name="convertValue"></param>
+            <param name="convertIdentifier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.ToSQLString(ICSSoft.STORMNET.FunctionalLanguage.Function,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegateConvertValueToQueryValueString,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegatePutIdentifierToBrackets)">
+            <summary>
+            Преобразовать значение в SQL строку
+            </summary>
+            <param name="function">Функция</param>
+            <param name="convertValue">делегат для преобразования констант</param>
+            <param name="convertIdentifier">делегат для преобразования идентификаторов</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.GetExistingVariableNames(ICSSoft.STORMNET.FunctionalLanguage.Function)">
+            <summary>
+            return null;
+            </summary>
+            <param name="f"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.InitializeDefs">
+            <summary>
+            Инициализация определений функций языка (для определения связки количества и типов параметров)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.LanguageDef">
+            <summary>
+            Получить описание языка
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.CaseInsensitive">
+            <summary>
+            Чувствительность к регистру при построении ограничений (зависит от настроек БД. Если БД чувствительна к регистру, то нужно вправлять это свойство чтобы получить не чувтвительную к регистру систему)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.BoolType">
+            <summary>
+             "Boolean","Логический"
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.NumericType">
+            <summary>
+             "Numeric","Число"
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.StringType">
+            <summary>
+             "String","Текст"
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.DateTimeType">
+            <summary>
+             "DateTime","Дата/Время"
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.GuidType">
+            <summary>
+             "Guid","Идентификатор"
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.QueryType">
+            <summary>
+             "Query","SQL выражение"
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcIsNull">
+            <summary>
+             ISNULL
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcNOT">
+            <summary>
+             NOT
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcOR">
+            <summary>
+             OR
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcAND">
+            <summary>
+             AND
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcPlus">
+            <summary>
+             +
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcSub">
+            <summary>
+             *
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcMinus">
+            <summary>
+             -
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcDiv">
+            <summary>
+             /
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcLike">
+            <summary>
+             LIKE
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcL">
+            <summary>
+             &lt;
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcLEQ">
+            <summary>
+             &lt;=
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcEQ">
+            <summary>
+             =
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcGEQ">
+            <summary>
+             &gt;=
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcG">
+            <summary>
+             &gt;
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcNEQ">
+            <summary>
+             &lt;&gt;
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcIN">
+            <summary>
+             IN
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcBETWEEN">
+            <summary>
+             BETWEEN
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.funcSQL">
+            <summary>
+             SQL
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.QueryLikeAnyStringSymbol">
+            <summary>
+             Получить символ, отвечающий за любую строку (по-умолчанию это "%")
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.QueryLikeAnyCharacterSymbol">
+            <summary>
+            Получить символ, отвечающий за любой символ в строке (по-умолчанию это "_")
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.UserLikeAnyStringSymbol">
+            <summary>
+             Символ, который вводит пользователь, чтобы обозначить любую строку (по-умолчанию это "*")
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.UserLikeAnyCharacterSymbol">
+            <summary>
+            Символ, который вводит пользователь, чтобы обозначить любой символ (по-умолчанию это "_")
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.MaxFuncID">
+            <summary>
+            Количество функций (return 100)
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.FunctionalLanguage.UncompatibleParameterTypeException">
+            <summary>
+            Несовместимые типы параметров.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.FunctionalLanguage.UncompatibleParameterTypeException.ParameterNum">
+            <summary>
+            Номер параметра
+            </summary>
+        </member>
+    </members>
+</doc>

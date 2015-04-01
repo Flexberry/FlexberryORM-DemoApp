@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.Business.DRDataService</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Business.DRDataService">
+            <summary>
+            Сервис данных для грязного чтения (MSSQLServer).
+            </summary>
+        </member>
+    </members>
+</doc>

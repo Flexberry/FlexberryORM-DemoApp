@@ -1,0 +1,872 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExternalLangDef</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit">
+            <summary>
+            Объектная модель ограничения, редактируемого на форме задания ограничений. Включает в себя как ограничивающую функцию, так и определения параметров. Тут же живёт сериализованное описание кастом-формы для ввода параметров.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.Name">
+            <summary>
+            Имя ограничения.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.HotKeyData">
+            <summary>
+            Горячая клавиша.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.Parameters">
+            <summary>
+            Определения параметров.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.Function">
+            <summary>
+            Ограничивающая функция.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.FormCustomizeString">
+            <summary>
+            Сериализованная настройка кастом-формы ввода параметров.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.paramValues">
+            <summary>
+            Значения параметров.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.LookUps">
+            <summary>
+            Лукапы (используются при подъёме универсальной кастом-формы ввода параметров).
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.#ctor(System.String,ICSSoft.STORMNET.Windows.Forms.ParameterDef[],ICSSoft.STORMNET.FunctionalLanguage.Function,System.String,System.Collections.SortedList,System.Collections.Hashtable)">
+            <summary>
+            конструктор с параметрами
+            </summary>
+            <param name="Name"></param>
+            <param name="pars"></param>
+            <param name="Func"></param>
+            <param name="custString"></param>
+            <param name="pV"></param>
+            <param name="LookUps"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.#ctor">
+            <summary>
+            конструктор
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.ToSimpleValue(ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef)">
+            <summary>
+            псевдосериализация FunctionalLanguageDef в object[]
+            </summary>
+            <param name="fld"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.FromSimpleValue(System.Object,ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef)">
+            <summary>
+            псевдодесериализация object[] в FunctionalLanguageDef
+            В конце выполняется синхронизация параметров функции с параметрами текущего объекта (параметрам функции присвоятся параметры текущего объекта при совпадении имён)
+            </summary>
+            <param name="Value"></param>
+            <param name="fld"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.SyncParams(ICSSoft.STORMNET.FunctionalLanguage.Function)">
+            <summary>
+            Синхронизация параметров функции с параметрами текущего объекта (параметрам функции присвоятся параметры текущего объекта при совпадении имён)
+            </summary>
+            <param name="func"></param>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.lastEdobj">
+            <summary>
+            Последний отредактированный объект данных (TODO: первый претендент на рефакторинг, т.к. по сути является глобальной переменной, которую непонятно кто и где использует)
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.InnerParameter">
+            <summary>
+            !!! Сделано public для обратной совместимости, не трогать.
+            Параметр, который передаётся в универсальную форму редактирования параметров при её подъёме, который попадает в заголовок зависимой формы.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.ConvertFunction(ICSSoft.STORMNET.FunctionalLanguage.Function)">
+            <summary>
+            !!! Сделано public для обратной совместимости, использовать аккуратно.
+            Берутся значения из глобальной переменной edobj и впариваются в функцию вместо параметров
+            TODO: переписать эту функцию так, чтобы глобальная переменная не применялась и сделать её публичной
+            </summary>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.AddFunctionByOR(ICSSoft.STORMNET.FunctionalLanguage.Function)">
+            <summary>
+            Добавляет переданное ограничение к текущему через OR
+            </summary>
+            <param name="addedFunction">Добавляемая функция</param>
+            <returns>Новая функция</returns>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.edobj">
+            <summary>
+            !!! Сделано public для обратной совместимости, не трогать.
+            Глобальная переменная, через которую передаются значения параметров, указанные пользователем в ограничивающую функцию. 
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.EndEdit">
+            <summary>
+            !!! Сделано public для обратной совместимости, не трогать.
+            Глобальный флаг, который будет выставлен, когда редактирование значений параметров закончено
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.ue_SaveEvent(System.Object,ICSSoft.STORMNET.UI.SaveEventArgs)">
+            <summary>
+            !!! Сделано public для обратной совместимости, не трогать.
+            Обработчик события сохранения кастом-формы задания параметров ограничения.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.ue_EditorStoppedEvent(System.Object,ICSSoft.STORMNET.UI.EditorStoppedEventArgs)">
+            <summary>
+            !!! Сделано public для обратной совместимости, не трогать.
+            Обработчик события остановки кастом-формы задания параметров ограничения.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.AdvansedLimit.ue_CancelEvent(System.Object,ICSSoft.STORMNET.UI.CancelEventArgs)">
+            <summary>
+            !!! Сделано public для обратной совместимости, не трогать.
+            Событие отмены редактирования параметров ограничений на кастом-форме.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Windows.Forms.ParameterDef">
+            <summary>
+             Определение параметра
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Windows.Forms.STORMAdvLimit">
+            <summary>
+            Объектное представление сохраняемого в базе ограничения. Не содержит логики по десериализации. Сам класс знает только сериализованное Value. Десериализуется в своё нехранимое свойство AdvLimit при помощи AdvLimitComponent.
+            </summary>
+            <summary>
+            Объектное представление сохраняемого в базе ограничения.
+            Не содержит логики по десериализации.
+            Сам класс знает только сериализованное Value.
+            Десериализуется в своё нехранимое свойство AdvLimit при помощи AdvLimitComponent.
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.STORMAdvLimit.fAdvLimit">
+            <summary>
+            десериализованное AdvansedLimit
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.STORMAdvLimit.AdvLimit">
+            <summary>
+            Десериализованное AdvansedLimit. Десериализацией занимается AdvLimitComponent
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.STORMAdvLimit.HotKeyData">
+            <summary>
+            горячая клавиша
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.STORMAdvLimit.Name">
+            <summary>
+            имя
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.STORMAdvLimit.User">
+            <summary>
+            пользователь, чьё это ограничение
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.STORMAdvLimit.Module">
+            <summary>
+            модуль (генерируется AdvLimitComponent-ом, содержит информацию о форме и о списковом контроле)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.STORMAdvLimit.Value">
+            <summary>
+            Сериализованное ограничение
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.STORMAdvLimit.Published">
+            <summary>
+            Опубликовано ли
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.CheckConditionFunctionForExistDetails(ICSSoft.STORMNET.FunctionalLanguage.FunctionDef)">
+            <summary>
+             Проверка доступных операций сравнения для двух детейловых свойств.
+            </summary>
+            <param name="func">Функция сравнения, для проверки.</param>
+            <returns>Результат проверки.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.CheckParametersFunctionForExistDetails(ICSSoft.STORMNET.FunctionalLanguage.Function)">
+            <summary>
+            Проверка доступных параметров при сравнении детейловых свойств.
+            </summary>
+            <param name="function">Функция ExistDetails.</param>
+            <returns>Результат проверки.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.GetSelectForDetailVariableDef(ICSSoft.STORMNET.Windows.Forms.DetailVariableDef,System.Collections.Generic.List{System.String})">
+            <summary>
+            Получить запрос по детейловому представлению с добавлением поля агригатора.
+            </summary>
+            <param name="dvd">Детейл</param>
+            <param name="additionalProperties">
+            Свойства, которые необходимо добавить в представление при вычитки детейлов.
+            </param>
+            <returns>Сформированный запрос по представлению детейла.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.#ctor">
+            <summary>
+            Внимание, используйте конструктор только в исключительных ситуациях
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.m_objDataService">
+            <summary>
+            сервис данных для построения подзапросов
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.ExtraTypeResolver">
+            <summary>
+            Делегат для получения типа по его имени в методе SimpleValueToDataObject
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.DataServiceSwitch(ICSSoft.STORMNET.FunctionalLanguage.Function,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegateConvertValueToQueryValueString,ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegatePutIdentifierToBrackets)">
+            <summary>
+            Функция возвращает СУБД-зависимые выражения
+            </summary>
+            <param name="value"></param>
+            <param name="convertValue"></param>
+            <param name="convertIdentifier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.WrapNull(System.Object,System.String,System.String)">
+            <summary>
+            Метод для обертки в "case when" IS NULL и NOT IS NULL, добавлен для иключения дублирования кода
+            </summary>
+            <param name="param"></param>
+            <param name="translSwitch"></param>
+            <param name="wrapper"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef">
+            <summary>
+            Статический ExternalLangDef, используется для получения функций.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.DataService">
+            <summary>
+            Сервис данных для построения подзапросов. Если не указан, используется DataServiceProvider.DataService
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcYearPart">
+            <summary>
+             Функция, возвращающая год от DateTime
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcMonthPart">
+            <summary>
+             Функция, возвращающая месяц(число) от DateTime
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcDayPart">
+            <summary>
+             Функция, возвращающая день от DateTime
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcHHPart">
+            <summary>
+             Функция, возвращающая часы от DateTime
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcMIPart">
+            <summary>
+             Функция, возвращающая минуты от DateTime
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcDATEDIFF">
+            <summary>
+             Функция, вычисляющая разность дат. Возвращает число, которое зависит от единицы измерения разности.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcOnlyDate">
+            <summary>
+             Функция, возвращающая только дату от DateTime
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcDayOfWeek">
+            <summary>
+             Функция, возвращающая день недели числом (1 = Понедельник, ..., 7 = Воскресенье)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcDayOfWeekZeroBased">
+            <summary>
+             Функция, возвращающая день недели числом (0 = Воскресенье, 1 = Понедельник, ...)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcCurrentUser">
+            <summary>
+             Функция, возвращающая имя текущего пользователя (FriendlyName)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcOnlyTime">
+            <summary>
+             Функция, возвращающая только время в формате чч:мм:сс от DateTime
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcDateAdd">
+            <summary>
+            Полный аналог SQL функции dateadd
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcImplication">
+            <summary>
+             Импликация (Если-то)
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcExistExact">
+            <summary>
+            Существуют только такие {}, что {}.	Вернет True, если все объекты удовлетворяют условию, в противном случае - False. Условие - только одна функция.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcExistAllExact">
+            <summary>
+            Существуют все только такие {}, что {} И {} И {} ...	Вернет True, если все объекты удовлетворяют условию, в противном случае - False. В качестве условия могут выступать множество функций, которые автоматически соединятся конъюнкцией. Внимание! Допустимых видов функций только две: "=" (funcEQ) и "СРЕДИ ЗНАЧЕНИЙ()" (FuncIN).
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcExist">
+            <summary>
+            Существуют такие {}, что {}	Вернет True, если найдется хотя бы один объект, удовлетворяющий условию, в противном случае - False. Условие - только одна функция.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcExistDetails">
+            <summary>
+            Существуют такие {} и такие {}, что {}	Вернет True, если найдется хотя бы один объект, удовлетворяющий условию, в противном случае - False. Условие - только одна функция.
+            Необходимо для сравнения свойств двух детейлов разных композиционных связей.
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcExistAll">
+            <summary>
+            Существуют все такие {}, что {} И {} И {} ...	Вернет True, если найдется хотя бы один объект, удовлетворяющий условию, в противном случае - False. В качестве условия могут выступать множество функций, которые автоматически соединятся конъюнкцией. Внимание! Допустимых видов функций только две: "=" (funcEQ) и "СРЕДИ ЗНАЧЕНИЙ()" (FuncIN).
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcMaxWithLimit">
+            <summary>
+            Максимальное значение в детейле с ограничением
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcMinWithLimit">
+            <summary>
+            Минимальное значение в детейле с ограничением
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcAvgWithLimit">
+            <summary>
+            Среднее значение в детейле с ограничением
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcSumWithLimit">
+            <summary>
+            Сумма значений в детейле с ограничением
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcCountWithLimit">
+            <summary>
+            Количество значений в детейле с ограничением
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcCount">
+            <summary>
+            Количество
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcNotIsNull">
+            <summary>
+            Не пусто
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcDaysInMonth">
+            <summary>
+            Количество дней в месяце
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcToUpper">
+            <summary>
+            Привести строку к верхнему регистру
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcToLower">
+            <summary>
+            Привести строку к нижнему регистру
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.funcToChar">
+            <summary>
+            Привести значение к строке
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.DateFormats">
+            <summary>
+            Класс, хранящий коды форматов строкового представления даты.
+            Все коды перечислены здесь: http://msdn.microsoft.com/ru-ru/library/ms187928.aspx
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.DateFormats.GetOracleDateFormat(System.Int32)">
+            <summary>
+            Возвращает маску даты для Oracle, соответстующую коду
+            </summary>
+            <param name="format">Код формата MSSQL</param>
+            <returns>Маска Oracle</returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.DateFormats.German">
+            <summary>
+            Дата в формате DD.MM.YY
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.DateFormats.GermanWithCentury">
+            <summary>
+            Дата в формате DD.MM.YYYY
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.DateFormats.Month">
+            <summary>
+            Дата в формате DD Mon YY
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.DateFormats.MonthWithCentury">
+            <summary>
+            Дата в формате DD Mon YYYY
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.DateFormats.Time">
+            <summary>
+            Время в формате HH.MM.SS
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef">
+            <summary>
+            Определение переменной ограничения, предназначенное для описания детейлов.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef.GetPossibleDynamicView(System.String,System.Type)">
+            <summary>
+            Получение представления по его имени и типу.
+            Если представление не найдено среди статических, то есть возможность сформировать его динамически (используется в редакторе ограничений).
+            </summary>
+            <param name="viewName">Имя представления, которое требуется получить.</param>
+            <param name="dataObjectType">Тип объекта, для которого нужно представление.</param>
+            <returns>Найденное/сформированное представление или <c>null</c>.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef.FromSimpleValue(System.Object,ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef)">
+            <summary>
+            Извлекаем описание ограничения на детейл из особой сериализованной структуры.
+            </summary>
+            <param name="value">Фрагмент сериализованной структуры, соответствующий описанию детейла.</param>
+            <param name="ldef">Описание языка, посредством которого в том числе идёт расшифровка.</param>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Windows.Forms.IViewGenerator">
+            <summary>
+            Интерфейс для генерации представления.
+            Используется для работы в детейлах с динамическими представлениями.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Windows.Forms.IViewGenerator.GenerateView(System.String,System.Type)">
+            <summary>
+            Метод для получения представления, если традиционным методом представление получить не удалось.
+            Используется при интергпретации в редакторе ограничений.
+            </summary>
+            <param name="viewName">Имя предпочитаемого представления.</param>
+            <param name="dataObjectType">Имя типа, для которого нужно получить представление.</param>
+            <returns> Сформированное представление. </returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Windows.Forms.TypeResolveDelegate">
+            <summary>
+            Делегат для получения типа по его имени (используется в особых случаях, когда стандартные методы почему-то не помогают).
+            </summary>
+            <param name="typeName">Имя типа.</param>
+            <returns>Сформированный по имени тип.</returns>
+        </member>
+        <member name="T:AdvLimit.ExternalLangDef.ViewPropertyAppender">
+            <summary>
+            Класс для расширения представления свойствами, используемыми в ограничении, но отсутствующими в указанном представлении. 
+            </summary>
+        </member>
+        <member name="M:AdvLimit.ExternalLangDef.ViewPropertyAppender.EnrichDetailViewInLimitFunction(ICSSoft.STORMNET.FunctionalLanguage.Function,ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            В представления <see cref="T:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef"/> функции ограничения добавляются недостающие свойства, если это необходимо.
+            </summary>
+            <param name="function">Функция ограничения, которая может содержать <see cref="T:ICSSoft.STORMNET.Windows.Forms.DetailVariableDef"/>.</param>
+            <param name="dataService">Сервис данных, через который будет вестись обработка вычислимых свойств.</param>
+        </member>
+        <member name="M:AdvLimit.ExternalLangDef.ViewPropertyAppender.EnrichDetailViewList(System.Collections.Generic.List{AdvLimit.ExternalLangDef.ViewPropertyAppender.DetailVariableDefContainer},ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            В представления переданных структур, соответствующих детейлам, добавляются недостающие свойства, если это необходимо.
+            </summary>
+            <param name="detailList">Список структур, соответствующих детейлам.</param>
+            <param name="dataService">Сервис данных, через который будет вестись обработка вычислимых свойств.</param>
+        </member>
+        <member name="M:AdvLimit.ExternalLangDef.ViewPropertyAppender.FindPropertiesUsedInFunction(ICSSoft.STORMNET.FunctionalLanguage.Function,System.Collections.Generic.List{System.String},System.Collections.Generic.List{AdvLimit.ExternalLangDef.ViewPropertyAppender.DetailVariableDefContainer})">
+            <summary>
+            Метод поиска всех используемых в параметрах функции свойств (включая описание детейлов).
+            </summary>
+            <param name="function">Функция, в которой производится поиск свойств.</param>
+            <param name="variableList">Список найденных в функции свойств.</param>
+            <param name="detailList">Список найденных описаний детейлов.</param>
+        </member>
+        <member name="M:AdvLimit.ExternalLangDef.ViewPropertyAppender.GetPropertiesUsedInExpression(System.String,System.Type,ICSSoft.STORMNET.Business.SQLDataService)">
+            <summary>
+            Получить список свойст, используемых DataServiceExpression.
+            </summary>
+            <param name="property"></param>
+            <returns>Cписок уникальных свойств, найденных в DataServiceExpression.</returns>
+        </member>
+        <member name="M:AdvLimit.ExternalLangDef.ViewPropertyAppender.GetViewWithPropertiesUsedInFunction(ICSSoft.STORMNET.View,ICSSoft.STORMNET.FunctionalLanguage.Function,ICSSoft.STORMNET.Business.IDataService)">
+            <summary>
+            Создание представление с добавление свойств из ограничения, которые используются в ограничении, но отсутствуют в указанном в качестве параметра ограничении. При поиске отсутствующих в представлении свойств учитываются также и выражения для вычислимых свойств.   
+            </summary>
+            <param name="view">Представление, но основе которого создается новое представление, возвращаемое в качестве результата метода.</param>
+            <param name="function">Функция, среди параметров которой происходит поиск неиспользуемых в представлении свойств.</param>
+            <param name="dataService">Сервис данных необходим для правильного выбора выражения для вычислимиого свойства.</param>
+            <returns>Представление, в которое добавлены необходимые свойства.</returns>
+        </member>
+        <member name="T:AdvLimit.ExternalLangDef.ViewPropertyAppender.DetailVariableDefContainer">
+            <summary>
+            Вспомогательный класс для хранения переменных, связанных с детейлами/псевдодетейлами.
+            На настоящий момент данная структура не используется, поскольку не стоит задачи расширения представления детейлами.
+            </summary>
+        </member>
+        <member name="F:AdvLimit.ExternalLangDef.ViewPropertyAppender.DetailVariableDefContainer.DetailVariableDefValue">
+            <summary>
+            Описание связи с детейлом/псевдодетейлом.
+            </summary>
+        </member>
+        <member name="F:AdvLimit.ExternalLangDef.ViewPropertyAppender.DetailVariableDefContainer.DetailVariablesList">
+            <summary>
+            Используемые в ограничении на детейлы свойства детейлов.
+            </summary>
+        </member>
+        <member name="F:AdvLimit.ExternalLangDef.ViewPropertyAppender.DetailVariableDefContainer.DetailDetailsList">
+            <summary>
+            Используемые в ограничении на детейлы ограничения на детейлы более низкого порядка.
+            </summary>
+        </member>
+        <member name="M:AdvLimit.ExternalLangDef.ViewPropertyAppender.DetailVariableDefContainer.CreateDetailVariableDefContainersList(System.Collections.Generic.List{ICSSoft.STORMNET.Windows.Forms.DetailVariableDef})">
+            <summary>
+            На базе списка DetailVariableDef создать список DetailVariableDefContainer.
+            </summary>
+            <param name="detailVariableDefsList">Список DetailVariableDef.</param>
+            <returns>Полученный список DetailVariableDefContainer.</returns>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.CancelEventArgs">
+            <summary>
+            Аргументы к событию отмены действия инициатора
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.DataObjectPropEventArg">
+            <summary>
+            параметры событий форм с передачей объекта данных и имени свойства
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.DataObjectEventArgs">
+            <summary>
+            Общий предок параметров событий форм с передаче объектов данных
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.ContActionEventArgs">
+            <summary>
+            Общий предок агрументов событий форм
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.ContActionEventArgs.#ctor(System.String)">
+            <summary>
+            Общий предок агрументов событий форм
+            </summary>
+            <param name="contpath"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.ContActionEventArgs.#ctor(System.String,System.Object)">
+            <summary>
+            Общий предок агрументов событий форм
+            </summary>
+            <param name="contpath"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UI.ContActionEventArgs.contpath">
+            <summary>
+            путь на форме к контролу, который инициировал событие
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UI.ContActionEventArgs.tag">
+            <summary>
+            дополнительный параметр
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.DataObjectEventArgs.#ctor(ICSSoft.STORMNET.DataObject,System.String)">
+            <summary>
+            Общий предок параметров событий форм с передаче объектов данных
+            </summary>
+            <param name="dataobject"></param>
+            <param name="contpath"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.DataObjectEventArgs.#ctor(ICSSoft.STORMNET.DataObject,System.String,System.Object)">
+            <summary>
+            Общий предок параметров событий форм с передаче объектов данных
+            </summary>
+            <param name="dataobject"></param>
+            <param name="contpath"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UI.DataObjectEventArgs.dataobject">
+            <summary>
+            объект данных
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.DataObjectPropEventArg.#ctor(System.String,ICSSoft.STORMNET.DataObject,System.String)">
+            <summary>
+            параметры событий форм с передачей объекта данных и имени свойства
+            </summary>
+            <param name="propertyname"></param>
+            <param name="dataobject"></param>
+            <param name="contpath"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.DataObjectPropEventArg.#ctor(System.String,ICSSoft.STORMNET.DataObject,System.String,System.Object)">
+            <summary>
+            параметры событий форм с передачей объекта данных и имени свойства
+            </summary>
+            <param name="propertyname"></param>
+            <param name="dataobject"></param>
+            <param name="contpath"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UI.DataObjectPropEventArg.propertyname">
+            <summary>
+            имя свойства
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.CancelEventArgs.#ctor(System.String,ICSSoft.STORMNET.DataObject,System.String)">
+            <summary>
+            Аргументы к событию отмены действия инициатора
+            </summary>
+            <param name="propertyname">имя свойства, если передавать не требуется - ""</param>
+            <param name="dataobject">объект данных</param>
+            <param name="contpath">некоторый путь на форме-инициаторе, для идентификации объекта, в случае, когда форма редактирует одновременно несколько объектов данных</param>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.CancelEventArgsHandler">
+            <summary>
+            Делегат для события отмены действия инициатора
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.CloseEventArgs">
+            <summary>
+            Аргументы к событию закрытия UI-зависимой Win-формы
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.CloseEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Аргументы к событию закрытия UI-зависимой Win-формы
+            </summary>
+            <param name="Cancel">true вызывает отмену закрытия формы</param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UI.CloseEventArgs.Cancel">
+            <summary>
+            Отмена закрытия формы
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.CloseEventArgsHandler">
+            <summary>
+            Делегат для события закрытия UI-зависимой Win-формы
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.BeforeCloseEventHandler">
+            <summary>
+            Делегат для события, происходящего перед закрытием UI-зависимой Win-формы
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.DeleteEventArgs">
+            <summary>
+            Аргументы для события удаления объекта
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.DeleteEventArgs.#ctor(ICSSoft.STORMNET.DataObject[],System.String)">
+            <summary>
+            Аргументы для события удаления объектов данных
+            </summary>
+            <param name="dataobjects">объекты данных</param>
+            <param name="contpath">некоторый путь на форме-инициаторе</param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UI.DeleteEventArgs.DataObjects">
+            <summary>
+            Объекты данных
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.DeleteEventArgsHandler">
+            <summary>
+            Делегат для событий удаления объектов данных
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.EditEventArgs">
+            <summary>
+            Аргументы для события редактирования объекта у инициатора
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.EditEventArgs.#ctor(System.String,ICSSoft.STORMNET.DataObject,System.String)">
+            <summary>
+            Аргументы для события редактирования объекта у инициатора
+            </summary>
+            <param name="propertyname">Имя свойства (в случае редактирования свойства объекта)</param>
+            <param name="dataobject">объект данных, подлежащий редактированию</param>
+            <param name="contpath">некоторый путь на форме-инициаторе</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.EditEventArgs.#ctor(System.String,ICSSoft.STORMNET.DataObject,System.String,System.Object)">
+            <summary>
+            Аргументы для события редактирования объекта у инициатора
+            </summary>
+            <param name="propertyname">Имя свойства (в случае редактирования свойства объекта)</param>
+            <param name="dataobject">объект данных, подлежащий редактированию</param>
+            <param name="contpath">некоторый путь на форме-инициаторе</param>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.EditEventArgsHandler">
+            <summary>
+            Делегат для событий редактирования объекта
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.EditorStoppedEventArgs">
+            <summary>
+            Аргументы для событий остановки работы редактора
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.EditorStoppedEventArgsHandler">
+            <summary>
+            Делегат для событий остановки работы редактора
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.InitiatorStoppedEventArgs">
+            <summary>
+            Аргументы к событию остановки инициатора
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.InitiatorStoppedEventArgsHandler">
+            <summary>
+            Делегат для события остановки инициатора
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.PrintInitiatorStoppedEventArgsHandler">
+            <summary>
+            Делегат для события остановки инициатора
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.NewEventArgs">
+            <summary>
+            Аргументы для события создания
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.NewEventArgs.#ctor(System.Type,System.String)">
+            <summary>
+            Аргументы для события создания
+            </summary>
+            <param name="type">тип создаваемого объекта данных</param>
+            <param name="contpath">путь на форме-инициаторе</param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.NewEventArgs.#ctor(System.Type,System.String,System.Object)">
+            <summary>
+            Аргументы для события создания
+            </summary>
+            <param name="type">тип создаваемого объекта данных</param>
+            <param name="contpath">путь на форме-инициаторе</param>
+            <param name="tag"> </param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UI.NewEventArgs.type">
+            <summary>
+            Тип создаваемого объекта данных
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UI.NewEventArgs.tag">
+            <summary>
+            тег
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.NewEventArgsHandler">
+            <summary>
+            Делегат для событий создания объектов
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.PrintInitiatorStoppedEventArgs">
+            <summary>
+            Аргументы к событию остановки инициатора
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.PrintPreviewEventArgs">
+            <summary>
+            Аргументы события предварительного просмотра
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.UI.PrintPreviewEventArgs.m_arrObjects">
+            <summary>
+            объекты данных для печати
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.UI.PrintPreviewEventArgs.m_sContPath">
+            <summary>
+            путь к контролу на форме, который инициировал печать
+            </summary>
+        </member>
+        <member name="F:ICSSoft.STORMNET.UI.PrintPreviewEventArgs.m_sPropertyName">
+            <summary>
+            имя свойства
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.PrintPreviewEventArgs.#ctor(ICSSoft.STORMNET.DataObject[],System.String,System.String)">
+            <summary>
+            Аргументы события предварительного просмотра
+            </summary>
+            <param name="objects"></param>
+            <param name="contpath"></param>
+            <param name="propertyname"></param>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UI.PrintPreviewEventArgs.objects">
+            <summary>
+            объекты данных для печати
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UI.PrintPreviewEventArgs.contpath">
+            <summary>
+            путь к контролу на форме, который инициировал печать
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.UI.PrintPreviewEventArgs.propertyname">
+            <summary>
+            имя свойства
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.PrintPreviewEventArgsHandler">
+            <summary>
+            Делегат для событий предварительного просмотра
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.SaveEventArgs">
+            <summary>
+            Аргументы события сохранения объекта данных
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.UI.SaveEventArgs.#ctor(System.String,ICSSoft.STORMNET.DataObject,System.String)">
+            <summary>
+            Аргументы события сохранения объекта данных
+            </summary>
+            <param name="propertyname">имя свойства объекта данных при частичном редактировании объекта</param>
+            <param name="dataobject">редактируемый объект данных</param>
+            <param name="contpath">путь на форме-инициаторе</param>       
+        </member>
+        <member name="T:ICSSoft.STORMNET.UI.SaveEventArgsHandler">
+            <summary>
+            Делегат события сохранения объекта данных
+            </summary>
+        </member>
+    </members>
+</doc>

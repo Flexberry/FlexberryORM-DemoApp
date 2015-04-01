@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.Drawing</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Drawing.IconNotFoundException">
+            <summary>
+            картинка не найдена
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Drawing.IconProvider">
+            <summary>
+            класс предоставлялщик иконок
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.GetIconFromAssembly(System.Type,System.String)">
+            <summary>
+            получить иконку из сборки (embeded)
+            </summary>
+            <param name="type">тип по которму брать сборку</param>
+            <param name="iconFileName">имя иконки</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.GetIconFromAssembly(System.Reflection.Assembly,System.String)">
+            <summary>
+            получить иконку из сборки (embeded)
+            </summary>
+            <param name="asm">сборка</param>
+            <param name="iconFileName">имя иконки</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.GetIconFromAssemblyByFullName(System.Reflection.Assembly,System.String)">
+            <summary>
+            получить иконку из сборки (embeded) по полному пути
+            </summary>
+            <param name="asm">сборка</param>
+            <param name="iconFileName">имя иконки</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.#cctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.GetIcon(System.Object,System.Boolean)">
+            <summary>
+            получить иконку по ключу
+            </summary>
+            <param name="key">ключ</param>
+            <param name="IsLarge">размер</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.AddIcon(System.Object,System.Drawing.Icon,System.Drawing.Icon)">
+            <summary>
+            добавить иконки
+            </summary>
+            <param name="key"></param>
+            <param name="LargeIcon"></param>
+            <param name="SmallIcon"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.AddIcon(System.Object,System.String,System.Int32)">
+            <summary>
+            добавить иконку
+            </summary>
+            <param name="key"></param>
+            <param name="fileName"></param>
+            <param name="IconIndex"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.RemoveIcon(System.Object)">
+            <summary>
+            удалить иконку
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.GetIcon(System.String,System.Int32,System.Boolean)">
+            <summary>
+            получить иконку из файла
+            </summary>
+            <param name="fileName"></param>
+            <param name="IconIndex"></param>
+            <param name="bIsLargeIcon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.GetTransparantedBitMap(System.Drawing.Icon)">
+            <summary>
+            преобразовать иконку к прозрачному битмапу
+            </summary>
+            <param name="icon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.GetTransparantedBitMap(System.Drawing.Icon,System.Drawing.Point)">
+            <summary>
+            преобразовать иконку к прозрачному битмапу
+            </summary>
+            <param name="icon"></param>
+            <param name="transparentPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.IconProvider.GetIconForFile(System.String)">
+            <summary>
+            получить иконку для файла
+            </summary>
+            <param name="FileName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Drawing.IconProvider.ClosedFolder">
+            <summary>
+            стандартная иконка закрытый папок
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Drawing.IconProvider.OpenedFolder">
+            <summary>
+            стандартная иконка открытый папок
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Drawing.IconProvider.List">
+            <summary>
+            список
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Drawing.IconProvider.LargeIconSize">
+            <summary>
+            Размер больших иконок
+            </summary>
+        </member>
+        <member name="P:ICSSoft.STORMNET.Drawing.IconProvider.SmallIconSize">
+            <summary>
+            Размер маленьких иконок
+            </summary>
+        </member>
+        <member name="T:ICSSoft.STORMNET.Drawing.GraphUtils">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Drawing.GraphUtils.DrawImage(System.Drawing.Graphics,System.Drawing.Image,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            нарисовать картинку
+            </summary>
+            <param name="g">на чем</param>
+            <param name="image">что </param>
+            <param name="positionX">где.икс</param>
+            <param name="positionY">где.игрек</param>
+            <param name="NotGrayed">посерять-непосерять</param>
+        </member>
+    </members>
+</doc>

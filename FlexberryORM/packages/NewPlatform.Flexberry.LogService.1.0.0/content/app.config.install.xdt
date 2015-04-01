@@ -1,0 +1,81 @@
+﻿<?xml version="1.0"?>
+
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+
+  <!--При вставке элемента необходимо, чтобы узел, куда он вставляется, обязательно присутствовал, иначе преобразование завершится с ошибкой.
+      Поэтому, на случай, если узла configSections изначально не было, вставляем свой.-->
+  <configSections xdt:Transform="Insert" />
+
+  <!--Вставка информации о секции конфигурации.-->
+  <configSections xdt:Locator="Condition(not(section[@name=&quot;log4net&quot;]))">
+    <section name="log4net" type="System.Configuration.IgnoreSectionHandler" xdt:Transform="Insert" />
+  </configSections>
+
+  <!--Если узел configSections уже был до нас, то их будет больше одного, и нам нужно удалить лишние (вставленные нами заведомо располагаются после ранее присутствующего,
+      так как вставка осуществляется в конец коллекции узлов.).-->
+  <configSections xdt:Locator="Condition(position() &gt; 1)" xdt:Transform="RemoveAll" />
+
+  <!--Вставляем свою секцию log4net.-->
+  <log4net xdt:Transform="Insert">
+    <appender name="AdoNetAppender" type="ICSSoft.STORMNET.CustomAdoNetAppender">
+      <bufferSize value="0" />
+      <connectionType
+        value="System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+      <ConnectionStringName value="DefConnStr" />
+      <commandText
+        value="INSERT INTO [ApplicationLog] ([primaryKey],[Timestamp],[ThreadName],[Category],[ProcessName],[Message],[FormattedMessage]) VALUES (NEWID(), @log_date, @thread, @log_level, @logger, @message, @exception)" />
+      <parameter>
+        <parameterName value="@log_date" />
+        <dbType value="DateTime" />
+        <layout type="log4net.Layout.RawTimeStampLayout" />
+      </parameter>
+      <parameter>
+        <parameterName value="@thread" />
+        <dbType value="String" />
+        <size value="512" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%thread" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@log_level" />
+        <dbType value="String" />
+        <size value="64" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%level" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@logger" />
+        <dbType value="String" />
+        <size value="512" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%logger" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@message" />
+        <dbType value="String" />
+        <size value="2500" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%message" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@exception" />
+        <dbType value="String" />
+        <size value="4000" />
+        <layout type="log4net.Layout.ExceptionLayout" />
+      </parameter>
+    </appender>
+    <root>
+      <level value="DEBUG" />
+      <appender-ref ref="AdoNetAppender" />
+    </root>
+  </log4net>
+  
+  <!--Если до нас секция log4net уже была, т.е. log4net сконфигурирован, наша секция не нужна, надо ее удалить. Она заведомо будет после присутствующей ранее, так как вставка осуществляется 
+      в конец коллекции узлов. Поэтому оставляем только секцию с позицией 1.-->
+  <log4net xdt:Locator="Condition(position() &gt; 1)" xdt:Transform="RemoveAll" />
+
+</configuration>

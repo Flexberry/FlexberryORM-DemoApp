@@ -71,10 +71,11 @@
       <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.Services.CurrentUserService">
-      <HintPath>..\..\packages\NewPlatform.Flexberry.CurrentUserService.1.0.0-alpha1\lib\net35\ICSSoft.Services.CurrentUserService.dll</HintPath>
+      <HintPath>..\..\packages\NewPlatform.Flexberry.CurrentUserService.1.0.0\lib\net35\ICSSoft.Services.CurrentUserService.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ICSSoft.Services.UnityFactory">
-      <HintPath>..\..\packages\NewPlatform.Flexberry.UnityFactory.1.0.0-alpha2\lib\net35\ICSSoft.Services.UnityFactory.dll</HintPath>
+      <HintPath>..\..\packages\NewPlatform.Flexberry.UnityFactory.1.0.0\lib\net35\ICSSoft.Services.UnityFactory.dll</HintPath>
     </Reference>
     <Reference Include="ICSSoft.STORMNET.BF">
       <HintPath>..\..\packages\NewPlatform.Flexberry.ORM.1.0.0-alpha1\lib\net35\ICSSoft.STORMNET.BF.dll</HintPath>

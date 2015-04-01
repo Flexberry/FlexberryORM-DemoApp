@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICSSoft.STORMNET.Business.PostgresDataService</name>
+    </assembly>
+    <members>
+        <member name="T:ICSSoft.STORMNET.Business.PostgresDataService">
+            <summary>
+            DataService for PostgreSQL.
+            </summary>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.PostgresDataService.GetConnection">
+            <summary>
+            Get connection by Npgsql.
+            </summary>
+            <returns>Database connection.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.PostgresDataService.PutIdentifierIntoBrackets(System.String)">
+            <summary>
+            Put identifier into brackets.
+            </summary>
+            <param name="identifier">Identifier in query.</param>
+            <returns>Identifier with brackets.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.PostgresDataService.GetConvertToTypeExpression(System.Type,System.String)">
+            <summary>
+            Conversation value to type.
+            </summary>
+            <param name="valType">Value type for conversation.</param>
+            <param name="value">Value for conversation.</param>
+            <returns>Converted value.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.PostgresDataService.ConvertSimpleValueToQueryValueString(System.Object)">
+            <summary>
+            Convert simple value to query value string.
+            </summary>
+            <param name="value">Value for conversation.</param>
+            <returns>Converted value.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.PostgresDataService.ConvertValueToQueryValueString(System.Object)">
+            <summary>
+            Convert simple value to query value string.
+            </summary>
+            <param name="value">Value for conversation.</param>
+            <returns>Converted value.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.PostgresDataService.ReadFirst(System.String,System.Object@,System.Int32)">
+            <summary>
+            Reading data from database: read first part.
+            </summary>
+            <param name="query">The SQL query.</param>
+            <param name="state">The reading state.</param>
+            <param name="loadingBufferSize">The loading buffer size.</param>
+            <returns>The readed objects from database.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.PostgresDataService.GetIfNullExpression(System.String[])">
+            <summary>
+            Get if null expression.
+            </summary>
+            <param name="identifiers">The identifiers.</param>
+            <returns>If null expression.</returns>
+        </member>
+        <member name="M:ICSSoft.STORMNET.Business.PostgresDataService.GenerateSQLSelect(ICSSoft.STORMNET.Business.LoadingCustomizationStruct,System.Boolean)">
+            <summary>
+            The generate sql select.
+            </summary>
+            <param name="customizationStruct">The customization struct.</param>
+            <param name="optimized">Get optimized query (view only with properties from limitation).</param>
+            <returns>The SQL SELECT Query for customization struct.</returns>
+        </member>
+    </members>
+</doc>
