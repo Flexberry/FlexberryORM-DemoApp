@@ -1,0 +1,10 @@
+*.suo
+
+FlexberryORM/CDLIB/BusinessServers/CDLIB(BusinessServers).xml
+FlexberryORM/CDLIB/Objects/CDLIB(Objects).xml
+FlexberryORM/CustomDB/Objects/CustomDB(Objects).xml
+FlexberryORM/MultiDetail/Objects/MultiDetail(Objects).xml
+FlexberryORM/MultiMaster/Objects/MultiMaster(Objects).xml
+
+/**/bin/*
+/**/obj/*
