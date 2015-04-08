@@ -435,7 +435,7 @@
             long loadObjectTime = stopwatch.ElapsedMilliseconds;
             stopwatch.Restart();
 
-            aggregator.Prototyping2(true); // This makes every object new
+            aggregator.Prototype(true); // This makes every object new
 
             stopwatch.Stop();
             long prototypingTime = stopwatch.ElapsedMilliseconds;

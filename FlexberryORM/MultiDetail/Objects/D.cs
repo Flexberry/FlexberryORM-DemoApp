@@ -49,14 +49,13 @@ namespace IIS.CDLIB
         private string fS5;
         
         // *** Start programmer edit section *** (D CustomMembers)
+
         /// <summary>
-        /// Прототипизация
+        /// Прототипизация.
         /// </summary>
         /// <param name="withDetails"></param>
-        public virtual void Prototyping2(bool withDetails)
+        public virtual void Prototype(bool withDetails)
         {
-
-            //__PrototypeKey = __PrimaryKey;
             KeyGenerator.Generate(this, null);
             this.SetStatus(ObjectStatus.Created);
             this.SetLoadingState(LoadingState.NotLoaded);
@@ -71,7 +70,7 @@ namespace IIS.CDLIB
                     if (proptype.IsSubclassOf(typeof(DetailArray)))
                     {
                         foreach (D detobj in (DetailArray)Information.GetPropValueByName(this, property))
-                            detobj.Prototyping2(withDetails);
+                            detobj.Prototype(withDetails);
                     }
                 }
             }
