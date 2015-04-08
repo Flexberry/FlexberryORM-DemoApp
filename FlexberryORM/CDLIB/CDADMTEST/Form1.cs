@@ -37,7 +37,7 @@
                                 new SampleData() { SampleCaption = "4. How to do something at persistence moment", WikiUrl = "http://wiki.ics.perm.ru/DataObjectUpdateHookExample.ashx", SampleAction = BasicUpdateObjectHook },
                                 new SampleData() { SampleCaption = "5. Create a dataobject with multiple details", WikiUrl = "http://wiki.ics.perm.ru/CreateMultipleDetailsExample.ashx", SampleAction = BasicCreateObjectWithMultipleDetails },
                                 new SampleData() { SampleCaption = "6. Load a dataobject with multiple details", WikiUrl = "http://wiki.ics.perm.ru/LoadMultipleDetailsExample.ashx", SampleAction = BasicLoadObjectWithMultipleDetails },
-                                new SampleData() { SampleCaption = "7. Prototyping", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic7 },
+                                new SampleData() { SampleCaption = "7. Prototyping", WikiUrl = "http://wiki.ics.perm.ru/PrototypingExample.ashx", SampleAction = BasicPrototyping },
                                 new SampleData() { SampleCaption = "8. Create master objects for multimaster example", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic8 },
                                 new SampleData() { SampleCaption = "9. Create 10000 dataobjects", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic9 },
                                 new SampleData() { SampleCaption = "10. Loading many objects", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic10 } 
@@ -409,13 +409,13 @@
         /// </param>
         private void button9_Click_1(object sender, EventArgs e)
         {
-            Basic7();
+            BasicPrototyping();
         }
 
         /// <summary>
         /// 7. Prototyping.
         /// </summary>
-        public static void Basic7()
+        public static void BasicPrototyping()
         {
             Console.WriteLine("7. Prototyping.");
             IDataService dataService = DataServiceProvider.DataService;
