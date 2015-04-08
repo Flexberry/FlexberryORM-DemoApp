@@ -57,7 +57,7 @@ namespace OrmSampleUnitTest
 
             // Act.
             Form1.BasicInstantiateAndPersist();
-            Form1.Basic2();
+            Form1.BasicLoadAndAlter();
             Form1.Basic3();
             Form1.Basic4();
             Form1.Basic5();

@@ -32,7 +32,7 @@
                             SampleCaption = "1. Basic", WikiUrl = "http://wiki.flexberry.net", ChildNodesList = new List<SampleData>()
                             {
                                 new SampleData() { SampleCaption = "1. How to instantiate dataobjects and persist into DB", WikiUrl = "http://wiki.ics.perm.ru/InstantiateAndPersistObjectsExample.ashx", SampleAction = BasicInstantiateAndPersist },
-                                new SampleData() { SampleCaption = "2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic2 },
+                                new SampleData() { SampleCaption = "2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state", WikiUrl = "http://wiki.ics.perm.ru/LoadAndAlterObjects.ashx", SampleAction = BasicLoadAndAlter },
                                 new SampleData() { SampleCaption = "3. How to load a set of dataobjects in specific view, limitation, quantity, etc.", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic3 },
                                 new SampleData() { SampleCaption = "4. How to do something at persistence moment", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic4 },
                                 new SampleData() { SampleCaption = "5. Create a dataobject with multiple details", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic5 },
@@ -181,13 +181,13 @@
         /// </param>
         private void button2_Click(object sender, EventArgs e)
         {
-            Basic2();
+            BasicLoadAndAlter();
         }
 
         /// <summary>
         /// 2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state.
         /// </summary>
-        public static void Basic2()
+        public static void BasicLoadAndAlter()
         {
             Console.WriteLine("2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state.");
 
