@@ -73,6 +73,9 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="ICSSoft.Services.UnityFactory">
+      <HintPath>..\..\packages\NewPlatform.Flexberry.UnityFactory.1.0.0\lib\net35\ICSSoft.Services.UnityFactory.dll</HintPath>
+    </Reference>
     <Reference Include="ICSSoft.STORMNET.BF">
       <HintPath>..\..\packages\NewPlatform.Flexberry.ORM.1.0.0\lib\net35\ICSSoft.STORMNET.BF.dll</HintPath>
     </Reference>
@@ -120,6 +123,9 @@
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="LogService">
+      <HintPath>..\..\packages\NewPlatform.Flexberry.LogService.1.0.0\lib\net35\LogService.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
