@@ -36,7 +36,7 @@
                                 new SampleData() { SampleCaption = "3. How to load a set of dataobjects in specific view, limitation, quantity, etc.", WikiUrl = "http://wiki.ics.perm.ru/LoadLimitationExample.ashx", SampleAction = BasicLimitation },
                                 new SampleData() { SampleCaption = "4. How to do something at persistence moment", WikiUrl = "http://wiki.ics.perm.ru/DataObjectUpdateHookExample.ashx", SampleAction = BasicUpdateObjectHook },
                                 new SampleData() { SampleCaption = "5. Create a dataobject with multiple details", WikiUrl = "http://wiki.ics.perm.ru/CreateMultipleDetailsExample.ashx", SampleAction = BasicCreateObjectWithMultipleDetails },
-                                new SampleData() { SampleCaption = "6. Load a dataobject with multiple details", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic6 },
+                                new SampleData() { SampleCaption = "6. Load a dataobject with multiple details", WikiUrl = "http://wiki.ics.perm.ru/LoadMultipleDetailsExample.ashx", SampleAction = BasicLoadObjectWithMultipleDetails },
                                 new SampleData() { SampleCaption = "7. Prototyping", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic7 },
                                 new SampleData() { SampleCaption = "8. Create master objects for multimaster example", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic8 },
                                 new SampleData() { SampleCaption = "9. Create 10000 dataobjects", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic9 },
@@ -368,13 +368,13 @@
         /// </param>
         private void button21_Click(object sender, EventArgs e)
         {
-            Basic6();
+            BasicLoadObjectWithMultipleDetails();
         }
 
         /// <summary>
         /// 6. Loading.
         /// </summary>
-        public static void Basic6()
+        public static void BasicLoadObjectWithMultipleDetails()
         {
             Console.WriteLine("6. Loading a dataobject with multiple details.");
             
