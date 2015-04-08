@@ -59,7 +59,7 @@ namespace OrmSampleUnitTest
             Form1.BasicInstantiateAndPersist();
             Form1.BasicLoadAndAlter();
             Form1.BasicLimitation();
-            Form1.Basic4();
+            Form1.BasicUpdateObjectHook();
             Form1.Basic5();
             Form1.Basic6();
             Form1.Basic7();

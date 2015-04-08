@@ -34,7 +34,7 @@
                                 new SampleData() { SampleCaption = "1. How to instantiate dataobjects and persist into DB", WikiUrl = "http://wiki.ics.perm.ru/InstantiateAndPersistObjectsExample.ashx", SampleAction = BasicInstantiateAndPersist },
                                 new SampleData() { SampleCaption = "2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state", WikiUrl = "http://wiki.ics.perm.ru/LoadAndAlterObjects.ashx", SampleAction = BasicLoadAndAlter },
                                 new SampleData() { SampleCaption = "3. How to load a set of dataobjects in specific view, limitation, quantity, etc.", WikiUrl = "http://wiki.ics.perm.ru/LoadLimitationExample.ashx", SampleAction = BasicLimitation },
-                                new SampleData() { SampleCaption = "4. How to do something at persistence moment", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic4 },
+                                new SampleData() { SampleCaption = "4. How to do something at persistence moment", WikiUrl = "http://wiki.ics.perm.ru/DataObjectUpdateHookExample.ashx", SampleAction = BasicUpdateObjectHook },
                                 new SampleData() { SampleCaption = "5. Create a dataobject with multiple details", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic5 },
                                 new SampleData() { SampleCaption = "6. Load a dataobject with multiple details", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic6 },
                                 new SampleData() { SampleCaption = "7. Prototyping", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic7 },
@@ -290,13 +290,13 @@
         /// </param>
         private void button7_Click(object sender, EventArgs e)
         {
-            Basic4();
+            BasicUpdateObjectHook();
         }
 
         /// <summary>
         /// 4. How to do something at persistence moment.
         /// </summary>
-        public static void Basic4()
+        public static void BasicUpdateObjectHook()
         {
             Console.WriteLine("4. How to do something at persistence moment.");
             IDataService dataService = DataServiceProvider.DataService;
