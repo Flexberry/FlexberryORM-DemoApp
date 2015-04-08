@@ -31,7 +31,7 @@
                         { 
                             SampleCaption = "1. Basic", WikiUrl = "http://wiki.flexberry.net", ChildNodesList = new List<SampleData>()
                             {
-                                new SampleData() { SampleCaption = "1. How to instantiate dataobjects and persist into DB", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic1 },
+                                new SampleData() { SampleCaption = "1. How to instantiate dataobjects and persist into DB", WikiUrl = "http://wiki.ics.perm.ru/InstantiateAndPersistObjectsExample.ashx", SampleAction = BasicInstantiateAndPersist },
                                 new SampleData() { SampleCaption = "2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic2 },
                                 new SampleData() { SampleCaption = "3. How to load a set of dataobjects in specific view, limitation, quantity, etc.", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic3 },
                                 new SampleData() { SampleCaption = "4. How to do something at persistence moment", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic4 },
@@ -72,13 +72,13 @@
         /// </param>
         private void button1_Click(object sender, EventArgs e)
         {
-            Basic1();
+            BasicInstantiateAndPersist();
         }
 
         /// <summary>
         /// 1. How to instantiate dataobjects and persist into DB.
         /// </summary>
-        public static void Basic1()
+        public static void BasicInstantiateAndPersist()
         {
             Console.WriteLine("1. How to instantiate dataobjects and persist into DB.");
 
@@ -86,83 +86,72 @@
             // -----------------------------------
 
             // You can instantiate dataobjects as usual. Let's create several countries, persons, discs, etc.
-            Country ctr1 = new Country();
-            ctr1.Name = "Greece";
-            Country ctr2 = new Country();
-            ctr2.Name = "USA";
-            Country ctr3 = new Country();
-            ctr3.Name = "Ireland";
+            Country country1 = new Country { Name = "Greece" };
+            Country country2 = new Country { Name = "USA" };
+            Country country3 = new Country { Name = "Ireland" };
 
-            Person prs1 = new Person();
-            prs1.LastName = "Johnson";
-            prs1.FirstName = "John";
-            Person prs2 = new Person();
-            prs2.LastName = "McLaren";
-            prs2.FirstName = "Alice";
+            Person person1 = new Person { LastName = "Johnson", FirstName = "John" };
+            Person person2 = new Person { LastName = "McLaren", FirstName = "Alice" };
 
-            Publisher pblshr1 = new Publisher();
-            pblshr1.Name = "First Publisher";
-            pblshr1.Country = ctr1;
+            Publisher publisher1 = new Publisher { Name = "First Publisher", Country = country1 };
 
-            Publisher pblshr2 = new Publisher();
-            pblshr2.Name = "Second Publisher";
-            pblshr2.Country = ctr2;
+            Publisher publisher2 = new Publisher { Name = "Second Publisher", Country = country2 };
 
-            CDDA cdda = new CDDA();
-            cdda.Publisher = pblshr1;
-            cdda.Name = "Strange music";
-            cdda.Price = new Dollar(0, 87);
+            CDDA cdda = new CDDA
+                            {
+                                Publisher = publisher1, Name = "Strange music", Price = new Dollar(0, 87)
+                            };
 
             // There is a creation of composited dataobjects (they acts as a part of aggregation dataobject).
             cdda.Track.Add(new Track()
             {
                 Name = "My strange love",
-                Author = prs1,
-                Singer = prs2,
+                Author = person1,
+                Singer = person2,
                 Length = new Random().Next(100, 600)
             });
             cdda.Track.Add(new Track()
             {
                 Name = "Stupid is as stupid does",
-                Author = prs2,
-                Singer = prs1,
+                Author = person2,
+                Singer = person1,
                 Length = new Random().Next(100, 600)
             });
             cdda.Track.Add(new Track()
             {
                 Name = "Save my life",
-                Author = prs2,
-                Singer = prs1,
+                Author = person2,
+                Singer = person1,
                 Length = new Random().Next(100, 600)
             });
 
             CDDD cddd = new CDDD();
-            cddd.Publisher = pblshr2;
+            cddd.Publisher = publisher2;
             cddd.Name = "Old software";
             cddd.Capacity = 640;
             cddd.Price = new Dollar(1, 52);
 
-            List<ICSSoft.STORMNET.DataObject> objstoupdlist = new List<ICSSoft.STORMNET.DataObject>();
+            List<ICSSoft.STORMNET.DataObject> objectsToUpdate = new List<ICSSoft.STORMNET.DataObject>();
 
             for (int i = 0; i < 5; i++)
             {
                 DVD dvd = new DVD();
-                dvd.Publisher = pblshr1;
+                dvd.Publisher = publisher1;
                 dvd.Name = string.Format("Movie {0}", i);
                 dvd.Capacity = i * 100;
                 dvd.Price = new Dollar(2, 66);
-                objstoupdlist.Add(dvd);
+                objectsToUpdate.Add(dvd);
             }
 
-            // Just put all the objects that needs to be persisted in one array. 
-            objstoupdlist.AddRange(new ICSSoft.STORMNET.DataObject[]
+            // Just put all the objects that needs to be persisted into one array. 
+            objectsToUpdate.AddRange(new ICSSoft.STORMNET.DataObject[]
             {
-                ctr1, ctr2, ctr3, prs1, prs2, pblshr1, pblshr2, cdda, cddd
+                country1, country2, country3, person1, person2, publisher1, publisher2, cdda, cddd
             });
 
             try
             {
-                ICSSoft.STORMNET.DataObject[] objstoupd = objstoupdlist.ToArray();
+                ICSSoft.STORMNET.DataObject[] objectsToUpdateArray = objectsToUpdate.ToArray();
 
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
@@ -170,7 +159,7 @@
                 // DataServiceProvider.DataService creates data service from app.config. Look at keys: DataServiceType, CustomizationStrings
                 // Flexberry ORM persists dataobjects according to their statuses. Flexberry automatically resolves dependencies between dataobjects. All queries runs in one transaction. 
                 // 1 UpdateObjects call = 1 DB transaction.
-                DataServiceProvider.DataService.UpdateObjects(ref objstoupd);
+                DataServiceProvider.DataService.UpdateObjects(ref objectsToUpdateArray);
 
                 stopwatch.Stop();
                 Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMilliseconds);
