@@ -60,7 +60,7 @@ namespace OrmSampleUnitTest
             Form1.BasicLoadAndAlter();
             Form1.BasicLimitation();
             Form1.BasicUpdateObjectHook();
-            Form1.Basic5();
+            Form1.BasicCreateObjectWithMultipleDetails();
             Form1.Basic6();
             Form1.Basic7();
             Form1.Basic8();

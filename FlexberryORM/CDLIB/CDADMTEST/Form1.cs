@@ -35,7 +35,7 @@
                                 new SampleData() { SampleCaption = "2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state", WikiUrl = "http://wiki.ics.perm.ru/LoadAndAlterObjects.ashx", SampleAction = BasicLoadAndAlter },
                                 new SampleData() { SampleCaption = "3. How to load a set of dataobjects in specific view, limitation, quantity, etc.", WikiUrl = "http://wiki.ics.perm.ru/LoadLimitationExample.ashx", SampleAction = BasicLimitation },
                                 new SampleData() { SampleCaption = "4. How to do something at persistence moment", WikiUrl = "http://wiki.ics.perm.ru/DataObjectUpdateHookExample.ashx", SampleAction = BasicUpdateObjectHook },
-                                new SampleData() { SampleCaption = "5. Create a dataobject with multiple details", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic5 },
+                                new SampleData() { SampleCaption = "5. Create a dataobject with multiple details", WikiUrl = "http://wiki.ics.perm.ru/CreateMultipleDetailsExample.ashx", SampleAction = BasicCreateObjectWithMultipleDetails },
                                 new SampleData() { SampleCaption = "6. Load a dataobject with multiple details", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic6 },
                                 new SampleData() { SampleCaption = "7. Prototyping", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic7 },
                                 new SampleData() { SampleCaption = "8. Create master objects for multimaster example", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic8 },
@@ -331,13 +331,13 @@
         /// </param>
         private void button9_Click(object sender, EventArgs e)
         {
-            Basic5();
+            BasicCreateObjectWithMultipleDetails();
         }
 
         /// <summary>
         /// 5. Create.
         /// </summary>
-        public static void Basic5()
+        public static void BasicCreateObjectWithMultipleDetails()
         {
             Console.WriteLine("5. Create a dataobject with multiple details.");
 
