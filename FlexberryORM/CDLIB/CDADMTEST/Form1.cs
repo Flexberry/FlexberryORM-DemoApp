@@ -43,7 +43,7 @@
                                 new SampleData() { SampleCaption = "10. Loading many objects", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic10 }
                             }
                         },
-                        new SampleData()
+                        new SampleData
                         {
                             SampleCaption = "2. Standard", ChildNodesList = new List<SampleData>
                             {
@@ -56,15 +56,23 @@
                                 new SampleData { SampleCaption = "7. How to change storage type", SampleAction = Standard7, WikiUrl = "http://wiki.ics.perm.ru/switching_storages_and_storage_types.ashx" }
                             }
                         },
-                        new SampleData() 
-                        { 
-                            SampleCaption = "3. Advanced", ChildNodesList = new List<SampleData>()
+                        new SampleData
+                        {
+                            SampleCaption = "3. Advanced", ChildNodesList = new List<SampleData>
                             {
+                                new SampleData { SampleCaption = "1. Custom data service", SampleAction = null, WikiUrl = "" },
+                                new SampleData { SampleCaption = "2. Advanced \"BusinessServing\"", SampleAction = null, WikiUrl = "" },
+                                new SampleData { SampleCaption = "3. Catching and replacement of query", SampleAction = null, WikiUrl = "" },
+                                new SampleData { SampleCaption = "4. Advanced limitation", SampleAction = null, WikiUrl = "" },
+                                new SampleData { SampleCaption = "5. Working with views", SampleAction = Advanced5, WikiUrl = "http://wiki.ics.perm.ru/advanced_working_with_views.ashx" },
+                                new SampleData { SampleCaption = "6. How to change primary key type and algorithm", SampleAction = null, WikiUrl = "" },
+                                new SampleData { SampleCaption = "7. How to update a dataobject that wasn't read before", SampleAction = null, WikiUrl = "" }
                             }
                         }
                     }
                 }
             };
+
             samplesControl1.SelectedSample = samplesControl1.SampleDataList[0];
         }
 
@@ -571,11 +579,11 @@
             Console.WriteLine("Read comments in code under this button!");
         }
 
-        private void button16_Click(object sender, EventArgs e)
+        private void Advanced5()
         {
             // Advanced working with views.
 
-            // 1. You can create a view dynamically. 
+            // 1. You can create a view dynamically.
             // If you need to create a view "in code", just use one of following:
             // a. Use default view constructor, then fill properties:
             ICSSoft.STORMNET.View dynaview = new ICSSoft.STORMNET.View(); // Create an empty view.
@@ -607,8 +615,9 @@
                 ));
         }
 
-
-
-
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Advanced5();
+        }
     }
 }
