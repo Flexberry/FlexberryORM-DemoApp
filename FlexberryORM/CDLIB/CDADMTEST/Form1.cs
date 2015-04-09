@@ -40,13 +40,20 @@
                                 new SampleData() { SampleCaption = "7. Prototyping", WikiUrl = "http://wiki.ics.perm.ru/PrototypingExample.ashx", SampleAction = BasicPrototyping },
                                 new SampleData() { SampleCaption = "8. Create master objects for multimaster example", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic8 },
                                 new SampleData() { SampleCaption = "9. Create 10000 dataobjects", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic9 },
-                                new SampleData() { SampleCaption = "10. Loading many objects", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic10 } 
+                                new SampleData() { SampleCaption = "10. Loading many objects", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic10 }
                             }
                         },
-                        new SampleData() 
-                        { 
-                            SampleCaption = "2. Standard", ChildNodesList = new List<SampleData>()
+                        new SampleData()
+                        {
+                            SampleCaption = "2. Standard", ChildNodesList = new List<SampleData>
                             {
+                                new SampleData { SampleCaption = "1. Non stored/calculated properties", SampleAction = Standard1, WikiUrl = "http://wiki.ics.perm.ru/nonstored_calculated_properties.ashx" },
+                                new SampleData { SampleCaption = "2. Views and inheritance", SampleAction = Standard2, WikiUrl = "http://wiki.ics.perm.ru/work_with_views_example.ashx" },
+                                new SampleData { SampleCaption = "3. Inheritance: type usages for master associations", SampleAction = Standard3 },
+                                new SampleData { SampleCaption = "4. Type synonyms", SampleAction = Standard4, WikiUrl = "http://wiki.ics.perm.ru/using_stereotypes_example.ashx" },
+                                new SampleData { SampleCaption = "5. Custom types", SampleAction = Standard5, WikiUrl = "http://wiki.ics.perm.ru/using_custom_types_example.ashx" },
+                                new SampleData { SampleCaption = "6. Custom naming of DB structures", SampleAction = Standard6, WikiUrl = "http://wiki.ics.perm.ru/custom_naming_of_db_structures_example.ashx" },
+                                new SampleData { SampleCaption = "7. How to change storage type", SampleAction = Standard7, WikiUrl = "http://wiki.ics.perm.ru/switching_storages_and_storage_types.ashx" }
                             }
                         },
                         new SampleData() 
@@ -59,20 +66,6 @@
                 }
             };
             samplesControl1.SelectedSample = samplesControl1.SampleDataList[0];
-        }
-
-        /// <summary>
-        /// The button 1_ click.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        private void button1_Click(object sender, EventArgs e)
-        {
-            BasicInstantiateAndPersist();
         }
 
         /// <summary>
@@ -171,20 +164,6 @@
         }
 
         /// <summary>
-        /// The button 2_ click.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        private void button2_Click(object sender, EventArgs e)
-        {
-            BasicLoadAndAlter();
-        }
-
-        /// <summary>
         /// 2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state.
         /// </summary>
         public static void BasicLoadAndAlter()
@@ -218,20 +197,6 @@
             
             stopwatch.Stop();
             Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMilliseconds);
-        }
-
-        /// <summary>
-        /// The button 3_ click.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        private void button3_Click(object sender, EventArgs e)
-        {
-            BasicLimitation();
         }
 
         /// <summary>
@@ -280,20 +245,6 @@
         }
 
         /// <summary>
-        /// The button 7_ click.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        private void button7_Click(object sender, EventArgs e)
-        {
-            BasicUpdateObjectHook();
-        }
-
-        /// <summary>
         /// 4. How to do something at persistence moment.
         /// </summary>
         public static void BasicUpdateObjectHook()
@@ -321,20 +272,6 @@
         }
 
         /// <summary>
-        /// The button 9_ click.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        private void button9_Click(object sender, EventArgs e)
-        {
-            BasicCreateObjectWithMultipleDetails();
-        }
-
-        /// <summary>
         /// 5. Create.
         /// </summary>
         public static void BasicCreateObjectWithMultipleDetails()
@@ -355,20 +292,6 @@
             // All objects will be saved according to composition semantic.
             stopwatch.Stop();
             Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMilliseconds);
-        }
-
-        /// <summary>
-        /// The button 21_ click.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        private void button21_Click(object sender, EventArgs e)
-        {
-            BasicLoadObjectWithMultipleDetails();
         }
 
         /// <summary>
@@ -396,20 +319,6 @@
             Console.WriteLine("Time taken for loading: {0} ms.", stopwatch.ElapsedMilliseconds);
             ormSample.CheckDetailsQty(aggregator, 10); // Ensure we have really had 10 objects per every detailarray.
             Console.WriteLine("CheckDetailsQty: OK.");
-        }
-
-        /// <summary>
-        /// The button 9_ click_1.
-        /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        private void button9_Click_1(object sender, EventArgs e)
-        {
-            BasicPrototyping();
         }
 
         /// <summary>
@@ -449,11 +358,6 @@
             Console.WriteLine("Time taken for loading: {1} ms{0}prototyping: {2} ms{0}persistence: {3} ms.", Environment.NewLine, loadObjectTime, prototypingTime, updateTime);
         }
 
-        private void button23_Click(object sender, EventArgs e)
-        {
-            Basic8();
-        }
-
         /// <summary>
         /// 8. Prepare masters.
         /// </summary>
@@ -474,11 +378,6 @@
             stopwatch.Stop();
 
             Console.WriteLine("Time taken for masters creation: {0} ms.", stopwatch.ElapsedMilliseconds);
-        }
-
-        private void button22_Click(object sender, EventArgs e)
-        {
-            Basic9();
         }
 
         /// <summary>
@@ -529,11 +428,6 @@
             Console.WriteLine("Time taken for creation: {0} ms.", stopwatch.ElapsedMilliseconds);
         }
 
-        private void button24_Click(object sender, EventArgs e)
-        {
-            Basic10();
-        }
-
         /// <summary>
         /// 10. Load.
         /// </summary>
@@ -555,7 +449,7 @@
             Console.WriteLine("Time taken for loading: {0} ms.", stopwatch.ElapsedMilliseconds);
         }
 
-        private void button20_Click(object sender, EventArgs e)
+        private void Standard1()
         {
             // This example shows you how to use calculated properties.
             // Please open Person class in CDLIB(Objects) project, then look at the property FullName.
@@ -568,7 +462,7 @@
             Console.WriteLine("OK.");
         }
 
-        private void button17_Click(object sender, EventArgs e)
+        private void Standard2()
         {
             // Working with views example
 
@@ -581,14 +475,14 @@
             // 2. Getting names for compatible static view for different classes 
             string[] commonviewnames = Information.AllViews(new Type[] { typeof(CDDA), typeof(CDDD) });
 
-
-
-
-
             Console.WriteLine("OK.");
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void Standard3()
+        {
+        }
+
+        private void Standard4()
         {
             // Using stereotypes.
             //-------------------------------
@@ -600,7 +494,7 @@
             // It maps attributes (defined by this type) to C# as System.String, and to SQL as VARCHAR(4000). As example, look at CD.Description attribute.
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void Standard5()
         {
             // Using custom types
             //-------------------------------
@@ -629,7 +523,7 @@
 
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void Standard6()
         {
             // Custom naming of DB structures
             // There are 2 ways to setup naming: by Flexberry or in-code by .NET-attributes. If you choose first way, Flexberry will generate corresponding attributes.
@@ -637,7 +531,7 @@
             // 1. Table name for class (ClassStorage attribute, class scope);
             // 2. Column name for attribute (PropertyStorage attribute, property scope);
             // 3. Primary key column name for dataobject identifier (PrimaryKeyStorage attribute, class scope);
-            // 4. Foreighn key column name for references to master (PropertyStorage attribute, property scope);            
+            // 4. Foreign key column name for references to master (PropertyStorage attribute, property scope);            
             // Example: look at the "DB structures custom naming" diagram:
             // 1. CustomDBOwnClass maps to CustomDBOwn table;
             // 2. CustomDBOwnClass.CustomOwnAttribute maps to CustomOwn column in CustomDBOwn table;
@@ -662,7 +556,7 @@
         }
 
 
-        private void button18_Click(object sender, EventArgs e)
+        private void Standard7()
         {
             // Switching storages and storage types
 
