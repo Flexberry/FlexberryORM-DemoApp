@@ -118,8 +118,9 @@
             set
             {
                 _selectedSample = value;
-                WikiUrlLinkLabel.Text = _selectedSample.WikiUrl;
-                WebBrowserControl.Navigate(_selectedSample.WikiUrl);
+                string wikiUrl = _selectedSample == null ? "http://wiki.flexberry.net" : _selectedSample.WikiUrl;
+                WikiUrlLinkLabel.Text = wikiUrl;
+                WebBrowserControl.Navigate(wikiUrl);
                 LogTextBox.Text = string.Empty;
             }
         }
