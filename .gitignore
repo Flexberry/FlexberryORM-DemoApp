@@ -11,8 +11,3 @@ FlexberryORM/MultiMaster/Objects/MultiMaster(Objects).xml
 
 # NuGet packages cache.
 /**/packages/*
-# Flexberry packages are not present at nuget.org yet.
-!/**/packages/NewPlatform.Flexberry.CurrentUserService.1.0.0
-!/**/packages/NewPlatform.Flexberry.LogService.1.0.0
-!/**/packages/NewPlatform.Flexberry.ORM.1.0.0
-!/**/packages/NewPlatform.Flexberry.UnityFactory.1.0.0
