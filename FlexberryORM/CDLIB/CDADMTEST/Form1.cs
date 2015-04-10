@@ -31,16 +31,13 @@
                         { 
                             SampleCaption = "1. Basic", WikiUrl = "http://wiki.flexberry.net", ChildNodesList = new List<SampleData>()
                             {
-                                new SampleData() { SampleCaption = "1. How to instantiate dataobjects and persist into DB", WikiUrl = "http://wiki.ics.perm.ru/InstantiateAndPersistObjectsExample.ashx", SampleAction = BasicInstantiateAndPersist },
-                                new SampleData() { SampleCaption = "2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state", WikiUrl = "http://wiki.ics.perm.ru/LoadAndAlterObjects.ashx", SampleAction = BasicLoadAndAlter },
-                                new SampleData() { SampleCaption = "3. How to load a set of dataobjects in specific view, limitation, quantity, etc.", WikiUrl = "http://wiki.ics.perm.ru/LoadLimitationExample.ashx", SampleAction = BasicLimitation },
-                                new SampleData() { SampleCaption = "4. How to do something at persistence moment", WikiUrl = "http://wiki.ics.perm.ru/DataObjectUpdateHookExample.ashx", SampleAction = BasicUpdateObjectHook },
-                                new SampleData() { SampleCaption = "5. Create a dataobject with multiple details", WikiUrl = "http://wiki.ics.perm.ru/CreateMultipleDetailsExample.ashx", SampleAction = BasicCreateObjectWithMultipleDetails },
-                                new SampleData() { SampleCaption = "6. Load a dataobject with multiple details", WikiUrl = "http://wiki.ics.perm.ru/LoadMultipleDetailsExample.ashx", SampleAction = BasicLoadObjectWithMultipleDetails },
-                                new SampleData() { SampleCaption = "7. Prototyping", WikiUrl = "http://wiki.ics.perm.ru/PrototypingExample.ashx", SampleAction = BasicPrototyping },
-                                new SampleData() { SampleCaption = "8. Create master objects for multimaster example", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic8 },
-                                new SampleData() { SampleCaption = "9. Create 10000 dataobjects", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic9 },
-                                new SampleData() { SampleCaption = "10. Loading many objects", WikiUrl = "http://wiki.flexberry.net", SampleAction = Basic10 }
+                                new SampleData { SampleCaption = "1. How to instantiate dataobjects and persist into DB", WikiUrl = "http://wiki.ics.perm.ru/InstantiateAndPersistObjectsExample.ashx", SampleAction = BasicInstantiateAndPersist },
+                                new SampleData { SampleCaption = "2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state", WikiUrl = "http://wiki.ics.perm.ru/LoadAndAlterObjects.ashx", SampleAction = BasicLoadAndAlter },
+                                new SampleData { SampleCaption = "3. How to load a set of dataobjects in specific view, limitation, quantity, etc.", WikiUrl = "http://wiki.ics.perm.ru/LoadLimitationExample.ashx", SampleAction = BasicLimitation },
+                                new SampleData { SampleCaption = "4. How to do something at persistence moment", WikiUrl = "http://wiki.ics.perm.ru/DataObjectUpdateHookExample.ashx", SampleAction = BasicUpdateObjectHook },
+                                new SampleData { SampleCaption = "5. Create a dataobject with multiple details", WikiUrl = "http://wiki.ics.perm.ru/CreateMultipleDetailsExample.ashx", SampleAction = BasicCreateObjectWithMultipleDetails },
+                                new SampleData { SampleCaption = "6. Load a dataobject with multiple details", WikiUrl = "http://wiki.ics.perm.ru/LoadMultipleDetailsExample.ashx", SampleAction = BasicLoadObjectWithMultipleDetails },
+                                new SampleData { SampleCaption = "7. Prototyping", WikiUrl = "http://wiki.ics.perm.ru/PrototypingExample.ashx", SampleAction = BasicPrototyping }
                             }
                         },
                         new SampleData
@@ -364,97 +361,6 @@
             long updateTime = stopwatch.ElapsedMilliseconds;
 
             Console.WriteLine("Time taken for loading: {1} ms{0}prototyping: {2} ms{0}persistence: {3} ms.", Environment.NewLine, loadObjectTime, prototypingTime, updateTime);
-        }
-
-        /// <summary>
-        /// 8. Prepare masters.
-        /// </summary>
-        public static void Basic8()
-        {
-            Console.WriteLine("8. Create master objects for multimaster example.");
-
-            // Create master objects for multimaster example.
-            IDataService dataService = DataServiceProvider.DataService;
-            OrmSample ormSample = new OrmSample(dataService);
-            ICSSoft.STORMNET.DataObject[] objstoupd = ormSample.CreateMasterXXs(100);
-
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-
-            dataService.UpdateObjects(ref objstoupd);
-
-            stopwatch.Stop();
-
-            Console.WriteLine("Time taken for masters creation: {0} ms.", stopwatch.ElapsedMilliseconds);
-        }
-
-        /// <summary>
-        /// 9. Create 10000.
-        /// </summary>
-        public static void Basic9()
-        {
-            Console.WriteLine("9. Create 10000.");
-
-            // Create 10000 dataobjects of class Internal.
-            IDataService dataService = DataServiceProvider.DataService;
-            OrmSample ormSample = new OrmSample(dataService);
-            Dictionary<string, MasterBase[]> masterscache = ormSample.LoadMasters(); // Load master dataobjects into a cache
-            RandomStringGenerator rsg = new RandomStringGenerator();
-            Random rndMaster0 = new Random();
-            int cnt = 10000;
-            ICSSoft.STORMNET.DataObject[] objstoupd = new ICSSoft.STORMNET.DataObject[cnt];
-
-            for (int i = 0; i < cnt; i++)
-            {
-                Internal itnl = new Internal();
-                objstoupd[i] = itnl;
-
-                // Fill string properties with random values.
-                for (int j = 0; j < 10; j++)
-                {
-                    Information.SetPropValueByName(itnl, string.Format("S{0}", j), rsg.Generate(200));
-                }
-
-                // Set MasterSpecial property to one of descendants of class Master0 randomly
-                itnl.MasterSpecial =
-                    (Master0)
-                        ormSample.GetRandomMaster(masterscache, string.Format("MasterDerived{0:00}", rndMaster0.Next(1, 3)));
-
-                // Set each master property to randomly selected value of corresponding type.
-                for (int j = 1; j < 13; j++)
-                {
-                    string mastertypename = string.Format("Master{0:00}", j);
-                    Information.SetPropValueByName(itnl, mastertypename, ormSample.GetRandomMaster(masterscache, mastertypename));
-                }
-            }
-
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-
-            dataService.UpdateObjects(ref objstoupd); // Just persists created objects
-            stopwatch.Stop();
-            Console.WriteLine("Time taken for creation: {0} ms.", stopwatch.ElapsedMilliseconds);
-        }
-
-        /// <summary>
-        /// 10. Load.
-        /// </summary>
-        public static void Basic10()
-        {
-            Console.WriteLine("10. Load.");
-
-            // Loading many objects of type Internal (for multimaster example)
-            IDataService dataService = DataServiceProvider.DataService;
-            LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Internal), Internal.Views.FULLInternal_E);
-            // Full set of attributes
-            //LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Internal), "Internal_E"); // S0 and only one attribute in each master
-            lcs.InitDataCopy = false;
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            ICSSoft.STORMNET.DataObject[] internals = dataService.LoadObjects(lcs);
-            //ObjectStringDataView[] sv = dataService.LoadStringedObjectView(';', lcs); //Loading as a string array, without dataobjects instantiation. It N-times faster and useful for UI.
-            stopwatch.Stop();
-            Console.WriteLine("Time taken for loading: {0} ms.", stopwatch.ElapsedMilliseconds);
         }
 
         private void Standard1()
