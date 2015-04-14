@@ -31,26 +31,26 @@
                         { 
                             SampleCaption = "1. Basic", WikiUrl = "http://wiki.flexberry.net", ChildNodesList = new List<SampleData>()
                             {
-                                new SampleData { SampleCaption = "1. How to instantiate dataobjects and persist into DB", WikiUrl = "http://wiki.ics.perm.ru/InstantiateAndPersistObjectsExample.ashx", SampleAction = BasicInstantiateAndPersist },
-                                new SampleData { SampleCaption = "2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state", WikiUrl = "http://wiki.ics.perm.ru/LoadAndAlterObjects.ashx", SampleAction = BasicLoadAndAlter },
-                                new SampleData { SampleCaption = "3. How to load a set of dataobjects in specific view, limitation, quantity, etc.", WikiUrl = "http://wiki.ics.perm.ru/LoadLimitationExample.ashx", SampleAction = BasicLimitation },
-                                new SampleData { SampleCaption = "4. How to do something at persistence moment", WikiUrl = "http://wiki.ics.perm.ru/DataObjectUpdateHookExample.ashx", SampleAction = BasicUpdateObjectHook },
-                                new SampleData { SampleCaption = "5. Create a dataobject with multiple details", WikiUrl = "http://wiki.ics.perm.ru/CreateMultipleDetailsExample.ashx", SampleAction = BasicCreateObjectWithMultipleDetails },
-                                new SampleData { SampleCaption = "6. Load a dataobject with multiple details", WikiUrl = "http://wiki.ics.perm.ru/LoadMultipleDetailsExample.ashx", SampleAction = BasicLoadObjectWithMultipleDetails },
-                                new SampleData { SampleCaption = "7. Prototyping", WikiUrl = "http://wiki.ics.perm.ru/PrototypingExample.ashx", SampleAction = BasicPrototyping }
+                                new SampleData { SampleCaption = "1. How to instantiate dataobjects and persist into DB", WikiUrl = "http://wiki.flexberry.ru/InstantiateAndPersistObjectsExample.ashx", SampleAction = BasicInstantiateAndPersist },
+                                new SampleData { SampleCaption = "2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state", WikiUrl = "http://wiki.flexberry.ru/LoadAndAlterObjects.ashx", SampleAction = BasicLoadAndAlter },
+                                new SampleData { SampleCaption = "3. How to load a set of dataobjects in specific view, limitation, quantity, etc.", WikiUrl = "http://wiki.flexberry.ru/LoadLimitationExample.ashx", SampleAction = BasicLimitation },
+                                new SampleData { SampleCaption = "4. How to do something at persistence moment", WikiUrl = "http://wiki.flexberry.ru/DataObjectUpdateHookExample.ashx", SampleAction = BasicUpdateObjectHook },
+                                new SampleData { SampleCaption = "5. Create a dataobject with multiple details", WikiUrl = "http://wiki.flexberry.ru/CreateMultipleDetailsExample.ashx", SampleAction = BasicCreateObjectWithMultipleDetails },
+                                new SampleData { SampleCaption = "6. Load a dataobject with multiple details", WikiUrl = "http://wiki.flexberry.ru/LoadMultipleDetailsExample.ashx", SampleAction = BasicLoadObjectWithMultipleDetails },
+                                new SampleData { SampleCaption = "7. Prototyping", WikiUrl = "http://wiki.flexberry.ru/PrototypingExample.ashx", SampleAction = BasicPrototyping }
                             }
                         },
                         new SampleData
                         {
                             SampleCaption = "2. Standard", ChildNodesList = new List<SampleData>
                             {
-                                new SampleData { SampleCaption = "1. Non stored/calculated properties", SampleAction = Standard1, WikiUrl = "http://wiki.ics.perm.ru/nonstored_calculated_properties.ashx" },
-                                new SampleData { SampleCaption = "2. Views and inheritance", SampleAction = Standard2, WikiUrl = "http://wiki.ics.perm.ru/work_with_views_example.ashx" },
+                                new SampleData { SampleCaption = "1. Non stored/calculated properties", SampleAction = Standard1, WikiUrl = "http://wiki.flexberry.ru/nonstored_calculated_properties.ashx" },
+                                new SampleData { SampleCaption = "2. Views and inheritance", SampleAction = Standard2, WikiUrl = "http://wiki.flexberry.ru/work_with_views_example.ashx" },
                                 new SampleData { SampleCaption = "3. Inheritance: type usages for master associations", SampleAction = Standard3 },
-                                new SampleData { SampleCaption = "4. Type synonyms", SampleAction = Standard4, WikiUrl = "http://wiki.ics.perm.ru/using_stereotypes_example.ashx" },
-                                new SampleData { SampleCaption = "5. Custom types", SampleAction = Standard5, WikiUrl = "http://wiki.ics.perm.ru/using_custom_types_example.ashx" },
-                                new SampleData { SampleCaption = "6. Custom naming of DB structures", SampleAction = Standard6, WikiUrl = "http://wiki.ics.perm.ru/custom_naming_of_db_structures_example.ashx" },
-                                new SampleData { SampleCaption = "7. How to change storage type", SampleAction = Standard7, WikiUrl = "http://wiki.ics.perm.ru/switching_storages_and_storage_types.ashx" }
+                                new SampleData { SampleCaption = "4. Type synonyms", SampleAction = Standard4, WikiUrl = "http://wiki.flexberry.ru/using_stereotypes_example.ashx" },
+                                new SampleData { SampleCaption = "5. Custom types", SampleAction = Standard5, WikiUrl = "http://wiki.flexberry.ru/using_custom_types_example.ashx" },
+                                new SampleData { SampleCaption = "6. Custom naming of DB structures", SampleAction = Standard6, WikiUrl = "http://wiki.flexberry.ru/custom_naming_of_db_structures_example.ashx" },
+                                new SampleData { SampleCaption = "7. How to change storage type", SampleAction = Standard7, WikiUrl = "http://wiki.flexberry.ru/switching_storages_and_storage_types.ashx" }
                             }
                         },
                         new SampleData
@@ -61,7 +61,7 @@
                                 new SampleData { SampleCaption = "2. Advanced \"BusinessServing\"", SampleAction = null, WikiUrl = "" },
                                 new SampleData { SampleCaption = "3. Catching and replacement of query", SampleAction = null, WikiUrl = "" },
                                 new SampleData { SampleCaption = "4. Advanced limitation", SampleAction = null, WikiUrl = "" },
-                                new SampleData { SampleCaption = "5. Working with views", SampleAction = Advanced5, WikiUrl = "http://wiki.ics.perm.ru/advanced_working_with_views.ashx" },
+                                new SampleData { SampleCaption = "5. Working with views", SampleAction = Advanced5, WikiUrl = "http://wiki.flexberry.ru/advanced_working_with_views.ashx" },
                                 new SampleData { SampleCaption = "6. How to change primary key type and algorithm", SampleAction = null, WikiUrl = "" },
                                 new SampleData { SampleCaption = "7. How to update a dataobject that wasn't read before", SampleAction = null, WikiUrl = "" }
                             }
